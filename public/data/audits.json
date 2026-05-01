@@ -3205,5 +3205,69 @@
                 "2 links de redes sociales caídos (Efecto 'Pueblo Fantasma')."
             ]
         }
+    },
+    {
+        "report_metadata": {
+            "timestamp": "2026-05-01T12:49:54.553042",
+            "domain_scanned": "agency399.example.com",
+            "status": "error",
+            "error_message": "Error de conexión o timeout."
+        }
+    },
+    {
+        "report_metadata": {
+            "timestamp": "2026-05-01T12:49:54.557375",
+            "domain_scanned": "agency400.example.com",
+            "status": "error",
+            "error_message": "Error de conexión o timeout."
+        }
+    },
+    {
+        "report_metadata": {
+            "timestamp": "2026-05-01T12:49:54.562418",
+            "domain_scanned": "agency392.example.com",
+            "status": "error",
+            "error_message": "Error de conexión o timeout."
+        }
+    },
+    {
+        "report_metadata": {
+            "timestamp": "2026-05-01T12:49:54.664395",
+            "domain_scanned": "agency398.example.com",
+            "status": "error",
+            "error_message": "Error de conexión o timeout."
+        }
+    },
+    {
+        "report_metadata": {
+            "timestamp": "2026-05-01T12:49:54.739812",
+            "domain_scanned": "agency396.example.com",
+            "status": "error",
+            "error_message": "Error de conexión o timeout."
+        }
+    },
+    {
+        "report_metadata": {
+            "timestamp": "2026-05-01T12:49:54.967257",
+            "domain_scanned": "agency395.example.com",
+            "status": "error",
+            "error_message": "Error de conexión o timeout."
+        }
+    },
+    {
+        "report_metadata": {
+            "timestamp": "2026-05-01T12:49:55.003233",
+            "domain_scanned": "agency397.example.com",
+            "status": "error",
+            "error_message": "Error de conexión o timeout."
+        }
+    },
+    {
+        "report_metadata": {
+            "timestamp": "2026-05-01T12:49:55.030284",
+            "domain_scanned": "agency391.example.com",
+            "status": "error",
+            "error_message": "Error de conexión o timeout."
+        }
     }
 ]
