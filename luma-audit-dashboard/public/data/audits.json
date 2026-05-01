@@ -398,5 +398,85 @@
             "status": "error",
             "error_message": "Error de conexión o timeout."
         }
+    },
+    {
+        "report_metadata": {
+            "timestamp": "2026-05-01T12:21:01.447023",
+            "domain_scanned": "agency48.example.com",
+            "status": "error",
+            "error_message": "Error de conexión o timeout."
+        }
+    },
+    {
+        "report_metadata": {
+            "timestamp": "2026-05-01T12:21:01.662166",
+            "domain_scanned": "agency53.example.com",
+            "status": "error",
+            "error_message": "Error de conexión o timeout."
+        }
+    },
+    {
+        "report_metadata": {
+            "timestamp": "2026-05-01T12:21:01.724786",
+            "domain_scanned": "agency50.example.com",
+            "status": "error",
+            "error_message": "Error de conexión o timeout."
+        }
+    },
+    {
+        "report_metadata": {
+            "timestamp": "2026-05-01T12:21:01.792454",
+            "domain_scanned": "agency52.example.com",
+            "status": "error",
+            "error_message": "Error de conexión o timeout."
+        }
+    },
+    {
+        "report_metadata": {
+            "timestamp": "2026-05-01T12:21:01.896661",
+            "domain_scanned": "agency59.example.com",
+            "status": "error",
+            "error_message": "Error de conexión o timeout."
+        }
+    },
+    {
+        "report_metadata": {
+            "timestamp": "2026-05-01T12:21:02.034819",
+            "domain_scanned": "agency55.example.com",
+            "status": "error",
+            "error_message": "Error de conexión o timeout."
+        }
+    },
+    {
+        "report_metadata": {
+            "timestamp": "2026-05-01T12:21:02.390963",
+            "domain_scanned": "agency62.example.com",
+            "status": "error",
+            "error_message": "Error de conexión o timeout."
+        }
+    },
+    {
+        "report_metadata": {
+            "timestamp": "2026-05-01T12:21:02.416002",
+            "domain_scanned": "agency60.example.com",
+            "status": "error",
+            "error_message": "Error de conexión o timeout."
+        }
+    },
+    {
+        "report_metadata": {
+            "timestamp": "2026-05-01T12:21:02.515653",
+            "domain_scanned": "agency61.example.com",
+            "status": "error",
+            "error_message": "Error de conexión o timeout."
+        }
+    },
+    {
+        "report_metadata": {
+            "timestamp": "2026-05-01T12:21:02.744398",
+            "domain_scanned": "agency57.example.com",
+            "status": "error",
+            "error_message": "Error de conexión o timeout."
+        }
     }
 ]
