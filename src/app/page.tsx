@@ -1,8 +1,16 @@
-import data from './data.json';
+import fs from 'fs';
+import path from 'path';
 import { ShieldAlert, TrendingDown, Target, Search, BarChart3, Globe, Smartphone, Activity, Link as LinkIcon, AlertTriangle } from 'lucide-react';
 
 export default function Home() {
-  const reports = data;
+  const filePath = path.join(process.cwd(), 'public', 'data', 'audits.json');
+  let reports = [];
+  try {
+    const fileContents = fs.readFileSync(filePath, 'utf8');
+    reports = JSON.parse(fileContents);
+  } catch (e) {
+    console.error("Error reading audits:", e);
+  }
 
   return (
     <main className="min-h-screen bg-[#050505] text-gray-200 p-8 font-sans selection:bg-red-500/30">
@@ -20,13 +28,13 @@ export default function Home() {
           </div>
           <div className="text-right">
             <p className="text-xs text-gray-600 tracking-widest uppercase">Targets Scanned</p>
-            <p className="text-3xl font-mono text-white">{reports.length}</p>
+            <p className="text-3xl font-mono text-white">{reports.filter((r: any) => r.report_metadata?.status === 'success' && r.pain_point_synthesis).length}</p>
           </div>
         </header>
 
         {/* Mapeo de Reportes */}
         <div className="space-y-16">
-          {reports.map((report, idx) => {
+          {reports.filter((r: any) => r.report_metadata?.status === 'success' && r.pain_point_synthesis).map((report: any, idx: number) => {
             const { client_identity, technical_audit, marketing_intelligence, pain_point_synthesis } = report;
             const isCritical = pain_point_synthesis.authority_score < 40;
             
@@ -101,7 +109,7 @@ export default function Home() {
                            </h3>
                            <div className="flex flex-wrap gap-2">
                              {technical_audit.tech_stack.length > 0 ? (
-                               technical_audit.tech_stack.map(tech => (
+                               technical_audit.tech_stack.map((tech: string) => (
                                  <span key={tech} className="px-3 py-1 bg-blue-500/10 text-blue-400 border border-blue-500/20 rounded-md text-xs font-medium">
                                    {tech}
                                  </span>
@@ -114,7 +122,7 @@ export default function Home() {
                            <div className="mt-4 pt-4 border-t border-white/5">
                               <h4 className="text-xs text-gray-500 mb-3 uppercase tracking-wider">Pixels & Analytics</h4>
                               <div className="flex flex-col gap-2">
-                                {['Meta Pixel', 'Google Analytics', 'Google Tag Manager'].map(tracker => {
+                                {['Meta Pixel', 'Google Analytics', 'Google Tag Manager'].map((tracker: string) => {
                                   const isActive = technical_audit.tracking.includes(tracker);
                                   return (
                                     <div key={tracker} className="flex items-center justify-between text-sm">
@@ -168,7 +176,7 @@ export default function Home() {
                              )}
                              
                              {/* Links Activos */}
-                             {marketing_intelligence.social_links.map(link => {
+                             {marketing_intelligence.social_links.map((link: string) => {
                                // Extract domain name roughly for display
                                const platformMatch = link.match(/instagram|facebook|linkedin|tiktok|youtube|pinterest|twitter|x\.com/i);
                                const platform = platformMatch ? platformMatch[0] : 'Web';
@@ -182,7 +190,7 @@ export default function Home() {
                              })}
 
                              {/* Pueblos Fantasmas */}
-                             {marketing_intelligence.broken_links.map(link => {
+                             {marketing_intelligence.broken_links.map((link: string) => {
                                const platformMatch = link.match(/instagram|facebook|linkedin|tiktok|youtube|pinterest|twitter|x\.com/i);
                                const platform = platformMatch ? platformMatch[0] : 'Web';
                                return (
@@ -204,7 +212,7 @@ export default function Home() {
                              <ShieldAlert className="w-4 h-4 text-red-500" /> Pain Point Synthesis
                            </h3>
                            <ul className="space-y-3">
-                             {pain_point_synthesis.identified_issues.map((issue, i) => (
+                             {pain_point_synthesis.identified_issues.map((issue: string, i: number) => (
                                <li key={i} className="flex items-start gap-3 text-sm">
                                  <span className="text-red-500 mt-0.5">•</span>
                                  <span className="text-gray-400 leading-relaxed">{issue}</span>

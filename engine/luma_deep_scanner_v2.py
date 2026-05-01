@@ -275,16 +275,27 @@ class LumaDeepScanner:
         }
 
     def run_bulk_scan(self, domains, max_workers=10):
-        results = []
-        logging.info(f"Iniciando Luma Deep Scanner con {max_workers} hilos para {len(domains)} dominios.")
-        
         output_dir = os.path.join(os.path.dirname(__file__), "..", "public", "data")
         os.makedirs(output_dir, exist_ok=True)
         output_file = os.path.join(output_dir, "audits.json")
         
-        count = 0
+        results = []
+        if os.path.exists(output_file):
+            try:
+                with open(output_file, 'r', encoding='utf-8') as f:
+                    results = json.load(f)
+            except Exception:
+                pass
+                
+        scanned_domains = {r.get("report_metadata", {}).get("domain_scanned") for r in results}
+        domains_to_scan = [d for d in domains if d not in scanned_domains]
+        
+        logging.info(f"Iniciando Luma Deep Scanner con {max_workers} hilos.")
+        logging.info(f"Ya procesados: {len(scanned_domains)}. Pendientes: {len(domains_to_scan)} dominios.")
+        
+        count = len(scanned_domains)
         with concurrent.futures.ThreadPoolExecutor(max_workers=max_workers) as executor:
-            future_to_domain = {executor.submit(self.process_domain, domain): domain for domain in domains}
+            future_to_domain = {executor.submit(self.process_domain, domain): domain for domain in domains_to_scan}
             for future in concurrent.futures.as_completed(future_to_domain):
                 domain = future_to_domain[future]
                 try:
@@ -343,5 +354,14 @@ if __name__ == "__main__":
     output_file = os.path.join(output_dir, "audits.json")
     with open(output_file, 'w', encoding='utf-8') as f:
         json.dump(resultados, f, indent=4, ensure_ascii=False)
+        
+    try:
+        import subprocess
+        subprocess.run(['git', 'add', output_file], check=True)
+        subprocess.run(['git', 'commit', '-m', f"feat(data): final audit results {len(resultados)} leads"], check=True)
+        subprocess.run(['git', 'push', 'origin', 'main'], check=True)
+        logging.info("Push final completado con éxito.")
+    except Exception as e:
+        logging.error(f"Error subiendo a Git el final: {e}")
         
     logging.info(f"Auditoría 360 finalizada. Reporte generado en '{output_file}'")
