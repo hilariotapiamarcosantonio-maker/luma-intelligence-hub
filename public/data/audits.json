@@ -3118,5 +3118,92 @@
             "status": "error",
             "error_message": "Error de conexión o timeout."
         }
+    },
+    {
+        "report_metadata": {
+            "timestamp": "2026-05-01T12:49:37.438437",
+            "domain_scanned": "century21.com",
+            "status": "success"
+        },
+        "client_identity": {
+            "company_name": "C21 loading...",
+            "key_people": [],
+            "emails": [],
+            "phones": []
+        },
+        "technical_audit": {
+            "tech_stack": [],
+            "tracking": [],
+            "open_graph": false,
+            "pagespeed": {
+                "error": "API Key no configurada",
+                "score": 0,
+                "lcp": null,
+                "tti": null
+            }
+        },
+        "marketing_intelligence": {
+            "social_links": [],
+            "broken_links": []
+        },
+        "pain_point_synthesis": {
+            "authority_score": 0,
+            "identified_issues": [
+                "Velocidad móvil crítica (0/100) - Alta tasa de rebote.",
+                "Sin Meta Pixel - Imposibilidad de retargeting eficiente en pauta.",
+                "Falta de Open Graph - Compartir en redes muestra enlaces rotos o sin imagen.",
+                "Presencia omnicanal nula - No se detectaron redes sociales enlazadas."
+            ]
+        }
+    },
+    {
+        "report_metadata": {
+            "timestamp": "2026-05-01T12:49:41.357731",
+            "domain_scanned": "remax.com",
+            "status": "success"
+        },
+        "client_identity": {
+            "company_name": "RE/MAX LLC",
+            "key_people": [],
+            "emails": [],
+            "phones": []
+        },
+        "technical_audit": {
+            "tech_stack": [
+                "Next.js"
+            ],
+            "tracking": [
+                "Google Tag Manager",
+                "Google Analytics"
+            ],
+            "open_graph": true,
+            "pagespeed": {
+                "error": "API Key no configurada",
+                "score": 0,
+                "lcp": null,
+                "tti": null
+            }
+        },
+        "marketing_intelligence": {
+            "social_links": [
+                "https://www.instagram.com/remax/",
+                "https://www.youtube.com/remax",
+                "https://pinterest.com/remax/",
+                "https://www.linkedin.com/company/remax",
+                "https://www.tiktok.com/@remax"
+            ],
+            "broken_links": [
+                "https://www.facebook.com/remax",
+                "https://www.twitter.com/remax"
+            ]
+        },
+        "pain_point_synthesis": {
+            "authority_score": 55,
+            "identified_issues": [
+                "Velocidad móvil crítica (0/100) - Alta tasa de rebote.",
+                "Sin Meta Pixel - Imposibilidad de retargeting eficiente en pauta.",
+                "2 links de redes sociales caídos (Efecto 'Pueblo Fantasma')."
+            ]
+        }
     }
 ]
