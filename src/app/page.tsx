@@ -2,6 +2,8 @@ import fs from 'fs';
 import path from 'path';
 import { ShieldAlert, TrendingDown, Target, Search, BarChart3, Globe, Smartphone, Activity, Link as LinkIcon, AlertTriangle } from 'lucide-react';
 
+export const dynamic = 'force-dynamic';
+
 export default function Home() {
   const filePath = path.join(process.cwd(), 'public', 'data', 'audits.json');
   let reports = [];
