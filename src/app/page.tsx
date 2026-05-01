@@ -30,14 +30,36 @@ export default function Home() {
           </div>
           <div className="text-right">
             <p className="text-xs text-gray-600 tracking-widest uppercase">Targets Scanned</p>
-            <p className="text-3xl font-mono text-white">{reports.filter((r: any) => r.report_metadata?.status === 'success' && r.pain_point_synthesis).length}</p>
+            <p className="text-3xl font-mono text-white">{reports.length}</p>
           </div>
         </header>
 
         {/* Mapeo de Reportes */}
         <div className="space-y-16">
-          {reports.filter((r: any) => r.report_metadata?.status === 'success' && r.pain_point_synthesis).map((report: any, idx: number) => {
-            const { client_identity, technical_audit, marketing_intelligence, pain_point_synthesis } = report;
+          {reports.map((report: any, idx: number) => {
+            const { client_identity, technical_audit, marketing_intelligence, pain_point_synthesis, report_metadata } = report;
+            
+            if (report_metadata?.status !== 'success' || !pain_point_synthesis) {
+              return (
+                <div key={idx} className="bg-[#0a0a0a] border border-white/5 rounded-2xl p-6 opacity-50">
+                  <div className="flex justify-between items-center">
+                    <div>
+                      <h2 className="text-xl font-bold text-gray-500 mb-1 italic">
+                        {report_metadata?.domain_scanned || 'Unknown Domain'}
+                      </h2>
+                      <p className="text-xs text-red-900 uppercase tracking-widest">
+                        {report_metadata?.error_message || 'Scan Failed / Pending Audit'}
+                      </p>
+                    </div>
+                    <div className="flex items-center gap-2 text-gray-700">
+                      <AlertTriangle className="w-4 h-4" />
+                      <span className="text-xs font-mono uppercase">Incomplete Data</span>
+                    </div>
+                  </div>
+                </div>
+              );
+            }
+
             const isCritical = pain_point_synthesis.authority_score < 40;
             
             // Simulación de ROI perdido
