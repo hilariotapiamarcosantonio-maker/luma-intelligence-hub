@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Luma Deep Scanner - Dashboard</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <style>
+        body {
+            background-color: #050505;
+            color: #f5f5f5; /* Blanco humo */
+            font-family: 'Inter', sans-serif;
+        }
+    </style>
+</head>
+<body class="min-h-screen p-8" x-data>
+    <div class="max-w-7xl mx-auto">
+        <header class="mb-12 border-b border-[#222] pb-6 flex items-center justify-between">
+            <div>
+                <h1 class="text-4xl font-black tracking-tight text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 to-yellow-600 mb-2">
+                    Luma Beast Scanner
+                </h1>
+                <p class="text-gray-500 text-sm">Dashboard Interactivo de Auditoría de Infraestructura Inmobiliaria</p>
+            </div>
+            <div class="text-right">
+                <span class="inline-block w-3 h-3 bg-green-500 rounded-full animate-pulse mr-2"></span>
+                <span class="text-xs text-gray-400 uppercase tracking-widest font-semibold">Sistema Activo</span>
+            </div>
+        </header>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            
+        <div class="bg-[#111111] rounded-2xl p-6 border border-[#333] hover:border-yellow-600 transition-all duration-300 shadow-lg">
+            <div class="flex justify-between items-start mb-4">
+                <h2 class="text-xl font-bold text-white">www.apartamentosrd.com.do</h2>
+                <span class="px-3 py-1 bg-[#1a1a1a] rounded-full text-xs font-semibold text-yellow-500 border border-yellow-600/30">
+                    Next.js, AlterEstate
+                </span>
+            </div>
+            
+            <div class="grid grid-cols-2 gap-4 mb-6">
+                <div class="bg-[#0a0a0a] p-4 rounded-xl border border-[#222]">
+                    <p class="text-xs text-gray-500 mb-1">Tiempo de Carga</p>
+                    <p class="text-2xl font-black text-red-500 drop-shadow-md">3.16s</p>
+                </div>
+                <div class="bg-[#0a0a0a] p-4 rounded-xl border border-[#222]">
+                    <p class="text-xs text-gray-500 mb-1">Riesgo de Pérdida</p>
+                    <p class="text-lg font-bold text-white">Alto</p>
+                </div>
+            </div>
+
+            <div class="mb-6">
+                <h3 class="text-sm font-semibold text-blue-400 mb-2 uppercase tracking-wider">Mapa de Dolores</h3>
+                <ul class="space-y-1">
+                    <li class='text-sm text-gray-400'>• Pérdida masiva de leads por velocidad crítica.</li>
+                </ul>
+            </div>
+            
+            <div class="border-t border-[#333] pt-4">
+                <h3 class="text-sm font-semibold text-yellow-500 mb-3 uppercase tracking-wider">Contactos Encontrados</h3>
+                <div class="text-sm text-gray-300">
+                    <p class="mb-1"><strong class="text-white">Emails:</strong> 1 encontrados</p>
+                    <p class="mb-1"><strong class="text-white">Teléfonos:</strong> 7 encontrados</p>
+                    <p><strong class="text-white">Nombres:</strong> #DEVELOPERSPLAN, Lo que dicenNuestros Clientes</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="bg-[#111111] rounded-2xl p-6 border border-[#333] hover:border-yellow-600 transition-all duration-300 shadow-lg">
+            <div class="flex justify-between items-start mb-4">
+                <h2 class="text-xl font-bold text-white">propertygrouprd.com</h2>
+                <span class="px-3 py-1 bg-[#1a1a1a] rounded-full text-xs font-semibold text-yellow-500 border border-yellow-600/30">
+                    Desconocida/Legacy
+                </span>
+            </div>
+            
+            <div class="grid grid-cols-2 gap-4 mb-6">
+                <div class="bg-[#0a0a0a] p-4 rounded-xl border border-[#222]">
+                    <p class="text-xs text-gray-500 mb-1">Tiempo de Carga</p>
+                    <p class="text-2xl font-black text-green-400 drop-shadow-md">0.53s</p>
+                </div>
+                <div class="bg-[#0a0a0a] p-4 rounded-xl border border-[#222]">
+                    <p class="text-xs text-gray-500 mb-1">Riesgo de Pérdida</p>
+                    <p class="text-lg font-bold text-white">Bajo</p>
+                </div>
+            </div>
+
+            <div class="mb-6">
+                <h3 class="text-sm font-semibold text-blue-400 mb-2 uppercase tracking-wider">Mapa de Dolores</h3>
+                <ul class="space-y-1">
+                    <li class='text-sm text-gray-400'>• Ceguera publicitaria (Sin Píxel).</li><li class='text-sm text-gray-400'>• Invisibilidad SEO (Falta Meta Description).</li>
+                </ul>
+            </div>
+            
+            <div class="border-t border-[#333] pt-4">
+                <h3 class="text-sm font-semibold text-yellow-500 mb-3 uppercase tracking-wider">Contactos Encontrados</h3>
+                <div class="text-sm text-gray-300">
+                    <p class="mb-1"><strong class="text-white">Emails:</strong> 0 encontrados</p>
+                    <p class="mb-1"><strong class="text-white">Teléfonos:</strong> 0 encontrados</p>
+                    <p><strong class="text-white">Nombres:</strong> No detectado</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="bg-[#111111] rounded-2xl p-6 border border-[#333] hover:border-yellow-600 transition-all duration-300 shadow-lg">
+            <div class="flex justify-between items-start mb-4">
+                <h2 class="text-xl font-bold text-white">remaxrd.com</h2>
+                <span class="px-3 py-1 bg-[#1a1a1a] rounded-full text-xs font-semibold text-yellow-500 border border-yellow-600/30">
+                    WordPress, Next.js
+                </span>
+            </div>
+            
+            <div class="grid grid-cols-2 gap-4 mb-6">
+                <div class="bg-[#0a0a0a] p-4 rounded-xl border border-[#222]">
+                    <p class="text-xs text-gray-500 mb-1">Tiempo de Carga</p>
+                    <p class="text-2xl font-black text-red-500 drop-shadow-md">5.02s</p>
+                </div>
+                <div class="bg-[#0a0a0a] p-4 rounded-xl border border-[#222]">
+                    <p class="text-xs text-gray-500 mb-1">Riesgo de Pérdida</p>
+                    <p class="text-lg font-bold text-white">Alto</p>
+                </div>
+            </div>
+
+            <div class="mb-6">
+                <h3 class="text-sm font-semibold text-blue-400 mb-2 uppercase tracking-wider">Mapa de Dolores</h3>
+                <ul class="space-y-1">
+                    <li class='text-sm text-gray-400'>• Pérdida masiva de leads por velocidad crítica.</li><li class='text-sm text-gray-400'>• Dependencia de plugins y vulnerabilidad técnica.</li>
+                </ul>
+            </div>
+            
+            <div class="border-t border-[#333] pt-4">
+                <h3 class="text-sm font-semibold text-yellow-500 mb-3 uppercase tracking-wider">Contactos Encontrados</h3>
+                <div class="text-sm text-gray-300">
+                    <p class="mb-1"><strong class="text-white">Emails:</strong> 26 encontrados</p>
+                    <p class="mb-1"><strong class="text-white">Teléfonos:</strong> 45 encontrados</p>
+                    <p><strong class="text-white">Nombres:</strong> No detectado</p>
+                </div>
+            </div>
+        </div>
+        
+        </div>
+    </div>
+</body>
+</html>

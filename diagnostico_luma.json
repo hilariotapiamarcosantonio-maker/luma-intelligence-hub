@@ -1,0 +1,187 @@
+[
+    {
+        "empresa": "www.apartamentosrd.com.do",
+        "url": "https://www.apartamentosrd.com.do/",
+        "tiempo_carga": 3.16,
+        "tecnologia": [
+            "Next.js",
+            "AlterEstate"
+        ],
+        "tracking": {
+            "Meta_Pixel": true,
+            "GTM": true,
+            "GA4": true
+        },
+        "marketing": {
+            "links_instagram": 2,
+            "botones_whatsapp": 0,
+            "meta_description": true
+        },
+        "lead_data": {
+            "nombre_contacto": [
+                "#DEVELOPERSPLAN",
+                "Lo que dicenNuestros Clientes"
+            ],
+            "email": [
+                "info@apartamentosrd.com.do"
+            ],
+            "telefono": [
+                "809-872-6734",
+                "(809) 899-2679",
+                "829-583-4218",
+                "8093201515",
+                "8295834218",
+                "(829) 709-3262",
+                "8293403875"
+            ],
+            "perfil_social": {
+                "instagram": [
+                    "apartamentosrd"
+                ]
+            }
+        },
+        "puntos_dolor": [
+            "Pérdida masiva de leads por velocidad crítica."
+        ]
+    },
+    {
+        "empresa": "propertygrouprd.com",
+        "url": "https://propertygrouprd.com/",
+        "tiempo_carga": 0.53,
+        "tecnologia": [
+            "Desconocida/Legacy"
+        ],
+        "tracking": {
+            "Meta_Pixel": false,
+            "GTM": false,
+            "GA4": false
+        },
+        "marketing": {
+            "links_instagram": 0,
+            "botones_whatsapp": 0,
+            "meta_description": false
+        },
+        "lead_data": {
+            "nombre_contacto": [
+                "No detectado"
+            ],
+            "email": [],
+            "telefono": [],
+            "perfil_social": {
+                "instagram": []
+            }
+        },
+        "puntos_dolor": [
+            "Ceguera publicitaria (Sin Píxel).",
+            "Invisibilidad SEO (Falta Meta Description)."
+        ]
+    },
+    {
+        "empresa": "remaxrd.com",
+        "url": "https://remaxrd.com/",
+        "tiempo_carga": 5.02,
+        "tecnologia": [
+            "WordPress",
+            "Next.js"
+        ],
+        "tracking": {
+            "Meta_Pixel": true,
+            "GTM": true,
+            "GA4": true
+        },
+        "marketing": {
+            "links_instagram": 1,
+            "botones_whatsapp": 0,
+            "meta_description": true
+        },
+        "lead_data": {
+            "nombre_contacto": [
+                "No detectado"
+            ],
+            "email": [
+                "yuleysinunezrealtor@gmail.com",
+                "remaxplusrd@gmail.com",
+                "administracion@remaxurbanard.com",
+                "ventas@remaxhome.do",
+                "felipemesa@remaxocean.net",
+                "remaxcoralbay@gmail.com",
+                "gerencia@remaxlifepuntacana.com",
+                "info@remaxbaysidedr.com",
+                "info@remaxcapital.do",
+                "ventas@remaxm.net",
+                "isaiasmedina@remaxind.com",
+                "wendygarcia@remaxnovard.com",
+                "aiv@pueblobavaro.com",
+                "luichy3171@gmail.com",
+                "info@remaxqualityrd.com",
+                "arielgrasso@remaxinfinityrd.com",
+                "info-puertoplata@remaxparadisedr.com",
+                "remaxatlantis.santiago@gmail.com",
+                "info@remaxcity.com",
+                "info@remaxutopia.com",
+                "info@remaxmonumentalrd.com",
+                "info@remaxparadisedr.com",
+                "vignyarduz@remax.net",
+                "dominicasanet160@gmail.com",
+                "sherlin@remaxnextdoor.com",
+                "info@remaxadvance.com"
+            ],
+            "telefono": [
+                "(809) 985-6072",
+                "(829) 498-1530",
+                "(809) 707-1575",
+                "(829) 762-6805",
+                "(809) 286-0221",
+                "(809) 724-3656",
+                "(809) 542-6200",
+                "(849) 539-5390",
+                "(829) 745-1194",
+                "(809) 726-4022",
+                "(809) 969-7799",
+                "(809) 696-3676",
+                "(809) 589-9999",
+                "(849) 621-1200",
+                "(809) 299-2020",
+                "(809) 738-7000",
+                "(809) 457-6356",
+                "(809) 248-9809",
+                "(809) 881-7999",
+                "(809) 571-9990",
+                "(809) 730-7195",
+                "(809) 826-5599",
+                "(849) 944-5582",
+                "(829) 585-6789",
+                "(829) 497-5465",
+                "(849) 916-8485",
+                "(809) 501-0795",
+                "(829) 749-9437",
+                "(849) 889-9313",
+                "(849) 637-1002",
+                "(809) 891-4214",
+                "(809) 841-1364",
+                "(809) 532-1844",
+                "(829) 745-2076",
+                "(829) 896-1132",
+                "(849) 222-2999",
+                "(809) 489-6982",
+                "(809) 564-2272",
+                "(809) 689-8996",
+                "(809) 541-2020",
+                "(809) 482-2329",
+                "(829) 599-6968",
+                "(809) 870-6968",
+                "(829) 884-3600",
+                "(829) 287-6408"
+            ],
+            "perfil_social": {
+                "instagram": [
+                    "remax_rd"
+                ]
+            }
+        },
+        "puntos_dolor": [
+            "Pérdida masiva de leads por velocidad crítica.",
+            "Dependencia de plugins y vulnerabilidad técnica."
+        ]
+    }
+]
