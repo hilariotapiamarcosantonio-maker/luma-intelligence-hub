@@ -278,7 +278,7 @@ class LumaDeepScanner:
         results = []
         logging.info(f"Iniciando Luma Deep Scanner con {max_workers} hilos para {len(domains)} dominios.")
         
-        output_dir = os.path.join(os.path.dirname(__file__), "luma-audit-dashboard", "public", "data")
+        output_dir = os.path.join(os.path.dirname(__file__), "..", "public", "data")
         os.makedirs(output_dir, exist_ok=True)
         output_file = os.path.join(output_dir, "audits.json")
         
@@ -336,7 +336,7 @@ if __name__ == "__main__":
     resultados = scanner.run_bulk_scan(domains, max_workers=10)
     
     # Directorio de destino dentro del proyecto Next.js
-    output_dir = os.path.join(os.path.dirname(__file__), "luma-audit-dashboard", "public", "data")
+    output_dir = os.path.join(os.path.dirname(__file__), "..", "public", "data")
     os.makedirs(output_dir, exist_ok=True)
     
     # Guardar reporte JSON en public/data/audits.json
