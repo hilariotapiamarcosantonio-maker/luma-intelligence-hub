@@ -104,10 +104,16 @@ export default function Home() {
                         <h2 className="text-3xl font-bold text-white mb-1 truncate">
                           {client_identity.company_name}
                         </h2>
-                        <a href={`https://${report.report_metadata.domain_scanned}`} target="_blank" rel="noreferrer" className="text-blue-400 hover:text-blue-300 text-sm flex items-center gap-1 transition-colors">
-                          <Globe className="w-4 h-4" />
-                          {report.report_metadata.domain_scanned}
-                        </a>
+                        <div className="flex flex-col gap-3 mt-2">
+                          <a href={`https://${report.report_metadata.domain_scanned}`} target="_blank" rel="noreferrer" className="text-blue-400 hover:text-blue-300 text-sm flex items-center gap-1 transition-colors w-fit">
+                            <Globe className="w-4 h-4" />
+                            {report.report_metadata.domain_scanned}
+                          </a>
+                          <a href={`/audit/${report.report_metadata.domain_scanned}`} target="_blank" className="flex items-center justify-center gap-2 px-4 py-2 bg-red-600 hover:bg-red-500 text-white text-sm font-bold rounded-lg transition-colors shadow-[0_0_15px_rgba(220,38,38,0.4)] border border-red-500/50">
+                            <ShieldAlert className="w-4 h-4" />
+                            Abrir Reporte en Vivo (Para enviar)
+                          </a>
+                        </div>
                       </div>
 
                       <div className="p-6 rounded-xl bg-black/40 border border-white/5">
