@@ -41,19 +41,39 @@ export default function Home() {
             
             if (report_metadata?.status !== 'success' || !pain_point_synthesis) {
               return (
-                <div key={idx} className="bg-[#0a0a0a] border border-white/5 rounded-2xl p-6 opacity-50">
-                  <div className="flex justify-between items-center">
+                <div key={idx} className="bg-[#0a0a0a] border border-white/10 rounded-2xl p-6 hover:border-red-500/30 transition-colors">
+                  <div className="flex flex-col md:flex-row md:justify-between md:items-center gap-4">
                     <div>
-                      <h2 className="text-xl font-bold text-gray-500 mb-1 italic">
+                      <h2 className="text-2xl font-bold text-gray-200 mb-1">
                         {report_metadata?.domain_scanned || 'Unknown Domain'}
                       </h2>
-                      <p className="text-xs text-red-900 uppercase tracking-widest">
+                      <p className="text-xs text-red-500 uppercase tracking-widest flex items-center gap-1">
+                        <AlertTriangle className="w-3 h-3" />
                         {report_metadata?.error_message || 'Scan Failed / Pending Audit'}
                       </p>
                     </div>
-                    <div className="flex items-center gap-2 text-gray-700">
-                      <AlertTriangle className="w-4 h-4" />
-                      <span className="text-xs font-mono uppercase">Incomplete Data</span>
+                    <div className="flex items-center gap-3">
+                      {report_metadata?.domain_scanned && (
+                        <>
+                          <a 
+                            href={`https://${report_metadata.domain_scanned}`} 
+                            target="_blank" 
+                            rel="noreferrer" 
+                            className="flex items-center gap-2 px-4 py-2 bg-white/5 hover:bg-white/10 text-gray-300 text-sm font-medium rounded-lg transition-colors border border-white/5"
+                          >
+                            <Globe className="w-4 h-4" />
+                            Visitar Web
+                          </a>
+                          <a 
+                            href={`/audit/${report_metadata.domain_scanned}`} 
+                            target="_blank"
+                            className="flex items-center gap-2 px-4 py-2 bg-red-600/20 hover:bg-red-600/40 text-red-400 text-sm font-bold rounded-lg transition-colors border border-red-500/20"
+                          >
+                            <ShieldAlert className="w-4 h-4" />
+                            Ver Reporte
+                          </a>
+                        </>
+                      )}
                     </div>
                   </div>
                 </div>
