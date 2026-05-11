@@ -602,5 +602,402 @@
             "status": "error",
             "error_message": "Error de conexión o timeout."
         }
+    },
+    {
+        "report_metadata": {
+            "timestamp": "2026-05-11T15:44:36.108866",
+            "domain_scanned": "inviertedr.com",
+            "status": "success"
+        },
+        "client_identity": {
+            "company_name": "No detectado",
+            "key_people": [],
+            "emails": [],
+            "phones": []
+        },
+        "technical_audit": {
+            "tech_stack": [],
+            "tracking": [],
+            "open_graph": false,
+            "pagespeed": {
+                "error": "API Key no configurada",
+                "score": 0,
+                "lcp": null,
+                "tti": null
+            }
+        },
+        "marketing_intelligence": {
+            "social_links": [],
+            "broken_links": []
+        },
+        "pain_point_synthesis": {
+            "authority_score": 0,
+            "identified_issues": [
+                "Velocidad móvil crítica (0/100) - Alta tasa de rebote.",
+                "Sin Meta Pixel - Imposibilidad de retargeting eficiente en pauta.",
+                "Falta de Open Graph - Compartir en redes muestra enlaces rotos o sin imagen.",
+                "Presencia omnicanal nula - No se detectaron redes sociales enlazadas."
+            ]
+        }
+    },
+    {
+        "report_metadata": {
+            "timestamp": "2026-05-11T15:44:36.423968",
+            "domain_scanned": "dainsa.com.do",
+            "status": "success"
+        },
+        "client_identity": {
+            "company_name": "Dainsa – Real State",
+            "key_people": [],
+            "emails": [
+                "Dainsa1@gmail.com"
+            ],
+            "phones": []
+        },
+        "technical_audit": {
+            "tech_stack": [
+                "WordPress 6.9.4"
+            ],
+            "tracking": [],
+            "open_graph": false,
+            "pagespeed": {
+                "error": "API Key no configurada",
+                "score": 0,
+                "lcp": null,
+                "tti": null
+            }
+        },
+        "marketing_intelligence": {
+            "social_links": [
+                "https://www.instagram.com/dainsarealestate/"
+            ],
+            "broken_links": []
+        },
+        "pain_point_synthesis": {
+            "authority_score": 5,
+            "identified_issues": [
+                "Velocidad móvil crítica (0/100) - Alta tasa de rebote.",
+                "Sin Meta Pixel - Imposibilidad de retargeting eficiente en pauta.",
+                "Falta de Open Graph - Compartir en redes muestra enlaces rotos o sin imagen."
+            ]
+        }
+    },
+    {
+        "report_metadata": {
+            "timestamp": "2026-05-11T15:44:37.151155",
+            "domain_scanned": "caribeinmobiliario.com",
+            "status": "success"
+        },
+        "client_identity": {
+            "company_name": "Caribe Inmobiliario",
+            "key_people": [],
+            "emails": [],
+            "phones": []
+        },
+        "technical_audit": {
+            "tech_stack": [],
+            "tracking": [],
+            "open_graph": true,
+            "pagespeed": {
+                "error": "API Key no configurada",
+                "score": 0,
+                "lcp": null,
+                "tti": null
+            }
+        },
+        "marketing_intelligence": {
+            "social_links": [],
+            "broken_links": []
+        },
+        "pain_point_synthesis": {
+            "authority_score": 10,
+            "identified_issues": [
+                "Velocidad móvil crítica (0/100) - Alta tasa de rebote.",
+                "Sin Meta Pixel - Imposibilidad de retargeting eficiente en pauta.",
+                "Presencia omnicanal nula - No se detectaron redes sociales enlazadas."
+            ]
+        }
+    },
+    {
+        "report_metadata": {
+            "timestamp": "2026-05-11T15:44:38.816451",
+            "domain_scanned": "inmobiliarialegacy.com",
+            "status": "success"
+        },
+        "client_identity": {
+            "company_name": "Legacy Inmobiliaria",
+            "key_people": [],
+            "emails": [
+                "ventas@inmobiliarialegacy.com"
+            ],
+            "phones": [
+                "9999074275"
+            ]
+        },
+        "technical_audit": {
+            "tech_stack": [
+                "WordPress 6.9.4"
+            ],
+            "tracking": [],
+            "open_graph": true,
+            "pagespeed": {
+                "error": "API Key no configurada",
+                "score": 0,
+                "lcp": null,
+                "tti": null
+            }
+        },
+        "marketing_intelligence": {
+            "social_links": [],
+            "broken_links": [
+                "https://www.facebook.com/LegacyInmobiliariaCampeche"
+            ]
+        },
+        "pain_point_synthesis": {
+            "authority_score": 10,
+            "identified_issues": [
+                "Velocidad móvil crítica (0/100) - Alta tasa de rebote.",
+                "Sin Meta Pixel - Imposibilidad de retargeting eficiente en pauta.",
+                "1 links de redes sociales caídos (Efecto 'Pueblo Fantasma').",
+                "Presencia omnicanal nula - No se detectaron redes sociales enlazadas."
+            ]
+        }
+    },
+    {
+        "report_metadata": {
+            "timestamp": "2026-05-11T15:44:39.602765",
+            "domain_scanned": "inmobiliarialaisla.com",
+            "status": "success"
+        },
+        "client_identity": {
+            "company_name": "Inmobiliaria La Isla, agencia en Pola de Siero, Asturias",
+            "key_people": [],
+            "emails": [
+                "info@inmobiliarialaisla.com"
+            ],
+            "phones": [
+                "985 72 54 85"
+            ]
+        },
+        "technical_audit": {
+            "tech_stack": [
+                "WordPress"
+            ],
+            "tracking": [
+                "Google Analytics"
+            ],
+            "open_graph": true,
+            "pagespeed": {
+                "error": "API Key no configurada",
+                "score": 0,
+                "lcp": null,
+                "tti": null
+            }
+        },
+        "marketing_intelligence": {
+            "social_links": [],
+            "broken_links": [
+                "https://es-es.facebook.com/inmolaisla/",
+                "https://es.linkedin.com/in/mar%C3%ADa-angeles-rivas-carbajal-02038963",
+                "https://www.facebook.com/",
+                "https://twitter.com/"
+            ]
+        },
+        "pain_point_synthesis": {
+            "authority_score": 20,
+            "identified_issues": [
+                "Velocidad móvil crítica (0/100) - Alta tasa de rebote.",
+                "Sin Meta Pixel - Imposibilidad de retargeting eficiente en pauta.",
+                "4 links de redes sociales caídos (Efecto 'Pueblo Fantasma').",
+                "Presencia omnicanal nula - No se detectaron redes sociales enlazadas."
+            ]
+        }
+    },
+    {
+        "report_metadata": {
+            "timestamp": "2026-05-11T15:44:39.741075",
+            "domain_scanned": "perezrealestate.com.do",
+            "status": "success"
+        },
+        "client_identity": {
+            "company_name": "Perez Real Estate",
+            "key_people": [],
+            "emails": [
+                "hello@yoursite.com",
+                "info@perezrealestate.com.do",
+                "leaflet@1.3.4"
+            ],
+            "phones": [
+                "1234567890"
+            ]
+        },
+        "technical_audit": {
+            "tech_stack": [
+                "WordPress 6.9.4"
+            ],
+            "tracking": [
+                "Google Analytics",
+                "Google Tag Manager"
+            ],
+            "open_graph": true,
+            "pagespeed": {
+                "error": "API Key no configurada",
+                "score": 0,
+                "lcp": null,
+                "tti": null
+            }
+        },
+        "marketing_intelligence": {
+            "social_links": [
+                "https://www.instagram.com/perezrealestaterd",
+                "https://www.youtube.com/@perezrealestateinmo"
+            ],
+            "broken_links": [
+                "https://www.facebook.com/perezrealestaterd/"
+            ]
+        },
+        "pain_point_synthesis": {
+            "authority_score": 40,
+            "identified_issues": [
+                "Velocidad móvil crítica (0/100) - Alta tasa de rebote.",
+                "Sin Meta Pixel - Imposibilidad de retargeting eficiente en pauta.",
+                "1 links de redes sociales caídos (Efecto 'Pueblo Fantasma')."
+            ]
+        }
+    },
+    {
+        "report_metadata": {
+            "timestamp": "2026-05-11T15:44:40.319760",
+            "domain_scanned": "mudate.net",
+            "status": "success"
+        },
+        "client_identity": {
+            "company_name": "mudate.net",
+            "key_people": [],
+            "emails": [
+                "asistente@mudate.net"
+            ],
+            "phones": []
+        },
+        "technical_audit": {
+            "tech_stack": [
+                "Next.js",
+                "AlterEstate"
+            ],
+            "tracking": [
+                "Meta Pixel",
+                "Google Analytics"
+            ],
+            "open_graph": true,
+            "pagespeed": {
+                "error": "API Key no configurada",
+                "score": 0,
+                "lcp": null,
+                "tti": null
+            }
+        },
+        "marketing_intelligence": {
+            "social_links": [
+                "https://www.instagram.com/mudate/",
+                "https://www.youtube.com/user/MudateSRL"
+            ],
+            "broken_links": [
+                "https://www.facebook.com/Mudatesrl",
+                "https://twitter.com/mudate"
+            ]
+        },
+        "pain_point_synthesis": {
+            "authority_score": 40,
+            "identified_issues": [
+                "Velocidad móvil crítica (0/100) - Alta tasa de rebote.",
+                "2 links de redes sociales caídos (Efecto 'Pueblo Fantasma')."
+            ]
+        }
+    },
+    {
+        "report_metadata": {
+            "timestamp": "2026-05-11T15:45:03.004834",
+            "domain_scanned": "dreamhomedr.com",
+            "status": "success"
+        },
+        "client_identity": {
+            "company_name": "Dreamhome Real Estate SRL.",
+            "key_people": [],
+            "emails": [
+                "info@www.dreamhomedr.com",
+                "email@email.com",
+                "edward-bickersteth-8246@emailhost.space",
+                "info@dreamhomedr.com",
+                "scottmcnally-5886@emailzoneonline.shop",
+                "melina_hedge@ultimateemailstorage.shop"
+            ],
+            "phones": [
+                "809-566-3977",
+                "8095663977",
+                "%28809%29+566-3977"
+            ]
+        },
+        "technical_audit": {
+            "tech_stack": [
+                "WordPress"
+            ],
+            "tracking": [
+                "Google Analytics",
+                "Google Tag Manager"
+            ],
+            "open_graph": true,
+            "pagespeed": {
+                "error": "API Key no configurada",
+                "score": 0,
+                "lcp": null,
+                "tti": null
+            }
+        },
+        "marketing_intelligence": {
+            "social_links": [
+                "https://pinterest.com/pin/create/button/?url=https://www.dreamhomedr.com/propiedad/encuentra-la-paz-que-buscabas-en-serralles-en-este-hermoso-apartamento-en-venta-de-3-habitaciones/&media=https://i0.wp.com/www.dreamhomedr.com/wp-content/uploads/2026/05/9E691709-DAC5-4214-A929-0D0C2D892E3F.jpeg?resize=1920%2C790&ssl=1&description=Encuentra+la+paz+que+buscabas+en+Serralles+en+este+hermoso+apartamento+en+venta+de+3+habitaciones",
+                "https://pinterest.com/pin/create/button/?url=https://www.dreamhomedr.com/propiedad/en-la-esperilla-centrico-y-acogedor-apartamento-de-3-habitaciones-en-piso-alto-id-968/&media=https://i0.wp.com/www.dreamhomedr.com/wp-content/uploads/2026/02/IMG_4700_129_compressed_2025_12_10_033122.webp?resize=1280%2C720&ssl=1&description=La+Esperilla+viva+con+pura+adrenalina+espectacular+vista+al+mar+y+ciudad+apartamento+en+venta+de+3+Hab.",
+                "https://pinterest.com/pin/create/button/?url=https://www.dreamhomedr.com/propiedad/exclusivo-apartamento-en-venta-en-evaristo-morales-159-metros-en-piso-7-id-3539/&media=https://i0.wp.com/www.dreamhomedr.com/wp-content/uploads/2025/04/IMG_2547.jpg?resize=1280%2C720&ssl=1&description=Exclusivo+Apartamento+en+Venta+en+Evaristo+Morales%2C+159+metros+en+Piso+7+%E2%80%93+ID+3539",
+                "https://pinterest.com/pin/create/button/?url=https://www.dreamhomedr.com/propiedad/apartamento-en-venta-en-bella-vista-con-275-metros-y-3-habitaciones-oportunidad-unica/&media=https://i0.wp.com/www.dreamhomedr.com/wp-content/uploads/2025/09/WhatsApp-Image-2025-09-11-at-14.05.31.jpeg?resize=1600%2C790&ssl=1&description=Apartamento+en+venta+en+Bella+Vista+con+275+metros+y+3+Habitaciones%2C+oportunidad+unica.",
+                "https://pinterest.com/pin/create/button/?url=https://www.dreamhomedr.com/propiedad/apartamentos-en-planos-en-mirador-norte-de-3-habitaciones-torre-moderna-id-3564/&media=https://i0.wp.com/www.dreamhomedr.com/wp-content/uploads/2025/09/WhatsApp-Image-2025-09-15-at-08.23.06-2.jpeg?resize=1280%2C790&ssl=1&description=Apartamentos+en+Planos+en+Mirador+Norte+de+3+Habitaciones+Torre+Moderna+ID+3564",
+                "https://pinterest.com/pin/create/button/?url=https://www.dreamhomedr.com/propiedad/piantini-te-invita-a-un-nuevo-horizonte-de-lujo-experimenta-un-estilo-de-vida-superior-id-3291/&media=https://i0.wp.com/www.dreamhomedr.com/wp-content/uploads/2026/04/IMG_1080_compressed.jpg?resize=1280%2C720&ssl=1&description=Piantini+te+Invita+a+un+Nuevo+Horizonte+de+Lujo%3A+Experimenta+un+Estilo+de+Vida+Superior+ID+3291",
+                "https://pinterest.com/pin/create/button/?url=https://www.dreamhomedr.com/propiedad/penthouse-con-vista-la-mar-en-venta-en-playa-nueva-romana-id-3186/&media=https://i0.wp.com/www.dreamhomedr.com/wp-content/uploads/2024/06/Penthouse-con-Vista-la-Mar-en-Venta-en-Playa-Nueva-Romana-ID-3186-8.jpg?resize=1155%2C790&ssl=1&description=Penthouse+con+Vista+la+Mar+en+Venta+en+Playa+Nueva+Romana+ID+3186",
+                "https://pinterest.com/pin/create/button/?url=https://www.dreamhomedr.com/propiedad/en-serralles-apartamento-de-2-habitaciones-con-terraza-privada-y-jacuzzi-en-venta/&media=https://i0.wp.com/www.dreamhomedr.com/wp-content/uploads/2026/03/IMG_8098-1.jpg?resize=1280%2C720&ssl=1&description=En+Serrall%C3%A9s+%E2%80%93+Apartamento+de+2+habitaciones+con+Terraza+Privada+y+Jacuzzi+en+venta",
+                "https://pinterest.com/pin/create/button/?url=https://www.dreamhomedr.com/propiedad/apartamento-en-alquiler-2-habitaciones-en-moderna-torre-con-areas-sociales-id-3197/&media=https://i0.wp.com/www.dreamhomedr.com/wp-content/uploads/2025/06/IMG_1274.jpg?resize=1280%2C720&ssl=1&description=La+Esperilla+Apartamento+en+Alquiler+2+Habitaciones+en+Moderna+Torre+Con+%C3%81reas+Sociales+ID+3197",
+                "https://pinterest.com/pin/create/button/?url=https://www.dreamhomedr.com/propiedad/la-esperilla-santo-domingo-apartamento-amueblado-de-2-habitaciones-en-alquiler-en-torre-moderna/&media=https://i0.wp.com/www.dreamhomedr.com/wp-content/uploads/2026/03/WhatsApp-Image-2026-03-19-at-19.17.23.jpeg?resize=900%2C790&ssl=1&description=La+Esperilla%2C+Santo+Domingo+%E2%80%93+Apartamento+Amueblado+de+2+Habitaciones+en+Alquiler+en+Torre+Moderna",
+                "https://pinterest.com/pin/create/button/?url=https://www.dreamhomedr.com/propiedad/en-casa-de-campo-donde-el-super-lujo-y-la-comodidad-se-complementan-en-esta-residencia-de-5-habitaciones-en-venta/&media=https://i0.wp.com/www.dreamhomedr.com/wp-content/uploads/2026/03/WhatsApp-Image-2026-03-17-at-21.33.54.jpeg?resize=1600%2C790&ssl=1&description=En+Casa+de+Campo+donde+el+super+lujo+y+la+comodidad+se+complementan+en+esta+residencia+de+5+habitaciones+en+venta",
+                "https://pinterest.com/pin/create/button/?url=https://www.dreamhomedr.com/propiedad/en-la-marina-de-cap-cana-majestuosa-villa-de-ultra-lujo-de-6-habitaciones-en-venta-con-muelle-privado-en-venta/&media=https://i0.wp.com/www.dreamhomedr.com/wp-content/uploads/2026/03/WhatsApp-Image-2026-03-06-at-22.55.36-1.jpeg?resize=1280%2C744&ssl=1&description=En+La+Marina+de+Cap+Cana%2C+Majestuosa+Villa+de+Ultra+Lujo+de+6+Habitaciones+en+venta+con+Muelle+Privado+en+Venta",
+                "https://pinterest.com/pin/create/button/?url=https://www.dreamhomedr.com/propiedad/en-cap-cana-paradisiaco-apartamento-completamente-amueblado-en-primera-linea-de-playa-con-3-habitaciones-id-3574/&media=https://i0.wp.com/www.dreamhomedr.com/wp-content/uploads/2025/10/WhatsApp-Image-2025-10-16-at-14.31.46-3.jpeg?resize=1280%2C720&ssl=1&description=En+Cap+Cana+Paradisiaco+Apartamento+Completamente+Amueblado+en+Primera+Linea+de+Playa+con+3+Habitaciones+ID+3574",
+                "https://pinterest.com/pin/create/button/?url=https://www.dreamhomedr.com/propiedad/en-piantini-apartamento-en-alquiler-de-1-habitacion-en-torre-moderna-con-vista-inigualable/&media=https://i0.wp.com/www.dreamhomedr.com/wp-content/uploads/2026/02/IMG_2770.jpeg?resize=1920%2C790&ssl=1&description=En+Piantini%2C+Apartamento+en+Alquiler+de+1+Habitaci%C3%B3n+en+Torre+moderna+con+vista+inigualable",
+                "https://pinterest.com/pin/create/button/?url=https://www.dreamhomedr.com/propiedad/sientete-en-el-paraiso-en-este-increible-apartamento-en-piantini-con-amplio-balcon-id-2744/&media=https://i0.wp.com/www.dreamhomedr.com/wp-content/uploads/2024/10/IMG_7860.jpg?resize=1008%2C756&ssl=1&description=En+Piantini+Donde+el+lujo%2C+prestigio+y+confort+se+fusionan+se+vende+apartamento+con+hermosa+vista+3+habitaciones+248m2+estudio+Terraza.",
+                "https://pinterest.com/pin/create/button/?url=https://www.dreamhomedr.com/propiedad/en-piantini-acogedor-apartamento-de-3-habitaciones-con-balcon-terraza-id-2752/&media=https://i0.wp.com/www.dreamhomedr.com/wp-content/uploads/2026/01/16A662AC-4D8D-422D-A874-5BD73E7A5CB4.jpeg?resize=1280%2C720&ssl=1&description=En+Piantini+acogedor+apartamento+de+3+habitaciones+con+balc%C3%B3n+terraza+ID+2752",
+                "https://pinterest.com/pin/create/button/?url=https://www.dreamhomedr.com/propiedad/en-naco-apartamento-de-lujo-exclusivo-en-venta-de-3-habitaciones-con-amplio-balcon-y-cocina-id-2994/&media=https://i0.wp.com/www.dreamhomedr.com/wp-content/uploads/2026/01/IMG_6475_22_compressed_2026_01_15_014148.jpg?resize=1920%2C790&ssl=1&description=En+Naco+apartamento+de+lujo+exclusivo+en+venta+de+3+habitaciones+con+amplio+balc%C3%B3n+y+cocina+ID+2994.",
+                "https://pinterest.com/pin/create/button/?url=https://www.dreamhomedr.com/propiedad/en-serralles-innovador-apartamento-de-3-habitaciones-con-amplio-balcon-id-3404/&media=https://i0.wp.com/www.dreamhomedr.com/wp-content/uploads/2024/06/IMG_6539.jpg?resize=1280%2C720&ssl=1&description=En+Serralles+Innovador+Apartamento+de+3+habitaciones+con+Amplio+Balc%C3%B3n+ID+3404",
+                "https://pinterest.com/pin/create/button/?url=https://www.dreamhomedr.com/propiedad/los-cacicazgos-con-vista-al-mar-imponente-apartamento-en-venta-315-m2-piso-alto-descubra-grandes-emociones-viva-con-prestigio-id-3538/&media=https://i0.wp.com/www.dreamhomedr.com/wp-content/uploads/2025/04/e7665c42-0e3d-47b5-a8f5-450662d0c351.jpg?resize=1284%2C702&ssl=1&description=Los+Cacicazgos+con+vista+al+mar+Imponente+apartamento+en+Venta+315+m2+Piso+alto+descubra+grandes+emociones+viva+con+prestigio+ID+3538",
+                "https://pinterest.com/pin/create/button/?url=https://www.dreamhomedr.com/propiedad/maravilloso-apartamento-en-piantini-de-3-habitaciones-con-3-parqueos-id-3507/&media=https://i0.wp.com/www.dreamhomedr.com/wp-content/uploads/2025/01/IMG_5388.jpg?resize=1280%2C720&ssl=1&description=Piantini+maravilloso+apartamento+en+alquiler+con+l%C3%ADnea+blanca+3+habitaciones+3+parqueos+torre+con+%C3%A1reas+sociales+ID+3507",
+                "https://pinterest.com/pin/create/button/?url=https://www.dreamhomedr.com/propiedad/en-la-esperilla-apartamento-estilo-miami-fabulosa-vista-3-habitaciones-y-4-parqueos-id-3257/&media=https://i0.wp.com/www.dreamhomedr.com/wp-content/uploads/2024/10/IMG_3136.jpg?resize=1280%2C720&ssl=1&description=En+La+Esperilla+Apartamento+Estilo+Miami+Con+Fabulosa+Vista+3+Habitaciones+y+4+Parqueos+ID+3257",
+                "https://pinterest.com/pin/create/button/?url=https://www.dreamhomedr.com/propiedad/exclusivo-apartamento-de-lujo-en-piso-alto-con-vista-panoramica-en-torre-de-piantini-id3484/&media=https://i0.wp.com/www.dreamhomedr.com/wp-content/uploads/2024/10/IMG_1635-1.jpg?resize=1280%2C720&ssl=1&description=%22Exclusivo+Apartamento+de+Lujo+en+Piso+Alto+con+Vista+Panor%C3%A1mica+en+Torre+de+Piantini+%7C+ID+3484%26%238243%3B",
+                "https://pinterest.com/pin/create/button/?url=https://www.dreamhomedr.com/propiedad/serralles-apartamento-en-venta-amueblado-y-equipado-como-nuevo-moderno-2do-nivel-con-terraza-de-2-habitaciones-en-exclusiva-y-centrica-zona-id-3357/&media=https://i0.wp.com/www.dreamhomedr.com/wp-content/uploads/2024/06/Apartamento-Semi-Amueblado-en-Serralles-Ideal-para-Vivir-con-Lujo-y-Comodidad-ID-3357-37.jpg?resize=1220%2C692&ssl=1&description=Apartamento+en+venta+amueblado+y+equipado+como+nuevo+moderno+2do+nivel+con+terraza+de+2+habitaciones+en+exclusivo+y+c%C3%A9ntrico+Serralles+ID+3357",
+                "https://pinterest.com/pin/create/button/?url=https://www.dreamhomedr.com/propiedad/estupendo-y-confortable-apartamento-de-1-habitacion-en-serralles-rep-dom-id-3442/&media=https://i0.wp.com/www.dreamhomedr.com/wp-content/uploads/2024/07/IMG_1160.jpg?resize=1280%2C720&ssl=1&description=Estupendo+Y+Confortable+Apartamento+de+1+Habitaci%C3%B3n+en+Serralles+ID+3442",
+                "https://pinterest.com/pin/create/button/?url=https://www.dreamhomedr.com/propiedad/torre-de-apartamentos-de-lujo-en-venta-en-el-corazon-del-arte-y-la-cultura-de-santo-domingo-id-3210/&media=https://i0.wp.com/www.dreamhomedr.com/wp-content/uploads/2024/06/Torre-de-Apartamentos-de-Lujo-en-Venta-en-el-Corazon-del-Arte-y-La-Cultura-de-Santo-Domingo-ID-3210-43.jpg?resize=1920%2C790&ssl=1&description=Torre+de+Apartamentos+de+Lujo+en+Gazcue+en+el+Coraz%C3%B3n+del+Arte+y+La+Cultura+de+Santo+Domingo+ID+3210",
+                "https://pinterest.com/pin/create/button/?url=https://www.dreamhomedr.com/propiedad/piantini-poco-uso-moderno-lujoso-centrico-apartamento-en-venta-amueblado-de-1-habitacion-en-torre-con-areas-sociales-id-3464/&media=https://i0.wp.com/www.dreamhomedr.com/wp-content/uploads/2025/06/IMG_4623.jpg?resize=1280%2C720&ssl=1&description=En+Piantini+moderno+apartamento+en+venta+amueblado+de+1+habitaci%C3%B3n+con+bellas+amenidades",
+                "https://www.pinterest.com/dreamhomedr/",
+                "https://www.youtube.com/@dreamhomedr",
+                "https://www.instagram.com/dreamhomedr/"
+            ],
+            "broken_links": [
+                "https://www.facebook.com/dreamhomedr",
+                "https://twitter.com/dreamhomedr",
+                "https://www.linkedin.com/in/dreamhomedr"
+            ]
+        },
+        "pain_point_synthesis": {
+            "authority_score": 60,
+            "identified_issues": [
+                "Velocidad móvil crítica (0/100) - Alta tasa de rebote.",
+                "Sin Meta Pixel - Imposibilidad de retargeting eficiente en pauta.",
+                "3 links de redes sociales caídos (Efecto 'Pueblo Fantasma')."
+            ]
+        }
     }
 ]
