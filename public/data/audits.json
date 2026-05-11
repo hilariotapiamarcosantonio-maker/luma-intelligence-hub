@@ -422,5 +422,185 @@
             "status": "error",
             "error_message": "Error de conexión o timeout."
         }
+    },
+    {
+        "report_metadata": {
+            "timestamp": "2026-05-11T15:44:30.909240",
+            "domain_scanned": "kwdominicana.com",
+            "status": "success"
+        },
+        "client_identity": {
+            "company_name": "KW Dominicana",
+            "key_people": [],
+            "emails": [],
+            "phones": []
+        },
+        "technical_audit": {
+            "tech_stack": [],
+            "tracking": [],
+            "open_graph": true,
+            "pagespeed": {
+                "error": "API Key no configurada",
+                "score": 0,
+                "lcp": null,
+                "tti": null
+            }
+        },
+        "marketing_intelligence": {
+            "social_links": [],
+            "broken_links": []
+        },
+        "pain_point_synthesis": {
+            "authority_score": 10,
+            "identified_issues": [
+                "Velocidad móvil crítica (0/100) - Alta tasa de rebote.",
+                "Sin Meta Pixel - Imposibilidad de retargeting eficiente en pauta.",
+                "Presencia omnicanal nula - No se detectaron redes sociales enlazadas."
+            ]
+        }
+    },
+    {
+        "report_metadata": {
+            "timestamp": "2026-05-11T15:44:30.919566",
+            "domain_scanned": "realestatepuntacana.com",
+            "status": "success"
+        },
+        "client_identity": {
+            "company_name": "Astra Realty - Punta Cana Real Estate",
+            "key_people": [],
+            "emails": [
+                "leaflet@1.3.4"
+            ],
+            "phones": [
+                "18096539196"
+            ]
+        },
+        "technical_audit": {
+            "tech_stack": [
+                "WordPress"
+            ],
+            "tracking": [
+                "Google Analytics"
+            ],
+            "open_graph": true,
+            "pagespeed": {
+                "error": "API Key no configurada",
+                "score": 0,
+                "lcp": null,
+                "tti": null
+            }
+        },
+        "marketing_intelligence": {
+            "social_links": [
+                "https://www.instagram.com/realestatepuntacana/?hl=en",
+                "https://www.youtube.com/miloskorac"
+            ],
+            "broken_links": [
+                "https://www.facebook.com/realestatedominicanrepublic",
+                "https://x.com/puntacanaestate",
+                "https://do.linkedin.com/in/puntacana/"
+            ]
+        },
+        "pain_point_synthesis": {
+            "authority_score": 30,
+            "identified_issues": [
+                "Velocidad móvil crítica (0/100) - Alta tasa de rebote.",
+                "Sin Meta Pixel - Imposibilidad de retargeting eficiente en pauta.",
+                "3 links de redes sociales caídos (Efecto 'Pueblo Fantasma')."
+            ]
+        }
+    },
+    {
+        "report_metadata": {
+            "timestamp": "2026-05-11T15:44:31.040166",
+            "domain_scanned": "theagencypuntacana.com",
+            "status": "error",
+            "error_message": "Error de conexión o timeout."
+        }
+    },
+    {
+        "report_metadata": {
+            "timestamp": "2026-05-11T15:44:31.057343",
+            "domain_scanned": "c21.com.do",
+            "status": "error",
+            "error_message": "Error de conexión o timeout."
+        }
+    },
+    {
+        "report_metadata": {
+            "timestamp": "2026-05-11T15:44:31.556178",
+            "domain_scanned": "dominicanrealestate.do",
+            "status": "error",
+            "error_message": "Error de conexión o timeout."
+        }
+    },
+    {
+        "report_metadata": {
+            "timestamp": "2026-05-11T15:44:31.709018",
+            "domain_scanned": "coldwellbanker.com.do",
+            "status": "error",
+            "error_message": "Error de conexión o timeout."
+        }
+    },
+    {
+        "report_metadata": {
+            "timestamp": "2026-05-11T15:44:32.649693",
+            "domain_scanned": "dominicanproperties.com",
+            "status": "success"
+        },
+        "client_identity": {
+            "company_name": "No detectado",
+            "key_people": [],
+            "emails": [],
+            "phones": []
+        },
+        "technical_audit": {
+            "tech_stack": [],
+            "tracking": [],
+            "open_graph": false,
+            "pagespeed": {
+                "error": "API Key no configurada",
+                "score": 0,
+                "lcp": null,
+                "tti": null
+            }
+        },
+        "marketing_intelligence": {
+            "social_links": [],
+            "broken_links": []
+        },
+        "pain_point_synthesis": {
+            "authority_score": 0,
+            "identified_issues": [
+                "Velocidad móvil crítica (0/100) - Alta tasa de rebote.",
+                "Sin Meta Pixel - Imposibilidad de retargeting eficiente en pauta.",
+                "Falta de Open Graph - Compartir en redes muestra enlaces rotos o sin imagen.",
+                "Presencia omnicanal nula - No se detectaron redes sociales enlazadas."
+            ]
+        }
+    },
+    {
+        "report_metadata": {
+            "timestamp": "2026-05-11T15:44:32.889883",
+            "domain_scanned": "echenique.com.do",
+            "status": "error",
+            "error_message": "Error de conexión o timeout."
+        }
+    },
+    {
+        "report_metadata": {
+            "timestamp": "2026-05-11T15:44:33.009564",
+            "domain_scanned": "alquiloyvendord.com",
+            "status": "error",
+            "error_message": "Error de conexión o timeout."
+        }
+    },
+    {
+        "report_metadata": {
+            "timestamp": "2026-05-11T15:44:34.575145",
+            "domain_scanned": "palmerrealestate.do",
+            "status": "error",
+            "error_message": "Error de conexión o timeout."
+        }
     }
 ]
