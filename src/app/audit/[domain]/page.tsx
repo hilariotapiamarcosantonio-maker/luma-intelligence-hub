@@ -204,7 +204,7 @@ export default async function AuditPage({ params }: { params: Promise<{ domain: 
                 <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mt-8">
                     {/* PRIMARY CTA */}
                     <a 
-                        href={`https://wa.me/18091234567?text=Hola,%20vi%20la%20revisión%20preliminar%20para%20mi%20web%20(${domain})%20y%20quiero%20solicitar%20una%20revisión%20personalizada.`}
+                        href={`https://wa.me/18292558703?text=Hola,%20vi%20la%20revisión%20preliminar%20para%20mi%20web%20(${domain})%20y%20quiero%20solicitar%20una%20revisión%20personalizada.`}
                         target="_blank"
                         rel="noreferrer"
                         className="inline-flex items-center justify-center gap-3 bg-white text-black hover:bg-gray-200 px-10 py-5 rounded-full text-lg font-bold transition-all hover:scale-105 w-full sm:w-auto"

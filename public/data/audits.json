@@ -1,6 +1,47 @@
 [
     {
         "report_metadata": {
+            "timestamp": "2026-05-11T20:30:00.000000",
+            "domain_scanned": "instagram.com-hclinmobiliaria",
+            "status": "success"
+        },
+        "client_identity": {
+            "company_name": "HCL Inmobiliaria",
+            "key_people": [],
+            "emails": [],
+            "phones": []
+        },
+        "technical_audit": {
+            "tech_stack": [
+                "Solo Instagram"
+            ],
+            "tracking": [],
+            "open_graph": false,
+            "pagespeed": {
+                "error": "N/A",
+                "score": 0,
+                "lcp": null,
+                "tti": null
+            }
+        },
+        "marketing_intelligence": {
+            "social_links": [
+                "https://www.instagram.com/hclinmobiliaria/"
+            ],
+            "broken_links": []
+        },
+        "pain_point_synthesis": {
+            "authority_score": 10,
+            "identified_issues": [
+                "Presencia digital limitada a Instagram - No cuenta con web propia ni landing pages para captación directa.",
+                "Ausencia total de CRM - Imposibilidad de medir, seguir o automatizar seguimientos de prospectos.",
+                "Falta de Meta Pixel o Google Analytics - Pérdida de datos clave de audiencia e imposibilidad de retargeting.",
+                "Dependencia de mensajes manuales (DM/WhatsApp) sin un funnel estructurado de ventas predecible."
+            ]
+        }
+    },
+    {
+        "report_metadata": {
             "timestamp": "2026-05-11T15:44:27.860799",
             "domain_scanned": "narvala.com",
             "status": "success"
