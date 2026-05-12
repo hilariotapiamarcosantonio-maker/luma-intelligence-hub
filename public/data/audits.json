@@ -5199,5 +5199,237 @@
                 "Sin Meta Pixel - Imposibilidad de retargeting eficiente en pauta."
             ]
         }
+    },
+    {
+        "report_metadata": {
+            "timestamp": "2026-05-12T18:38:02.843871",
+            "domain_scanned": "stla.net",
+            "status": "success"
+        },
+        "client_identity": {
+            "company_name": "Secure Title",
+            "key_people": [],
+            "emails": [
+                "info@stla.net"
+            ],
+            "phones": []
+        },
+        "technical_audit": {
+            "tech_stack": [
+                "WordPress"
+            ],
+            "tracking": [
+                "Google Tag Manager",
+                "Google Analytics"
+            ],
+            "open_graph": true,
+            "pagespeed": {
+                "error": "API Key no configurada",
+                "score": 0,
+                "lcp": null,
+                "tti": null
+            }
+        },
+        "marketing_intelligence": {
+            "social_links": [
+                "https://cr.linkedin.com/company/secure-title-latin-america",
+                "https://www.instagram.com/securetitle/"
+            ],
+            "broken_links": [
+                "https://www.facebook.com/SecureTitleLat/"
+            ]
+        },
+        "pain_point_synthesis": {
+            "authority_score": 40,
+            "identified_issues": [
+                "Rendimiento móvil pendiente de revisión — podría afectar la experiencia del usuario y la conversión.",
+                "Sin Meta Pixel - Imposibilidad de retargeting eficiente en pauta.",
+                "1 enlace sociales sin actividad clara o que requieren revisión."
+            ]
+        }
+    },
+    {
+        "report_metadata": {
+            "timestamp": "2026-05-12T18:38:03.312293",
+            "domain_scanned": "smartinvestdr.com",
+            "status": "success"
+        },
+        "client_identity": {
+            "company_name": "Home",
+            "key_people": [],
+            "emails": [
+                "smartinvestdr@gmail.com",
+                "es-module-shims@1.10.0"
+            ],
+            "phones": [
+                "8496535111",
+                "8097075111"
+            ]
+        },
+        "technical_audit": {
+            "tech_stack": [],
+            "tracking": [
+                "Google Analytics"
+            ],
+            "open_graph": false,
+            "pagespeed": {
+                "error": "API Key no configurada",
+                "score": 0,
+                "lcp": null,
+                "tti": null
+            }
+        },
+        "marketing_intelligence": {
+            "social_links": [
+                "https://www.youtube.com/channel/UCV7AhtC1NLn5qk2zQvjmWxQ",
+                "https://www.instagram.com/smart.investdr/"
+            ],
+            "broken_links": [
+                "https://www.facebook.com/smartinvestdr",
+                "https://twitter.com/SmartinvestD",
+                "https://www.linkedin.com/in/abel-aldebot-7b4465110/"
+            ]
+        },
+        "pain_point_synthesis": {
+            "authority_score": 20,
+            "identified_issues": [
+                "Rendimiento móvil pendiente de revisión — podría afectar la experiencia del usuario y la conversión.",
+                "Sin Meta Pixel - Imposibilidad de retargeting eficiente en pauta.",
+                "Falta de Open Graph - Compartir en redes muestra enlaces rotos o sin imagen.",
+                "3 enlaces sociales sin actividad clara o que requieren revisión."
+            ]
+        }
+    },
+    {
+        "report_metadata": {
+            "timestamp": "2026-05-12T18:38:05.380918",
+            "domain_scanned": "viprm.com",
+            "status": "error",
+            "error_message": "Error de conexión o timeout."
+        }
+    },
+    {
+        "report_metadata": {
+            "timestamp": "2026-05-12T18:38:15.859623",
+            "domain_scanned": "tuanisrd.com",
+            "status": "success"
+        },
+        "client_identity": {
+            "company_name": "tuanis-real-estate.alterestate.com",
+            "key_people": [],
+            "emails": [
+                "pro@tuanisrd.com"
+            ],
+            "phones": [
+                "18098521234",
+                "8098521234"
+            ]
+        },
+        "technical_audit": {
+            "tech_stack": [
+                "Next.js",
+                "AlterEstate"
+            ],
+            "tracking": [
+                "Google Analytics",
+                "Meta Pixel",
+                "Google Tag Manager"
+            ],
+            "open_graph": true,
+            "pagespeed": {
+                "error": "API Key no configurada",
+                "score": 0,
+                "lcp": null,
+                "tti": null
+            }
+        },
+        "marketing_intelligence": {
+            "social_links": [
+                "https://www.instagram.com/tuanisrd/",
+                "https://www.linkedin.com/company/tuanis-real-estate",
+                "https://www.youtube.com/@tuanisrd",
+                "https://www.instagram.com/tuanisrd"
+            ],
+            "broken_links": [
+                "https://x.com/tuanisrd",
+                "https://www.facebook.com/tuanisrd",
+                "https://www.twitter.com/tuanisrd",
+                "https://www.tiktok.com/https://www.tiktok.com/@tuanisrd"
+            ]
+        },
+        "pain_point_synthesis": {
+            "authority_score": 60,
+            "identified_issues": [
+                "Rendimiento móvil pendiente de revisión — podría afectar la experiencia del usuario y la conversión.",
+                "4 enlaces sociales sin actividad clara o que requieren revisión."
+            ]
+        }
+    },
+    {
+        "report_metadata": {
+            "timestamp": "2026-05-12T18:38:16.093983",
+            "domain_scanned": "tropicalrealtydr.com",
+            "status": "success"
+        },
+        "client_identity": {
+            "company_name": "Tropical Realty",
+            "key_people": [],
+            "emails": [
+                "example@mysite.com.",
+                "79baaa8e09c746d2b7401643b99792e0@sentry.wixpress.com",
+                "core-js-bundle@3.2.1",
+                "8eb368c655b84e029ed79ad7a5c1718e@sentry.wixpress.com",
+                "admin@tropicalrealtydr.com",
+                "18d2f96d279149989b95faf0a4b41882@sentry-next.wixpress.com",
+                "dd0a55ccb8124b9c9d938e3acf41f8aa@sentry.wixpress.com",
+                "intl-segmenter@11.7.10",
+                "email@example.com",
+                "react-dom@18.3.1",
+                "focus-within-polyfill@5.0.9",
+                "rspack@1.6.6",
+                "c183baa23371454f99f417f6616b724d@sentry.wixpress.com",
+                "react@18.3.1",
+                "2062d0a4929b45348643784b5cb39c36@sentry.wixpress.com",
+                "5d1795a2db124a268f1e1bd88f503500@sentry.wixpress.com",
+                "605a7baede844d278b89dc95ae0a9123@sentry-next.wixpress.com",
+                "lodash@4.17.21"
+            ],
+            "phones": [
+                "17862262073"
+            ]
+        },
+        "technical_audit": {
+            "tech_stack": [
+                "WordPress",
+                "Wix"
+            ],
+            "tracking": [],
+            "open_graph": true,
+            "pagespeed": {
+                "error": "API Key no configurada",
+                "score": 0,
+                "lcp": null,
+                "tti": null
+            }
+        },
+        "marketing_intelligence": {
+            "social_links": [
+                "https://www.instagram.com/tropicalrealtydr/",
+                "https://www.youtube.com/@MeganAlfonseca",
+                "https://www.linkedin.com/company/tropicalrealty/"
+            ],
+            "broken_links": [
+                "https://www.facebook.com/TropicalRealtyDR",
+                "https://www.tiktok.com/@tropicalrealty"
+            ]
+        },
+        "pain_point_synthesis": {
+            "authority_score": 25,
+            "identified_issues": [
+                "Rendimiento móvil pendiente de revisión — podría afectar la experiencia del usuario y la conversión.",
+                "Sin Meta Pixel - Imposibilidad de retargeting eficiente en pauta.",
+                "2 enlaces sociales sin actividad clara o que requieren revisión."
+            ]
+        }
     }
 ]
