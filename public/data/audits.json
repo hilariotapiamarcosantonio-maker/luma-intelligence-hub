@@ -1128,5 +1128,85 @@
             "status": "error",
             "error_message": "Error de conexión o timeout."
         }
+    },
+    {
+        "report_metadata": {
+            "timestamp": "2026-05-12T17:55:29.513536",
+            "domain_scanned": "apexrealestate.com.do",
+            "status": "error",
+            "error_message": "Error de conexión o timeout."
+        }
+    },
+    {
+        "report_metadata": {
+            "timestamp": "2026-05-12T17:55:29.626819",
+            "domain_scanned": "sunstoneestates.com.do",
+            "status": "error",
+            "error_message": "Error de conexión o timeout."
+        }
+    },
+    {
+        "report_metadata": {
+            "timestamp": "2026-05-12T17:55:29.707073",
+            "domain_scanned": "bluewaterrealestate.com.do",
+            "status": "error",
+            "error_message": "Error de conexión o timeout."
+        }
+    },
+    {
+        "report_metadata": {
+            "timestamp": "2026-05-12T17:55:29.729526",
+            "domain_scanned": "beachfrontpropertiesrd.com.do",
+            "status": "error",
+            "error_message": "Error de conexión o timeout."
+        }
+    },
+    {
+        "report_metadata": {
+            "timestamp": "2026-05-12T17:55:29.882786",
+            "domain_scanned": "haciendaestates.com.do",
+            "status": "error",
+            "error_message": "Error de conexión o timeout."
+        }
+    },
+    {
+        "report_metadata": {
+            "timestamp": "2026-05-12T17:55:30.331163",
+            "domain_scanned": "luxuryvillastodon.com.do",
+            "status": "error",
+            "error_message": "Error de conexión o timeout."
+        }
+    },
+    {
+        "report_metadata": {
+            "timestamp": "2026-05-12T17:55:30.480911",
+            "domain_scanned": "oceanfrontproperties.com.do",
+            "status": "error",
+            "error_message": "Error de conexión o timeout."
+        }
+    },
+    {
+        "report_metadata": {
+            "timestamp": "2026-05-12T17:55:30.769576",
+            "domain_scanned": "inmobiliarianova.com.do",
+            "status": "error",
+            "error_message": "Error de conexión o timeout."
+        }
+    },
+    {
+        "report_metadata": {
+            "timestamp": "2026-05-12T17:55:30.847916",
+            "domain_scanned": "inversionessegurasrd.com.do",
+            "status": "error",
+            "error_message": "Error de conexión o timeout."
+        }
+    },
+    {
+        "report_metadata": {
+            "timestamp": "2026-05-12T17:55:30.908637",
+            "domain_scanned": "golfcourtesates.com.do",
+            "status": "error",
+            "error_message": "Error de conexión o timeout."
+        }
     }
 ]
