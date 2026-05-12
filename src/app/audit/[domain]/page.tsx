@@ -140,7 +140,7 @@ export default async function AuditPage({ params }: { params: Promise<{ domain: 
         <div className="max-w-7xl mx-auto px-4 md:px-8 pb-12 md:pb-20 space-y-8 md:space-y-12">
           <div className="relative group">
             <div className="absolute -inset-0.5 bg-gradient-to-r from-red-600 to-orange-600 rounded-xl md:rounded-2xl blur opacity-10 group-hover:opacity-20 transition duration-1000"></div>
-            <div className="relative bg-[#0a0a0a] border border-white/5 rounded-xl md:rounded-2xl p-4 md:p-8 lg:p-12 shadow-2xl overflow-hidden">
+            <div className="relative bg-[#0a0a0a] border border-white/5 rounded-xl md:rounded-2xl p-4 md:p-8 lg:p-12 overflow-hidden">
               <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 md:gap-12">
                 
                 {/* LEFT COL: Score */}
@@ -150,7 +150,7 @@ export default async function AuditPage({ params }: { params: Promise<{ domain: 
                       <Globe className="w-4 h-4 md:w-5 md:h-5 text-gray-500" />
                       <span className="truncate">{domain}</span>
                     </h2>
-                    <p className="text-xs md:text-sm text-gray-500">Datos extraídos de señales públicas disponibles para identificar oportunidades comerciales.</p>
+                    <p className="text-xs md:text-sm text-gray-400">Datos extraídos de señales públicas disponibles para identificar oportunidades comerciales.</p>
                   </div>
 
                   <div className="p-4 md:p-8 rounded-xl bg-black/60 border border-white/5 relative overflow-hidden">
@@ -194,16 +194,16 @@ export default async function AuditPage({ params }: { params: Promise<{ domain: 
                 <div className="lg:col-span-7 grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
                   
                   {/* Tech Stack */}
-                  <div className="bg-[#111] p-4 md:p-6 rounded-xl border border-white/5 shadow-lg">
-                      <h3 className="text-xs font-bold text-gray-400 flex items-center gap-2 mb-3 md:mb-4 uppercase tracking-widest">
-                          <Search className="w-3 h-3 md:w-4 md:h-4 text-blue-500" /> <span className="md:hidden">Infraestructura</span> <span className="hidden md:inline">Infraestructura & Tracking</span>
+                  <div className="bg-[#111] p-4 md:p-6 rounded-xl border border-white/5">
+                      <h3 className="text-xs font-bold text-gray-300 flex items-center gap-2 mb-3 md:mb-4 uppercase tracking-widest">
+                          <Search className="w-3 h-3 md:w-4 md:h-4 text-blue-500" /> <span className="md:hidden">Infraestructura y medición</span> <span className="hidden md:inline">Infraestructura y medición</span>
                       </h3>
                       <div className="flex flex-wrap gap-1.5 md:gap-2 mb-4 md:mb-6">
                           {technical_audit.tech_stack?.length > 0 ? (
                           technical_audit.tech_stack.map((tech: string) => (
                               <span key={tech} className="px-2 md:px-3 py-0.5 md:py-1 bg-white/5 border border-white/10 rounded-md text-xs font-medium text-gray-300">{tech}</span>
                           ))
-                          ) : (<span className="text-xs text-amber-500 font-bold bg-amber-500/10 px-2 py-1 rounded">No se detecta infraestructura moderna visible.</span>)}
+                          ) : (<span className="text-xs text-amber-400 bg-amber-500/10 px-2 py-1 rounded">No se identifica una capa pública clara de medición y seguimiento en esta revisión preliminar.</span>)}
                       </div>
                       
                       <h4 className="text-[10px] text-gray-500 mb-2 md:mb-3 uppercase tracking-widest font-bold">Diagnóstico de Píxeles</h4>
@@ -227,18 +227,18 @@ export default async function AuditPage({ params }: { params: Promise<{ domain: 
                   {/* Mobile & Speed */}
                   <div className="bg-[#111] p-4 md:p-6 rounded-xl border border-white/5 shadow-lg flex flex-col justify-between">
                       <div>
-                          <h3 className="text-xs font-bold text-gray-400 flex items-center gap-2 mb-3 md:mb-4 uppercase tracking-widest">
+                          <h3 className="text-xs font-bold text-gray-300 flex items-center gap-2 mb-3 md:mb-4 uppercase tracking-widest">
                               <Smartphone className="w-3 h-3 md:w-4 md:h-4 text-purple-500" /> Experiencia Móvil
                           </h3>
                           <div className="space-y-4 md:space-y-6">
                               <div>
-                                  <p className="text-[10px] uppercase tracking-widest text-gray-500 mb-1 font-bold">Performance Global</p>
-                                  <p className="text-3xl md:text-4xl font-black text-white">{technical_audit.pagespeed?.score || 'N/A'}<span className="text-base md:text-lg text-gray-600">/100</span></p>
-                                  <p className="text-xs text-gray-500 mt-1">El rendimiento móvil puede influir en la experiencia del usuario y la tasa de conversión.</p>
+                                  <p className="text-[10px] uppercase tracking-widest text-gray-400 mb-1 font-bold">Rendimiento general</p>
+                                  <p className="text-3xl md:text-4xl font-bold text-white">{technical_audit.pagespeed?.score || 'Pendiente de medición'}{technical_audit.pagespeed?.score && <span className="text-base md:text-lg text-gray-500">/100</span>}</p>
+                                  <p className="text-xs text-gray-400 mt-1">El rendimiento móvil puede influir en la experiencia del usuario y la tasa de conversión.</p>
                               </div>
                               <div>
-                                  <p className="text-[10px] uppercase tracking-widest text-gray-500 mb-1 font-bold">Carga Visual (LCP)</p>
-                                  <p className="text-2xl md:text-3xl font-black text-gray-300">{technical_audit.pagespeed?.lcp || 'N/A'}</p>
+                                  <p className="text-[10px] uppercase tracking-widest text-gray-400 mb-1 font-bold">Carga Visual (LCP)</p>
+                                  <p className="text-2xl md:text-3xl font-bold text-gray-300">{technical_audit.pagespeed?.lcp || 'Pendiente de medición'}</p>
                               </div>
                           </div>
                       </div>
@@ -389,8 +389,7 @@ export default async function AuditPage({ params }: { params: Promise<{ domain: 
                         rel="noreferrer"
                         className="inline-flex items-center justify-center gap-2 md:gap-3 bg-white text-black hover:bg-gray-200 px-6 md:px-10 py-3 md:py-5 rounded-full text-sm md:text-lg font-bold transition-all hover:scale-105 w-full sm:w-auto"
                     >
-                        <span className="md:hidden">Explicación personalizada</span>
-                        <span className="hidden md:inline">Solicitar explicación personalizada</span>
+                        Solicitar explicación personalizada
                     </a>
 
                     {/* SECONDARY CTA */}
@@ -400,8 +399,7 @@ export default async function AuditPage({ params }: { params: Promise<{ domain: 
                         rel="noreferrer"
                         className="inline-flex items-center justify-center gap-2 md:gap-3 bg-transparent border border-white/20 text-white hover:bg-white/5 px-6 md:px-10 py-3 md:py-5 rounded-full text-sm md:text-lg font-bold transition-all w-full sm:w-auto"
                     >
-                        <span className="md:hidden">Ver propuesta</span>
-                        <span className="hidden md:inline">Ver propuesta Luma Estate OS</span>
+                        Ver propuesta Luma Estate OS
                     </a>
                 </div>
             </div>

@@ -226,7 +226,7 @@ return (
                             
                             <div className="space-y-2 md:space-y-3">
                               {marketing_intelligence.social_links.length === 0 && marketing_intelligence.broken_links.length === 0 && (
-                                <p className="text-xs md:text-sm text-gray-500 italic">No se detectaron canales sociales enlazados.</p>
+                                <p className="text-xs md:text-sm text-gray-400 italic">No se detectaron canales sociales enlazados en esta revisión preliminar.</p>
                               )}
                               
                               {/* Links Activos */}
