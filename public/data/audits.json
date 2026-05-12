@@ -1255,14 +1255,6 @@
     },
     {
         "report_metadata": {
-            "timestamp": "2026-05-12T18:32:05.314152",
-            "domain_scanned": "lcankyrarents.com",
-            "status": "error",
-            "error_message": "Error de conexión o timeout."
-        }
-    },
-    {
-        "report_metadata": {
             "timestamp": "2026-05-12T18:32:05.392293",
             "domain_scanned": "vivehabitar.com",
             "status": "success"
@@ -1333,14 +1325,6 @@
                 "Falta de Open Graph - Compartir en redes muestra enlaces rotos o sin imagen.",
                 "Presencia omnicanal nula - No se detectaron redes sociales enlazadas."
             ]
-        }
-    },
-    {
-        "report_metadata": {
-            "timestamp": "2026-05-12T18:32:05.871361",
-            "domain_scanned": "vega-investment-rd.com",
-            "status": "error",
-            "error_message": "Error de conexión o timeout."
         }
     },
     {
@@ -1565,14 +1549,6 @@
     },
     {
         "report_metadata": {
-            "timestamp": "2026-05-12T18:32:07.672568",
-            "domain_scanned": "metro2inmobiliariard.com",
-            "status": "error",
-            "error_message": "Error de conexión o timeout."
-        }
-    },
-    {
-        "report_metadata": {
             "timestamp": "2026-05-12T18:32:07.980354",
             "domain_scanned": "passerrd.com",
             "status": "success"
@@ -1615,38 +1591,6 @@
                 "Sin Meta Pixel - Imposibilidad de retargeting eficiente en pauta.",
                 "3 enlaces sociales sin actividad clara o que requieren revisión."
             ]
-        }
-    },
-    {
-        "report_metadata": {
-            "timestamp": "2026-05-12T18:32:08.094640",
-            "domain_scanned": "dycluxury.com",
-            "status": "error",
-            "error_message": "Error de conexión o timeout."
-        }
-    },
-    {
-        "report_metadata": {
-            "timestamp": "2026-05-12T18:32:08.751620",
-            "domain_scanned": "gcl-realty.com",
-            "status": "error",
-            "error_message": "Error de conexión o timeout."
-        }
-    },
-    {
-        "report_metadata": {
-            "timestamp": "2026-05-12T18:32:09.239953",
-            "domain_scanned": "lscinmobiliaria.com",
-            "status": "error",
-            "error_message": "Error de conexión o timeout."
-        }
-    },
-    {
-        "report_metadata": {
-            "timestamp": "2026-05-12T18:32:09.275639",
-            "domain_scanned": "koinmobiliaria.com",
-            "status": "error",
-            "error_message": "Error de conexión o timeout."
         }
     },
     {
@@ -1697,30 +1641,6 @@
                 "Sin Meta Pixel - Imposibilidad de retargeting eficiente en pauta.",
                 "4 enlaces sociales sin actividad clara o que requieren revisión."
             ]
-        }
-    },
-    {
-        "report_metadata": {
-            "timestamp": "2026-05-12T18:32:09.469328",
-            "domain_scanned": "loraaltagracia.com",
-            "status": "error",
-            "error_message": "Error de conexión o timeout."
-        }
-    },
-    {
-        "report_metadata": {
-            "timestamp": "2026-05-12T18:32:09.506248",
-            "domain_scanned": "isabelluxury.com",
-            "status": "error",
-            "error_message": "Error de conexión o timeout."
-        }
-    },
-    {
-        "report_metadata": {
-            "timestamp": "2026-05-12T18:32:09.514726",
-            "domain_scanned": "viprm.com",
-            "status": "error",
-            "error_message": "Error de conexión o timeout."
         }
     },
     {
@@ -1924,22 +1844,6 @@
                 "Rendimiento móvil pendiente de revisión — podría afectar la experiencia del usuario y la conversión.",
                 "4 enlaces sociales sin actividad clara o que requieren revisión."
             ]
-        }
-    },
-    {
-        "report_metadata": {
-            "timestamp": "2026-05-12T18:32:10.521139",
-            "domain_scanned": "jvinmueblesrd.com",
-            "status": "error",
-            "error_message": "Error de conexión o timeout."
-        }
-    },
-    {
-        "report_metadata": {
-            "timestamp": "2026-05-12T18:32:10.840122",
-            "domain_scanned": "vanderhorstrealestate.com",
-            "status": "error",
-            "error_message": "Error de conexión o timeout."
         }
     },
     {
@@ -2606,14 +2510,6 @@
     },
     {
         "report_metadata": {
-            "timestamp": "2026-05-12T18:32:18.200850",
-            "domain_scanned": "santiagoapartments.com.do",
-            "status": "error",
-            "error_message": "Error de conexión o timeout."
-        }
-    },
-    {
-        "report_metadata": {
             "timestamp": "2026-05-12T18:32:18.434795",
             "domain_scanned": "canablue.com",
             "status": "success"
@@ -2752,14 +2648,6 @@
     },
     {
         "report_metadata": {
-            "timestamp": "2026-05-12T18:32:22.493655",
-            "domain_scanned": "deephouserd.com",
-            "status": "error",
-            "error_message": "Error de conexión o timeout."
-        }
-    },
-    {
-        "report_metadata": {
             "timestamp": "2026-05-12T18:32:22.622525",
             "domain_scanned": "algonovopuntacana.com",
             "status": "success"
@@ -2809,14 +2697,6 @@
                 "Sin Meta Pixel - Imposibilidad de retargeting eficiente en pauta.",
                 "2 enlaces sociales sin actividad clara o que requieren revisión."
             ]
-        }
-    },
-    {
-        "report_metadata": {
-            "timestamp": "2026-05-12T18:32:22.771353",
-            "domain_scanned": "corazabienesraices.com",
-            "status": "error",
-            "error_message": "Error de conexión o timeout."
         }
     },
     {
@@ -2971,54 +2851,6 @@
     },
     {
         "report_metadata": {
-            "timestamp": "2026-05-12T18:32:23.553522",
-            "domain_scanned": "gsinmobiliaria.com.do",
-            "status": "error",
-            "error_message": "Error de conexión o timeout."
-        }
-    },
-    {
-        "report_metadata": {
-            "timestamp": "2026-05-12T18:32:23.799317",
-            "domain_scanned": "remax-independent.com.do",
-            "status": "error",
-            "error_message": "Error de conexión o timeout."
-        }
-    },
-    {
-        "report_metadata": {
-            "timestamp": "2026-05-12T18:32:24.012597",
-            "domain_scanned": "dionil-realty.com",
-            "status": "error",
-            "error_message": "Error de conexión o timeout."
-        }
-    },
-    {
-        "report_metadata": {
-            "timestamp": "2026-05-12T18:32:24.022195",
-            "domain_scanned": "hsmrealestate.net",
-            "status": "error",
-            "error_message": "Error de conexión o timeout."
-        }
-    },
-    {
-        "report_metadata": {
-            "timestamp": "2026-05-12T18:32:24.611396",
-            "domain_scanned": "dacosta-fmc.com",
-            "status": "error",
-            "error_message": "Error de conexión o timeout."
-        }
-    },
-    {
-        "report_metadata": {
-            "timestamp": "2026-05-12T18:32:24.680192",
-            "domain_scanned": "canasol.do",
-            "status": "error",
-            "error_message": "Error de conexión o timeout."
-        }
-    },
-    {
-        "report_metadata": {
             "timestamp": "2026-05-12T18:32:25.441139",
             "domain_scanned": "fsinmobiliaria.com",
             "status": "success"
@@ -3061,14 +2893,6 @@
     },
     {
         "report_metadata": {
-            "timestamp": "2026-05-12T18:32:25.674125",
-            "domain_scanned": "solunionrd.com",
-            "status": "error",
-            "error_message": "Error de conexión o timeout."
-        }
-    },
-    {
-        "report_metadata": {
             "timestamp": "2026-05-12T18:32:25.724029",
             "domain_scanned": "rumbasol.com",
             "status": "success"
@@ -3106,22 +2930,6 @@
                 "Falta de Open Graph - Compartir en redes muestra enlaces rotos o sin imagen.",
                 "Presencia omnicanal nula - No se detectaron redes sociales enlazadas."
             ]
-        }
-    },
-    {
-        "report_metadata": {
-            "timestamp": "2026-05-12T18:32:25.941627",
-            "domain_scanned": "inversioninmobiliaria.com.do",
-            "status": "error",
-            "error_message": "Error de conexión o timeout."
-        }
-    },
-    {
-        "report_metadata": {
-            "timestamp": "2026-05-12T18:32:25.953998",
-            "domain_scanned": "casapropia.com.do",
-            "status": "error",
-            "error_message": "Error de conexión o timeout."
         }
     },
     {
@@ -3169,86 +2977,6 @@
     },
     {
         "report_metadata": {
-            "timestamp": "2026-05-12T18:32:26.717586",
-            "domain_scanned": "ggh.com.do",
-            "status": "error",
-            "error_message": "Error de conexión o timeout."
-        }
-    },
-    {
-        "report_metadata": {
-            "timestamp": "2026-05-12T18:32:27.231030",
-            "domain_scanned": "homedreams.com.do",
-            "status": "error",
-            "error_message": "Error de conexión o timeout."
-        }
-    },
-    {
-        "report_metadata": {
-            "timestamp": "2026-05-12T18:32:27.372567",
-            "domain_scanned": "inmobiliaria-ap.com",
-            "status": "error",
-            "error_message": "Error de conexión o timeout."
-        }
-    },
-    {
-        "report_metadata": {
-            "timestamp": "2026-05-12T18:32:27.786098",
-            "domain_scanned": "dreamhome-dr.com",
-            "status": "error",
-            "error_message": "Error de conexión o timeout."
-        }
-    },
-    {
-        "report_metadata": {
-            "timestamp": "2026-05-12T18:32:27.945288",
-            "domain_scanned": "remaxlaguna.com.do",
-            "status": "error",
-            "error_message": "Error de conexión o timeout."
-        }
-    },
-    {
-        "report_metadata": {
-            "timestamp": "2026-05-12T18:32:27.991281",
-            "domain_scanned": "gvpropiedades.com",
-            "status": "error",
-            "error_message": "Error de conexión o timeout."
-        }
-    },
-    {
-        "report_metadata": {
-            "timestamp": "2026-05-12T18:32:27.995868",
-            "domain_scanned": "remaxmetropolis.com.do",
-            "status": "error",
-            "error_message": "Error de conexión o timeout."
-        }
-    },
-    {
-        "report_metadata": {
-            "timestamp": "2026-05-12T18:32:28.446816",
-            "domain_scanned": "remaxpremium.com.do",
-            "status": "error",
-            "error_message": "Error de conexión o timeout."
-        }
-    },
-    {
-        "report_metadata": {
-            "timestamp": "2026-05-12T18:32:28.512439",
-            "domain_scanned": "remaxcolonial.com.do",
-            "status": "error",
-            "error_message": "Error de conexión o timeout."
-        }
-    },
-    {
-        "report_metadata": {
-            "timestamp": "2026-05-12T18:32:29.062433",
-            "domain_scanned": "remaxconecta.com.do",
-            "status": "error",
-            "error_message": "Error de conexión o timeout."
-        }
-    },
-    {
-        "report_metadata": {
             "timestamp": "2026-05-12T18:32:29.384861",
             "domain_scanned": "remaxatlantis.com",
             "status": "success"
@@ -3291,38 +3019,6 @@
                 "Sin Meta Pixel - Imposibilidad de retargeting eficiente en pauta.",
                 "1 enlace sociales sin actividad clara o que requieren revisión."
             ]
-        }
-    },
-    {
-        "report_metadata": {
-            "timestamp": "2026-05-12T18:32:29.814880",
-            "domain_scanned": "remaxmilenium.com.do",
-            "status": "error",
-            "error_message": "Error de conexión o timeout."
-        }
-    },
-    {
-        "report_metadata": {
-            "timestamp": "2026-05-12T18:32:29.914738",
-            "domain_scanned": "remaxmagnolia.com.do",
-            "status": "error",
-            "error_message": "Error de conexión o timeout."
-        }
-    },
-    {
-        "report_metadata": {
-            "timestamp": "2026-05-12T18:32:30.339491",
-            "domain_scanned": "ccre.com.do",
-            "status": "error",
-            "error_message": "Error de conexión o timeout."
-        }
-    },
-    {
-        "report_metadata": {
-            "timestamp": "2026-05-12T18:32:30.501845",
-            "domain_scanned": "snati.com.do",
-            "status": "error",
-            "error_message": "Error de conexión o timeout."
         }
     },
     {
@@ -3670,6 +3366,367 @@
             "authority_score": 35,
             "identified_issues": [
                 "Rendimiento móvil pendiente de revisión — podría afectar la experiencia del usuario y la conversión.",
+                "2 enlaces sociales sin actividad clara o que requieren revisión."
+            ]
+        }
+    },
+    {
+        "report_metadata": {
+            "timestamp": "2026-05-12T18:37:46.276686",
+            "domain_scanned": "buenvivirrealestate.com",
+            "status": "success"
+        },
+        "client_identity": {
+            "company_name": "buen-vivir-real-estate-srl.alterestate.com",
+            "key_people": [],
+            "emails": [
+                "Buenvivirrealestate@gmail.com"
+            ],
+            "phones": [
+                "8298133619",
+                "18298133619"
+            ]
+        },
+        "technical_audit": {
+            "tech_stack": [
+                "Next.js",
+                "AlterEstate"
+            ],
+            "tracking": [],
+            "open_graph": true,
+            "pagespeed": {
+                "error": "API Key no configurada",
+                "score": 0,
+                "lcp": null,
+                "tti": null
+            }
+        },
+        "marketing_intelligence": {
+            "social_links": [
+                "https://www.instagram.com/Buenvivir_Realestate"
+            ],
+            "broken_links": [
+                "https://www.facebook.com/Buen Vivir Real Estate"
+            ]
+        },
+        "pain_point_synthesis": {
+            "authority_score": 15,
+            "identified_issues": [
+                "Rendimiento móvil pendiente de revisión — podría afectar la experiencia del usuario y la conversión.",
+                "Sin Meta Pixel - Imposibilidad de retargeting eficiente en pauta.",
+                "1 enlace sociales sin actividad clara o que requieren revisión."
+            ]
+        }
+    },
+    {
+        "report_metadata": {
+            "timestamp": "2026-05-12T18:37:46.479435",
+            "domain_scanned": "decanaaninmobiliaria.net",
+            "status": "success"
+        },
+        "client_identity": {
+            "company_name": "DeCanaan Gestion Inmobiliaria",
+            "key_people": [],
+            "emails": [
+                "info@decanaan.net",
+                "es-module-shims@1.10.0"
+            ],
+            "phones": [
+                "18094493333",
+                "+118097703788"
+            ]
+        },
+        "technical_audit": {
+            "tech_stack": [],
+            "tracking": [
+                "Google Analytics"
+            ],
+            "open_graph": false,
+            "pagespeed": {
+                "error": "API Key no configurada",
+                "score": 0,
+                "lcp": null,
+                "tti": null
+            }
+        },
+        "marketing_intelligence": {
+            "social_links": [
+                "https://www.instagram.com/decanaan.rd/?hl=es-la"
+            ],
+            "broken_links": [
+                "https://www.facebook.com/DeCanaanGestionInmobiliaria/"
+            ]
+        },
+        "pain_point_synthesis": {
+            "authority_score": 15,
+            "identified_issues": [
+                "Rendimiento móvil pendiente de revisión — podría afectar la experiencia del usuario y la conversión.",
+                "Sin Meta Pixel - Imposibilidad de retargeting eficiente en pauta.",
+                "Falta de Open Graph - Compartir en redes muestra enlaces rotos o sin imagen.",
+                "1 enlace sociales sin actividad clara o que requieren revisión."
+            ]
+        }
+    },
+    {
+        "report_metadata": {
+            "timestamp": "2026-05-12T18:37:46.592242",
+            "domain_scanned": "aguamarrd.com",
+            "status": "success"
+        },
+        "client_identity": {
+            "company_name": "Aguamar - Inmobiliaria",
+            "key_people": [],
+            "emails": [
+                "email@gmail.com",
+                "info@aguamarrd.com"
+            ],
+            "phones": [
+                "18493503796",
+                "18495231669",
+                "18098208616",
+                "18092032728"
+            ]
+        },
+        "technical_audit": {
+            "tech_stack": [
+                "WordPress"
+            ],
+            "tracking": [
+                "Google Analytics"
+            ],
+            "open_graph": true,
+            "pagespeed": {
+                "error": "API Key no configurada",
+                "score": 0,
+                "lcp": null,
+                "tti": null
+            }
+        },
+        "marketing_intelligence": {
+            "social_links": [
+                "https://www.instagram.com/aguamarrd/"
+            ],
+            "broken_links": [
+                "https://www.facebook.com/aguamarrd/"
+            ]
+        },
+        "pain_point_synthesis": {
+            "authority_score": 25,
+            "identified_issues": [
+                "Rendimiento móvil pendiente de revisión — podría afectar la experiencia del usuario y la conversión.",
+                "Sin Meta Pixel - Imposibilidad de retargeting eficiente en pauta.",
+                "1 enlace sociales sin actividad clara o que requieren revisión."
+            ]
+        }
+    },
+    {
+        "report_metadata": {
+            "timestamp": "2026-05-12T18:37:47.100390",
+            "domain_scanned": "anarelysbienesraices.com",
+            "status": "success"
+        },
+        "client_identity": {
+            "company_name": "anarelysbienesraices.com",
+            "key_people": [],
+            "emails": [
+                "anarelysbienesraices@gmail.com"
+            ],
+            "phones": [
+                "8095047659",
+                "18095047659"
+            ]
+        },
+        "technical_audit": {
+            "tech_stack": [
+                "Next.js",
+                "AlterEstate"
+            ],
+            "tracking": [],
+            "open_graph": true,
+            "pagespeed": {
+                "error": "API Key no configurada",
+                "score": 0,
+                "lcp": null,
+                "tti": null
+            }
+        },
+        "marketing_intelligence": {
+            "social_links": [
+                "https://www.instagram.com/anarelysbienesraices"
+            ],
+            "broken_links": [
+                "https://www.facebook.com/anarelysbienesraices"
+            ]
+        },
+        "pain_point_synthesis": {
+            "authority_score": 15,
+            "identified_issues": [
+                "Rendimiento móvil pendiente de revisión — podría afectar la experiencia del usuario y la conversión.",
+                "Sin Meta Pixel - Imposibilidad de retargeting eficiente en pauta.",
+                "1 enlace sociales sin actividad clara o que requieren revisión."
+            ]
+        }
+    },
+    {
+        "report_metadata": {
+            "timestamp": "2026-05-12T18:37:47.102428",
+            "domain_scanned": "domusrd.com",
+            "status": "success"
+        },
+        "client_identity": {
+            "company_name": "Bienvenido a DOMUS RD S.R.L.",
+            "key_people": [],
+            "emails": [
+                "info@domusrd.com",
+                "es-module-shims@1.10.0"
+            ],
+            "phones": [
+                "18099159006"
+            ]
+        },
+        "technical_audit": {
+            "tech_stack": [],
+            "tracking": [],
+            "open_graph": false,
+            "pagespeed": {
+                "error": "API Key no configurada",
+                "score": 0,
+                "lcp": null,
+                "tti": null
+            }
+        },
+        "marketing_intelligence": {
+            "social_links": [
+                "https://www.instagram.com/domusrd/"
+            ],
+            "broken_links": [
+                "https://web.facebook.com/domusrd?_rdc=1&_rdr"
+            ]
+        },
+        "pain_point_synthesis": {
+            "authority_score": 5,
+            "identified_issues": [
+                "Rendimiento móvil pendiente de revisión — podría afectar la experiencia del usuario y la conversión.",
+                "Sin Meta Pixel - Imposibilidad de retargeting eficiente en pauta.",
+                "Falta de Open Graph - Compartir en redes muestra enlaces rotos o sin imagen.",
+                "1 enlace sociales sin actividad clara o que requieren revisión."
+            ]
+        }
+    },
+    {
+        "report_metadata": {
+            "timestamp": "2026-05-12T18:37:48.080731",
+            "domain_scanned": "apartamentosrd.com.do",
+            "status": "success"
+        },
+        "client_identity": {
+            "company_name": "apartamentosrd.com.do",
+            "key_people": [],
+            "emails": [
+                "info@apartamentosrd.com.do"
+            ],
+            "phones": [
+                "18098992679"
+            ]
+        },
+        "technical_audit": {
+            "tech_stack": [
+                "Next.js",
+                "AlterEstate"
+            ],
+            "tracking": [
+                "Google Analytics",
+                "Meta Pixel",
+                "Google Tag Manager"
+            ],
+            "open_graph": true,
+            "pagespeed": {
+                "error": "API Key no configurada",
+                "score": 0,
+                "lcp": null,
+                "tti": null
+            }
+        },
+        "marketing_intelligence": {
+            "social_links": [
+                "https://instagram.com/apartamentosrd",
+                "https://www.youtube.com/channel/UCk8JCr6dn0s-jXpj1T-F9Dw"
+            ],
+            "broken_links": [
+                "https://www.facebook.com/ApartamentosenRD/"
+            ]
+        },
+        "pain_point_synthesis": {
+            "authority_score": 50,
+            "identified_issues": [
+                "Rendimiento móvil pendiente de revisión — podría afectar la experiencia del usuario y la conversión.",
+                "1 enlace sociales sin actividad clara o que requieren revisión."
+            ]
+        }
+    },
+    {
+        "report_metadata": {
+            "timestamp": "2026-05-12T18:37:48.237069",
+            "domain_scanned": "geristar.com",
+            "status": "error",
+            "error_message": "Error de conexión o timeout."
+        }
+    },
+    {
+        "report_metadata": {
+            "timestamp": "2026-05-12T18:37:48.903861",
+            "domain_scanned": "crestgroupdominicana.com",
+            "status": "error",
+            "error_message": "Error de conexión o timeout."
+        }
+    },
+    {
+        "report_metadata": {
+            "timestamp": "2026-05-12T18:37:49.671535",
+            "domain_scanned": "geraldinorealty.com",
+            "status": "success"
+        },
+        "client_identity": {
+            "company_name": "Bienvenido a Geraldino Realty, SRL",
+            "key_people": [],
+            "emails": [
+                "es-module-shims@1.10.0",
+                "info@geraldinorealty.com"
+            ],
+            "phones": [
+                "8094673030",
+                "18094673030"
+            ]
+        },
+        "technical_audit": {
+            "tech_stack": [],
+            "tracking": [
+                "Meta Pixel",
+                "Google Analytics"
+            ],
+            "open_graph": false,
+            "pagespeed": {
+                "error": "API Key no configurada",
+                "score": 0,
+                "lcp": null,
+                "tti": null
+            }
+        },
+        "marketing_intelligence": {
+            "social_links": [
+                "https://www.youtube.com/user/geraldinorealty",
+                "https://www.instagram.com/geraldinorealty"
+            ],
+            "broken_links": [
+                "https://www.facebook.com/GERALDINOrealty/",
+                "https://twitter.com/realtygeraldino"
+            ]
+        },
+        "pain_point_synthesis": {
+            "authority_score": 30,
+            "identified_issues": [
+                "Rendimiento móvil pendiente de revisión — podría afectar la experiencia del usuario y la conversión.",
+                "Falta de Open Graph - Compartir en redes muestra enlaces rotos o sin imagen.",
                 "2 enlaces sociales sin actividad clara o que requieren revisión."
             ]
         }
