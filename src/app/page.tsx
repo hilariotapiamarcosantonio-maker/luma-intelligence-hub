@@ -10,6 +10,12 @@ export default function Home() {
   try {
     const fileContents = fs.readFileSync(filePath, 'utf8');
     reports = JSON.parse(fileContents);
+    // Sort by timestamp descending
+    reports.sort((a: any, b: any) => {
+      const dateA = new Date(a.report_metadata?.timestamp || 0).getTime();
+      const dateB = new Date(b.report_metadata?.timestamp || 0).getTime();
+      return dateB - dateA;
+    });
   } catch (e) {
     console.error("Error reading audits:", e);
   }

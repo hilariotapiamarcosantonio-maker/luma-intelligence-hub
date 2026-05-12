@@ -1,0 +1,323 @@
+[
+    {
+        "empresa": "www.apartamentosrd.com.do",
+        "url": "https://www.apartamentosrd.com.do/",
+        "tiempo_carga": 3.43,
+        "tecnologia": [
+            "Next.js",
+            "AlterEstate"
+        ],
+        "tracking": {
+            "Meta_Pixel": true,
+            "GTM": true,
+            "GA4": true
+        },
+        "marketing": {
+            "links_instagram": 2,
+            "botones_whatsapp": 0,
+            "meta_description": true
+        },
+        "lead_data": {
+            "nombre_contacto": [
+                "#DEVELOPERSPLAN",
+                "Lo que dicenNuestros Clientes"
+            ],
+            "email": [],
+            "telefono": [
+                "(809) 899-2679",
+                "(829) 709-3262",
+                "809-872-6734",
+                "829-583-4218"
+            ],
+            "perfil_social": {
+                "instagram": [
+                    "apartamentosrd"
+                ]
+            }
+        },
+        "puntos_dolor": [
+            "Pérdida masiva de leads por velocidad crítica."
+        ]
+    },
+    {
+        "empresa": "propertygrouprd.com",
+        "url": "https://propertygrouprd.com/",
+        "tiempo_carga": 0.76,
+        "tecnologia": [
+            "Desconocida/Legacy"
+        ],
+        "tracking": {
+            "Meta_Pixel": false,
+            "GTM": false,
+            "GA4": false
+        },
+        "marketing": {
+            "links_instagram": 0,
+            "botones_whatsapp": 0,
+            "meta_description": false
+        },
+        "lead_data": {
+            "nombre_contacto": [
+                "Nombre comercial no detectado"
+            ],
+            "email": [],
+            "telefono": [],
+            "perfil_social": {
+                "instagram": []
+            }
+        },
+        "puntos_dolor": [
+            "Ceguera publicitaria (Sin Píxel).",
+            "Invisibilidad SEO (Falta Meta Description)."
+        ]
+    },
+    {
+        "empresa": "remaxrd.com",
+        "url": "https://remaxrd.com/",
+        "tiempo_carga": 5.51,
+        "tecnologia": [
+            "WordPress",
+            "Next.js"
+        ],
+        "tracking": {
+            "Meta_Pixel": true,
+            "GTM": true,
+            "GA4": true
+        },
+        "marketing": {
+            "links_instagram": 1,
+            "botones_whatsapp": 0,
+            "meta_description": true
+        },
+        "lead_data": {
+            "nombre_contacto": [
+                "Nombre comercial no detectado"
+            ],
+            "email": [
+                "vignyarduz@remax.net",
+                "sherlin@remaxnextdoor.com",
+                "remaxplusrd@gmail.com",
+                "dominicasanet160@gmail.com",
+                "arielgrasso@remaxinfinityrd.com",
+                "info@remaxmonumentalrd.com",
+                "yuleysinunezrealtor@gmail.com",
+                "wendygarcia@remaxnovard.com",
+                "luichy3171@gmail.com",
+                "felipemesa@remaxocean.net",
+                "aiv@pueblobavaro.com",
+                "remaxatlantis.santiago@gmail.com",
+                "remaxcoralbay@gmail.com",
+                "info-puertoplata@remaxparadisedr.com",
+                "info@remaxutopia.com",
+                "info@remaxcity.com",
+                "info@remaxbaysidedr.com",
+                "ventas@remaxhome.do",
+                "info@remaxcapital.do",
+                "info@remaxadvance.com",
+                "gerencia@remaxlifepuntacana.com",
+                "isaiasmedina@remaxind.com",
+                "administracion@remaxurbanard.com",
+                "info@remaxparadisedr.com",
+                "info@remaxqualityrd.com",
+                "ventas@remaxm.net"
+            ],
+            "telefono": [
+                "(829) 585-6789",
+                "(809) 724-3656",
+                "(849) 637-1002",
+                "(829) 745-2076",
+                "(809) 730-7195",
+                "(809) 841-1364",
+                "(809) 457-6356",
+                "(829) 745-1194",
+                "(809) 696-3676",
+                "(809) 726-4022",
+                "(809) 564-2272",
+                "(809) 891-4214",
+                "(809) 707-1575",
+                "(829) 287-6408",
+                "(809) 286-0221",
+                "(809) 969-7799",
+                "(809) 541-2020",
+                "(849) 944-5582",
+                "(809) 870-6968",
+                "(849) 621-1200",
+                "(809) 248-9809",
+                "(829) 762-6805",
+                "(809) 501-0795",
+                "(849) 916-8485",
+                "(809) 589-9999",
+                "(809) 542-6200",
+                "(809) 689-8996",
+                "(809) 299-2020",
+                "(829) 749-9437",
+                "(809) 738-7000",
+                "(809) 489-6982",
+                "(849) 222-2999",
+                "(809) 532-1844",
+                "(829) 497-5465",
+                "(829) 599-6968",
+                "(809) 482-2329",
+                "(829) 896-1132",
+                "(849) 539-5390",
+                "(809) 571-9990",
+                "(829) 884-3600",
+                "(849) 889-9313",
+                "(829) 498-1530",
+                "(809) 985-6072",
+                "(809) 826-5599",
+                "(809) 881-7999"
+            ],
+            "perfil_social": {
+                "instagram": [
+                    "remax_rd"
+                ]
+            }
+        },
+        "puntos_dolor": [
+            "Pérdida masiva de leads por velocidad crítica.",
+            "Dependencia de plugins y vulnerabilidad técnica."
+        ]
+    },
+    {
+        "empresa": "plusval.com.do",
+        "url": "https://plusval.com.do/",
+        "tiempo_carga": 3.6,
+        "tecnologia": [
+            "Desconocida/Legacy"
+        ],
+        "tracking": {
+            "Meta_Pixel": true,
+            "GTM": true,
+            "GA4": true
+        },
+        "marketing": {
+            "links_instagram": 2,
+            "botones_whatsapp": 0,
+            "meta_description": true
+        },
+        "lead_data": {
+            "nombre_contacto": [
+                "Blog Plusval",
+                "Conoce qué opinan nuestros clientes",
+                "Conoce a tus es Plusval",
+                "Conoce qué opinan nuestos s"
+            ],
+            "email": [
+                "plusval.vd@plusval.com.do",
+                "ventas@plusval.com.do"
+            ],
+            "telefono": [
+                "(809) 534-5059",
+                "(809) 468-1800",
+                "809-378-1500",
+                "(809) 378-1500",
+                "(809) 540-1234",
+                "(809) 612-3333",
+                "809-540-1234"
+            ],
+            "perfil_social": {
+                "instagram": [
+                    "plusval"
+                ]
+            }
+        },
+        "puntos_dolor": [
+            "Pérdida masiva de leads por velocidad crítica."
+        ]
+    },
+    {
+        "empresa": "indominicana.com",
+        "url": "https://indominicana.com/",
+        "tiempo_carga": 19.84,
+        "tecnologia": [
+            "Desconocida/Legacy"
+        ],
+        "tracking": {
+            "Meta_Pixel": false,
+            "GTM": false,
+            "GA4": false
+        },
+        "marketing": {
+            "links_instagram": 0,
+            "botones_whatsapp": 0,
+            "meta_description": false
+        },
+        "lead_data": {
+            "nombre_contacto": [
+                "Nombre comercial no detectado"
+            ],
+            "email": [],
+            "telefono": [],
+            "perfil_social": {
+                "instagram": []
+            }
+        },
+        "puntos_dolor": [
+            "Pérdida masiva de leads por velocidad crítica.",
+            "Ceguera publicitaria (Sin Píxel).",
+            "Invisibilidad SEO (Falta Meta Description)."
+        ]
+    },
+    {
+        "empresa": "mudate.net",
+        "url": "https://mudate.net/",
+        "tiempo_carga": 4.15,
+        "tecnologia": [
+            "WordPress",
+            "Next.js",
+            "AlterEstate"
+        ],
+        "tracking": {
+            "Meta_Pixel": true,
+            "GTM": true,
+            "GA4": true
+        },
+        "marketing": {
+            "links_instagram": 2,
+            "botones_whatsapp": 0,
+            "meta_description": true
+        },
+        "lead_data": {
+            "nombre_contacto": [
+                "Expertos profesionales"
+            ],
+            "email": [
+                "info@mudate.net"
+            ],
+            "telefono": [
+                "(809) 881-7084",
+                "(829) 551-2277",
+                "(829) 702-0902",
+                "809-540-2685",
+                "(809) 931-6223",
+                "(849) 285-5573",
+                "(809) 330-1727",
+                "(809) 696-7836",
+                "(809) 963-4166",
+                "(829) 447-9889",
+                "(809) 769-4845",
+                "(829) 763-4955",
+                "(849) 270-2112",
+                "(809) 906-1381",
+                "(809) 972-2974",
+                "(809) 901-0089",
+                "(829) 539-1475",
+                "(809) 670-4213",
+                "(829) 868-2664",
+                "(809) 974-3050",
+                "(809) 218-7895",
+                "(829) 743-2910",
+                "(809) 383-6410"
+            ],
+            "perfil_social": {
+                "instagram": [
+                    "mudate"
+                ]
+            }
+        },
+        "puntos_dolor": [
+            "Pérdida masiva de leads por velocidad crítica."
+        ]
+    }
+]

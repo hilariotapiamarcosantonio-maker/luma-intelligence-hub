@@ -31,7 +31,35 @@ export default async function AuditPage({ params }: { params: Promise<{ domain: 
     notFound();
   }
 
-  const { client_identity, technical_audit, marketing_intelligence, pain_point_synthesis } = report as any;
+  const typedReport = report as any;
+
+  // Handle Error or Pending reports
+  if (typedReport.report_metadata.status !== 'success') {
+    return (
+      <LiveAuditStatus>
+        <main className="min-h-screen bg-[#050505] text-gray-200 font-sans p-8 flex flex-col items-center justify-center text-center">
+           <AlertTriangle className="w-16 h-16 text-red-500 mb-6" />
+           <h1 className="text-3xl font-black uppercase tracking-tighter mb-4">Revisión en Progreso o Fallida</h1>
+           <p className="text-gray-400 max-w-md mb-8">
+             No pudimos completar el escaneo automático para <span className="text-white font-bold">{domain}</span>. 
+             Esto puede deberse a que el dominio no resuelve, está caído o tiene protecciones anti-bot.
+           </p>
+           <div className="flex gap-4">
+             <a href="/" className="px-6 py-3 bg-white/5 border border-white/10 rounded-lg hover:bg-white/10 transition-colors">Volver al Dashboard</a>
+             <a 
+              href={`https://wa.me/18292558703?text=Hola,%20el%20escaneo%20para%20${domain}%20falló.%20¿Podemos%20revisarlo%20manualmente?`}
+              target="_blank"
+              className="px-6 py-3 bg-red-600/20 text-red-400 border border-red-600/20 rounded-lg hover:bg-red-600/40 transition-colors font-bold"
+             >
+               Solicitar revisión manual
+             </a>
+           </div>
+        </main>
+      </LiveAuditStatus>
+    );
+  }
+
+  const { client_identity, technical_audit, marketing_intelligence, pain_point_synthesis } = typedReport;
   
   const topIssues = pain_point_synthesis.identified_issues?.slice(0, 4) || [];
   
