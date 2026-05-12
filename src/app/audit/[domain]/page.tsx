@@ -74,8 +74,8 @@ export default async function AuditPage({ params }: { params: Promise<{ domain: 
     if (lowerIssue.includes('velocidad') || lowerIssue.includes('móvil') || lowerIssue.includes('rendimiento')) {
       return "Rendimiento móvil a revisar.";
     }
-    if (lowerIssue.includes('enlace') || lowerIssue.includes('link') || lowerIssue.includes('red social')) {
-      return "Enlaces sociales que requieren revisión.";
+    if (lowerIssue.includes('enlace') || lowerIssue.includes('link') || lowerIssue.includes('red social') || lowerIssue.includes('presencia omnicanal nula')) {
+      return "Presencia omnicanal a revisar — no se detectaron canales sociales enlazados en esta revisión preliminar.";
     }
     return issue;
   };
@@ -100,10 +100,10 @@ export default async function AuditPage({ params }: { params: Promise<{ domain: 
             <h1 className="text-3xl md:text-5xl lg:text-6xl font-black tracking-tighter text-transparent bg-clip-text bg-gradient-to-br from-white via-gray-200 to-gray-600 uppercase leading-tight">
               Revisión preliminar para <span className="text-white">{client_identity.company_name || domain}</span>
             </h1>
-            <p className="text-sm md:text-xl text-gray-400 max-w-3xl mx-auto leading-relaxed">
+            <p className="text-sm md:text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
               Esta revisión identifica oportunidades visibles en presencia digital, captación, medición, experiencia móvil y seguimiento comercial.
             </p>
-            <p className="text-xs md:text-sm text-gray-500 max-w-2xl mx-auto leading-relaxed italic">
+            <p className="text-xs md:text-sm text-gray-400 max-w-2xl mx-auto leading-relaxed italic">
               No es una auditoría interna completa. Es una lectura inicial basada en señales públicas para detectar dónde puede mejorar la ruta comercial del prospecto.
             </p>
           </div>
@@ -178,7 +178,7 @@ export default async function AuditPage({ params }: { params: Promise<{ domain: 
                       <Globe className="w-4 h-4 md:w-5 md:h-5 text-gray-500" />
                       <span className="truncate">{domain}</span>
                     </h2>
-                    <p className="text-xs md:text-sm text-gray-400">Datos extraídos de señales públicas disponibles para identificar oportunidades comerciales.</p>
+                    <p className="text-xs md:text-sm text-gray-300">Datos extraídos de señales públicas disponibles para identificar oportunidades comerciales.</p>
                   </div>
 
                   <div className="p-4 md:p-8 rounded-xl bg-black/60 border border-white/5 relative overflow-hidden">
@@ -193,7 +193,7 @@ export default async function AuditPage({ params }: { params: Promise<{ domain: 
                           </span>
                           <span className="text-xl md:text-2xl text-gray-600 mb-1 md:mb-2 font-light">/100</span>
                       </div>
-                      <p className="text-xs text-gray-400 mt-3 md:mt-4 font-medium uppercase tracking-wider relative z-10 leading-relaxed">
+                      <p className="text-[10px] text-gray-300 mt-3 md:mt-4 font-bold uppercase tracking-widest relative z-10 leading-relaxed">
                         {pain_point_synthesis.authority_score < 40 ? "Inicial: presencia limitada o poco conectada." : 
                          pain_point_synthesis.authority_score < 60 ? "En desarrollo: existe presencia, pero falta estructura comercial." : 
                          pain_point_synthesis.authority_score < 80 ? "Competitivo: buena base digital con oportunidades de optimización." : 
@@ -211,7 +211,7 @@ export default async function AuditPage({ params }: { params: Promise<{ domain: 
                           <p className="text-2xl md:text-4xl font-black text-white mb-1 md:mb-2 tracking-tighter">
                               Potencial de Mejora
                           </p>
-                          <p className="text-xs md:text-sm text-gray-400 leading-relaxed">
+                          <p className="text-xs md:text-sm text-gray-300 leading-relaxed">
                               Con una mejora en captación digital, seguimiento de prospectos y medición de resultados, existe potencial para fortalecer el embudo comercial de forma medible.
                           </p>
                       </div>
@@ -224,7 +224,8 @@ export default async function AuditPage({ params }: { params: Promise<{ domain: 
                   {/* Tech Stack */}
                   <div className="bg-[#111] p-4 md:p-6 rounded-xl border border-white/5">
                       <h3 className="text-xs font-bold text-gray-300 flex items-center gap-2 mb-3 md:mb-4 uppercase tracking-widest">
-                          <Search className="w-3 h-3 md:w-4 md:h-4 text-blue-500" /> <span className="md:hidden">Infraestructura y medición</span> <span className="hidden md:inline">Infraestructura y medición</span>
+                          <Search className="w-3 h-3 md:w-4 md:h-4 text-blue-500" />
+                          <span>Infraestructura y medición</span>
                       </h3>
                       <div className="flex flex-wrap gap-1.5 md:gap-2 mb-4 md:mb-6">
                           {technical_audit.tech_stack?.length > 0 ? (
@@ -234,7 +235,7 @@ export default async function AuditPage({ params }: { params: Promise<{ domain: 
                           ) : (<span className="text-xs text-amber-400 bg-amber-500/10 px-2 py-1 rounded">No se identifica una capa pública clara de medición y seguimiento en esta revisión preliminar.</span>)}
                       </div>
                       
-                      <h4 className="text-[10px] text-gray-500 mb-2 md:mb-3 uppercase tracking-widest font-bold">Diagnóstico de Píxeles</h4>
+                      <h4 className="text-[10px] text-gray-400 mb-2 md:mb-3 uppercase tracking-widest font-bold">Medición y analítica</h4>
                       <div className="flex flex-col gap-2 md:gap-3">
                       {['Meta Pixel', 'Google Analytics', 'Google Tag Manager'].map(tracker => {
                           const isActive = technical_audit.tracking?.includes(tracker);
@@ -249,7 +250,7 @@ export default async function AuditPage({ params }: { params: Promise<{ domain: 
                           )
                       })}
                       </div>
-                      <p className="mt-3 md:mt-4 text-xs text-gray-500 italic">Una capa de medición más completa podría mejorar el seguimiento de prospectos y optimización de campañas.</p>
+                      <p className="mt-3 md:mt-4 text-[10px] text-gray-400 italic">Una capa de medición más completa podría mejorar el seguimiento de prospectos y optimización de campañas.</p>
                   </div>
                   
                   {/* Mobile & Speed */}
@@ -261,12 +262,21 @@ export default async function AuditPage({ params }: { params: Promise<{ domain: 
                           <div className="space-y-4 md:space-y-6">
                               <div>
                                   <p className="text-[10px] uppercase tracking-widest text-gray-400 mb-1 font-bold">Rendimiento general</p>
-                                  <p className="text-3xl md:text-4xl font-bold text-white">{technical_audit.pagespeed?.score || 'Pendiente de medición'}{technical_audit.pagespeed?.score && <span className="text-base md:text-lg text-gray-500">/100</span>}</p>
-                                  <p className="text-xs text-gray-400 mt-1">El rendimiento móvil puede influir en la experiencia del usuario y la tasa de conversión.</p>
+                                  <p className="text-3xl md:text-4xl font-bold text-white">
+                                    {technical_audit.pagespeed?.score && technical_audit.pagespeed.score > 0 
+                                      ? technical_audit.pagespeed.score 
+                                      : 'Pendiente de medición'}
+                                    {technical_audit.pagespeed?.score && technical_audit.pagespeed.score > 0 && <span className="text-base md:text-lg text-gray-500">/100</span>}
+                                  </p>
+                                  <p className="text-xs text-gray-300 mt-1 leading-relaxed">El rendimiento móvil puede influir en la experiencia del usuario y la tasa de conversión.</p>
                               </div>
                               <div>
                                   <p className="text-[10px] uppercase tracking-widest text-gray-400 mb-1 font-bold">Carga Visual (LCP)</p>
-                                  <p className="text-2xl md:text-3xl font-bold text-gray-300">{technical_audit.pagespeed?.lcp || 'Pendiente de medición'}</p>
+                                  <p className="text-2xl md:text-3xl font-bold text-gray-300">
+                                    {technical_audit.pagespeed?.lcp && technical_audit.pagespeed.lcp !== 'N/A' 
+                                      ? technical_audit.pagespeed.lcp 
+                                      : 'Pendiente de medición'}
+                                  </p>
                               </div>
                           </div>
                       </div>
@@ -306,7 +316,7 @@ export default async function AuditPage({ params }: { params: Promise<{ domain: 
               <Target className="w-4 h-4 md:w-5 md:h-5 text-yellow-500" />
               Qué significa esto comercialmente
             </h3>
-            <p className="text-sm md:text-base text-gray-400 leading-relaxed mb-4 md:mb-6 max-w-3xl">
+            <p className="text-sm md:text-base text-gray-300 leading-relaxed mb-4 md:mb-6 max-w-3xl">
               Tener presencia digital no siempre significa tener una estructura comercial. La oportunidad está en convertir visitas, mensajes y búsquedas en prospectos organizados, filtrados y con seguimiento claro.
             </p>
             <ul className="space-y-2 md:space-y-3 text-sm text-gray-300">
@@ -349,10 +359,10 @@ export default async function AuditPage({ params }: { params: Promise<{ domain: 
               <Search className="w-4 h-4 md:w-5 md:h-5 text-blue-500" />
               Cómo puede ayudar Luma Premium
             </h3>
-            <p className="text-sm md:text-base text-gray-400 leading-relaxed mb-4 md:mb-6 max-w-3xl">
+            <p className="text-sm md:text-base text-gray-300 leading-relaxed mb-4 md:mb-6 max-w-3xl">
               Luma Premium no busca reemplazar procesos internos existentes. La propuesta es fortalecer la capa externa de captación, autoridad y conversión para que los prospectos lleguen mejor orientados y con más contexto.
             </p>
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 md:gap-4">
               {[
                 "Landing o ruta de captación personalizada",
                 "Formulario o filtro inicial de prospectos",
@@ -363,11 +373,11 @@ export default async function AuditPage({ params }: { params: Promise<{ domain: 
                 "Medición básica",
                 "Guiones de seguimiento por WhatsApp"
               ].map((item, i) => (
-                <div key={i} className="flex items-center gap-3 text-sm text-gray-300 bg-blue-500/5 p-3 rounded-lg border border-blue-500/10">
-                  <div className="w-6 h-6 rounded-md bg-blue-500/20 flex items-center justify-center flex-shrink-0">
-                    <CheckCircle className="w-3 h-3 text-blue-400" />
+                <div key={i} className="flex flex-col gap-3 p-4 md:p-5 rounded-xl bg-blue-500/5 border border-blue-500/10 hover:bg-blue-500/10 transition-colors">
+                  <div className="w-8 h-8 rounded-lg bg-blue-500/20 flex items-center justify-center">
+                    <CheckCircle className="w-4 h-4 text-blue-400" />
                   </div>
-                  {item}
+                  <span className="text-sm font-medium text-gray-200 leading-snug">{item}</span>
                 </div>
               ))}
             </div>
@@ -383,7 +393,7 @@ export default async function AuditPage({ params }: { params: Promise<{ domain: 
                 <h3 className="text-base md:text-lg font-bold text-white mb-2">
                   Solución recomendada: Luma Estate OS Foundation
                 </h3>
-                <p className="text-sm text-gray-400 leading-relaxed mb-4 md:mb-6 max-w-2xl">
+                <p className="text-sm text-gray-300 leading-relaxed mb-4 md:mb-6 max-w-2xl">
                   Una implementación base para convertir presencia digital dispersa en una ruta comercial más clara: presentación, captación, filtro, seguimiento y control.
                 </p>
                 
