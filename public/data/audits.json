@@ -1208,5 +1208,77 @@
             "status": "error",
             "error_message": "Error de conexión o timeout."
         }
+    },
+    {
+        "report_metadata": {
+            "timestamp": "2026-05-12T17:55:30.947552",
+            "domain_scanned": "disenosarquitectonicos.com.do",
+            "status": "error",
+            "error_message": "Error de conexión o timeout."
+        }
+    },
+    {
+        "report_metadata": {
+            "timestamp": "2026-05-12T17:55:31.136582",
+            "domain_scanned": "proyectosinmobiliariosrd.com.do",
+            "status": "error",
+            "error_message": "Error de conexión o timeout."
+        }
+    },
+    {
+        "report_metadata": {
+            "timestamp": "2026-05-12T17:55:31.329405",
+            "domain_scanned": "ranchosantodomingo.com.do",
+            "status": "error",
+            "error_message": "Error de conexión o timeout."
+        }
+    },
+    {
+        "report_metadata": {
+            "timestamp": "2026-05-12T17:55:31.359751",
+            "domain_scanned": "propiedadeselite.com.do",
+            "status": "error",
+            "error_message": "Error de conexión o timeout."
+        }
+    },
+    {
+        "report_metadata": {
+            "timestamp": "2026-05-12T17:55:31.413591",
+            "domain_scanned": "construccionesmodernas.com.do",
+            "status": "error",
+            "error_message": "Error de conexión o timeout."
+        }
+    },
+    {
+        "report_metadata": {
+            "timestamp": "2026-05-12T17:55:31.671565",
+            "domain_scanned": "casasparaelretiro.com.do",
+            "status": "error",
+            "error_message": "Error de conexión o timeout."
+        }
+    },
+    {
+        "report_metadata": {
+            "timestamp": "2026-05-12T17:55:31.816299",
+            "domain_scanned": "hogaressostenibles.com.do",
+            "status": "error",
+            "error_message": "Error de conexión o timeout."
+        }
+    },
+    {
+        "report_metadata": {
+            "timestamp": "2026-05-12T17:55:31.860679",
+            "domain_scanned": "desarrollosurbanos.com.do",
+            "status": "error",
+            "error_message": "Error de conexión o timeout."
+        }
+    },
+    {
+        "report_metadata": {
+            "timestamp": "2026-05-12T17:55:32.224920",
+            "domain_scanned": "inmobiliariaverde.com.do",
+            "status": "error",
+            "error_message": "Error de conexión o timeout."
+        }
     }
 ]
