@@ -1640,5 +1640,298 @@
             "status": "error",
             "error_message": "Error de conexión o timeout."
         }
+    },
+    {
+        "report_metadata": {
+            "timestamp": "2026-05-12T18:32:09.275639",
+            "domain_scanned": "koinmobiliaria.com",
+            "status": "error",
+            "error_message": "Error de conexión o timeout."
+        }
+    },
+    {
+        "report_metadata": {
+            "timestamp": "2026-05-12T18:32:09.301233",
+            "domain_scanned": "alfamoyca.com",
+            "status": "success"
+        },
+        "client_identity": {
+            "company_name": "alfamoyca.com",
+            "key_people": [],
+            "emails": [
+                "alfamoycainmobiliaria@gmail.com",
+                "bootstrap-select@1.14.0-beta3"
+            ],
+            "phones": [
+                "8094227263",
+                "8094227261",
+                "8092588645"
+            ]
+        },
+        "technical_audit": {
+            "tech_stack": [],
+            "tracking": [],
+            "open_graph": true,
+            "pagespeed": {
+                "error": "API Key no configurada",
+                "score": 0,
+                "lcp": null,
+                "tti": null
+            }
+        },
+        "marketing_intelligence": {
+            "social_links": [
+                "https://www.instagram.com/moycainmobiliaria/"
+            ],
+            "broken_links": [
+                "https://www.facebook.com/ALFA-MOYCA-Inmobiliaria-102522681432968/",
+                "https://www.facebook.com/ALFA-MOYCA-inmobiliaria-102522681432968//",
+                "https://www.facebook.com/ALFA-MOYCA-inmobiliaria-102522681432968/",
+                "https://twitter.com/alfamoycainmob1"
+            ]
+        },
+        "pain_point_synthesis": {
+            "authority_score": 15,
+            "identified_issues": [
+                "Rendimiento móvil pendiente de revisión — podría afectar la experiencia del usuario y la conversión.",
+                "Sin Meta Pixel - Imposibilidad de retargeting eficiente en pauta.",
+                "4 enlaces sociales sin actividad clara o que requieren revisión."
+            ]
+        }
+    },
+    {
+        "report_metadata": {
+            "timestamp": "2026-05-12T18:32:09.469328",
+            "domain_scanned": "loraaltagracia.com",
+            "status": "error",
+            "error_message": "Error de conexión o timeout."
+        }
+    },
+    {
+        "report_metadata": {
+            "timestamp": "2026-05-12T18:32:09.506248",
+            "domain_scanned": "isabelluxury.com",
+            "status": "error",
+            "error_message": "Error de conexión o timeout."
+        }
+    },
+    {
+        "report_metadata": {
+            "timestamp": "2026-05-12T18:32:09.514726",
+            "domain_scanned": "viprm.com",
+            "status": "error",
+            "error_message": "Error de conexión o timeout."
+        }
+    },
+    {
+        "report_metadata": {
+            "timestamp": "2026-05-12T18:32:09.586524",
+            "domain_scanned": "lircaribe.com",
+            "status": "success"
+        },
+        "client_identity": {
+            "company_name": "lircaribe.com",
+            "key_people": [],
+            "emails": [
+                "u003esantiago@lircaribe.com",
+                "u003eterrenas@lircaribe.com",
+                "terrenas@lircaribe.com",
+                "njrealtysource@gmail.com"
+            ],
+            "phones": [
+                "829-599-7262",
+                "18295694000",
+                "18295997262"
+            ]
+        },
+        "technical_audit": {
+            "tech_stack": [
+                "AlterEstate",
+                "Next.js"
+            ],
+            "tracking": [
+                "Google Analytics"
+            ],
+            "open_graph": true,
+            "pagespeed": {
+                "error": "API Key no configurada",
+                "score": 0,
+                "lcp": null,
+                "tti": null
+            }
+        },
+        "marketing_intelligence": {
+            "social_links": [
+                "https://www.youtube.com/@LifestyleInternationalRealtyCa",
+                "https://www.instagram.com/p/DQt13iLjv5b/?igsh=dnltajFhNndrd3E=",
+                "https://www.youtube.com/shorts/ps9inY1fO5k",
+                "https://www.instagram.com/lifestyleinternationalcaribe/"
+            ],
+            "broken_links": [
+                "https://www.instagram.com/lifestyleinternationalcaribe//"
+            ]
+        },
+        "pain_point_synthesis": {
+            "authority_score": 40,
+            "identified_issues": [
+                "Rendimiento móvil pendiente de revisión — podría afectar la experiencia del usuario y la conversión.",
+                "Sin Meta Pixel - Imposibilidad de retargeting eficiente en pauta.",
+                "1 enlace sociales sin actividad clara o que requieren revisión."
+            ]
+        }
+    },
+    {
+        "report_metadata": {
+            "timestamp": "2026-05-12T18:32:09.822565",
+            "domain_scanned": "elitehouserd.com",
+            "status": "success"
+        },
+        "client_identity": {
+            "company_name": "elite-house-rd-2767.alterestate.com",
+            "key_people": [],
+            "emails": [
+                "info@elitehouse.do"
+            ],
+            "phones": [
+                "809.542.0555"
+            ]
+        },
+        "technical_audit": {
+            "tech_stack": [
+                "AlterEstate",
+                "Next.js"
+            ],
+            "tracking": [
+                "Google Analytics",
+                "Google Tag Manager"
+            ],
+            "open_graph": true,
+            "pagespeed": {
+                "error": "API Key no configurada",
+                "score": 0,
+                "lcp": null,
+                "tti": null
+            }
+        },
+        "marketing_intelligence": {
+            "social_links": [
+                "https://www.instagram.com/elitehouserd"
+            ],
+            "broken_links": []
+        },
+        "pain_point_synthesis": {
+            "authority_score": 35,
+            "identified_issues": [
+                "Rendimiento móvil pendiente de revisión — podría afectar la experiencia del usuario y la conversión.",
+                "Sin Meta Pixel - Imposibilidad de retargeting eficiente en pauta."
+            ]
+        }
+    },
+    {
+        "report_metadata": {
+            "timestamp": "2026-05-12T18:32:10.236037",
+            "domain_scanned": "casalinainmobiliaria.com",
+            "status": "success"
+        },
+        "client_identity": {
+            "company_name": "Casalina inmobiliaria",
+            "key_people": [],
+            "emails": [
+                "info@casalinainmobiliaria.com",
+                "leaflet@1.3.4"
+            ],
+            "phones": []
+        },
+        "technical_audit": {
+            "tech_stack": [
+                "WordPress 6.9.4"
+            ],
+            "tracking": [],
+            "open_graph": true,
+            "pagespeed": {
+                "error": "API Key no configurada",
+                "score": 0,
+                "lcp": null,
+                "tti": null
+            }
+        },
+        "marketing_intelligence": {
+            "social_links": [
+                "https://www.instagram.com/drvillageok/",
+                "https://www.instagram.com/casalinasrl/"
+            ],
+            "broken_links": [
+                "https://www.facebook.com/casalina.srl/"
+            ]
+        },
+        "pain_point_synthesis": {
+            "authority_score": 20,
+            "identified_issues": [
+                "Rendimiento móvil pendiente de revisión — podría afectar la experiencia del usuario y la conversión.",
+                "Sin Meta Pixel - Imposibilidad de retargeting eficiente en pauta.",
+                "1 enlace sociales sin actividad clara o que requieren revisión."
+            ]
+        }
+    },
+    {
+        "report_metadata": {
+            "timestamp": "2026-05-12T18:32:10.292319",
+            "domain_scanned": "yinetreyesrealtygroup.com",
+            "status": "success"
+        },
+        "client_identity": {
+            "company_name": "Yinet Reyes Realty Group",
+            "key_people": [],
+            "emails": [
+                "handlebars-intl@1.1.2"
+            ],
+            "phones": [
+                "(210) 902-1139",
+                "2103264370",
+                "2109021139",
+                "(210) 326-4370"
+            ]
+        },
+        "technical_audit": {
+            "tech_stack": [],
+            "tracking": [
+                "Meta Pixel",
+                "Google Tag Manager"
+            ],
+            "open_graph": true,
+            "pagespeed": {
+                "error": "API Key no configurada",
+                "score": 0,
+                "lcp": null,
+                "tti": null
+            }
+        },
+        "marketing_intelligence": {
+            "social_links": [
+                "https://www.instagram.com/yinetreyesrealtygroup?utm_source=qr",
+                "https://www.tiktok.com/@yinet.reyes"
+            ],
+            "broken_links": [
+                "https://www.facebook.com/p/Yinet-Reyes-Elite-House-RD-100075712373918/?paipv=0&eav=AfZB6Ik_Dpgr7qa3ucvm7S3qqAAbZWHsP3WyTetXX90IiDXwnEa9z4M3IoRMHSSxRXI&_rdr",
+                "https://www.linkedin.com/in/yinet-reyes-406713179/",
+                "https://www.youtube.com/@yinetreyesrd1397/featured",
+                "https://x.com/YinetReyes2"
+            ]
+        },
+        "pain_point_synthesis": {
+            "authority_score": 40,
+            "identified_issues": [
+                "Rendimiento móvil pendiente de revisión — podría afectar la experiencia del usuario y la conversión.",
+                "4 enlaces sociales sin actividad clara o que requieren revisión."
+            ]
+        }
+    },
+    {
+        "report_metadata": {
+            "timestamp": "2026-05-12T18:32:10.521139",
+            "domain_scanned": "jvinmueblesrd.com",
+            "status": "error",
+            "error_message": "Error de conexión o timeout."
+        }
     }
 ]
