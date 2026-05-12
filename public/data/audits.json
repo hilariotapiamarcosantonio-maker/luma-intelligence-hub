@@ -3730,5 +3730,383 @@
                 "2 enlaces sociales sin actividad clara o que requieren revisión."
             ]
         }
+    },
+    {
+        "report_metadata": {
+            "timestamp": "2026-05-12T18:37:50.118187",
+            "domain_scanned": "grupoactua.com.do",
+            "status": "success"
+        },
+        "client_identity": {
+            "company_name": "Grupo Actúa Properties -",
+            "key_people": [],
+            "emails": [
+                "gustavo@grupoactua.com.do",
+                "javier@grupoactua.com.do",
+                "lirka@grupoactua.com.do"
+            ],
+            "phones": [
+                "18493565230",
+                "18092586774",
+                "18099293738",
+                "18096693061"
+            ]
+        },
+        "technical_audit": {
+            "tech_stack": [
+                "WordPress"
+            ],
+            "tracking": [],
+            "open_graph": true,
+            "pagespeed": {
+                "error": "API Key no configurada",
+                "score": 0,
+                "lcp": null,
+                "tti": null
+            }
+        },
+        "marketing_intelligence": {
+            "social_links": [
+                "https://www.instagram.com/grupoactuaproperties/?hl=es-la"
+            ],
+            "broken_links": [
+                "https://www.facebook.com/grupoactua/?locale=es_LA"
+            ]
+        },
+        "pain_point_synthesis": {
+            "authority_score": 15,
+            "identified_issues": [
+                "Rendimiento móvil pendiente de revisión — podría afectar la experiencia del usuario y la conversión.",
+                "Sin Meta Pixel - Imposibilidad de retargeting eficiente en pauta.",
+                "1 enlace sociales sin actividad clara o que requieren revisión."
+            ]
+        }
+    },
+    {
+        "report_metadata": {
+            "timestamp": "2026-05-12T18:37:50.184702",
+            "domain_scanned": "hsyminmobiliaria.com",
+            "status": "error",
+            "error_message": "Error de conexión o timeout."
+        }
+    },
+    {
+        "report_metadata": {
+            "timestamp": "2026-05-12T18:37:50.487087",
+            "domain_scanned": "gopropertiestate.com",
+            "status": "success"
+        },
+        "client_identity": {
+            "company_name": "Go Properties",
+            "key_people": [],
+            "emails": [
+                "sales@gogroup.com",
+                "info@gogroupo.com",
+                "sales@gogroupo.com"
+            ],
+            "phones": [
+                "+18495399991",
+                "+13052035273",
+                "+18093830309",
+                "8297502854",
+                "+1%20809%20832-0465"
+            ]
+        },
+        "technical_audit": {
+            "tech_stack": [
+                "WordPress 6.9.4"
+            ],
+            "tracking": [],
+            "open_graph": true,
+            "pagespeed": {
+                "error": "API Key no configurada",
+                "score": 0,
+                "lcp": null,
+                "tti": null
+            }
+        },
+        "marketing_intelligence": {
+            "social_links": [
+                "https://www.instagram.com/go.propertiestate/",
+                "https://www.instagram.com/go.propertiestate"
+            ],
+            "broken_links": [
+                "https://www.facebook.com/villasdominicana/"
+            ]
+        },
+        "pain_point_synthesis": {
+            "authority_score": 20,
+            "identified_issues": [
+                "Rendimiento móvil pendiente de revisión — podría afectar la experiencia del usuario y la conversión.",
+                "Sin Meta Pixel - Imposibilidad de retargeting eficiente en pauta.",
+                "1 enlace sociales sin actividad clara o que requieren revisión."
+            ]
+        }
+    },
+    {
+        "report_metadata": {
+            "timestamp": "2026-05-12T18:37:50.708640",
+            "domain_scanned": "biexrealty.com",
+            "status": "success"
+        },
+        "client_identity": {
+            "company_name": "biexrealty.com",
+            "key_people": [],
+            "emails": [
+                "info@biexrealty.com",
+                "bootstrap-select@1.14.0-beta3"
+            ],
+            "phones": [
+                "+18294709338",
+                "+18095829330"
+            ]
+        },
+        "technical_audit": {
+            "tech_stack": [],
+            "tracking": [],
+            "open_graph": true,
+            "pagespeed": {
+                "error": "API Key no configurada",
+                "score": 0,
+                "lcp": null,
+                "tti": null
+            }
+        },
+        "marketing_intelligence": {
+            "social_links": [
+                "https://www.instagram.com/biexrealty?igsh=aXdqNm9icmZzanlm&utm_source=qr",
+                "https://www.tiktok.com/@biexsrl?_t=ZS-909rWGGmnY8&_r=1"
+            ],
+            "broken_links": [
+                "https://www.youtube.com/@fantina_martinez",
+                "https://x.com/biexrealty?s=21&t=AWBhfDLZNdo_s0QyqHD7XQ",
+                "https://youtube.com/@fantina_martinez?si=InXjeLtrytzW9DgW"
+            ]
+        },
+        "pain_point_synthesis": {
+            "authority_score": 20,
+            "identified_issues": [
+                "Rendimiento móvil pendiente de revisión — podría afectar la experiencia del usuario y la conversión.",
+                "Sin Meta Pixel - Imposibilidad de retargeting eficiente en pauta.",
+                "3 enlaces sociales sin actividad clara o que requieren revisión."
+            ]
+        }
+    },
+    {
+        "report_metadata": {
+            "timestamp": "2026-05-12T18:37:51.288131",
+            "domain_scanned": "inmobisla.com.do",
+            "status": "error",
+            "error_message": "Error de conexión o timeout."
+        }
+    },
+    {
+        "report_metadata": {
+            "timestamp": "2026-05-12T18:37:51.633024",
+            "domain_scanned": "habitame.com",
+            "status": "success"
+        },
+        "client_identity": {
+            "company_name": "Habitame",
+            "key_people": [],
+            "emails": [
+                "sweetalert2@11.11.0",
+                "bootstrap@5.3.3",
+                "aos@2.3.1",
+                "GRAD@20..48"
+            ],
+            "phones": [
+                "+1 (829) 547-8364"
+            ]
+        },
+        "technical_audit": {
+            "tech_stack": [
+                "WordPress 6.9.4"
+            ],
+            "tracking": [
+                "Meta Pixel",
+                "Google Analytics"
+            ],
+            "open_graph": true,
+            "pagespeed": {
+                "error": "API Key no configurada",
+                "score": 0,
+                "lcp": null,
+                "tti": null
+            }
+        },
+        "marketing_intelligence": {
+            "social_links": [
+                "https://www.google.com/search?q=habitame+inmobiliaria&rlz=1C5CHFA_enDO1129DO1129&oq=habitame&gs_lcrp=EgZjaHJvbWUqBwgBEAAYgAQyBggAEEUYOTIHCAEQABiABDIJCAIQABgKGIAEMgkIAxAAGAoYgAQyCQgEEAAYChiABDIGCAUQRRg8MgYIBhBFGDwyBggHEEUYPNIBCDM1NzJqMGo3qAIAsAIA&sourceid=chrome&ie=UTF-8#:~:text=junto%20a%20ti!-,Habitame%20Inmobiliaria,https%3A//www.facebook.com%20%E2%80%BA%20...%20%E2%80%BA%20Inmobiliaria,-Habitame%20Inmobiliaria%20...%20Es",
+                "https://www.instagram.com/habitamerd/?hl=es",
+                "https://www.youtube.com/@habitameinmobiliariard1937"
+            ],
+            "broken_links": []
+        },
+        "pain_point_synthesis": {
+            "authority_score": 45,
+            "identified_issues": [
+                "Rendimiento móvil pendiente de revisión — podría afectar la experiencia del usuario y la conversión."
+            ]
+        }
+    },
+    {
+        "report_metadata": {
+            "timestamp": "2026-05-12T18:37:51.874872",
+            "domain_scanned": "hummelinmobiliaria.com",
+            "status": "success"
+        },
+        "client_identity": {
+            "company_name": "humel",
+            "key_people": [
+                "CEO - Broker"
+            ],
+            "emails": [
+                "info@hummelinmobiliaria.com"
+            ],
+            "phones": [
+                "18094800077"
+            ]
+        },
+        "technical_audit": {
+            "tech_stack": [
+                "WordPress 6.8.2"
+            ],
+            "tracking": [
+                "Google Tag Manager",
+                "Google Analytics"
+            ],
+            "open_graph": true,
+            "pagespeed": {
+                "error": "API Key no configurada",
+                "score": 0,
+                "lcp": null,
+                "tti": null
+            }
+        },
+        "marketing_intelligence": {
+            "social_links": [
+                "https://www.instagram.com/hummelinmobiliaria"
+            ],
+            "broken_links": [
+                "https://www.facebook.com/hummelinmobiliariadr/"
+            ]
+        },
+        "pain_point_synthesis": {
+            "authority_score": 35,
+            "identified_issues": [
+                "Rendimiento móvil pendiente de revisión — podría afectar la experiencia del usuario y la conversión.",
+                "Sin Meta Pixel - Imposibilidad de retargeting eficiente en pauta.",
+                "1 enlace sociales sin actividad clara o que requieren revisión."
+            ]
+        }
+    },
+    {
+        "report_metadata": {
+            "timestamp": "2026-05-12T18:37:52.651265",
+            "domain_scanned": "joannyriviera.com",
+            "status": "error",
+            "error_message": "Error de conexión o timeout."
+        }
+    },
+    {
+        "report_metadata": {
+            "timestamp": "2026-05-12T18:37:52.812273",
+            "domain_scanned": "iag.com.do",
+            "status": "success"
+        },
+        "client_identity": {
+            "company_name": "iag-inmobiliaria-3931.alterestate.com",
+            "key_people": [],
+            "emails": [
+                "info@iag.com.do"
+            ],
+            "phones": [
+                "8095402777",
+                "18299627186"
+            ]
+        },
+        "technical_audit": {
+            "tech_stack": [
+                "Next.js",
+                "AlterEstate"
+            ],
+            "tracking": [
+                "Google Analytics",
+                "Meta Pixel",
+                "Google Tag Manager"
+            ],
+            "open_graph": true,
+            "pagespeed": {
+                "error": "API Key no configurada",
+                "score": 0,
+                "lcp": null,
+                "tti": null
+            }
+        },
+        "marketing_intelligence": {
+            "social_links": [
+                "https://www.instagram.com/iaginmobiliaria/",
+                "https://www.youtube.com/channel/UCMltA18_qeiUsi-Q9iXgX_Q"
+            ],
+            "broken_links": [
+                "https://www.facebook.com/IAGInmnobiliaria/"
+            ]
+        },
+        "pain_point_synthesis": {
+            "authority_score": 50,
+            "identified_issues": [
+                "Rendimiento móvil pendiente de revisión — podría afectar la experiencia del usuario y la conversión.",
+                "1 enlace sociales sin actividad clara o que requieren revisión."
+            ]
+        }
+    },
+    {
+        "report_metadata": {
+            "timestamp": "2026-05-12T18:37:52.958675",
+            "domain_scanned": "inmobrothrd.com",
+            "status": "success"
+        },
+        "client_identity": {
+            "company_name": "inmobroth-real-estate.alterestate.com",
+            "key_people": [],
+            "emails": [
+                "admin@inmobrothrd.com"
+            ],
+            "phones": [
+                "18492834415",
+                "+18492834415"
+            ]
+        },
+        "technical_audit": {
+            "tech_stack": [
+                "Next.js",
+                "AlterEstate"
+            ],
+            "tracking": [],
+            "open_graph": true,
+            "pagespeed": {
+                "error": "API Key no configurada",
+                "score": 0,
+                "lcp": null,
+                "tti": null
+            }
+        },
+        "marketing_intelligence": {
+            "social_links": [
+                "https://www.instagram.com/inmobrothrealestate"
+            ],
+            "broken_links": [
+                "https://www.facebook.com/inmobrothrealestate"
+            ]
+        },
+        "pain_point_synthesis": {
+            "authority_score": 15,
+            "identified_issues": [
+                "Rendimiento móvil pendiente de revisión — podría afectar la experiencia del usuario y la conversión.",
+                "Sin Meta Pixel - Imposibilidad de retargeting eficiente en pauta.",
+                "1 enlace sociales sin actividad clara o que requieren revisión."
+            ]
+        }
     }
 ]
