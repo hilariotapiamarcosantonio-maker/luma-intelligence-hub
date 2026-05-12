@@ -15,7 +15,7 @@ export default function LiveAuditStatus({ children }: { children: React.ReactNod
 
   useEffect(() => {
     if (stage < stages.length) {
-      const timer = setTimeout(() => setStage(prev => prev + 1), 800);
+      const timer = setTimeout(() => setStage(prev => prev + 1), 50); // Velocidad luz
       return () => clearTimeout(timer);
     }
   }, [stage, stages.length]);
