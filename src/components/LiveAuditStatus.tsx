@@ -7,10 +7,10 @@ import { Activity, ShieldCheck, Database, Search } from 'lucide-react';
 export default function LiveAuditStatus({ children }: { children: React.ReactNode }) {
   const [stage, setStage] = useState(0);
   const stages = [
-    { text: "Initiating Live Scan...", icon: <Activity className="w-6 h-6 animate-pulse text-blue-500" /> },
-    { text: "Bypassing WAF & Fetching HTML...", icon: <ShieldCheck className="w-6 h-6 text-green-500" /> },
-    { text: "Analyzing Tech Stack & SEO...", icon: <Database className="w-6 h-6 text-yellow-500" /> },
-    { text: "Synthesizing Pain Points...", icon: <Search className="w-6 h-6 text-purple-500" /> }
+    { text: "Preparando análisis preliminar...", icon: <Activity className="w-6 h-6 animate-pulse text-blue-500" /> },
+    { text: "Recopilando señales públicas...", icon: <ShieldCheck className="w-6 h-6 text-green-500" /> },
+    { text: "Analizando infraestructura y presencia...", icon: <Database className="w-6 h-6 text-yellow-500" /> },
+    { text: "Identificando oportunidades de mejora...", icon: <Search className="w-6 h-6 text-purple-500" /> }
   ];
 
   useEffect(() => {
@@ -18,7 +18,7 @@ export default function LiveAuditStatus({ children }: { children: React.ReactNod
       const timer = setTimeout(() => setStage(prev => prev + 1), 800);
       return () => clearTimeout(timer);
     }
-  }, [stage]);
+  }, [stage, stages.length]);
 
   const isLoading = stage < stages.length;
 

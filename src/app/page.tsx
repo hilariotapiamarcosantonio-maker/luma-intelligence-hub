@@ -1,6 +1,6 @@
 import fs from 'fs';
 import path from 'path';
-import { ShieldAlert, TrendingDown, Target, Search, BarChart3, Globe, Smartphone, Activity, Link as LinkIcon, AlertTriangle } from 'lucide-react';
+import { ShieldAlert, TrendingDown, Target, Search, Globe, Smartphone, Activity, Link as LinkIcon, AlertTriangle } from 'lucide-react';
 
 export const dynamic = 'force-dynamic';
 
@@ -21,11 +21,14 @@ export default function Home() {
         <header className="border-b border-white/10 pb-8 flex justify-between items-end">
           <div>
             <h1 className="text-5xl font-black tracking-tighter text-transparent bg-clip-text bg-gradient-to-r from-white to-gray-500 uppercase">
-              Luma Audit Center
+              Luma Intelligence Hub
             </h1>
             <p className="text-gray-500 mt-2 text-sm tracking-widest uppercase flex items-center gap-2">
-              <Activity className="w-4 h-4 text-red-500 animate-pulse" />
-              Real-time deep scan architecture
+              <Activity className="w-4 h-4 text-gray-500 animate-pulse" />
+              Revisión preliminar de presencia digital inmobiliaria
+            </p>
+            <p className="text-gray-400 mt-4 max-w-2xl text-sm leading-relaxed">
+              Un análisis inicial para detectar oportunidades en captación, presentación digital, seguimiento comercial y medición de prospectos en inmobiliarias y proyectos inmobiliarios.
             </p>
           </div>
           <div className="text-right">
@@ -34,10 +37,15 @@ export default function Home() {
           </div>
         </header>
 
+        <div className="bg-[#0a0a0a] border border-white/10 rounded-xl p-6 text-sm text-gray-400">
+          <strong>Aviso importante:</strong> Esta revisión es preliminar y se basa en señales públicas disponibles: presencia web, redes sociales, velocidad, enlaces, tracking y estructura de captación. No representa una auditoría interna completa ni afirma resultados financieros exactos. Su objetivo es identificar oportunidades de mejora comercial.
+        </div>
+
         {/* Mapeo de Reportes */}
         <div className="space-y-16">
-          {reports.map((report: any, idx: number) => {
-            const { client_identity, technical_audit, marketing_intelligence, pain_point_synthesis, report_metadata } = report;
+          {reports.map((report: unknown, idx: number) => {
+            const typedReport = report as any;
+            const { client_identity, technical_audit, marketing_intelligence, pain_point_synthesis, report_metadata } = typedReport;
             
             if (report_metadata?.status !== 'success' || !pain_point_synthesis) {
               return (
@@ -80,13 +88,7 @@ export default function Home() {
               );
             }
 
-            const isCritical = pain_point_synthesis.authority_score < 40;
-            
-            // Simulación de ROI perdido
-            const baseTraffic = 15000;
-            const conversionRateDrop = 0.02; // 2% caída
-            const averageTicket = 5000; // Valor promedio de lead/comisión
-            const lostRevenue = Math.round(baseTraffic * conversionRateDrop * averageTicket);
+            // Variables removidas para copy consultivo (isCritical, lostRevenue, etc.)
 
             return (
               <div key={idx} className="relative group">
@@ -105,11 +107,11 @@ export default function Home() {
                           {client_identity.company_name}
                         </h2>
                         <div className="flex flex-col gap-3 mt-2">
-                          <a href={`https://${report.report_metadata.domain_scanned}`} target="_blank" rel="noreferrer" className="text-blue-400 hover:text-blue-300 text-sm flex items-center gap-1 transition-colors w-fit">
+                          <a href={`https://${typedReport.report_metadata.domain_scanned}`} target="_blank" rel="noreferrer" className="text-blue-400 hover:text-blue-300 text-sm flex items-center gap-1 transition-colors w-fit">
                             <Globe className="w-4 h-4" />
-                            {report.report_metadata.domain_scanned}
+                            {typedReport.report_metadata.domain_scanned}
                           </a>
-                          <a href={`/audit/${report.report_metadata.domain_scanned}`} target="_blank" className="flex items-center justify-center gap-2 px-4 py-2 bg-red-600 hover:bg-red-500 text-white text-sm font-bold rounded-lg transition-colors shadow-[0_0_15px_rgba(220,38,38,0.4)] border border-red-500/50">
+                          <a href={`/audit/${typedReport.report_metadata.domain_scanned}`} target="_blank" className="flex items-center justify-center gap-2 px-4 py-2 bg-red-600 hover:bg-red-500 text-white text-sm font-bold rounded-lg transition-colors shadow-[0_0_15px_rgba(220,38,38,0.4)] border border-red-500/50">
                             <ShieldAlert className="w-4 h-4" />
                             Abrir Reporte en Vivo (Para enviar)
                           </a>
@@ -118,33 +120,32 @@ export default function Home() {
 
                       <div className="p-6 rounded-xl bg-black/40 border border-white/5">
                         <div className="flex items-center justify-between mb-4">
-                          <span className="text-sm font-semibold tracking-wider text-gray-400 uppercase">Authority Score</span>
+                          <span className="text-sm font-semibold tracking-wider text-gray-400 uppercase">Nivel de madurez digital</span>
                           <Target className="w-5 h-5 text-gray-500" />
                         </div>
                         <div className="flex items-end gap-3">
-                          <span className={`text-6xl font-black ${isCritical ? 'text-red-500' : 'text-yellow-500'}`}>
+                          <span className="text-6xl font-black text-white">
                             {pain_point_synthesis.authority_score}
                           </span>
                           <span className="text-xl text-gray-500 mb-1">/100</span>
                         </div>
-                        <div className="mt-4 w-full bg-gray-900 rounded-full h-1.5 overflow-hidden">
-                          <div 
-                            className={`h-full ${isCritical ? 'bg-red-500' : 'bg-yellow-500'}`} 
-                            style={{ width: `${pain_point_synthesis.authority_score}%` }}
-                          ></div>
-                        </div>
+                        <p className="text-xs text-gray-500 mt-4 uppercase tracking-wider font-semibold">
+                          {pain_point_synthesis.authority_score < 40 ? "Inicial" : 
+                           pain_point_synthesis.authority_score < 60 ? "En desarrollo" : 
+                           pain_point_synthesis.authority_score < 80 ? "Competitivo" : "Avanzado"}
+                        </p>
                       </div>
 
-                      {/* ROI Proyectado */}
-                      <div className="p-6 rounded-xl bg-red-950/20 border border-red-900/30 relative overflow-hidden">
+                      {/* Oportunidad Comercial */}
+                      <div className="p-6 rounded-xl bg-gray-900/40 border border-white/5 relative overflow-hidden">
                          <div className="absolute top-0 right-0 p-4 opacity-10">
                             <TrendingDown className="w-24 h-24" />
                          </div>
-                         <h3 className="text-red-400 text-xs font-bold tracking-widest uppercase mb-2">Fuga de Capital Estimada</h3>
-                         <p className="text-3xl font-mono text-white mb-1">
-                           ${lostRevenue.toLocaleString()} <span className="text-sm text-gray-500 font-sans">/mo</span>
+                         <h3 className="text-gray-400 text-xs font-bold tracking-widest uppercase mb-2">Oportunidad No Aprovechada</h3>
+                         <p className="text-2xl font-bold text-white mb-1">
+                           Potencial de mejora
                          </p>
-                         <p className="text-xs text-gray-400">Basado en tasas de rebote móvil y fugas en embudos sin tracking.</p>
+                         <p className="text-xs text-gray-500 mt-2">Basado en optimización de conversión y estructuración de embudos comerciales.</p>
                       </div>
                     </div>
 
@@ -239,17 +240,17 @@ export default function Home() {
                                )
                              })}
 
-                             {/* Pueblos Fantasmas */}
+                             {/* Enlaces sin actividad clara */}
                              {marketing_intelligence.broken_links.map((link: string) => {
                                const platformMatch = link.match(/instagram|facebook|linkedin|tiktok|youtube|pinterest|twitter|x\.com/i);
                                const platform = platformMatch ? platformMatch[0] : 'Web';
                                return (
-                                 <div key={link} className="flex items-center gap-3 p-2 rounded-lg bg-red-500/5 border border-red-500/20 relative overflow-hidden group">
-                                   <div className="absolute inset-0 bg-red-500/10 w-0 group-hover:w-full transition-all duration-500"></div>
-                                   <AlertTriangle className="w-3 h-3 text-red-500 z-10" />
-                                   <span className="text-xs text-red-400 capitalize w-16 z-10">{platform}</span>
-                                   <span className="text-xs text-red-700 truncate flex-1 line-through z-10" title={link}>{link}</span>
-                                   <span className="absolute right-2 top-1/2 -translate-y-1/2 text-[10px] font-bold text-red-500/80 tracking-widest uppercase z-10">Ghost Town</span>
+                                 <div key={link} className="flex items-center gap-3 p-2 rounded-lg bg-gray-500/5 border border-gray-500/20 relative overflow-hidden group">
+                                   <div className="absolute inset-0 bg-gray-500/10 w-0 group-hover:w-full transition-all duration-500"></div>
+                                   <AlertTriangle className="w-3 h-3 text-gray-500 z-10" />
+                                   <span className="text-xs text-gray-400 capitalize w-16 z-10">{platform}</span>
+                                   <span className="text-xs text-gray-600 truncate flex-1 z-10" title={link}>{link}</span>
+                                   <span className="absolute right-2 top-1/2 -translate-y-1/2 text-[10px] font-bold text-gray-500/80 tracking-widest uppercase z-10 text-right leading-tight">Sin actividad<br/>clara</span>
                                  </div>
                                )
                              })}
@@ -259,12 +260,12 @@ export default function Home() {
                         {/* Synthesis */}
                         <div className="bg-[#111] p-6 rounded-xl border border-white/5 h-full">
                            <h3 className="text-sm font-semibold text-gray-300 flex items-center gap-2 mb-4 uppercase tracking-wider">
-                             <ShieldAlert className="w-4 h-4 text-red-500" /> Pain Point Synthesis
+                             <Target className="w-4 h-4 text-gray-400" /> Oportunidades encontradas
                            </h3>
                            <ul className="space-y-3">
                              {pain_point_synthesis.identified_issues.map((issue: string, i: number) => (
                                <li key={i} className="flex items-start gap-3 text-sm">
-                                 <span className="text-red-500 mt-0.5">•</span>
+                                 <span className="text-gray-500 mt-0.5">•</span>
                                  <span className="text-gray-400 leading-relaxed">{issue}</span>
                                </li>
                              ))}

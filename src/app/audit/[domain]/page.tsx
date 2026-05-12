@@ -19,19 +19,19 @@ export default async function AuditPage({ params }: { params: Promise<{ domain: 
   }
 
   // Find the specific report
-  const report = data.find((r: any) => r.report_metadata.domain_scanned.includes(domain));
+  const report = data.find((r: unknown) => {
+    const typedR = r as any;
+    return typedR.report_metadata.domain_scanned.includes(domain);
+  });
 
   if (!report) {
     notFound();
   }
 
-  const { client_identity, technical_audit, marketing_intelligence, pain_point_synthesis } = report;
-  const isCritical = pain_point_synthesis.authority_score < 40;
+  const { client_identity, technical_audit, marketing_intelligence, pain_point_synthesis } = report as any;
   
   const baseTraffic = 15000;
-  const conversionRateDrop = 0.02;
   const averageTicket = 5000;
-  const lostRevenue = Math.round(baseTraffic * conversionRateDrop * averageTicket);
 
   return (
     <LiveAuditStatus>
@@ -40,17 +40,23 @@ export default async function AuditPage({ params }: { params: Promise<{ domain: 
         <div className="relative pt-20 pb-16 px-8">
           <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-red-900/20 via-[#050505] to-[#050505] -z-10"></div>
           <div className="max-w-5xl mx-auto text-center space-y-6">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-red-500/10 border border-red-500/20 text-red-500 text-xs font-bold tracking-widest uppercase mb-4">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-gray-500/10 border border-gray-500/20 text-gray-400 text-xs font-bold tracking-widest uppercase mb-4">
               <Activity className="w-4 h-4 animate-pulse" />
-              Reporte de Inteligencia Confidencial
+              Revisión Preliminar de Presencia Digital
             </div>
             <h1 className="text-5xl md:text-7xl font-black tracking-tighter text-transparent bg-clip-text bg-gradient-to-br from-white via-gray-200 to-gray-600 uppercase">
-              Tu Inmobiliaria Está <br className="hidden md:block"/> <span className="text-red-500">Perdiendo Dinero</span>
+              Oportunidades de Captación <br className="hidden md:block"/> <span className="text-gray-400">No Aprovechadas</span>
             </h1>
             <p className="text-xl text-gray-400 max-w-3xl mx-auto leading-relaxed">
-              Hemos analizado la infraestructura digital de <strong className="text-white">{client_identity.company_name || domain}</strong>.
-              Mientras lees esto, prospectos calificados en tu mercado están abandonando tu web para irse con la competencia.
+              Hemos realizado una revisión preliminar de la presencia digital de <strong className="text-white">{client_identity.company_name || domain}</strong>.
+              El objetivo es identificar oportunidades de mejora en presentación, seguimiento comercial y medición de prospectos.
             </p>
+          </div>
+        </div>
+
+        <div className="max-w-5xl mx-auto px-8 mb-12">
+          <div className="p-4 border border-white/10 bg-white/5 rounded-lg text-xs text-gray-400 text-left">
+            <strong>Nota importante:</strong> Esta revisión es preliminar y se basa en señales públicas disponibles: presencia web, redes sociales, velocidad, enlaces, tracking y estructura de captación. No representa una auditoría interna completa ni afirma resultados financieros exactos. Su objetivo es identificar oportunidades de mejora comercial.
           </div>
         </div>
 
@@ -66,38 +72,43 @@ export default async function AuditPage({ params }: { params: Promise<{ domain: 
                   <div>
                     <h2 className="text-2xl font-bold text-white mb-2 flex items-center gap-2">
                       <Globe className="w-5 h-5 text-gray-500" />
-                      Radiografía de {domain}
+                      Análisis Preliminar de {domain}
                     </h2>
-                    <p className="text-sm text-gray-500">Los datos no mienten. Este es el estado real de tu ecosistema de ventas.</p>
+                    <p className="text-sm text-gray-500">Datos extraídos de señales públicas disponibles para identificar oportunidades comerciales.</p>
                   </div>
 
                   <div className="p-8 rounded-xl bg-black/60 border border-white/5 relative overflow-hidden">
-                      <div className="absolute top-0 right-0 w-32 h-32 bg-red-500/10 rounded-full blur-3xl -translate-y-1/2 translate-x-1/3"></div>
+                      <div className="absolute top-0 right-0 w-32 h-32 bg-gray-500/10 rounded-full blur-3xl -translate-y-1/2 translate-x-1/3"></div>
                       <div className="flex items-center justify-between mb-4 relative z-10">
-                          <span className="text-sm font-bold tracking-wider text-gray-400 uppercase">Health Score de Conversión</span>
+                          <span className="text-sm font-bold tracking-wider text-gray-400 uppercase">Nivel de madurez digital</span>
                           <Target className="w-5 h-5 text-gray-500" />
                       </div>
                       <div className="flex items-end gap-3 relative z-10">
-                          <span className={`text-7xl font-black tracking-tighter ${isCritical ? 'text-red-500' : 'text-yellow-500'}`}>
+                          <span className="text-7xl font-black tracking-tighter text-white">
                               {pain_point_synthesis.authority_score}
                           </span>
                           <span className="text-2xl text-gray-600 mb-2 font-light">/100</span>
                       </div>
-                      {isCritical && <p className="text-xs text-red-400 mt-4 font-medium uppercase tracking-wider relative z-10">ESTADO CRÍTICO: Conversión por el suelo.</p>}
+                      <p className="text-xs text-gray-400 mt-4 font-medium uppercase tracking-wider relative z-10">
+                        {pain_point_synthesis.authority_score < 40 ? "Inicial: presencia limitada o poco conectada." : 
+                         pain_point_synthesis.authority_score < 60 ? "En desarrollo: existe presencia, pero falta estructura comercial." : 
+                         pain_point_synthesis.authority_score < 80 ? "Competitivo: buena base digital con oportunidades de optimización." : 
+                         "Avanzado: estructura sólida con margen de mejora en seguimiento o medición."}
+                      </p>
                   </div>
 
-                  <div className="p-8 rounded-xl bg-red-950/20 border border-red-900/50 relative overflow-hidden shadow-[inset_0_0_20px_rgba(220,38,38,0.1)]">
-                      <div className="absolute -right-4 -bottom-4 opacity-10"><TrendingDown className="w-48 h-48 text-red-500" /></div>
+                  <div className="p-8 rounded-xl bg-[#111] border border-white/5 relative overflow-hidden">
+                      <div className="absolute -right-4 -bottom-4 opacity-10"><TrendingDown className="w-48 h-48 text-gray-500" /></div>
                       <div className="relative z-10">
-                          <h3 className="text-red-500 text-sm font-black tracking-widest uppercase mb-3 flex items-center gap-2">
-                              <AlertTriangle className="w-4 h-4" />
-                              Fuga de Capital Mensual Estimada
+                          <h3 className="text-gray-300 text-sm font-black tracking-widest uppercase mb-3 flex items-center gap-2">
+                              <TrendingDown className="w-4 h-4" />
+                              Oportunidad Comercial No Aprovechada
                           </h3>
-                          <p className="text-5xl font-black text-white mb-2 tracking-tighter">
-                              ${lostRevenue.toLocaleString()} <span className="text-lg text-red-500/50 font-sans font-light">USD</span>
+                          <p className="text-4xl font-black text-white mb-2 tracking-tighter">
+                              Estimación Potencial
                           </p>
                           <p className="text-sm text-gray-400 leading-relaxed">
-                              Cálculo basado en una pérdida del 2% de conversión sobre {baseTraffic.toLocaleString()} visitas con un ticket promedio de ${averageTicket.toLocaleString()}. <strong>Literalmente estás quemando dinero en publicidad que no convierte.</strong>
+                              Un aumento conservador del 2% en conversión sobre {baseTraffic.toLocaleString()} visitas estimadas podría representar múltiples operaciones de ${averageTicket.toLocaleString()} USD al mes que actualmente se pierden por fricciones comerciales.
                           </p>
                       </div>
                   </div>
@@ -157,15 +168,15 @@ export default async function AuditPage({ params }: { params: Promise<{ domain: 
                   </div>
 
                   {/* Synthesis */}
-                  <div className="bg-gradient-to-br from-[#111] to-[#0a0a0a] p-6 rounded-xl border border-red-900/30 md:col-span-2 shadow-[0_4px_30px_rgba(220,38,38,0.05)]">
-                      <h3 className="text-xs font-bold text-red-500 flex items-center gap-2 mb-4 uppercase tracking-widest">
-                          <ShieldAlert className="w-4 h-4" /> Veredicto Ejecutivo
+                  <div className="bg-gradient-to-br from-[#111] to-[#0a0a0a] p-6 rounded-xl border border-white/5 md:col-span-2">
+                      <h3 className="text-xs font-bold text-gray-300 flex items-center gap-2 mb-4 uppercase tracking-widest">
+                          <Search className="w-4 h-4" /> Oportunidades Encontradas
                       </h3>
                       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                           {pain_point_synthesis.identified_issues?.map((issue: string, i: number) => (
                           <div key={i} className="flex items-start gap-3 bg-white/5 p-4 rounded-lg border border-white/5">
-                              <div className="mt-0.5 bg-red-500/20 p-1 rounded">
-                                  <AlertTriangle className="w-3 h-3 text-red-500" />
+                              <div className="mt-0.5 bg-gray-500/20 p-1 rounded">
+                                  <Target className="w-3 h-3 text-gray-400" />
                               </div>
                               <span className="text-sm text-gray-300 font-medium leading-relaxed">{issue}</span>
                           </div>
@@ -178,41 +189,39 @@ export default async function AuditPage({ params }: { params: Promise<{ domain: 
           </div>
         </div>
 
-        {/* THE MAFIA OFFER / CTA SECTION */}
+        {/* CTA SECTION */}
         <div className="border-t border-white/10 bg-[#0a0a0a] relative overflow-hidden py-24">
-            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full max-w-4xl bg-red-600/10 rounded-full blur-[120px] pointer-events-none"></div>
+            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full max-w-4xl bg-gray-600/10 rounded-full blur-[120px] pointer-events-none"></div>
             
             <div className="max-w-4xl mx-auto px-8 relative z-10 text-center space-y-8">
                 <h2 className="text-4xl md:text-5xl font-black text-white uppercase tracking-tighter">
-                    ¿Listo para dejar de perder ventas?
+                    Mejora tu Captación Digital
                 </h2>
                 <p className="text-xl text-gray-400 leading-relaxed max-w-2xl mx-auto">
-                    Tener una "web bonita" ya no sirve en 2026. Necesitas una <strong>Máquina de Captación de Leads</strong>. 
-                    Reconstruimos tu infraestructura para que sea ultrarrápida, optimizada para móviles y con un embudo de retargeting imparable.
+                    Recibe una lectura breve sobre cómo mejorar captación, seguimiento y control comercial de tus prospectos inmobiliarios.
                 </p>
                 
-                <div className="bg-[#111] border border-white/10 p-6 rounded-xl max-w-lg mx-auto mb-8 shadow-2xl">
-                    <h3 className="text-emerald-500 font-bold uppercase tracking-widest text-sm mb-2 flex justify-center items-center gap-2">
-                        <ShieldAlert className="w-4 h-4" /> Nuestra Garantía Irresistible
-                    </h3>
-                    <p className="text-gray-300 text-sm">
-                        Si no duplicamos tu velocidad de carga y reparamos tu sistema de captación en 30 días, <strong>trabajamos gratis</strong>. Cero riesgo para ti.
-                    </p>
-                </div>
+                <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mt-8">
+                    {/* PRIMARY CTA */}
+                    <a 
+                        href={`https://wa.me/18091234567?text=Hola,%20vi%20la%20revisión%20preliminar%20para%20mi%20web%20(${domain})%20y%20quiero%20solicitar%20una%20revisión%20personalizada.`}
+                        target="_blank"
+                        rel="noreferrer"
+                        className="inline-flex items-center justify-center gap-3 bg-white text-black hover:bg-gray-200 px-10 py-5 rounded-full text-lg font-bold transition-all hover:scale-105 w-full sm:w-auto"
+                    >
+                        Solicitar revisión personalizada
+                    </a>
 
-                {/* WHATSAPP CTA BUTTON */}
-                <a 
-                    href={`https://wa.me/18091234567?text=Hola,%20vi%20el%20análisis%20de%20rendimiento%20para%20mi%20web%20(${domain})%20y%20me%20preocupa%20la%20fuga%20de%20capital.%20Quiero%20agendar%20la%20consultoría%20gratuita.`}
-                    target="_blank"
-                    rel="noreferrer"
-                    className="inline-flex items-center justify-center gap-3 bg-red-600 hover:bg-red-500 text-white px-10 py-5 rounded-full text-lg font-black uppercase tracking-widest transition-all hover:scale-105 shadow-[0_0_40px_rgba(220,38,38,0.3)] hover:shadow-[0_0_60px_rgba(220,38,38,0.5)] active:scale-95"
-                >
-                    Agendar Consultoría Gratuita
-                    <Activity className="w-5 h-5 animate-pulse" />
-                </a>
-                <p className="text-xs text-gray-500 mt-4 uppercase tracking-widest">
-                    ⚠️ Solo tomamos 3 clientes nuevos por mes para garantizar resultados.
-                </p>
+                    {/* SECONDARY CTA */}
+                    <a 
+                        href="https://luma-premium.vercel.app/luma-estate-os"
+                        target="_blank"
+                        rel="noreferrer"
+                        className="inline-flex items-center justify-center gap-3 bg-transparent border border-white/20 text-white hover:bg-white/5 px-10 py-5 rounded-full text-lg font-bold transition-all w-full sm:w-auto"
+                    >
+                        Ver propuesta Luma Estate OS
+                    </a>
+                </div>
             </div>
         </div>
       </main>
