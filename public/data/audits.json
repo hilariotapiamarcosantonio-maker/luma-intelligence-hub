@@ -1342,5 +1342,303 @@
             "status": "error",
             "error_message": "Error de conexión o timeout."
         }
+    },
+    {
+        "report_metadata": {
+            "timestamp": "2026-05-12T18:32:05.925436",
+            "domain_scanned": "evrealestate.com",
+            "status": "success"
+        },
+        "client_identity": {
+            "company_name": "Engel & Völkers Americas: Global Recognition. Local Expertise.",
+            "key_people": [],
+            "emails": [
+                "you@emailaddress.com"
+            ],
+            "phones": []
+        },
+        "technical_audit": {
+            "tech_stack": [
+                "Next.js"
+            ],
+            "tracking": [],
+            "open_graph": true,
+            "pagespeed": {
+                "error": "API Key no configurada",
+                "score": 0,
+                "lcp": null,
+                "tti": null
+            }
+        },
+        "marketing_intelligence": {
+            "social_links": [],
+            "broken_links": []
+        },
+        "pain_point_synthesis": {
+            "authority_score": 10,
+            "identified_issues": [
+                "Rendimiento móvil pendiente de revisión — podría afectar la experiencia del usuario y la conversión.",
+                "Sin Meta Pixel - Imposibilidad de retargeting eficiente en pauta.",
+                "Presencia omnicanal nula - No se detectaron redes sociales enlazadas."
+            ]
+        }
+    },
+    {
+        "report_metadata": {
+            "timestamp": "2026-05-12T18:32:06.075610",
+            "domain_scanned": "inmobiliariamarianelly.com",
+            "status": "success"
+        },
+        "client_identity": {
+            "company_name": "inmobiliariamarianelly.com",
+            "key_people": [],
+            "emails": [
+                "inmobiliariamarianelly0@gmail.com"
+            ],
+            "phones": [
+                "829",
+                "829-564-7638",
+                "829-826-5536",
+                "18295647638"
+            ]
+        },
+        "technical_audit": {
+            "tech_stack": [
+                "AlterEstate",
+                "Next.js"
+            ],
+            "tracking": [],
+            "open_graph": true,
+            "pagespeed": {
+                "error": "API Key no configurada",
+                "score": 0,
+                "lcp": null,
+                "tti": null
+            }
+        },
+        "marketing_intelligence": {
+            "social_links": [
+                "https://www.instagram.com/inmobiliariamarianelly/"
+            ],
+            "broken_links": [
+                "https://www.facebook.com/inmobiliariamarianelly/"
+            ]
+        },
+        "pain_point_synthesis": {
+            "authority_score": 15,
+            "identified_issues": [
+                "Rendimiento móvil pendiente de revisión — podría afectar la experiencia del usuario y la conversión.",
+                "Sin Meta Pixel - Imposibilidad de retargeting eficiente en pauta.",
+                "1 enlace sociales sin actividad clara o que requieren revisión."
+            ]
+        }
+    },
+    {
+        "report_metadata": {
+            "timestamp": "2026-05-12T18:32:06.241648",
+            "domain_scanned": "realtypropertyrdpc.com",
+            "status": "success"
+        },
+        "client_identity": {
+            "company_name": "Nombre comercial no detectado",
+            "key_people": [],
+            "emails": [],
+            "phones": []
+        },
+        "technical_audit": {
+            "tech_stack": [
+                "AlterEstate",
+                "WordPress",
+                "Next.js"
+            ],
+            "tracking": [],
+            "open_graph": false,
+            "pagespeed": {
+                "error": "API Key no configurada",
+                "score": 0,
+                "lcp": null,
+                "tti": null
+            }
+        },
+        "marketing_intelligence": {
+            "social_links": [],
+            "broken_links": []
+        },
+        "pain_point_synthesis": {
+            "authority_score": 0,
+            "identified_issues": [
+                "Rendimiento móvil pendiente de revisión — podría afectar la experiencia del usuario y la conversión.",
+                "Sin Meta Pixel - Imposibilidad de retargeting eficiente en pauta.",
+                "Falta de Open Graph - Compartir en redes muestra enlaces rotos o sin imagen.",
+                "Presencia omnicanal nula - No se detectaron redes sociales enlazadas."
+            ]
+        }
+    },
+    {
+        "report_metadata": {
+            "timestamp": "2026-05-12T18:32:07.178741",
+            "domain_scanned": "cibaolivingrealty.com",
+            "status": "success"
+        },
+        "client_identity": {
+            "company_name": "cibao-living-realty-eirl.alterestate.com",
+            "key_people": [],
+            "emails": [
+                "admin@cibaolivingrealtyrd.com"
+            ],
+            "phones": [
+                "+18099935700",
+                "18099935700"
+            ]
+        },
+        "technical_audit": {
+            "tech_stack": [
+                "AlterEstate",
+                "Next.js"
+            ],
+            "tracking": [],
+            "open_graph": true,
+            "pagespeed": {
+                "error": "API Key no configurada",
+                "score": 0,
+                "lcp": null,
+                "tti": null
+            }
+        },
+        "marketing_intelligence": {
+            "social_links": [],
+            "broken_links": []
+        },
+        "pain_point_synthesis": {
+            "authority_score": 10,
+            "identified_issues": [
+                "Rendimiento móvil pendiente de revisión — podría afectar la experiencia del usuario y la conversión.",
+                "Sin Meta Pixel - Imposibilidad de retargeting eficiente en pauta.",
+                "Presencia omnicanal nula - No se detectaron redes sociales enlazadas."
+            ]
+        }
+    },
+    {
+        "report_metadata": {
+            "timestamp": "2026-05-12T18:32:07.498210",
+            "domain_scanned": "inmosiprd.com",
+            "status": "success"
+        },
+        "client_identity": {
+            "company_name": "inmosip-5013.alterestate.com",
+            "key_people": [],
+            "emails": [
+                "serviciosinmobiliariosinmosp@gmail.com"
+            ],
+            "phones": [
+                "18294370245",
+                "-"
+            ]
+        },
+        "technical_audit": {
+            "tech_stack": [
+                "AlterEstate",
+                "Next.js"
+            ],
+            "tracking": [],
+            "open_graph": true,
+            "pagespeed": {
+                "error": "API Key no configurada",
+                "score": 0,
+                "lcp": null,
+                "tti": null
+            }
+        },
+        "marketing_intelligence": {
+            "social_links": [
+                "https://www.instagram.com/serviciosinmobiliarios.inmosip"
+            ],
+            "broken_links": []
+        },
+        "pain_point_synthesis": {
+            "authority_score": 15,
+            "identified_issues": [
+                "Rendimiento móvil pendiente de revisión — podría afectar la experiencia del usuario y la conversión.",
+                "Sin Meta Pixel - Imposibilidad de retargeting eficiente en pauta."
+            ]
+        }
+    },
+    {
+        "report_metadata": {
+            "timestamp": "2026-05-12T18:32:07.672568",
+            "domain_scanned": "metro2inmobiliariard.com",
+            "status": "error",
+            "error_message": "Error de conexión o timeout."
+        }
+    },
+    {
+        "report_metadata": {
+            "timestamp": "2026-05-12T18:32:07.980354",
+            "domain_scanned": "passerrd.com",
+            "status": "success"
+        },
+        "client_identity": {
+            "company_name": "Passer – Construimos tu futuro",
+            "key_people": [],
+            "emails": [],
+            "phones": [
+                "18097040187"
+            ]
+        },
+        "technical_audit": {
+            "tech_stack": [
+                "WordPress 6.9.4"
+            ],
+            "tracking": [],
+            "open_graph": true,
+            "pagespeed": {
+                "error": "API Key no configurada",
+                "score": 0,
+                "lcp": null,
+                "tti": null
+            }
+        },
+        "marketing_intelligence": {
+            "social_links": [
+                "https://www.instagram.com/passerrd/"
+            ],
+            "broken_links": [
+                "https://www.facebook.com/passerrd",
+                "https://twitter.com/passer_rd",
+                "https://www.linkedin.com/in/passer-srl-a65316275/"
+            ]
+        },
+        "pain_point_synthesis": {
+            "authority_score": 15,
+            "identified_issues": [
+                "Rendimiento móvil pendiente de revisión — podría afectar la experiencia del usuario y la conversión.",
+                "Sin Meta Pixel - Imposibilidad de retargeting eficiente en pauta.",
+                "3 enlaces sociales sin actividad clara o que requieren revisión."
+            ]
+        }
+    },
+    {
+        "report_metadata": {
+            "timestamp": "2026-05-12T18:32:08.094640",
+            "domain_scanned": "dycluxury.com",
+            "status": "error",
+            "error_message": "Error de conexión o timeout."
+        }
+    },
+    {
+        "report_metadata": {
+            "timestamp": "2026-05-12T18:32:08.751620",
+            "domain_scanned": "gcl-realty.com",
+            "status": "error",
+            "error_message": "Error de conexión o timeout."
+        }
+    },
+    {
+        "report_metadata": {
+            "timestamp": "2026-05-12T18:32:09.239953",
+            "domain_scanned": "lscinmobiliaria.com",
+            "status": "error",
+            "error_message": "Error de conexión o timeout."
+        }
     }
 ]
