@@ -4507,5 +4507,378 @@
                 "5 enlaces sociales sin actividad clara o que requieren revisión."
             ]
         }
+    },
+    {
+        "report_metadata": {
+            "timestamp": "2026-05-12T18:37:57.484475",
+            "domain_scanned": "gruponavarroramos.com",
+            "status": "success"
+        },
+        "client_identity": {
+            "company_name": "Grupo Navarro Rámos",
+            "key_people": [],
+            "emails": [
+                "romer.reyes77@gmail.com",
+                "elizabethtorres9924@gmail.Com",
+                "thomasreyny@gmail.com",
+                "luz.gruponavarro@gmail.com",
+                "alejandramminmobiliaria@gmail.com",
+                "estefany01silva@gmail.com"
+            ],
+            "phones": [
+                "(809) 583-2116"
+            ]
+        },
+        "technical_audit": {
+            "tech_stack": [
+                "WordPress 6.9.4"
+            ],
+            "tracking": [],
+            "open_graph": true,
+            "pagespeed": {
+                "error": "API Key no configurada",
+                "score": 0,
+                "lcp": null,
+                "tti": null
+            }
+        },
+        "marketing_intelligence": {
+            "social_links": [
+                "https://pinterest.com/pin/create/button/?url=https://gruponavarroramos.com/propiedad/apartamento-economico-en-jardines-del-norte-santiago/&media=https://gruponavarroramos.com/wp-content/uploads/2025/09/eyJidWNrZXQiOiAiYWx0ZXJlc3RhdGUiLCAia2V5IjogInN0YXRpYy9wcm9wZXJ0aWVzL1VaUVlBMkhDRjUvSU0yUkRDTk5VWS9HcXhFSjZwVFFXL0ZBQ0hBREFTLmpwZWciLCAiZWRpdHMiOiB7InJlc2l6ZSI6IHsid2lkdGgiOiA-1.jpeg&description=Apartamento+Econ%C3%B3mico+en+Jardines+del+Norte%2C+Santiago",
+                "https://pinterest.com/pin/create/button/?url=https://gruponavarroramos.com/propiedad/apartamento-en-venta-en-los-alamos/&media=https://gruponavarroramos.com/wp-content/uploads/2025/09/eyJidWNrZXQiOiAiYWx0ZXJlc3RhdGUiLCAia2V5IjogInN0YXRpYy9wcm9wZXJ0aWVzL1VaUVlBMkhDRjUvQUpaOUJaMzJNVC9jOHVnNzRvYm9ML0ZBQ0hBREFfMS5qcGVnIiwgImVkaXRzIjogeyJyZXNpemUiOiB7IndpZHRoIjo-1.jpeg&description=APARTAMENTO+EN+VENTA+EN+LOS+ALAMOS",
+                "https://pinterest.com/pin/create/button/?url=https://gruponavarroramos.com/propiedad/casa-de-lujo-en-venta-en-santiago-de-los-caballeros/&media=https://gruponavarroramos.com/wp-content/uploads/2025/09/eyJidWNrZXQiOiAiYWx0ZXJlc3RhdGUiLCAia2V5IjogInN0YXRpYy9wcm9wZXJ0aWVzL1VaUVlBMkhDRjUvRUMyNjBJSDI5Vy9TRHZWaE5DZmJ6L0lNRy0yMDI0MDYyOC1XQTAyMTUuanBlZyIsICJlZGl0cyI6IHsicmVza-1.jpeg&description=CASA+DE+LUJO+EN+VENTA+EN+SANTIAGO+DE+LOS+CABALLEROS",
+                "https://pinterest.com/pin/create/button/?url=https://gruponavarroramos.com/propiedad/apartamento-en-venta-en-tecasa-breezes/&media=https://gruponavarroramos.com/wp-content/uploads/2025/09/eyJidWNrZXQiOiAiYWx0ZXJlc3RhdGUiLCAia2V5IjogInN0YXRpYy9wcm9wZXJ0aWVzL1VaUVlBMkhDRjUvNlJBRjRDWURFNS9qYUZCbnh2UHB6L1doYXRzQXBwX0ltYWdlXzIwMjUtMDEtMTZfYXRfMTAuanBlZyIs-1.jpeg&description=APARTAMENTO+EN+VENTA+EN+TECASA+BREEZES",
+                "https://pinterest.com/pin/create/button/?url=https://gruponavarroramos.com/propiedad/chic-condominium/&media=https://gruponavarroramos.com/wp-content/uploads/2025/09/eyJidWNrZXQiOiAiYWx0ZXJlc3RhdGUiLCAia2V5IjogInN0YXRpYy9wcm9wZXJ0aWVzL1VaUVlBMkhDRjUvVlBTRFFCVjZJSy9XZEFlWlZOalNnL1doYXRzQXBwLUltYWdlLTIwMjUtMDYtMjEtYXQtNy5qcGVnIiwgImVk-1.jpeg&description=CHIC+CONDOMINIUM",
+                "https://pinterest.com/pin/create/button/?url=https://gruponavarroramos.com/propiedad/apartamento-en-venta-santiago-gurabo/&media=https://gruponavarroramos.com/wp-content/uploads/2025/09/eyJidWNrZXQiOiAiYWx0ZXJlc3RhdGUiLCAia2V5IjogInN0YXRpYy9wcm9wZXJ0aWVzL1VaUVlBMkhDRjUvSUNTRFZaNDdaNC90c242dXFOb1VZL1doYXRzQXBwLUltYWdlLTIwMjItMTEtMDctYXQtOC5qcGVnIiwgImVkaXRz-1.jpeg&description=APARTAMENTO+EN+VENTA+SANTIAGO%2C+GURABO",
+                "https://pinterest.com/pin/create/button/?url=https://gruponavarroramos.com/propiedad/apartamento-de-alquiler-en-las-dianas/&media=https://gruponavarroramos.com/wp-content/uploads/2025/09/eyJidWNrZXQiOiAiYWx0ZXJlc3RhdGUiLCAia2V5IjogInN0YXRpYy9wcm9wZXJ0aWVzL1VaUVlBMkhDRjUvSVg1NjAwWDVWVi83WEFlVnI1R1VULzdjMDk3MjA4LTBkMGUtNGM2NS05OWQzLTZmN2IwYzA3YTBlYS5qcGVnIiwg-1.jpeg&description=APARTAMENTO+DE+ALQUILER+EN+LAS+DIANAS",
+                "https://pinterest.com/pin/create/button/?url=https://gruponavarroramos.com/propiedad/apartamento-de-alquiler-en-cerro-alto-santiago-de-los-caballeros/&media=https://gruponavarroramos.com/wp-content/uploads/2025/09/eyJidWNrZXQiOiAiYWx0ZXJlc3RhdGUiLCAia2V5IjogInN0YXRpYy9wcm9wZXJ0aWVzL1VaUVlBMkhDRjUvQUkyUkFFSzNQMy9TVWp5ZDJyQlhlL2ZiYWE0MWM4LWQxNjctNGFkZi1iMDY4LTgwMzNmODg1YjMxMC5qcGVn-1.jpeg&description=APARTAMENTO+DE+ALQUILER+EN+CERRO+ALTO%2C+SANTIAGO+DE+LOS+CABALLEROS",
+                "https://pinterest.com/pin/create/button/?url=https://gruponavarroramos.com/propiedad/apartamento-de-alquiler-en-la-barranquita-santiago/&media=https://gruponavarroramos.com/wp-content/uploads/2025/09/eyJidWNrZXQiOiAiYWx0ZXJlc3RhdGUiLCAia2V5IjogInN0YXRpYy9wcm9wZXJ0aWVzL1VaUVlBMkhDRjUvQ1hXT1dZWVA5RC9yTmVmRnNid0xILzNmM2Q2NGI1LTRiM2QtNGIyMC05YWY5LWY3MzEwMjk2YzRlNi5qcGVn-1.jpeg&description=APARTAMENTO+DE+ALQUILER+EN+LA+BARRANQUITA+SANTIAGO",
+                "https://www.tiktok.com/@gruponavarroramosrd?_t=ZS-8zaDaT276H9&_r=1",
+                "https://www.instagram.com/gruponavarror"
+            ],
+            "broken_links": []
+        },
+        "pain_point_synthesis": {
+            "authority_score": 40,
+            "identified_issues": [
+                "Rendimiento móvil pendiente de revisión — podría afectar la experiencia del usuario y la conversión.",
+                "Sin Meta Pixel - Imposibilidad de retargeting eficiente en pauta."
+            ]
+        }
+    },
+    {
+        "report_metadata": {
+            "timestamp": "2026-05-12T18:37:57.606422",
+            "domain_scanned": "myhomepuntacana.com",
+            "status": "success"
+        },
+        "client_identity": {
+            "company_name": "My Home Punta Cana",
+            "key_people": [],
+            "emails": [],
+            "phones": []
+        },
+        "technical_audit": {
+            "tech_stack": [
+                "WordPress 6.8.5"
+            ],
+            "tracking": [
+                "Google Analytics"
+            ],
+            "open_graph": true,
+            "pagespeed": {
+                "error": "API Key no configurada",
+                "score": 0,
+                "lcp": null,
+                "tti": null
+            }
+        },
+        "marketing_intelligence": {
+            "social_links": [
+                "https://www.instagram.com/myhomepuntacana/?hl=es"
+            ],
+            "broken_links": [
+                "https://www.facebook.com/myhomepuntacanarealestate/?locale=es_LA"
+            ]
+        },
+        "pain_point_synthesis": {
+            "authority_score": 25,
+            "identified_issues": [
+                "Rendimiento móvil pendiente de revisión — podría afectar la experiencia del usuario y la conversión.",
+                "Sin Meta Pixel - Imposibilidad de retargeting eficiente en pauta.",
+                "1 enlace sociales sin actividad clara o que requieren revisión."
+            ]
+        }
+    },
+    {
+        "report_metadata": {
+            "timestamp": "2026-05-12T18:37:57.934457",
+            "domain_scanned": "prestigiousluxuryhome.com",
+            "status": "error",
+            "error_message": "Error de conexión o timeout."
+        }
+    },
+    {
+        "report_metadata": {
+            "timestamp": "2026-05-12T18:37:57.979566",
+            "domain_scanned": "naco.com.do",
+            "status": "success"
+        },
+        "client_identity": {
+            "company_name": "GRUPO NACO",
+            "key_people": [],
+            "emails": [],
+            "phones": []
+        },
+        "technical_audit": {
+            "tech_stack": [
+                "WordPress 6.9.4"
+            ],
+            "tracking": [],
+            "open_graph": false,
+            "pagespeed": {
+                "error": "API Key no configurada",
+                "score": 0,
+                "lcp": null,
+                "tti": null
+            }
+        },
+        "marketing_intelligence": {
+            "social_links": [],
+            "broken_links": []
+        },
+        "pain_point_synthesis": {
+            "authority_score": 0,
+            "identified_issues": [
+                "Rendimiento móvil pendiente de revisión — podría afectar la experiencia del usuario y la conversión.",
+                "Sin Meta Pixel - Imposibilidad de retargeting eficiente en pauta.",
+                "Falta de Open Graph - Compartir en redes muestra enlaces rotos o sin imagen.",
+                "Presencia omnicanal nula - No se detectaron redes sociales enlazadas."
+            ]
+        }
+    },
+    {
+        "report_metadata": {
+            "timestamp": "2026-05-12T18:37:58.465947",
+            "domain_scanned": "phbrothers.do",
+            "status": "error",
+            "error_message": "Error de conexión o timeout."
+        }
+    },
+    {
+        "report_metadata": {
+            "timestamp": "2026-05-12T18:37:59.347543",
+            "domain_scanned": "rossellygomezbienesraices.com",
+            "status": "success"
+        },
+        "client_identity": {
+            "company_name": "Nombre comercial no detectado",
+            "key_people": [],
+            "emails": [],
+            "phones": []
+        },
+        "technical_audit": {
+            "tech_stack": [],
+            "tracking": [],
+            "open_graph": false,
+            "pagespeed": {
+                "error": "API Key no configurada",
+                "score": 0,
+                "lcp": null,
+                "tti": null
+            }
+        },
+        "marketing_intelligence": {
+            "social_links": [],
+            "broken_links": []
+        },
+        "pain_point_synthesis": {
+            "authority_score": 0,
+            "identified_issues": [
+                "Rendimiento móvil pendiente de revisión — podría afectar la experiencia del usuario y la conversión.",
+                "Sin Meta Pixel - Imposibilidad de retargeting eficiente en pauta.",
+                "Falta de Open Graph - Compartir en redes muestra enlaces rotos o sin imagen.",
+                "Presencia omnicanal nula - No se detectaron redes sociales enlazadas."
+            ]
+        }
+    },
+    {
+        "report_metadata": {
+            "timestamp": "2026-05-12T18:37:59.444333",
+            "domain_scanned": "ofertainmobiliariard.com",
+            "status": "success"
+        },
+        "client_identity": {
+            "company_name": "Oferta Inmobiliaria RD",
+            "key_people": [],
+            "emails": [
+                "info@ofertainmobiliariard.com"
+            ],
+            "phones": [
+                "18098001234",
+                "18295606060"
+            ]
+        },
+        "technical_audit": {
+            "tech_stack": [
+                "Next.js"
+            ],
+            "tracking": [
+                "Google Tag Manager"
+            ],
+            "open_graph": true,
+            "pagespeed": {
+                "error": "API Key no configurada",
+                "score": 0,
+                "lcp": null,
+                "tti": null
+            }
+        },
+        "marketing_intelligence": {
+            "social_links": [
+                "https://www.instagram.com/ofertainmobiliariard",
+                "https://www.linkedin.com/company/ofertainmobiliariard",
+                "https://www.youtube.com/@ofertainmobiliariard"
+            ],
+            "broken_links": [
+                "https://www.facebook.com/ofertainmobiliariado"
+            ]
+        },
+        "pain_point_synthesis": {
+            "authority_score": 35,
+            "identified_issues": [
+                "Rendimiento móvil pendiente de revisión — podría afectar la experiencia del usuario y la conversión.",
+                "Sin Meta Pixel - Imposibilidad de retargeting eficiente en pauta.",
+                "1 enlace sociales sin actividad clara o que requieren revisión."
+            ]
+        }
+    },
+    {
+        "report_metadata": {
+            "timestamp": "2026-05-12T18:37:59.546796",
+            "domain_scanned": "rivealvagroup.com",
+            "status": "success"
+        },
+        "client_identity": {
+            "company_name": "rivealvagroup.com",
+            "key_people": [],
+            "emails": [
+                "info@rivealvagroup.com"
+            ],
+            "phones": [
+                "849-851-9898"
+            ]
+        },
+        "technical_audit": {
+            "tech_stack": [
+                "Next.js",
+                "AlterEstate"
+            ],
+            "tracking": [],
+            "open_graph": true,
+            "pagespeed": {
+                "error": "API Key no configurada",
+                "score": 0,
+                "lcp": null,
+                "tti": null
+            }
+        },
+        "marketing_intelligence": {
+            "social_links": [],
+            "broken_links": []
+        },
+        "pain_point_synthesis": {
+            "authority_score": 10,
+            "identified_issues": [
+                "Rendimiento móvil pendiente de revisión — podría afectar la experiencia del usuario y la conversión.",
+                "Sin Meta Pixel - Imposibilidad de retargeting eficiente en pauta.",
+                "Presencia omnicanal nula - No se detectaron redes sociales enlazadas."
+            ]
+        }
+    },
+    {
+        "report_metadata": {
+            "timestamp": "2026-05-12T18:37:59.643148",
+            "domain_scanned": "rodriguez-peguero.com",
+            "status": "success"
+        },
+        "client_identity": {
+            "company_name": "RodrÃ­guez Peguero",
+            "key_people": [],
+            "emails": [
+                "guezpegueroc@gmail.com"
+            ],
+            "phones": []
+        },
+        "technical_audit": {
+            "tech_stack": [],
+            "tracking": [],
+            "open_graph": true,
+            "pagespeed": {
+                "error": "API Key no configurada",
+                "score": 0,
+                "lcp": null,
+                "tti": null
+            }
+        },
+        "marketing_intelligence": {
+            "social_links": [],
+            "broken_links": []
+        },
+        "pain_point_synthesis": {
+            "authority_score": 10,
+            "identified_issues": [
+                "Rendimiento móvil pendiente de revisión — podría afectar la experiencia del usuario y la conversión.",
+                "Sin Meta Pixel - Imposibilidad de retargeting eficiente en pauta.",
+                "Presencia omnicanal nula - No se detectaron redes sociales enlazadas."
+            ]
+        }
+    },
+    {
+        "report_metadata": {
+            "timestamp": "2026-05-12T18:38:00.126841",
+            "domain_scanned": "raicescaribena.com",
+            "status": "success"
+        },
+        "client_identity": {
+            "company_name": "raices-caribenas-inmobiliaria.alterestate.com",
+            "key_people": [],
+            "emails": [
+                "inmobiliariaraicescaribenas@gmail.com"
+            ],
+            "phones": [
+                "8092163587"
+            ]
+        },
+        "technical_audit": {
+            "tech_stack": [
+                "Next.js",
+                "AlterEstate"
+            ],
+            "tracking": [],
+            "open_graph": true,
+            "pagespeed": {
+                "error": "API Key no configurada",
+                "score": 0,
+                "lcp": null,
+                "tti": null
+            }
+        },
+        "marketing_intelligence": {
+            "social_links": [
+                "https://www.instagram.com/raicescaribenarc"
+            ],
+            "broken_links": [
+                "https://www.facebook.com/raicescaribenarc"
+            ]
+        },
+        "pain_point_synthesis": {
+            "authority_score": 15,
+            "identified_issues": [
+                "Rendimiento móvil pendiente de revisión — podría afectar la experiencia del usuario y la conversión.",
+                "Sin Meta Pixel - Imposibilidad de retargeting eficiente en pauta.",
+                "1 enlace sociales sin actividad clara o que requieren revisión."
+            ]
+        }
     }
 ]
