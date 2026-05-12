@@ -4880,5 +4880,324 @@
                 "1 enlace sociales sin actividad clara o que requieren revisión."
             ]
         }
+    },
+    {
+        "report_metadata": {
+            "timestamp": "2026-05-12T18:38:00.250438",
+            "domain_scanned": "construccionesbiltmore.com",
+            "status": "error",
+            "error_message": "Error de conexión o timeout."
+        }
+    },
+    {
+        "report_metadata": {
+            "timestamp": "2026-05-12T18:38:00.812767",
+            "domain_scanned": "techorealrd.com",
+            "status": "success"
+        },
+        "client_identity": {
+            "company_name": "Techo Real RD",
+            "key_people": [],
+            "emails": [],
+            "phones": []
+        },
+        "technical_audit": {
+            "tech_stack": [],
+            "tracking": [],
+            "open_graph": false,
+            "pagespeed": {
+                "error": "API Key no configurada",
+                "score": 0,
+                "lcp": null,
+                "tti": null
+            }
+        },
+        "marketing_intelligence": {
+            "social_links": [],
+            "broken_links": []
+        },
+        "pain_point_synthesis": {
+            "authority_score": 0,
+            "identified_issues": [
+                "Rendimiento móvil pendiente de revisión — podría afectar la experiencia del usuario y la conversión.",
+                "Sin Meta Pixel - Imposibilidad de retargeting eficiente en pauta.",
+                "Falta de Open Graph - Compartir en redes muestra enlaces rotos o sin imagen.",
+                "Presencia omnicanal nula - No se detectaron redes sociales enlazadas."
+            ]
+        }
+    },
+    {
+        "report_metadata": {
+            "timestamp": "2026-05-12T18:38:00.835109",
+            "domain_scanned": "platinumbrokersrd.com",
+            "status": "success"
+        },
+        "client_identity": {
+            "company_name": "Platinum Brokers by Freeway",
+            "key_people": [],
+            "emails": [
+                "info@platinumbrokersrd.com",
+                "es-module-shims@1.10.0"
+            ],
+            "phones": [
+                "18297651804"
+            ]
+        },
+        "technical_audit": {
+            "tech_stack": [],
+            "tracking": [
+                "Meta Pixel",
+                "Google Analytics"
+            ],
+            "open_graph": false,
+            "pagespeed": {
+                "error": "API Key no configurada",
+                "score": 0,
+                "lcp": null,
+                "tti": null
+            }
+        },
+        "marketing_intelligence": {
+            "social_links": [
+                "https://do.linkedin.com/company/platinumbrokers",
+                "https://www.youtube.com/@PlatinumBrokersbyFreeway",
+                "https://www.instagram.com/platinumbrokersrd/"
+            ],
+            "broken_links": [
+                "https://www.facebook.com/Platinumbrokersrd"
+            ]
+        },
+        "pain_point_synthesis": {
+            "authority_score": 35,
+            "identified_issues": [
+                "Rendimiento móvil pendiente de revisión — podría afectar la experiencia del usuario y la conversión.",
+                "Falta de Open Graph - Compartir en redes muestra enlaces rotos o sin imagen.",
+                "1 enlace sociales sin actividad clara o que requieren revisión."
+            ]
+        }
+    },
+    {
+        "report_metadata": {
+            "timestamp": "2026-05-12T18:38:00.895808",
+            "domain_scanned": "theagency-dr.com",
+            "status": "error",
+            "error_message": "Error de conexión o timeout."
+        }
+    },
+    {
+        "report_metadata": {
+            "timestamp": "2026-05-12T18:38:00.919553",
+            "domain_scanned": "playanuevaromana.com",
+            "status": "success"
+        },
+        "client_identity": {
+            "company_name": "Propiedades en venta/alquiler en R. Dominicana",
+            "key_people": [],
+            "emails": [
+                "nombre@correo.com",
+                "dpd.privacy@pinero.com"
+            ],
+            "phones": [
+                "+0018096230869"
+            ]
+        },
+        "technical_audit": {
+            "tech_stack": [],
+            "tracking": [],
+            "open_graph": false,
+            "pagespeed": {
+                "error": "API Key no configurada",
+                "score": 0,
+                "lcp": null,
+                "tti": null
+            }
+        },
+        "marketing_intelligence": {
+            "social_links": [
+                "https://www.instagram.com/playanuevaromana/",
+                "https://www.youtube.com/c/BahiaPrincipeResidencesPlayaNuevaRomana"
+            ],
+            "broken_links": [
+                "https://www.facebook.com/PlayaNuevaRomana/"
+            ]
+        },
+        "pain_point_synthesis": {
+            "authority_score": 10,
+            "identified_issues": [
+                "Rendimiento móvil pendiente de revisión — podría afectar la experiencia del usuario y la conversión.",
+                "Sin Meta Pixel - Imposibilidad de retargeting eficiente en pauta.",
+                "Falta de Open Graph - Compartir en redes muestra enlaces rotos o sin imagen.",
+                "1 enlace sociales sin actividad clara o que requieren revisión."
+            ]
+        }
+    },
+    {
+        "report_metadata": {
+            "timestamp": "2026-05-12T18:38:01.206281",
+            "domain_scanned": "mj.com.do",
+            "status": "success"
+        },
+        "client_identity": {
+            "company_name": "MJ Real Estate",
+            "key_people": [],
+            "emails": [
+                "jquery@3.5.1",
+                "lazyload@2.0.0-rc.2",
+                "GRAD@20..48",
+                "bootstrap@5.3.5",
+                "sweetalert2@11.6.10",
+                "ui@5.0"
+            ],
+            "phones": [
+                "18098788114",
+                "809-870-6999"
+            ]
+        },
+        "technical_audit": {
+            "tech_stack": [
+                "WordPress 6.9.4"
+            ],
+            "tracking": [
+                "Google Analytics"
+            ],
+            "open_graph": true,
+            "pagespeed": {
+                "error": "API Key no configurada",
+                "score": 0,
+                "lcp": null,
+                "tti": null
+            }
+        },
+        "marketing_intelligence": {
+            "social_links": [
+                "https://www.youtube.com/watch?v=oE1sw4ajrWs",
+                "https://www.youtube.com/watch?v=oq1OCsCiQPg",
+                "https://www.youtube.com/watch?v=SdegQf9Iytg",
+                "https://www.instagram.com/mjrealestaterd/",
+                "https://www.youtube.com/@mjrealestaterd",
+                "https://www.youtube.com/@InvierteenRD"
+            ],
+            "broken_links": [
+                "https://web.facebook.com/mjrealestaterd"
+            ]
+        },
+        "pain_point_synthesis": {
+            "authority_score": 50,
+            "identified_issues": [
+                "Rendimiento móvil pendiente de revisión — podría afectar la experiencia del usuario y la conversión.",
+                "Sin Meta Pixel - Imposibilidad de retargeting eficiente en pauta.",
+                "1 enlace sociales sin actividad clara o que requieren revisión."
+            ]
+        }
+    },
+    {
+        "report_metadata": {
+            "timestamp": "2026-05-12T18:38:01.532110",
+            "domain_scanned": "seekers.com.do",
+            "status": "success"
+        },
+        "client_identity": {
+            "company_name": "seekers.do",
+            "key_people": [],
+            "emails": [
+                "m.mejia@seekers.com.do"
+            ],
+            "phones": [
+                "18493576901",
+                "8493576901"
+            ]
+        },
+        "technical_audit": {
+            "tech_stack": [
+                "Next.js",
+                "AlterEstate"
+            ],
+            "tracking": [
+                "Meta Pixel",
+                "Google Analytics"
+            ],
+            "open_graph": true,
+            "pagespeed": {
+                "error": "API Key no configurada",
+                "score": 0,
+                "lcp": null,
+                "tti": null
+            }
+        },
+        "marketing_intelligence": {
+            "social_links": [
+                "https://www.instagram.com/miguelina_seekersrd/"
+            ],
+            "broken_links": [
+                "https://www.facebook.com/seekersrd/"
+            ]
+        },
+        "pain_point_synthesis": {
+            "authority_score": 35,
+            "identified_issues": [
+                "Rendimiento móvil pendiente de revisión — podría afectar la experiencia del usuario y la conversión.",
+                "1 enlace sociales sin actividad clara o que requieren revisión."
+            ]
+        }
+    },
+    {
+        "report_metadata": {
+            "timestamp": "2026-05-12T18:38:01.746441",
+            "domain_scanned": "topinmobiliario.net",
+            "status": "error",
+            "error_message": "Error de conexión o timeout."
+        }
+    },
+    {
+        "report_metadata": {
+            "timestamp": "2026-05-12T18:38:02.393823",
+            "domain_scanned": "vista-golf.com",
+            "status": "error",
+            "error_message": "Error de conexión o timeout."
+        }
+    },
+    {
+        "report_metadata": {
+            "timestamp": "2026-05-12T18:38:02.643989",
+            "domain_scanned": "tresolutions.io",
+            "status": "success"
+        },
+        "client_identity": {
+            "company_name": "tre-solutions.alterestate.com",
+            "key_people": [],
+            "emails": [
+                "broker@treinmobiliaria.com"
+            ],
+            "phones": [
+                "809-729-6999"
+            ]
+        },
+        "technical_audit": {
+            "tech_stack": [
+                "Next.js",
+                "AlterEstate"
+            ],
+            "tracking": [],
+            "open_graph": true,
+            "pagespeed": {
+                "error": "API Key no configurada",
+                "score": 0,
+                "lcp": null,
+                "tti": null
+            }
+        },
+        "marketing_intelligence": {
+            "social_links": [
+                "https://www.instagram.com/tresolutions.rd"
+            ],
+            "broken_links": []
+        },
+        "pain_point_synthesis": {
+            "authority_score": 15,
+            "identified_issues": [
+                "Rendimiento móvil pendiente de revisión — podría afectar la experiencia del usuario y la conversión.",
+                "Sin Meta Pixel - Imposibilidad de retargeting eficiente en pauta."
+            ]
+        }
     }
 ]
