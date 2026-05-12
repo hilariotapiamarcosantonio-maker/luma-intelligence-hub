@@ -3666,22 +3666,6 @@
     },
     {
         "report_metadata": {
-            "timestamp": "2026-05-12T18:37:48.237069",
-            "domain_scanned": "geristar.com",
-            "status": "error",
-            "error_message": "Error de conexión o timeout."
-        }
-    },
-    {
-        "report_metadata": {
-            "timestamp": "2026-05-12T18:37:48.903861",
-            "domain_scanned": "crestgroupdominicana.com",
-            "status": "error",
-            "error_message": "Error de conexión o timeout."
-        }
-    },
-    {
-        "report_metadata": {
             "timestamp": "2026-05-12T18:37:49.671535",
             "domain_scanned": "geraldinorealty.com",
             "status": "success"
@@ -3780,14 +3764,6 @@
                 "Sin Meta Pixel - Imposibilidad de retargeting eficiente en pauta.",
                 "1 enlace sociales sin actividad clara o que requieren revisión."
             ]
-        }
-    },
-    {
-        "report_metadata": {
-            "timestamp": "2026-05-12T18:37:50.184702",
-            "domain_scanned": "hsyminmobiliaria.com",
-            "status": "error",
-            "error_message": "Error de conexión o timeout."
         }
     },
     {
@@ -3894,14 +3870,6 @@
     },
     {
         "report_metadata": {
-            "timestamp": "2026-05-12T18:37:51.288131",
-            "domain_scanned": "inmobisla.com.do",
-            "status": "error",
-            "error_message": "Error de conexión o timeout."
-        }
-    },
-    {
-        "report_metadata": {
             "timestamp": "2026-05-12T18:37:51.633024",
             "domain_scanned": "habitame.com",
             "status": "success"
@@ -3999,14 +3967,6 @@
                 "Sin Meta Pixel - Imposibilidad de retargeting eficiente en pauta.",
                 "1 enlace sociales sin actividad clara o que requieren revisión."
             ]
-        }
-    },
-    {
-        "report_metadata": {
-            "timestamp": "2026-05-12T18:37:52.651265",
-            "domain_scanned": "joannyriviera.com",
-            "status": "error",
-            "error_message": "Error de conexión o timeout."
         }
     },
     {
@@ -4156,14 +4116,6 @@
                 "Sin Meta Pixel - Imposibilidad de retargeting eficiente en pauta.",
                 "1 enlace sociales sin actividad clara o que requieren revisión."
             ]
-        }
-    },
-    {
-        "report_metadata": {
-            "timestamp": "2026-05-12T18:37:54.118980",
-            "domain_scanned": "lcankyrarents.com",
-            "status": "error",
-            "error_message": "Error de conexión o timeout."
         }
     },
     {
@@ -4357,14 +4309,6 @@
                 "Sin Meta Pixel - Imposibilidad de retargeting eficiente en pauta.",
                 "1 enlace sociales sin actividad clara o que requieren revisión."
             ]
-        }
-    },
-    {
-        "report_metadata": {
-            "timestamp": "2026-05-12T18:37:56.739111",
-            "domain_scanned": "novesproperties.com.do",
-            "status": "error",
-            "error_message": "Error de conexión o timeout."
         }
     },
     {
@@ -4612,14 +4556,6 @@
     },
     {
         "report_metadata": {
-            "timestamp": "2026-05-12T18:37:57.934457",
-            "domain_scanned": "prestigiousluxuryhome.com",
-            "status": "error",
-            "error_message": "Error de conexión o timeout."
-        }
-    },
-    {
-        "report_metadata": {
             "timestamp": "2026-05-12T18:37:57.979566",
             "domain_scanned": "naco.com.do",
             "status": "success"
@@ -4655,14 +4591,6 @@
                 "Falta de Open Graph - Compartir en redes muestra enlaces rotos o sin imagen.",
                 "Presencia omnicanal nula - No se detectaron redes sociales enlazadas."
             ]
-        }
-    },
-    {
-        "report_metadata": {
-            "timestamp": "2026-05-12T18:37:58.465947",
-            "domain_scanned": "phbrothers.do",
-            "status": "error",
-            "error_message": "Error de conexión o timeout."
         }
     },
     {
@@ -4883,14 +4811,6 @@
     },
     {
         "report_metadata": {
-            "timestamp": "2026-05-12T18:38:00.250438",
-            "domain_scanned": "construccionesbiltmore.com",
-            "status": "error",
-            "error_message": "Error de conexión o timeout."
-        }
-    },
-    {
-        "report_metadata": {
             "timestamp": "2026-05-12T18:38:00.812767",
             "domain_scanned": "techorealrd.com",
             "status": "success"
@@ -4974,14 +4894,6 @@
                 "Falta de Open Graph - Compartir en redes muestra enlaces rotos o sin imagen.",
                 "1 enlace sociales sin actividad clara o que requieren revisión."
             ]
-        }
-    },
-    {
-        "report_metadata": {
-            "timestamp": "2026-05-12T18:38:00.895808",
-            "domain_scanned": "theagency-dr.com",
-            "status": "error",
-            "error_message": "Error de conexión o timeout."
         }
     },
     {
@@ -5142,22 +5054,6 @@
     },
     {
         "report_metadata": {
-            "timestamp": "2026-05-12T18:38:01.746441",
-            "domain_scanned": "topinmobiliario.net",
-            "status": "error",
-            "error_message": "Error de conexión o timeout."
-        }
-    },
-    {
-        "report_metadata": {
-            "timestamp": "2026-05-12T18:38:02.393823",
-            "domain_scanned": "vista-golf.com",
-            "status": "error",
-            "error_message": "Error de conexión o timeout."
-        }
-    },
-    {
-        "report_metadata": {
             "timestamp": "2026-05-12T18:38:02.643989",
             "domain_scanned": "tresolutions.io",
             "status": "success"
@@ -5298,14 +5194,6 @@
                 "Falta de Open Graph - Compartir en redes muestra enlaces rotos o sin imagen.",
                 "3 enlaces sociales sin actividad clara o que requieren revisión."
             ]
-        }
-    },
-    {
-        "report_metadata": {
-            "timestamp": "2026-05-12T18:38:05.380918",
-            "domain_scanned": "viprm.com",
-            "status": "error",
-            "error_message": "Error de conexión o timeout."
         }
     },
     {

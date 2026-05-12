@@ -330,7 +330,8 @@ if __name__ == "__main__":
     urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
     
     # Archivo de entrada con leads
-    LEADS_FILE = "leads.txt"
+    script_dir = os.path.dirname(__file__)
+    LEADS_FILE = os.path.join(script_dir, "leads.txt")
     domains = []
     if os.path.exists(LEADS_FILE):
         with open(LEADS_FILE, "r", encoding="utf-8") as f:
