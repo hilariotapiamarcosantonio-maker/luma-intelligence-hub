@@ -2757,5 +2757,256 @@
             "status": "error",
             "error_message": "Error de conexión o timeout."
         }
+    },
+    {
+        "report_metadata": {
+            "timestamp": "2026-05-12T18:32:22.622525",
+            "domain_scanned": "algonovopuntacana.com",
+            "status": "success"
+        },
+        "client_identity": {
+            "company_name": "Algonovo Puntacana",
+            "key_people": [],
+            "emails": [],
+            "phones": [
+                "+1(809)638-3407",
+                "18096383407",
+                "+1 (809) 638-3407",
+                "18094698332",
+                "+1(849)460-2595"
+            ]
+        },
+        "technical_audit": {
+            "tech_stack": [
+                "WordPress 6.9.4"
+            ],
+            "tracking": [
+                "Google Analytics",
+                "Google Tag Manager"
+            ],
+            "open_graph": true,
+            "pagespeed": {
+                "error": "API Key no configurada",
+                "score": 0,
+                "lcp": null,
+                "tti": null
+            }
+        },
+        "marketing_intelligence": {
+            "social_links": [
+                "https://instagram.com/algonovopuntacana",
+                "https://instagram.com/algonovodr"
+            ],
+            "broken_links": [
+                "https://facebook.com/algonovopuntacana",
+                "https://facebook.com/algonovodr"
+            ]
+        },
+        "pain_point_synthesis": {
+            "authority_score": 40,
+            "identified_issues": [
+                "Rendimiento móvil pendiente de revisión — podría afectar la experiencia del usuario y la conversión.",
+                "Sin Meta Pixel - Imposibilidad de retargeting eficiente en pauta.",
+                "2 enlaces sociales sin actividad clara o que requieren revisión."
+            ]
+        }
+    },
+    {
+        "report_metadata": {
+            "timestamp": "2026-05-12T18:32:22.771353",
+            "domain_scanned": "corazabienesraices.com",
+            "status": "error",
+            "error_message": "Error de conexión o timeout."
+        }
+    },
+    {
+        "report_metadata": {
+            "timestamp": "2026-05-12T18:32:22.781779",
+            "domain_scanned": "calis.com.do",
+            "status": "success"
+        },
+        "client_identity": {
+            "company_name": "calis.com.do",
+            "key_people": [],
+            "emails": [
+                "inmuebles@calis.com.do",
+                "bootstrap-select@1.14.0-beta3"
+            ],
+            "phones": [
+                "+18096147492"
+            ]
+        },
+        "technical_audit": {
+            "tech_stack": [],
+            "tracking": [
+                "Google Analytics"
+            ],
+            "open_graph": true,
+            "pagespeed": {
+                "error": "API Key no configurada",
+                "score": 0,
+                "lcp": null,
+                "tti": null
+            }
+        },
+        "marketing_intelligence": {
+            "social_links": [
+                "https://www.instagram.com/calisrealestate",
+                "https://www.youtube.com/@calisrealestate",
+                "https://www.tiktok.com/@calisrealestate"
+            ],
+            "broken_links": [
+                "https://facebook.com/calisrealestate/",
+                "https://facebook.com/calisrealestate",
+                "https://twitter.com/calisrealestate"
+            ]
+        },
+        "pain_point_synthesis": {
+            "authority_score": 35,
+            "identified_issues": [
+                "Rendimiento móvil pendiente de revisión — podría afectar la experiencia del usuario y la conversión.",
+                "Sin Meta Pixel - Imposibilidad de retargeting eficiente en pauta.",
+                "3 enlaces sociales sin actividad clara o que requieren revisión."
+            ]
+        }
+    },
+    {
+        "report_metadata": {
+            "timestamp": "2026-05-12T18:32:23.191155",
+            "domain_scanned": "santiagocasasrd.com",
+            "status": "success"
+        },
+        "client_identity": {
+            "company_name": "Santiago Casas RD",
+            "key_people": [],
+            "emails": [
+                "select2@4.1.0-rc.0",
+                "contacto@santiagocasas.do"
+            ],
+            "phones": [
+                "18097713486",
+                "809-771-3486"
+            ]
+        },
+        "technical_audit": {
+            "tech_stack": [
+                "WordPress"
+            ],
+            "tracking": [
+                "Google Tag Manager"
+            ],
+            "open_graph": true,
+            "pagespeed": {
+                "error": "API Key no configurada",
+                "score": 0,
+                "lcp": null,
+                "tti": null
+            }
+        },
+        "marketing_intelligence": {
+            "social_links": [
+                "https://www.instagram.com/santiagocasasrd",
+                "https://www.instagram.com/santiagocasasrd/",
+                "https://www.youtube.com/@santiagocasasrd_adonisfran3515"
+            ],
+            "broken_links": [
+                "https://www.facebook.com/SANTIAGOCasasRD"
+            ]
+        },
+        "pain_point_synthesis": {
+            "authority_score": 35,
+            "identified_issues": [
+                "Rendimiento móvil pendiente de revisión — podría afectar la experiencia del usuario y la conversión.",
+                "Sin Meta Pixel - Imposibilidad de retargeting eficiente en pauta.",
+                "1 enlace sociales sin actividad clara o que requieren revisión."
+            ]
+        }
+    },
+    {
+        "report_metadata": {
+            "timestamp": "2026-05-12T18:32:23.334307",
+            "domain_scanned": "clicinmobiliaria.com",
+            "status": "success"
+        },
+        "client_identity": {
+            "company_name": "CLIC Inmobiliaria",
+            "key_people": [],
+            "emails": [
+                "tu@email.com",
+                "contacto@clic.do"
+            ],
+            "phones": [
+                "+18295148080"
+            ]
+        },
+        "technical_audit": {
+            "tech_stack": [],
+            "tracking": [
+                "Google Analytics",
+                "Meta Pixel"
+            ],
+            "open_graph": true,
+            "pagespeed": {
+                "error": "API Key no configurada",
+                "score": 0,
+                "lcp": null,
+                "tti": null
+            }
+        },
+        "marketing_intelligence": {
+            "social_links": [
+                "https://www.youtube.com/@clicinmobiliaria",
+                "https://www.instagram.com/clic.do/",
+                "https://www.instagram.com/renecastillotv/",
+                "https://www.linkedin.com/company/clic-inmobiliaria/"
+            ],
+            "broken_links": []
+        },
+        "pain_point_synthesis": {
+            "authority_score": 50,
+            "identified_issues": [
+                "Rendimiento móvil pendiente de revisión — podría afectar la experiencia del usuario y la conversión."
+            ]
+        }
+    },
+    {
+        "report_metadata": {
+            "timestamp": "2026-05-12T18:32:23.553522",
+            "domain_scanned": "gsinmobiliaria.com.do",
+            "status": "error",
+            "error_message": "Error de conexión o timeout."
+        }
+    },
+    {
+        "report_metadata": {
+            "timestamp": "2026-05-12T18:32:23.799317",
+            "domain_scanned": "remax-independent.com.do",
+            "status": "error",
+            "error_message": "Error de conexión o timeout."
+        }
+    },
+    {
+        "report_metadata": {
+            "timestamp": "2026-05-12T18:32:24.012597",
+            "domain_scanned": "dionil-realty.com",
+            "status": "error",
+            "error_message": "Error de conexión o timeout."
+        }
+    },
+    {
+        "report_metadata": {
+            "timestamp": "2026-05-12T18:32:24.022195",
+            "domain_scanned": "hsmrealestate.net",
+            "status": "error",
+            "error_message": "Error de conexión o timeout."
+        }
+    },
+    {
+        "report_metadata": {
+            "timestamp": "2026-05-12T18:32:24.611396",
+            "domain_scanned": "dacosta-fmc.com",
+            "status": "error",
+            "error_message": "Error de conexión o timeout."
+        }
     }
 ]
