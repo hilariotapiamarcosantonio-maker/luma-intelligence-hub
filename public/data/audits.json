@@ -3308,5 +3308,370 @@
             "status": "error",
             "error_message": "Error de conexión o timeout."
         }
+    },
+    {
+        "report_metadata": {
+            "timestamp": "2026-05-12T18:32:30.339491",
+            "domain_scanned": "ccre.com.do",
+            "status": "error",
+            "error_message": "Error de conexión o timeout."
+        }
+    },
+    {
+        "report_metadata": {
+            "timestamp": "2026-05-12T18:32:30.501845",
+            "domain_scanned": "snati.com.do",
+            "status": "error",
+            "error_message": "Error de conexión o timeout."
+        }
+    },
+    {
+        "report_metadata": {
+            "timestamp": "2026-05-12T18:32:30.513034",
+            "domain_scanned": "armoniarealty.com",
+            "status": "success"
+        },
+        "client_identity": {
+            "company_name": "ARMONÍA REALTY",
+            "key_people": [],
+            "emails": [
+                "team@latofonts.com",
+                "anapbm@gmail.com"
+            ],
+            "phones": []
+        },
+        "technical_audit": {
+            "tech_stack": [],
+            "tracking": [
+                "Google Analytics"
+            ],
+            "open_graph": true,
+            "pagespeed": {
+                "error": "API Key no configurada",
+                "score": 0,
+                "lcp": null,
+                "tti": null
+            }
+        },
+        "marketing_intelligence": {
+            "social_links": [],
+            "broken_links": []
+        },
+        "pain_point_synthesis": {
+            "authority_score": 20,
+            "identified_issues": [
+                "Rendimiento móvil pendiente de revisión — podría afectar la experiencia del usuario y la conversión.",
+                "Sin Meta Pixel - Imposibilidad de retargeting eficiente en pauta.",
+                "Presencia omnicanal nula - No se detectaron redes sociales enlazadas."
+            ]
+        }
+    },
+    {
+        "report_metadata": {
+            "timestamp": "2026-05-12T18:32:32.031616",
+            "domain_scanned": "puntacanavilla.com",
+            "status": "success"
+        },
+        "client_identity": {
+            "company_name": "Punta Cana Villa Real Estate",
+            "key_people": [],
+            "emails": [
+                "ventas@puntacanavilla.com"
+            ],
+            "phones": [
+                "18092802992",
+                "//+1 (809) 280-2992"
+            ]
+        },
+        "technical_audit": {
+            "tech_stack": [
+                "WordPress 6.9.4"
+            ],
+            "tracking": [
+                "Google Analytics",
+                "Google Tag Manager"
+            ],
+            "open_graph": true,
+            "pagespeed": {
+                "error": "API Key no configurada",
+                "score": 0,
+                "lcp": null,
+                "tti": null
+            }
+        },
+        "marketing_intelligence": {
+            "social_links": [
+                "https://www.tiktok.com/@punta_cana_real_estate",
+                "http://linkedin.com/company/punta-cana-villa-real-estate/",
+                "https://www.instagram.com/puntacana.villa/",
+                "https://www.pinterest.com/Punta_Cana_Villa/",
+                "https://www.youtube.com/c/PuntaCanaRealEstate",
+                "https://www.linkedin.com/company/punta-cana-villa-real-estate/"
+            ],
+            "broken_links": [
+                "https://www.facebook.com/puntacanavilla/",
+                "https://www.tiktok.com/@puntacanavilla"
+            ]
+        },
+        "pain_point_synthesis": {
+            "authority_score": 60,
+            "identified_issues": [
+                "Rendimiento móvil pendiente de revisión — podría afectar la experiencia del usuario y la conversión.",
+                "Sin Meta Pixel - Imposibilidad de retargeting eficiente en pauta.",
+                "2 enlaces sociales sin actividad clara o que requieren revisión."
+            ]
+        }
+    },
+    {
+        "report_metadata": {
+            "timestamp": "2026-05-12T18:32:32.489459",
+            "domain_scanned": "bluecaribbeanproperties.com",
+            "status": "success"
+        },
+        "client_identity": {
+            "company_name": "Blue Caribbean Properties",
+            "key_people": [],
+            "emails": [
+                "sales@bluecaribbeanproperties.com",
+                "leaflet@1.9.3"
+            ],
+            "phones": [
+                "+16163442583",
+                "+18095662583",
+                "+18292433122",
+                "//+529842679536"
+            ]
+        },
+        "technical_audit": {
+            "tech_stack": [
+                "WordPress 6.9.4"
+            ],
+            "tracking": [
+                "Google Tag Manager"
+            ],
+            "open_graph": true,
+            "pagespeed": {
+                "error": "API Key no configurada",
+                "score": 0,
+                "lcp": null,
+                "tti": null
+            }
+        },
+        "marketing_intelligence": {
+            "social_links": [
+                "https://www.instagram.com/bluecaribbeanproperties/",
+                "https://www.linkedin.com/company/blue-caribbean-properties/"
+            ],
+            "broken_links": [
+                "https://www.facebook.com/bluecaribbeanproperties",
+                "https://www.youtube.com/@bluecaribbeanproperties2360",
+                "https://www.tiktok.com/@bluecaribbeanproperties",
+                "http://twitter.com/bluecaribbeandr"
+            ]
+        },
+        "pain_point_synthesis": {
+            "authority_score": 30,
+            "identified_issues": [
+                "Rendimiento móvil pendiente de revisión — podría afectar la experiencia del usuario y la conversión.",
+                "Sin Meta Pixel - Imposibilidad de retargeting eficiente en pauta.",
+                "4 enlaces sociales sin actividad clara o que requieren revisión."
+            ]
+        }
+    },
+    {
+        "report_metadata": {
+            "timestamp": "2026-05-12T18:32:32.547356",
+            "domain_scanned": "casalinard.com",
+            "status": "success"
+        },
+        "client_identity": {
+            "company_name": "casalina-srl.alterestate.com",
+            "key_people": [],
+            "emails": [
+                "casalinasrl@gmail.com"
+            ],
+            "phones": [
+                "809.299.5767",
+                "18092995767"
+            ]
+        },
+        "technical_audit": {
+            "tech_stack": [
+                "AlterEstate",
+                "Next.js"
+            ],
+            "tracking": [],
+            "open_graph": true,
+            "pagespeed": {
+                "error": "API Key no configurada",
+                "score": 0,
+                "lcp": null,
+                "tti": null
+            }
+        },
+        "marketing_intelligence": {
+            "social_links": [
+                "https://www.instagram.com/Casalinasrl/"
+            ],
+            "broken_links": [
+                "https://www.facebook.com/Casalinasrl/"
+            ]
+        },
+        "pain_point_synthesis": {
+            "authority_score": 15,
+            "identified_issues": [
+                "Rendimiento móvil pendiente de revisión — podría afectar la experiencia del usuario y la conversión.",
+                "Sin Meta Pixel - Imposibilidad de retargeting eficiente en pauta.",
+                "1 enlace sociales sin actividad clara o que requieren revisión."
+            ]
+        }
+    },
+    {
+        "report_metadata": {
+            "timestamp": "2026-05-12T18:32:32.658378",
+            "domain_scanned": "xanderinmobiliaria.com",
+            "status": "success"
+        },
+        "client_identity": {
+            "company_name": "Xander Inmobiliaria",
+            "key_people": [],
+            "emails": [],
+            "phones": [
+                "18296463410",
+                "//829-646-3410"
+            ]
+        },
+        "technical_audit": {
+            "tech_stack": [
+                "WordPress"
+            ],
+            "tracking": [
+                "Google Analytics",
+                "Meta Pixel"
+            ],
+            "open_graph": true,
+            "pagespeed": {
+                "error": "API Key no configurada",
+                "score": 0,
+                "lcp": null,
+                "tti": null
+            }
+        },
+        "marketing_intelligence": {
+            "social_links": [
+                "https://www.instagram.com/xanderinmobiliaria/",
+                "https://www.youtube.com/channel/UCG66g6kAoQoRez83hX4-kww"
+            ],
+            "broken_links": [
+                "https://www.facebook.com/xanderinmobiliariard/"
+            ]
+        },
+        "pain_point_synthesis": {
+            "authority_score": 40,
+            "identified_issues": [
+                "Rendimiento móvil pendiente de revisión — podría afectar la experiencia del usuario y la conversión.",
+                "1 enlace sociales sin actividad clara o que requieren revisión."
+            ]
+        }
+    },
+    {
+        "report_metadata": {
+            "timestamp": "2026-05-12T18:32:32.891150",
+            "domain_scanned": "ultrapropiedadesrd.com",
+            "status": "success"
+        },
+        "client_identity": {
+            "company_name": "lic-joel-collado-asesor-inmobiliario.alterestate.com",
+            "key_people": [],
+            "emails": [
+                "info@ultrapropiedadesrd.com"
+            ],
+            "phones": [
+                "18097155745"
+            ]
+        },
+        "technical_audit": {
+            "tech_stack": [
+                "AlterEstate",
+                "Next.js"
+            ],
+            "tracking": [
+                "Google Analytics",
+                "Meta Pixel",
+                "Google Tag Manager"
+            ],
+            "open_graph": true,
+            "pagespeed": {
+                "error": "API Key no configurada",
+                "score": 0,
+                "lcp": null,
+                "tti": null
+            }
+        },
+        "marketing_intelligence": {
+            "social_links": [
+                "https://www.instagram.com/ultrapropiedadesrd",
+                "https://www.linkedin.com/company/ultrapropiedadesrd",
+                "https://www.youtube.com/@UltraPropiedadesRD"
+            ],
+            "broken_links": [
+                "https://www.facebook.com/ultrapropiedadesrd",
+                "https://www.twitter.com/ultrapropiedadesrd",
+                "https://www.tiktok.com/ultrapropiedadesrd"
+            ]
+        },
+        "pain_point_synthesis": {
+            "authority_score": 55,
+            "identified_issues": [
+                "Rendimiento móvil pendiente de revisión — podría afectar la experiencia del usuario y la conversión.",
+                "3 enlaces sociales sin actividad clara o que requieren revisión."
+            ]
+        }
+    },
+    {
+        "report_metadata": {
+            "timestamp": "2026-05-12T18:32:33.366809",
+            "domain_scanned": "inmuebleslaromana.com",
+            "status": "success"
+        },
+        "client_identity": {
+            "company_name": "Inmuebles La Romana",
+            "key_people": [],
+            "emails": [],
+            "phones": [
+                "18095504042",
+                "18093993140"
+            ]
+        },
+        "technical_audit": {
+            "tech_stack": [],
+            "tracking": [
+                "Google Analytics",
+                "Meta Pixel"
+            ],
+            "open_graph": true,
+            "pagespeed": {
+                "error": "API Key no configurada",
+                "score": 0,
+                "lcp": null,
+                "tti": null
+            }
+        },
+        "marketing_intelligence": {
+            "social_links": [
+                "https://www.instagram.com/inmuebleslaromana/?hl=es-la"
+            ],
+            "broken_links": [
+                "https://www.facebook.com/Inmuebles-La-Romana-2310644942293679/",
+                "https://twitter.com/"
+            ]
+        },
+        "pain_point_synthesis": {
+            "authority_score": 35,
+            "identified_issues": [
+                "Rendimiento móvil pendiente de revisión — podría afectar la experiencia del usuario y la conversión.",
+                "2 enlaces sociales sin actividad clara o que requieren revisión."
+            ]
+        }
     }
 ]
