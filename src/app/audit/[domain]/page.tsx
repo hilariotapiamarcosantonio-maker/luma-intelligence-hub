@@ -30,8 +30,14 @@ export default async function AuditPage({ params }: { params: Promise<{ domain: 
 
   const { client_identity, technical_audit, marketing_intelligence, pain_point_synthesis } = report as any;
   
-  const baseTraffic = 15000;
-  const averageTicket = 5000;
+  const topIssues = pain_point_synthesis.identified_issues?.slice(0, 3) || [];
+  
+  const getMaturityInsight = (score: number) => {
+    if (score < 40) return "Existe oportunidad de mejorar la presencia digital para captar más prospectos de forma sistematizada.";
+    if (score < 60) return "Con ajustes estratégicos en medición y seguimiento, se puede fortalecer el embudo comercial.";
+    if (score < 80) return "La base digital es sólida; optimizando seguimiento y análisis se puede incrementar la conversión.";
+    return "Estructura avanzada; el enfoque en medición y automatización puede maximizar resultados.";
+  };
 
   return (
     <LiveAuditStatus>
@@ -102,13 +108,13 @@ export default async function AuditPage({ params }: { params: Promise<{ domain: 
                       <div className="relative z-10">
                           <h3 className="text-gray-300 text-sm font-black tracking-widest uppercase mb-3 flex items-center gap-2">
                               <TrendingDown className="w-4 h-4" />
-                              Oportunidad Comercial No Aprovechada
+                              Oportunidad Identificada
                           </h3>
                           <p className="text-4xl font-black text-white mb-2 tracking-tighter">
-                              Estimación Potencial
+                              Potencial de Mejora
                           </p>
                           <p className="text-sm text-gray-400 leading-relaxed">
-                              Un aumento conservador del 2% en conversión sobre {baseTraffic.toLocaleString()} visitas estimadas podría representar múltiples operaciones de ${averageTicket.toLocaleString()} USD al mes que actualmente se pierden por fricciones comerciales.
+                              Con una mejora en captación digital, seguimiento de prospectos y medición de resultados, existe potencial para fortalecer el embudo comercial de forma medible.
                           </p>
                       </div>
                   </div>
@@ -144,7 +150,7 @@ export default async function AuditPage({ params }: { params: Promise<{ domain: 
                           )
                       })}
                       </div>
-                      <p className="mt-4 text-xs text-gray-500 italic">Si no mides a quién entra, no puedes hacer remarketing. Estás perdiendo hasta el 80% de tus ventas potenciales.</p>
+                      <p className="mt-4 text-xs text-gray-500 italic">Sin herramientas de medición, se dificulta el seguimiento eficiente de prospectos y la optimización de campañas.</p>
                   </div>
                   
                   {/* Mobile & Speed */}
@@ -157,7 +163,7 @@ export default async function AuditPage({ params }: { params: Promise<{ domain: 
                               <div>
                                   <p className="text-[10px] uppercase tracking-widest text-gray-500 mb-1 font-bold">Performance Global</p>
                                   <p className="text-4xl font-black text-white">{technical_audit.pagespeed?.score || 'N/A'}<span className="text-lg text-gray-600">/100</span></p>
-                                  <p className="text-xs text-red-400 mt-1">El 53% de los usuarios abandona una web si tarda más de 3 segundos en cargar.</p>
+                                  <p className="text-xs text-gray-500 mt-1">El rendimiento móvil puede influir en la experiencia del usuario y la tasa de conversión.</p>
                               </div>
                               <div>
                                   <p className="text-[10px] uppercase tracking-widest text-gray-500 mb-1 font-bold">Bloqueo Visual (LCP)</p>
@@ -170,10 +176,10 @@ export default async function AuditPage({ params }: { params: Promise<{ domain: 
                   {/* Synthesis */}
                   <div className="bg-gradient-to-br from-[#111] to-[#0a0a0a] p-6 rounded-xl border border-white/5 md:col-span-2">
                       <h3 className="text-xs font-bold text-gray-300 flex items-center gap-2 mb-4 uppercase tracking-widest">
-                          <Search className="w-4 h-4" /> Oportunidades Encontradas
+                          <Search className="w-4 h-4" /> Oportunidades Principales
                       </h3>
                       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                          {pain_point_synthesis.identified_issues?.map((issue: string, i: number) => (
+                          {topIssues.map((issue: string, i: number) => (
                           <div key={i} className="flex items-start gap-3 bg-white/5 p-4 rounded-lg border border-white/5">
                               <div className="mt-0.5 bg-gray-500/20 p-1 rounded">
                                   <Target className="w-3 h-3 text-gray-400" />
@@ -184,6 +190,55 @@ export default async function AuditPage({ params }: { params: Promise<{ domain: 
                       </div>
                   </div>
                 </div>
+              </div>
+            </div>
+          </div>
+
+          {/* QUÉ SIGNIFICA COMERCIALMENTE */}
+          <div className="bg-[#0a0a0a] border border-white/5 rounded-2xl p-8 md:p-12">
+            <h3 className="text-lg font-bold text-white mb-4 flex items-center gap-2">
+              <Target className="w-5 h-5 text-yellow-500" />
+              Qué significa esto comercialmente
+            </h3>
+            <p className="text-gray-400 leading-relaxed">
+              {getMaturityInsight(pain_point_synthesis.authority_score)}
+            </p>
+            <p className="text-gray-500 mt-4 text-sm leading-relaxed">
+              Una revisión detallada permite identificar exactamente dónde están las fricciones en el proceso de captación y cómo optimizarlas con cambios concretos y medibles.
+            </p>
+          </div>
+
+          {/* SOLUCIÓN RECOMENDADA */}
+          <div className="bg-gradient-to-br from-yellow-900/20 to-[#0a0a0a] border border-yellow-500/20 rounded-2xl p-8 md:p-12">
+            <div className="flex items-start gap-4">
+              <div className="p-3 bg-yellow-500/10 rounded-xl">
+                <TrendingDown className="w-8 h-8 text-yellow-500" />
+              </div>
+              <div>
+                <h3 className="text-lg font-bold text-white mb-2">
+                  Solución recomendada: Luma Estate OS Foundation
+                </h3>
+                <p className="text-gray-400 leading-relaxed mb-4">
+                  Una plataforma integral diseñada para inmobiliarias que necesitan estructurar su captación digital, automatizar el seguimiento de prospectos y medir resultados de forma clara.
+                </p>
+                <ul className="space-y-2 text-sm text-gray-500">
+                  <li className="flex items-center gap-2">
+                    <div className="w-1.5 h-1.5 rounded-full bg-yellow-500"></div>
+                    CRM Inmobiliario con seguimiento automático de prospectos
+                  </li>
+                  <li className="flex items-center gap-2">
+                    <div className="w-1.5 h-1.5 rounded-full bg-yellow-500"></div>
+                    Landing pages optimizadas para captación
+                  </li>
+                  <li className="flex items-center gap-2">
+                    <div className="w-1.5 h-1.5 rounded-full bg-yellow-500"></div>
+                    Integración con Meta Pixel y Google Analytics
+                  </li>
+                  <li className="flex items-center gap-2">
+                    <div className="w-1.5 h-1.5 rounded-full bg-yellow-500"></div>
+                    Dashboard de métricas comerciales en tiempo real
+                  </li>
+                </ul>
               </div>
             </div>
           </div>
