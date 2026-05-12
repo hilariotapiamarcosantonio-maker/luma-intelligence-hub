@@ -971,54 +971,6 @@
     },
     {
         "report_metadata": {
-            "timestamp": "2026-05-12T18:06:40.964943",
-            "domain_scanned": "remaxlider.com.do",
-            "status": "error",
-            "error_message": "Error de conexión o timeout."
-        }
-    },
-    {
-        "report_metadata": {
-            "timestamp": "2026-05-12T18:06:41.121420",
-            "domain_scanned": "vanguardiard.com",
-            "status": "error",
-            "error_message": "Error de conexión o timeout."
-        }
-    },
-    {
-        "report_metadata": {
-            "timestamp": "2026-05-12T18:06:41.171255",
-            "domain_scanned": "inversion.do",
-            "status": "error",
-            "error_message": "Error de conexión o timeout."
-        }
-    },
-    {
-        "report_metadata": {
-            "timestamp": "2026-05-12T18:06:41.311750",
-            "domain_scanned": "indominicana.com.do",
-            "status": "error",
-            "error_message": "Error de conexión o timeout."
-        }
-    },
-    {
-        "report_metadata": {
-            "timestamp": "2026-05-12T18:06:41.503448",
-            "domain_scanned": "tuinmobiliaria.com.do",
-            "status": "error",
-            "error_message": "Error de conexión o timeout."
-        }
-    },
-    {
-        "report_metadata": {
-            "timestamp": "2026-05-12T18:06:41.728714",
-            "domain_scanned": "remaxmetropolitan.com.do",
-            "status": "error",
-            "error_message": "Error de conexión o timeout."
-        }
-    },
-    {
-        "report_metadata": {
             "timestamp": "2026-05-12T18:06:42.646786",
             "domain_scanned": "homemaster.do",
             "status": "success"
