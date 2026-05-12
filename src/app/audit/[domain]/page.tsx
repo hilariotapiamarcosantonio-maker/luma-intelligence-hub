@@ -43,59 +43,60 @@ export default async function AuditPage({ params }: { params: Promise<{ domain: 
     <LiveAuditStatus>
       <main className="min-h-screen bg-[#050505] text-gray-200 font-sans selection:bg-red-500/30 overflow-x-hidden">
         {/* HEADER HERO */}
-        <div className="relative pt-20 pb-16 px-8">
+        <div className="relative pt-16 pb-12 px-4 md:pt-20 md:pb-16 md:px-8">
           <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-red-900/20 via-[#050505] to-[#050505] -z-10"></div>
-          <div className="max-w-5xl mx-auto text-center space-y-6">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-gray-500/10 border border-gray-500/20 text-gray-400 text-xs font-bold tracking-widest uppercase mb-4">
-              <Activity className="w-4 h-4 animate-pulse" />
-              Revisión Preliminar de Presencia Digital
+          <div className="max-w-5xl mx-auto text-center space-y-4 md:space-y-6">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-gray-500/10 border border-gray-500/20 text-gray-400 text-xs font-bold tracking-widest uppercase mb-2 md:mb-4">
+              <Activity className="w-3 h-3 md:w-4 md:h-4 animate-pulse" />
+              <span className="md:hidden">Revisión Digital</span>
+              <span className="hidden md:inline">Revisión Preliminar de Presencia Digital</span>
             </div>
-            <h1 className="text-5xl md:text-7xl font-black tracking-tighter text-transparent bg-clip-text bg-gradient-to-br from-white via-gray-200 to-gray-600 uppercase">
+            <h1 className="text-3xl md:text-5xl lg:text-7xl font-black tracking-tighter text-transparent bg-clip-text bg-gradient-to-br from-white via-gray-200 to-gray-600 uppercase leading-tight">
               Oportunidades de Captación <br className="hidden md:block"/> <span className="text-gray-400">No Aprovechadas</span>
             </h1>
-            <p className="text-xl text-gray-400 max-w-3xl mx-auto leading-relaxed">
+            <p className="text-sm md:text-xl text-gray-400 max-w-3xl mx-auto leading-relaxed">
               Hemos realizado una revisión preliminar de la presencia digital de <strong className="text-white">{client_identity.company_name || domain}</strong>.
               El objetivo es identificar oportunidades de mejora en presentación, seguimiento comercial y medición de prospectos.
             </p>
           </div>
         </div>
 
-        <div className="max-w-5xl mx-auto px-8 mb-12">
-          <div className="p-4 border border-white/10 bg-white/5 rounded-lg text-xs text-gray-400 text-left">
+        <div className="max-w-5xl mx-auto px-4 md:px-8 mb-8 md:mb-12">
+          <div className="p-3 md:p-4 border border-white/10 bg-white/5 rounded-lg text-xs text-gray-400 text-left">
             <strong>Nota importante:</strong> Esta revisión es preliminar y se basa en señales públicas disponibles: presencia web, redes sociales, velocidad, enlaces, tracking y estructura de captación. No representa una auditoría interna completa ni afirma resultados financieros exactos. Su objetivo es identificar oportunidades de mejora comercial.
           </div>
         </div>
 
         {/* DATA AGITATION SECTION */}
-        <div className="max-w-7xl mx-auto px-8 pb-20 space-y-12">
+        <div className="max-w-7xl mx-auto px-4 md:px-8 pb-12 md:pb-20 space-y-8 md:space-y-12">
           <div className="relative group">
-            <div className="absolute -inset-0.5 bg-gradient-to-r from-red-600 to-orange-600 rounded-2xl blur opacity-10 group-hover:opacity-20 transition duration-1000"></div>
-            <div className="relative bg-[#0a0a0a] border border-white/5 rounded-2xl p-8 md:p-12 shadow-2xl overflow-hidden">
-              <div className="grid grid-cols-1 lg:grid-cols-12 gap-12">
+            <div className="absolute -inset-0.5 bg-gradient-to-r from-red-600 to-orange-600 rounded-xl md:rounded-2xl blur opacity-10 group-hover:opacity-20 transition duration-1000"></div>
+            <div className="relative bg-[#0a0a0a] border border-white/5 rounded-xl md:rounded-2xl p-4 md:p-8 lg:p-12 shadow-2xl overflow-hidden">
+              <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 md:gap-12">
                 
                 {/* LEFT COL: BIG NUMBERS */}
-                <div className="lg:col-span-5 space-y-8">
+                <div className="lg:col-span-5 space-y-4 md:space-y-8">
                   <div>
-                    <h2 className="text-2xl font-bold text-white mb-2 flex items-center gap-2">
-                      <Globe className="w-5 h-5 text-gray-500" />
-                      Análisis Preliminar de {domain}
+                    <h2 className="text-xl md:text-2xl font-bold text-white mb-2 flex items-center gap-2">
+                      <Globe className="w-4 h-4 md:w-5 md:h-5 text-gray-500" />
+                      <span className="truncate">{domain}</span>
                     </h2>
-                    <p className="text-sm text-gray-500">Datos extraídos de señales públicas disponibles para identificar oportunidades comerciales.</p>
+                    <p className="text-xs md:text-sm text-gray-500">Datos extraídos de señales públicas disponibles para identificar oportunidades comerciales.</p>
                   </div>
 
-                  <div className="p-8 rounded-xl bg-black/60 border border-white/5 relative overflow-hidden">
-                      <div className="absolute top-0 right-0 w-32 h-32 bg-gray-500/10 rounded-full blur-3xl -translate-y-1/2 translate-x-1/3"></div>
-                      <div className="flex items-center justify-between mb-4 relative z-10">
-                          <span className="text-sm font-bold tracking-wider text-gray-400 uppercase">Nivel de madurez digital</span>
-                          <Target className="w-5 h-5 text-gray-500" />
+                  <div className="p-4 md:p-8 rounded-xl bg-black/60 border border-white/5 relative overflow-hidden">
+                      <div className="absolute top-0 right-0 w-20 md:w-32 h-20 md:h-32 bg-gray-500/10 rounded-full blur-2xl md:blur-3xl -translate-y-1/2 translate-x-1/3"></div>
+                      <div className="flex items-center justify-between mb-3 md:mb-4 relative z-10">
+                          <span className="text-xs md:text-sm font-bold tracking-wider text-gray-400 uppercase">Madurez digital</span>
+                          <Target className="w-4 h-4 md:w-5 md:h-5 text-gray-500" />
                       </div>
-                      <div className="flex items-end gap-3 relative z-10">
-                          <span className="text-7xl font-black tracking-tighter text-white">
+                      <div className="flex items-end gap-2 md:gap-3 relative z-10">
+                          <span className="text-5xl md:text-7xl font-black tracking-tighter text-white">
                               {pain_point_synthesis.authority_score}
                           </span>
-                          <span className="text-2xl text-gray-600 mb-2 font-light">/100</span>
+                          <span className="text-xl md:text-2xl text-gray-600 mb-1 md:mb-2 font-light">/100</span>
                       </div>
-                      <p className="text-xs text-gray-400 mt-4 font-medium uppercase tracking-wider relative z-10">
+                      <p className="text-xs text-gray-400 mt-3 md:mt-4 font-medium uppercase tracking-wider relative z-10 leading-relaxed">
                         {pain_point_synthesis.authority_score < 40 ? "Inicial: presencia limitada o poco conectada." : 
                          pain_point_synthesis.authority_score < 60 ? "En desarrollo: existe presencia, pero falta estructura comercial." : 
                          pain_point_synthesis.authority_score < 80 ? "Competitivo: buena base digital con oportunidades de optimización." : 
@@ -103,17 +104,17 @@ export default async function AuditPage({ params }: { params: Promise<{ domain: 
                       </p>
                   </div>
 
-                  <div className="p-8 rounded-xl bg-[#111] border border-white/5 relative overflow-hidden">
-                      <div className="absolute -right-4 -bottom-4 opacity-10"><TrendingDown className="w-48 h-48 text-gray-500" /></div>
+                  <div className="p-4 md:p-8 rounded-xl bg-[#111] border border-white/5 relative overflow-hidden">
+                      <div className="absolute -right-2 md:-right-4 -bottom-2 md:-bottom-4 opacity-10"><TrendingDown className="w-24 md:w-48 h-24 md:h-48" /></div>
                       <div className="relative z-10">
-                          <h3 className="text-gray-300 text-sm font-black tracking-widest uppercase mb-3 flex items-center gap-2">
-                              <TrendingDown className="w-4 h-4" />
+                          <h3 className="text-gray-300 text-xs md:text-sm font-black tracking-widest uppercase mb-2 md:mb-3 flex items-center gap-2">
+                              <TrendingDown className="w-3 h-3 md:w-4 md:h-4" />
                               Oportunidad Identificada
                           </h3>
-                          <p className="text-4xl font-black text-white mb-2 tracking-tighter">
+                          <p className="text-2xl md:text-4xl font-black text-white mb-1 md:mb-2 tracking-tighter">
                               Potencial de Mejora
                           </p>
-                          <p className="text-sm text-gray-400 leading-relaxed">
+                          <p className="text-xs md:text-sm text-gray-400 leading-relaxed">
                               Con una mejora en captación digital, seguimiento de prospectos y medición de resultados, existe potencial para fortalecer el embudo comercial de forma medible.
                           </p>
                       </div>
@@ -121,70 +122,70 @@ export default async function AuditPage({ params }: { params: Promise<{ domain: 
                 </div>
 
                 {/* RIGHT COL: DETAILS */}
-                <div className="lg:col-span-7 grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div className="lg:col-span-7 grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
                   {/* Tech Stack */}
-                  <div className="bg-[#111] p-6 rounded-xl border border-white/5 shadow-lg">
-                      <h3 className="text-xs font-bold text-gray-400 flex items-center gap-2 mb-4 uppercase tracking-widest">
-                          <Search className="w-4 h-4 text-blue-500" /> Infraestructura & Tracking
+                  <div className="bg-[#111] p-4 md:p-6 rounded-xl border border-white/5 shadow-lg">
+                      <h3 className="text-xs font-bold text-gray-400 flex items-center gap-2 mb-3 md:mb-4 uppercase tracking-widest">
+                          <Search className="w-3 h-3 md:w-4 md:h-4 text-blue-500" /> <span className="md:hidden">Infraestructura</span> <span className="hidden md:inline">Infraestructura & Tracking</span>
                       </h3>
-                      <div className="flex flex-wrap gap-2 mb-6">
+                      <div className="flex flex-wrap gap-1.5 md:gap-2 mb-4 md:mb-6">
                           {technical_audit.tech_stack?.length > 0 ? (
                           technical_audit.tech_stack.map((tech: string) => (
-                              <span key={tech} className="px-3 py-1 bg-white/5 border border-white/10 rounded-md text-xs font-medium text-gray-300">{tech}</span>
+                              <span key={tech} className="px-2 md:px-3 py-0.5 md:py-1 bg-white/5 border border-white/10 rounded-md text-xs font-medium text-gray-300">{tech}</span>
                           ))
                           ) : (<span className="text-xs text-red-400 font-bold bg-red-500/10 px-2 py-1 rounded">Cero infraestructura moderna detectada.</span>)}
                       </div>
                       
-                      <h4 className="text-[10px] text-gray-500 mb-3 uppercase tracking-widest font-bold">Diagnóstico de Píxeles</h4>
-                      <div className="flex flex-col gap-3">
+                      <h4 className="text-[10px] text-gray-500 mb-2 md:mb-3 uppercase tracking-widest font-bold">Diagnóstico de Píxeles</h4>
+                      <div className="flex flex-col gap-2 md:gap-3">
                       {['Meta Pixel', 'Google Analytics', 'Google Tag Manager'].map(tracker => {
                           const isActive = technical_audit.tracking?.includes(tracker);
                           return (
-                          <div key={tracker} className="flex items-center justify-between text-sm p-2 rounded bg-black/40 border border-white/5">
+                          <div key={tracker} className="flex items-center justify-between text-xs md:text-sm p-1.5 md:p-2 rounded bg-black/40 border border-white/5">
                               <span className={isActive ? 'text-gray-300 font-medium' : 'text-gray-600 line-through'}>{tracker}</span>
                               {isActive ? 
-                                  <span className="text-[10px] text-green-400 uppercase font-bold tracking-wider flex items-center gap-1"><div className="w-1.5 h-1.5 rounded-full bg-green-500"></div> Activo</span> : 
+                                  <span className="text-[10px] text-green-400 uppercase font-bold tracking-wider flex items-center gap-1"><div className="w-1.5 h-1.5 rounded-full bg-green-500"></div> <span className="hidden md:inline">Activo</span></span> : 
                                   <span className="text-[10px] text-red-500 uppercase font-bold tracking-wider">Ausente</span>
                               }
                           </div>
                           )
                       })}
                       </div>
-                      <p className="mt-4 text-xs text-gray-500 italic">Sin herramientas de medición, se dificulta el seguimiento eficiente de prospectos y la optimización de campañas.</p>
+                      <p className="mt-3 md:mt-4 text-xs text-gray-500 italic">Sin herramientas de medición, se dificulta el seguimiento eficiente de prospectos y la optimización de campañas.</p>
                   </div>
                   
                   {/* Mobile & Speed */}
-                  <div className="bg-[#111] p-6 rounded-xl border border-white/5 shadow-lg flex flex-col justify-between">
+                  <div className="bg-[#111] p-4 md:p-6 rounded-xl border border-white/5 shadow-lg flex flex-col justify-between">
                       <div>
-                          <h3 className="text-xs font-bold text-gray-400 flex items-center gap-2 mb-4 uppercase tracking-widest">
-                              <Smartphone className="w-4 h-4 text-purple-500" /> Experiencia Móvil
+                          <h3 className="text-xs font-bold text-gray-400 flex items-center gap-2 mb-3 md:mb-4 uppercase tracking-widest">
+                              <Smartphone className="w-3 h-3 md:w-4 md:h-4 text-purple-500" /> Experiencia Móvil
                           </h3>
-                          <div className="space-y-6">
+                          <div className="space-y-4 md:space-y-6">
                               <div>
                                   <p className="text-[10px] uppercase tracking-widest text-gray-500 mb-1 font-bold">Performance Global</p>
-                                  <p className="text-4xl font-black text-white">{technical_audit.pagespeed?.score || 'N/A'}<span className="text-lg text-gray-600">/100</span></p>
+                                  <p className="text-3xl md:text-4xl font-black text-white">{technical_audit.pagespeed?.score || 'N/A'}<span className="text-base md:text-lg text-gray-600">/100</span></p>
                                   <p className="text-xs text-gray-500 mt-1">El rendimiento móvil puede influir en la experiencia del usuario y la tasa de conversión.</p>
                               </div>
                               <div>
                                   <p className="text-[10px] uppercase tracking-widest text-gray-500 mb-1 font-bold">Bloqueo Visual (LCP)</p>
-                                  <p className="text-3xl font-black text-gray-300">{technical_audit.pagespeed?.lcp || 'N/A'}</p>
+                                  <p className="text-2xl md:text-3xl font-black text-gray-300">{technical_audit.pagespeed?.lcp || 'N/A'}</p>
                               </div>
                           </div>
                       </div>
                   </div>
 
                   {/* Synthesis */}
-                  <div className="bg-gradient-to-br from-[#111] to-[#0a0a0a] p-6 rounded-xl border border-white/5 md:col-span-2">
-                      <h3 className="text-xs font-bold text-gray-300 flex items-center gap-2 mb-4 uppercase tracking-widest">
-                          <Search className="w-4 h-4" /> Oportunidades Principales
+                  <div className="bg-gradient-to-br from-[#111] to-[#0a0a0a] p-4 md:p-6 rounded-xl border border-white/5 md:col-span-2">
+                      <h3 className="text-xs font-bold text-gray-300 flex items-center gap-2 mb-3 md:mb-4 uppercase tracking-widest">
+                          <Search className="w-3 h-3 md:w-4 md:h-4" /> Oportunidades Principales
                       </h3>
-                      <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                      <div className="grid grid-cols-1 md:grid-cols-2 gap-3 md:gap-4">
                           {topIssues.map((issue: string, i: number) => (
-                          <div key={i} className="flex items-start gap-3 bg-white/5 p-4 rounded-lg border border-white/5">
-                              <div className="mt-0.5 bg-gray-500/20 p-1 rounded">
+                          <div key={i} className="flex items-start gap-2 md:gap-3 bg-white/5 p-3 md:p-4 rounded-lg border border-white/5">
+                              <div className="mt-0.5 bg-gray-500/20 p-1 rounded flex-shrink-0">
                                   <Target className="w-3 h-3 text-gray-400" />
                               </div>
-                              <span className="text-sm text-gray-300 font-medium leading-relaxed">{issue}</span>
+                              <span className="text-xs md:text-sm text-gray-300 font-medium leading-relaxed">{issue}</span>
                           </div>
                           ))}
                       </div>
@@ -195,47 +196,47 @@ export default async function AuditPage({ params }: { params: Promise<{ domain: 
           </div>
 
           {/* QUÉ SIGNIFICA COMERCIALMENTE */}
-          <div className="bg-[#0a0a0a] border border-white/5 rounded-2xl p-8 md:p-12">
-            <h3 className="text-lg font-bold text-white mb-4 flex items-center gap-2">
-              <Target className="w-5 h-5 text-yellow-500" />
+          <div className="bg-[#0a0a0a] border border-white/5 rounded-xl md:rounded-2xl p-4 md:p-8 lg:p-12">
+            <h3 className="text-base md:text-lg font-bold text-white mb-3 md:mb-4 flex items-center gap-2">
+              <Target className="w-4 h-4 md:w-5 md:h-5 text-yellow-500" />
               Qué significa esto comercialmente
             </h3>
-            <p className="text-gray-400 leading-relaxed">
+            <p className="text-sm md:text-gray-400 leading-relaxed">
               {getMaturityInsight(pain_point_synthesis.authority_score)}
             </p>
-            <p className="text-gray-500 mt-4 text-sm leading-relaxed">
+            <p className="text-gray-500 mt-3 md:mt-4 text-xs md:text-sm leading-relaxed">
               Una revisión detallada permite identificar exactamente dónde están las fricciones en el proceso de captación y cómo optimizarlas con cambios concretos y medibles.
             </p>
           </div>
 
           {/* SOLUCIÓN RECOMENDADA */}
-          <div className="bg-gradient-to-br from-yellow-900/20 to-[#0a0a0a] border border-yellow-500/20 rounded-2xl p-8 md:p-12">
-            <div className="flex items-start gap-4">
-              <div className="p-3 bg-yellow-500/10 rounded-xl">
-                <TrendingDown className="w-8 h-8 text-yellow-500" />
+          <div className="bg-gradient-to-br from-yellow-900/20 to-[#0a0a0a] border border-yellow-500/20 rounded-xl md:rounded-2xl p-4 md:p-8 lg:p-12">
+            <div className="flex items-start gap-3 md:gap-4">
+              <div className="p-2 md:p-3 bg-yellow-500/10 rounded-xl flex-shrink-0">
+                <TrendingDown className="w-5 h-5 md:w-8 md:h-8 text-yellow-500" />
               </div>
               <div>
-                <h3 className="text-lg font-bold text-white mb-2">
+                <h3 className="text-base md:text-lg font-bold text-white mb-2">
                   Solución recomendada: Luma Estate OS Foundation
                 </h3>
-                <p className="text-gray-400 leading-relaxed mb-4">
+                <p className="text-sm text-gray-400 leading-relaxed mb-3 md:mb-4">
                   Una plataforma integral diseñada para inmobiliarias que necesitan estructurar su captación digital, automatizar el seguimiento de prospectos y medir resultados de forma clara.
                 </p>
-                <ul className="space-y-2 text-sm text-gray-500">
+                <ul className="space-y-1.5 md:space-y-2 text-xs md:text-sm text-gray-500">
                   <li className="flex items-center gap-2">
-                    <div className="w-1.5 h-1.5 rounded-full bg-yellow-500"></div>
+                    <div className="w-1.5 h-1.5 rounded-full bg-yellow-500 flex-shrink-0"></div>
                     CRM Inmobiliario con seguimiento automático de prospectos
                   </li>
                   <li className="flex items-center gap-2">
-                    <div className="w-1.5 h-1.5 rounded-full bg-yellow-500"></div>
+                    <div className="w-1.5 h-1.5 rounded-full bg-yellow-500 flex-shrink-0"></div>
                     Landing pages optimizadas para captación
                   </li>
                   <li className="flex items-center gap-2">
-                    <div className="w-1.5 h-1.5 rounded-full bg-yellow-500"></div>
+                    <div className="w-1.5 h-1.5 rounded-full bg-yellow-500 flex-shrink-0"></div>
                     Integración con Meta Pixel y Google Analytics
                   </li>
                   <li className="flex items-center gap-2">
-                    <div className="w-1.5 h-1.5 rounded-full bg-yellow-500"></div>
+                    <div className="w-1.5 h-1.5 rounded-full bg-yellow-500 flex-shrink-0"></div>
                     Dashboard de métricas comerciales en tiempo real
                   </li>
                 </ul>
@@ -245,26 +246,27 @@ export default async function AuditPage({ params }: { params: Promise<{ domain: 
         </div>
 
         {/* CTA SECTION */}
-        <div className="border-t border-white/10 bg-[#0a0a0a] relative overflow-hidden py-24">
-            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full max-w-4xl bg-gray-600/10 rounded-full blur-[120px] pointer-events-none"></div>
+        <div className="border-t border-white/10 bg-[#0a0a0a] relative overflow-hidden py-12 md:py-24">
+            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full max-w-4xl bg-gray-600/10 rounded-full blur-[80px] md:blur-[120px] pointer-events-none"></div>
             
-            <div className="max-w-4xl mx-auto px-8 relative z-10 text-center space-y-8">
-                <h2 className="text-4xl md:text-5xl font-black text-white uppercase tracking-tighter">
+            <div className="max-w-4xl mx-auto px-4 md:px-8 relative z-10 text-center space-y-6 md:space-y-8">
+                <h2 className="text-2xl md:text-4xl lg:text-5xl font-black text-white uppercase tracking-tighter">
                     Mejora tu Captación Digital
                 </h2>
-                <p className="text-xl text-gray-400 leading-relaxed max-w-2xl mx-auto">
+                <p className="text-sm md:text-xl text-gray-400 leading-relaxed max-w-2xl mx-auto">
                     Recibe una lectura breve sobre cómo mejorar captación, seguimiento y control comercial de tus prospectos inmobiliarios.
                 </p>
                 
-                <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mt-8">
+                <div className="flex flex-col sm:flex-row items-center justify-center gap-3 md:gap-4 mt-6 md:mt-8">
                     {/* PRIMARY CTA */}
                     <a 
                         href={`https://wa.me/18292558703?text=Hola,%20vi%20la%20revisión%20preliminar%20para%20mi%20web%20(${domain})%20y%20quiero%20solicitar%20una%20revisión%20personalizada.`}
                         target="_blank"
                         rel="noreferrer"
-                        className="inline-flex items-center justify-center gap-3 bg-white text-black hover:bg-gray-200 px-10 py-5 rounded-full text-lg font-bold transition-all hover:scale-105 w-full sm:w-auto"
+                        className="inline-flex items-center justify-center gap-2 md:gap-3 bg-white text-black hover:bg-gray-200 px-6 md:px-10 py-3 md:py-5 rounded-full text-sm md:text-lg font-bold transition-all hover:scale-105 w-full sm:w-auto"
                     >
-                        Solicitar revisión personalizada
+                        <span className="md:hidden">Solicitar revisión</span>
+                        <span className="hidden md:inline">Solicitar revisión personalizada</span>
                     </a>
 
                     {/* SECONDARY CTA */}
@@ -272,9 +274,10 @@ export default async function AuditPage({ params }: { params: Promise<{ domain: 
                         href="https://luma-premium.vercel.app/luma-estate-os"
                         target="_blank"
                         rel="noreferrer"
-                        className="inline-flex items-center justify-center gap-3 bg-transparent border border-white/20 text-white hover:bg-white/5 px-10 py-5 rounded-full text-lg font-bold transition-all w-full sm:w-auto"
+                        className="inline-flex items-center justify-center gap-2 md:gap-3 bg-transparent border border-white/20 text-white hover:bg-white/5 px-6 md:px-10 py-3 md:py-5 rounded-full text-sm md:text-lg font-bold transition-all w-full sm:w-auto"
                     >
-                        Ver propuesta Luma Estate OS
+                        <span className="md:hidden">Ver propuesta</span>
+                        <span className="hidden md:inline">Ver propuesta Luma Estate OS</span>
                     </a>
                 </div>
             </div>
