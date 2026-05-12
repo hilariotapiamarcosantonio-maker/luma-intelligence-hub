@@ -1933,5 +1933,460 @@
             "status": "error",
             "error_message": "Error de conexión o timeout."
         }
+    },
+    {
+        "report_metadata": {
+            "timestamp": "2026-05-12T18:32:10.840122",
+            "domain_scanned": "vanderhorstrealestate.com",
+            "status": "error",
+            "error_message": "Error de conexión o timeout."
+        }
+    },
+    {
+        "report_metadata": {
+            "timestamp": "2026-05-12T18:32:13.491896",
+            "domain_scanned": "remaxocean.net",
+            "status": "success"
+        },
+        "client_identity": {
+            "company_name": "Remax",
+            "key_people": [],
+            "emails": [
+                "info@remaxocean.com",
+                "info@remaxocean.net"
+            ],
+            "phones": [
+                "+18494723617",
+                "18499445581"
+            ]
+        },
+        "technical_audit": {
+            "tech_stack": [
+                "WordPress 6.9.4"
+            ],
+            "tracking": [
+                "Google Analytics",
+                "Google Tag Manager"
+            ],
+            "open_graph": true,
+            "pagespeed": {
+                "error": "API Key no configurada",
+                "score": 0,
+                "lcp": null,
+                "tti": null
+            }
+        },
+        "marketing_intelligence": {
+            "social_links": [
+                "https://www.instagram.com/mermax_remax_ocean/"
+            ],
+            "broken_links": [
+                "https://www.facebook.com/MermaxRemaxOcean"
+            ]
+        },
+        "pain_point_synthesis": {
+            "authority_score": 35,
+            "identified_issues": [
+                "Rendimiento móvil pendiente de revisión — podría afectar la experiencia del usuario y la conversión.",
+                "Sin Meta Pixel - Imposibilidad de retargeting eficiente en pauta.",
+                "1 enlace sociales sin actividad clara o que requieren revisión."
+            ]
+        }
+    },
+    {
+        "report_metadata": {
+            "timestamp": "2026-05-12T18:32:13.957489",
+            "domain_scanned": "inverfisa.com.do",
+            "status": "success"
+        },
+        "client_identity": {
+            "company_name": "Inverfisa",
+            "key_people": [],
+            "emails": [
+                "inverfisard@gmail.com",
+                "bootstrap@3.3.7"
+            ],
+            "phones": [
+                "809 567-9071"
+            ]
+        },
+        "technical_audit": {
+            "tech_stack": [
+                "WordPress 6.2.8"
+            ],
+            "tracking": [
+                "Google Analytics"
+            ],
+            "open_graph": true,
+            "pagespeed": {
+                "error": "API Key no configurada",
+                "score": 0,
+                "lcp": null,
+                "tti": null
+            }
+        },
+        "marketing_intelligence": {
+            "social_links": [
+                "https://www.instagram.com/inverfisard/"
+            ],
+            "broken_links": [
+                "https://www.facebook.com/InverfisaRD"
+            ]
+        },
+        "pain_point_synthesis": {
+            "authority_score": 25,
+            "identified_issues": [
+                "Rendimiento móvil pendiente de revisión — podría afectar la experiencia del usuario y la conversión.",
+                "Sin Meta Pixel - Imposibilidad de retargeting eficiente en pauta.",
+                "1 enlace sociales sin actividad clara o que requieren revisión."
+            ]
+        }
+    },
+    {
+        "report_metadata": {
+            "timestamp": "2026-05-12T18:32:13.957489",
+            "domain_scanned": "dominicanproperties.do",
+            "status": "success"
+        },
+        "client_identity": {
+            "company_name": "dominicanproperties.do",
+            "key_people": [],
+            "emails": [
+                "info@dominicanproperties.com.do"
+            ],
+            "phones": [
+                "18099864112",
+                "8092273220"
+            ]
+        },
+        "technical_audit": {
+            "tech_stack": [
+                "AlterEstate",
+                "Next.js"
+            ],
+            "tracking": [
+                "Google Analytics",
+                "Meta Pixel",
+                "Google Tag Manager"
+            ],
+            "open_graph": true,
+            "pagespeed": {
+                "error": "API Key no configurada",
+                "score": 0,
+                "lcp": null,
+                "tti": null
+            }
+        },
+        "marketing_intelligence": {
+            "social_links": [
+                "https://www.instagram.com/dominicanpropertiesrd/"
+            ],
+            "broken_links": [
+                "https://www.facebook.com/dominicanpropertiesrd/"
+            ]
+        },
+        "pain_point_synthesis": {
+            "authority_score": 45,
+            "identified_issues": [
+                "Rendimiento móvil pendiente de revisión — podría afectar la experiencia del usuario y la conversión.",
+                "1 enlace sociales sin actividad clara o que requieren revisión."
+            ]
+        }
+    },
+    {
+        "report_metadata": {
+            "timestamp": "2026-05-12T18:32:14.037730",
+            "domain_scanned": "dreamrealtydr.com",
+            "status": "success"
+        },
+        "client_identity": {
+            "company_name": "Dream Realty Group – Dream Realty Group",
+            "key_people": [
+                "Meet Calin Stoianovici founder of Dream Realty Group"
+            ],
+            "emails": [
+                "info@dreamrealtydr.com"
+            ],
+            "phones": [
+                "18492799260",
+                "1-849-279-9260"
+            ]
+        },
+        "technical_audit": {
+            "tech_stack": [
+                "WordPress"
+            ],
+            "tracking": [
+                "Google Analytics"
+            ],
+            "open_graph": false,
+            "pagespeed": {
+                "error": "API Key no configurada",
+                "score": 0,
+                "lcp": null,
+                "tti": null
+            }
+        },
+        "marketing_intelligence": {
+            "social_links": [
+                "http://instagram.com/dreamrealtydr",
+                "https://www.youtube.com/@DreamRealtyDR"
+            ],
+            "broken_links": [
+                "https://www.facebook.com/dreamrealtydr",
+                "https://www.linkedin.com/in/calinstoianovici/"
+            ]
+        },
+        "pain_point_synthesis": {
+            "authority_score": 20,
+            "identified_issues": [
+                "Rendimiento móvil pendiente de revisión — podría afectar la experiencia del usuario y la conversión.",
+                "Sin Meta Pixel - Imposibilidad de retargeting eficiente en pauta.",
+                "Falta de Open Graph - Compartir en redes muestra enlaces rotos o sin imagen.",
+                "2 enlaces sociales sin actividad clara o que requieren revisión."
+            ]
+        }
+    },
+    {
+        "report_metadata": {
+            "timestamp": "2026-05-12T18:32:14.170246",
+            "domain_scanned": "anchorgroup.com.do",
+            "status": "success"
+        },
+        "client_identity": {
+            "company_name": "Anchor Group",
+            "key_people": [
+                "Gerente GeneralAnchor Corredores de Seguros",
+                "Fundador & CEO"
+            ],
+            "emails": [
+                "contacto@anchor.do"
+            ],
+            "phones": [
+                "(809) 638-1861",
+                "+1 (809) 881-9083"
+            ]
+        },
+        "technical_audit": {
+            "tech_stack": [
+                "WordPress 6.8.5"
+            ],
+            "tracking": [],
+            "open_graph": true,
+            "pagespeed": {
+                "error": "API Key no configurada",
+                "score": 0,
+                "lcp": null,
+                "tti": null
+            }
+        },
+        "marketing_intelligence": {
+            "social_links": [],
+            "broken_links": []
+        },
+        "pain_point_synthesis": {
+            "authority_score": 10,
+            "identified_issues": [
+                "Rendimiento móvil pendiente de revisión — podría afectar la experiencia del usuario y la conversión.",
+                "Sin Meta Pixel - Imposibilidad de retargeting eficiente en pauta.",
+                "Presencia omnicanal nula - No se detectaron redes sociales enlazadas."
+            ]
+        }
+    },
+    {
+        "report_metadata": {
+            "timestamp": "2026-05-12T18:32:14.435987",
+            "domain_scanned": "larimarhomerd.com",
+            "status": "success"
+        },
+        "client_identity": {
+            "company_name": "larimar-home-rd.alterestate.com",
+            "key_people": [],
+            "emails": [
+                "larimarhomerd@gmail.com"
+            ],
+            "phones": [
+                "18295240121",
+                "809-638-1871"
+            ]
+        },
+        "technical_audit": {
+            "tech_stack": [
+                "AlterEstate",
+                "Next.js"
+            ],
+            "tracking": [],
+            "open_graph": true,
+            "pagespeed": {
+                "error": "API Key no configurada",
+                "score": 0,
+                "lcp": null,
+                "tti": null
+            }
+        },
+        "marketing_intelligence": {
+            "social_links": [
+                "https://www.instagram.com/larimarhomerd_/",
+                "https://www.youtube.com/@LarimarHomeInmobiliariaRD",
+                "https://www.instagram.com/larimarhomerd_",
+                "https://www.tiktok.com/https://www.tiktok.com/@larimarhomerd_?is_from_webapp=1&sender_device=pc"
+            ],
+            "broken_links": []
+        },
+        "pain_point_synthesis": {
+            "authority_score": 30,
+            "identified_issues": [
+                "Rendimiento móvil pendiente de revisión — podría afectar la experiencia del usuario y la conversión.",
+                "Sin Meta Pixel - Imposibilidad de retargeting eficiente en pauta."
+            ]
+        }
+    },
+    {
+        "report_metadata": {
+            "timestamp": "2026-05-12T18:32:14.582999",
+            "domain_scanned": "oneclickcabarete.com",
+            "status": "success"
+        },
+        "client_identity": {
+            "company_name": "One Click Cabarete – Real Estate – Vacation Rentals",
+            "key_people": [],
+            "emails": [
+                "info@oneclickcabarete.com"
+            ],
+            "phones": [
+                "1"
+            ]
+        },
+        "technical_audit": {
+            "tech_stack": [
+                "WordPress 6.9.4"
+            ],
+            "tracking": [],
+            "open_graph": false,
+            "pagespeed": {
+                "error": "API Key no configurada",
+                "score": 0,
+                "lcp": null,
+                "tti": null
+            }
+        },
+        "marketing_intelligence": {
+            "social_links": [
+                "https://www.instagram.com/oneclick_cabarete",
+                "https://www.youtube.com/@oneclickcabarete1410"
+            ],
+            "broken_links": [
+                "https://www.facebook.com/pages/OneClick-Cabarete/311715209023521",
+                "http://twitter.com/OneclickCabaret",
+                "https://do.linkedin.com/in/one-click-cabarete-96482536"
+            ]
+        },
+        "pain_point_synthesis": {
+            "authority_score": 10,
+            "identified_issues": [
+                "Rendimiento móvil pendiente de revisión — podría afectar la experiencia del usuario y la conversión.",
+                "Sin Meta Pixel - Imposibilidad de retargeting eficiente en pauta.",
+                "Falta de Open Graph - Compartir en redes muestra enlaces rotos o sin imagen.",
+                "3 enlaces sociales sin actividad clara o que requieren revisión."
+            ]
+        }
+    },
+    {
+        "report_metadata": {
+            "timestamp": "2026-05-12T18:32:14.649563",
+            "domain_scanned": "c21sunsets.com",
+            "status": "success"
+        },
+        "client_identity": {
+            "company_name": "CENTURY 21 Sunsets",
+            "key_people": [],
+            "emails": [
+                "hola@c21sunsets.com"
+            ],
+            "phones": [
+                "+18494490596",
+                "18494490596"
+            ]
+        },
+        "technical_audit": {
+            "tech_stack": [
+                "Powered by LayerSlider 7.2.1 - Multi-Purpose, Responsive, Parallax, Mobile-Friendly Slider Plugin for WordPress."
+            ],
+            "tracking": [
+                "Google Analytics",
+                "Meta Pixel",
+                "Google Tag Manager"
+            ],
+            "open_graph": true,
+            "pagespeed": {
+                "error": "API Key no configurada",
+                "score": 0,
+                "lcp": null,
+                "tti": null
+            }
+        },
+        "marketing_intelligence": {
+            "social_links": [
+                "https://www.instagram.com/c21sunsets/"
+            ],
+            "broken_links": []
+        },
+        "pain_point_synthesis": {
+            "authority_score": 45,
+            "identified_issues": [
+                "Rendimiento móvil pendiente de revisión — podría afectar la experiencia del usuario y la conversión."
+            ]
+        }
+    },
+    {
+        "report_metadata": {
+            "timestamp": "2026-05-12T18:32:14.651072",
+            "domain_scanned": "inmoteca.net",
+            "status": "success"
+        },
+        "client_identity": {
+            "company_name": "Inmoteca Inmobiliaria",
+            "key_people": [],
+            "emails": [
+                "info@inmoteca.net"
+            ],
+            "phones": [
+                "8295540934",
+                "829-554-0934"
+            ]
+        },
+        "technical_audit": {
+            "tech_stack": [
+                "WordPress"
+            ],
+            "tracking": [],
+            "open_graph": true,
+            "pagespeed": {
+                "error": "API Key no configurada",
+                "score": 0,
+                "lcp": null,
+                "tti": null
+            }
+        },
+        "marketing_intelligence": {
+            "social_links": [
+                "https://www.instagram.com/inmotecard/",
+                "https://www.youtube.com/channel/UColMXvFCd83ZKgud1PTPc3w?view_as=subscriber",
+                "https://www.linkedin.com/company/11373345/"
+            ],
+            "broken_links": [
+                "https://es-la.facebook.com/inmotecard/",
+                "https://twitter.com/inmotecard",
+                "https://www.facebook.com/inmotecard/"
+            ]
+        },
+        "pain_point_synthesis": {
+            "authority_score": 25,
+            "identified_issues": [
+                "Rendimiento móvil pendiente de revisión — podría afectar la experiencia del usuario y la conversión.",
+                "Sin Meta Pixel - Imposibilidad de retargeting eficiente en pauta.",
+                "3 enlaces sociales sin actividad clara o que requieren revisión."
+            ]
+        }
     }
 ]
