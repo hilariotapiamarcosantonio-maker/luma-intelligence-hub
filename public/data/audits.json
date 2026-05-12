@@ -3190,5 +3190,123 @@
             "status": "error",
             "error_message": "Error de conexión o timeout."
         }
+    },
+    {
+        "report_metadata": {
+            "timestamp": "2026-05-12T18:32:27.786098",
+            "domain_scanned": "dreamhome-dr.com",
+            "status": "error",
+            "error_message": "Error de conexión o timeout."
+        }
+    },
+    {
+        "report_metadata": {
+            "timestamp": "2026-05-12T18:32:27.945288",
+            "domain_scanned": "remaxlaguna.com.do",
+            "status": "error",
+            "error_message": "Error de conexión o timeout."
+        }
+    },
+    {
+        "report_metadata": {
+            "timestamp": "2026-05-12T18:32:27.991281",
+            "domain_scanned": "gvpropiedades.com",
+            "status": "error",
+            "error_message": "Error de conexión o timeout."
+        }
+    },
+    {
+        "report_metadata": {
+            "timestamp": "2026-05-12T18:32:27.995868",
+            "domain_scanned": "remaxmetropolis.com.do",
+            "status": "error",
+            "error_message": "Error de conexión o timeout."
+        }
+    },
+    {
+        "report_metadata": {
+            "timestamp": "2026-05-12T18:32:28.446816",
+            "domain_scanned": "remaxpremium.com.do",
+            "status": "error",
+            "error_message": "Error de conexión o timeout."
+        }
+    },
+    {
+        "report_metadata": {
+            "timestamp": "2026-05-12T18:32:28.512439",
+            "domain_scanned": "remaxcolonial.com.do",
+            "status": "error",
+            "error_message": "Error de conexión o timeout."
+        }
+    },
+    {
+        "report_metadata": {
+            "timestamp": "2026-05-12T18:32:29.062433",
+            "domain_scanned": "remaxconecta.com.do",
+            "status": "error",
+            "error_message": "Error de conexión o timeout."
+        }
+    },
+    {
+        "report_metadata": {
+            "timestamp": "2026-05-12T18:32:29.384861",
+            "domain_scanned": "remaxatlantis.com",
+            "status": "success"
+        },
+        "client_identity": {
+            "company_name": "RE/MAX ATLANTIS - THE BEST COLLECTION REAL ESTATE IN DOMINICAN REPUBLIC",
+            "key_people": [],
+            "emails": [
+                "realestate@remaxatlantis.com"
+            ],
+            "phones": [
+                "1 (849)222 2999"
+            ]
+        },
+        "technical_audit": {
+            "tech_stack": [
+                "WordPress"
+            ],
+            "tracking": [],
+            "open_graph": true,
+            "pagespeed": {
+                "error": "API Key no configurada",
+                "score": 0,
+                "lcp": null,
+                "tti": null
+            }
+        },
+        "marketing_intelligence": {
+            "social_links": [
+                "https://www.instagram.com/remax_atlantis_rd/"
+            ],
+            "broken_links": [
+                "https://www.facebook.com/Remax.Sosua"
+            ]
+        },
+        "pain_point_synthesis": {
+            "authority_score": 15,
+            "identified_issues": [
+                "Rendimiento móvil pendiente de revisión — podría afectar la experiencia del usuario y la conversión.",
+                "Sin Meta Pixel - Imposibilidad de retargeting eficiente en pauta.",
+                "1 enlace sociales sin actividad clara o que requieren revisión."
+            ]
+        }
+    },
+    {
+        "report_metadata": {
+            "timestamp": "2026-05-12T18:32:29.814880",
+            "domain_scanned": "remaxmilenium.com.do",
+            "status": "error",
+            "error_message": "Error de conexión o timeout."
+        }
+    },
+    {
+        "report_metadata": {
+            "timestamp": "2026-05-12T18:32:29.914738",
+            "domain_scanned": "remaxmagnolia.com.do",
+            "status": "error",
+            "error_message": "Error de conexión o timeout."
+        }
     }
 ]
