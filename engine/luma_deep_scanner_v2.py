@@ -206,7 +206,7 @@ class LumaDeepScanner:
         # Sintetización de Fugas de Capital / Pain Points
         issues = []
         if isinstance(ps_score, (int, float)) and ps_score < 50:
-            issues.append(f"Velocidad móvil crítica ({ps_score}/100) - Alta tasa de rebote.")
+            issues.append(f"Rendimiento móvil pendiente de revisión — podría afectar la experiencia del usuario y la conversión.")
         if 'Meta Pixel' not in tech_seo['tracking']:
             issues.append("Sin Meta Pixel - Imposibilidad de retargeting eficiente en pauta.")
         if not tech_seo['open_graph']:

@@ -166,7 +166,7 @@ export default function Home() {
                                  </span>
                                ))
                              ) : (
-                               <p className="text-xs text-gray-600 italic">Sin frameworks modernos detectados</p>
+                               <p className="text-xs text-gray-600 italic">Tecnología base no identificada</p>
                              )}
                            </div>
                            
@@ -223,7 +223,7 @@ export default function Home() {
                            
                            <div className="space-y-3">
                              {marketing_intelligence.social_links.length === 0 && marketing_intelligence.broken_links.length === 0 && (
-                               <p className="text-sm text-gray-500 italic">Sin presencia en redes sociales detectada.</p>
+                               <p className="text-sm text-gray-500 italic">No se detectaron canales sociales enlazados.</p>
                              )}
                              
                              {/* Links Activos */}
