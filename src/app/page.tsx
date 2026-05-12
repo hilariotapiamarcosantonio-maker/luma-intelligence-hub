@@ -23,11 +23,11 @@ export default function Home() {
             <h1 className="text-3xl md:text-5xl font-black tracking-tighter text-transparent bg-clip-text bg-gradient-to-r from-white to-gray-500 uppercase">
               Luma Intelligence Hub
             </h1>
-            <p className="text-gray-500 mt-2 text-xs md:text-sm tracking-widest uppercase flex items-center gap-2">
-              <Activity className="w-4 h-4 text-gray-500 animate-pulse" />
+            <p className="text-gray-400 mt-2 text-xs md:text-sm tracking-widest uppercase flex items-center gap-2">
+              <Activity className="w-4 h-4 text-gray-400 animate-pulse" />
               Revisión preliminar de presencia digital inmobiliaria
             </p>
-            <p className="text-gray-400 mt-4 max-w-2xl text-xs md:text-sm leading-relaxed">
+            <p className="text-gray-300 mt-4 max-w-2xl text-xs md:text-sm leading-relaxed">
               Un análisis inicial para detectar oportunidades en captación, presentación digital, seguimiento comercial y medición de prospectos en inmobiliarias y proyectos inmobiliarios.
             </p>
           </div>
@@ -130,9 +130,9 @@ return (
                           <span className="text-4xl md:text-6xl font-black text-white">
                             {pain_point_synthesis.authority_score}
                           </span>
-                          <span className="text-lg md:text-xl text-gray-500 mb-1">/100</span>
+                          <span className="text-lg md:text-xl text-gray-400 mb-1">/100</span>
                         </div>
-                        <p className="text-xs text-gray-500 mt-3 md:mt-4 uppercase tracking-wider font-semibold">
+                        <p className="text-xs text-gray-400 mt-3 md:mt-4 uppercase tracking-wider font-semibold">
                           {pain_point_synthesis.authority_score < 40 ? "Inicial" : 
                            pain_point_synthesis.authority_score < 60 ? "En desarrollo" : 
                            pain_point_synthesis.authority_score < 80 ? "Competitivo" : "Avanzado"}
@@ -148,7 +148,7 @@ return (
                          <p className="text-xl md:text-2xl font-bold text-white mb-1">
                            Potencial de mejora
                          </p>
-                         <p className="text-xs text-gray-500 mt-2">Basado en optimización de conversión y estructuración de embudos comerciales.</p>
+                         <p className="text-xs text-gray-400 mt-2">Basado en optimización de conversión y estructuración de embudos comerciales.</p>
                       </div>
                     </div>
 
@@ -174,7 +174,7 @@ return (
                             </div>
                             
                             <div className="mt-3 md:mt-4 pt-3 md:pt-4 border-t border-white/5">
-                               <h4 className="text-xs text-gray-500 mb-2 md:mb-3 uppercase tracking-wider">Píxeles y analítica</h4>
+                               <h4 className="text-xs text-gray-400 mb-2 md:mb-3 uppercase tracking-wider">Píxeles y analítica</h4>
                                <div className="flex flex-col gap-1.5 md:gap-2">
                                  {['Meta Pixel', 'Google Analytics', 'Google Tag Manager'].map((tracker: string) => {
                                    const isActive = technical_audit.tracking.includes(tracker);
@@ -200,13 +200,13 @@ return (
                             </h3>
                             <div className="grid grid-cols-2 gap-3 md:gap-4">
                               <div>
-                                <p className="text-xs text-gray-500 mb-1">Puntuación de velocidad</p>
+                                <p className="text-xs text-gray-400 mb-1">Puntuación de velocidad</p>
                                 <p className="text-xl md:text-2xl font-mono text-white">
                                   {technical_audit.pagespeed.score || 'N/A'}
                                 </p>
                               </div>
                               <div>
-                                <p className="text-xs text-gray-500 mb-1">LCP (Carga visual)</p>
+                                <p className="text-xs text-gray-400 mb-1">LCP (Carga visual)</p>
                                 <p className="text-xl md:text-2xl font-mono text-white">
                                   {technical_audit.pagespeed.lcp || 'N/A'}
                                 </p>
@@ -237,7 +237,7 @@ return (
                                   <div key={link} className="flex items-center gap-2 md:gap-3 p-1.5 md:p-2 rounded-lg bg-green-500/5 border border-green-500/10">
                                     <div className="w-1.5 h-1.5 rounded-full bg-green-500 flex-shrink-0"></div>
                                     <span className="text-xs text-gray-300 capitalize w-12 md:w-16 flex-shrink-0">{platform}</span>
-                                    <a href={link} className="text-xs text-gray-500 hover:text-green-400 truncate flex-1" title={link}>{link}</a>
+                                    <a href={link} className="text-xs text-gray-400 hover:text-green-400 truncate flex-1" title={link}>{link}</a>
                                   </div>
                                 )
                               })}
@@ -267,7 +267,7 @@ return (
                             <ul className="space-y-2 md:space-y-3">
                               {pain_point_synthesis.identified_issues.map((issue: string, i: number) => (
                                 <li key={i} className="flex items-start gap-2 md:gap-3 text-xs md:text-sm">
-                                  <span className="text-gray-500 mt-0.5">•</span>
+                                  <span className="text-gray-400 mt-0.5">•</span>
                                   <span className="text-gray-400 leading-relaxed">{issue}</span>
                                 </li>
                               ))}

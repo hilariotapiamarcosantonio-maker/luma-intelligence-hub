@@ -281,26 +281,36 @@ export default async function AuditPage({ params }: { params: Promise<{ domain: 
             <p className="text-sm md:text-base text-gray-400 leading-relaxed mb-4 md:mb-6 max-w-3xl">
               Tener presencia digital no siempre significa tener una estructura comercial. La oportunidad está en convertir visitas, mensajes y búsquedas en prospectos organizados, filtrados y con seguimiento claro.
             </p>
-            <ul className="grid grid-cols-1 md:grid-cols-2 gap-2 md:gap-3 text-xs md:text-sm text-gray-400">
-              <li className="flex items-center gap-2">
-                <CheckCircle className="w-3 h-3 md:w-4 md:h-4 text-green-500 flex-shrink-0" />
-                Mejorar la confianza antes del primer contacto.
+            <ul className="space-y-2 md:space-y-3 text-sm text-gray-300">
+              <li className="flex items-start gap-3">
+                <div className="w-5 h-5 rounded-full bg-green-500/20 flex items-center justify-center flex-shrink-0 mt-0.5">
+                  <CheckCircle className="w-3 h-3 text-green-400" />
+                </div>
+                <span className="leading-relaxed">Mejorar la confianza antes del primer contacto.</span>
               </li>
-              <li className="flex items-center gap-2">
-                <CheckCircle className="w-3 h-3 md:w-4 md:h-4 text-green-500 flex-shrink-0" />
-                Reducir prospectos dispersos en WhatsApp o redes.
+              <li className="flex items-start gap-3">
+                <div className="w-5 h-5 rounded-full bg-green-500/20 flex items-center justify-center flex-shrink-0 mt-0.5">
+                  <CheckCircle className="w-3 h-3 text-green-400" />
+                </div>
+                <span className="leading-relaxed">Reducir prospectos dispersos en WhatsApp o redes.</span>
               </li>
-              <li className="flex items-center gap-2">
-                <CheckCircle className="w-3 h-3 md:w-4 md:h-4 text-green-500 flex-shrink-0" />
-                Medir mejor qué canales generan oportunidades.
+              <li className="flex items-start gap-3">
+                <div className="w-5 h-5 rounded-full bg-green-500/20 flex items-center justify-center flex-shrink-0 mt-0.5">
+                  <CheckCircle className="w-3 h-3 text-green-400" />
+                </div>
+                <span className="leading-relaxed">Medir mejor qué canales generan oportunidades.</span>
               </li>
-              <li className="flex items-center gap-2">
-                <CheckCircle className="w-3 h-3 md:w-4 md:h-4 text-green-500 flex-shrink-0" />
-                Crear una ruta más clara desde interés hasta seguimiento.
+              <li className="flex items-start gap-3">
+                <div className="w-5 h-5 rounded-full bg-green-500/20 flex items-center justify-center flex-shrink-0 mt-0.5">
+                  <CheckCircle className="w-3 h-3 text-green-400" />
+                </div>
+                <span className="leading-relaxed">Crear una ruta más clara desde interés hasta seguimiento.</span>
               </li>
-              <li className="flex items-center gap-2">
-                <CheckCircle className="w-3 h-3 md:w-4 md:h-4 text-green-500 flex-shrink-0" />
-                Preparar la base para campañas y automatización futura.
+              <li className="flex items-start gap-3">
+                <div className="w-5 h-5 rounded-full bg-green-500/20 flex items-center justify-center flex-shrink-0 mt-0.5">
+                  <CheckCircle className="w-3 h-3 text-green-400" />
+                </div>
+                <span className="leading-relaxed">Preparar la base para campañas y automatización futura.</span>
               </li>
             </ul>
           </div>
@@ -314,7 +324,7 @@ export default async function AuditPage({ params }: { params: Promise<{ domain: 
             <p className="text-sm md:text-base text-gray-400 leading-relaxed mb-4 md:mb-6 max-w-3xl">
               Luma Premium no busca reemplazar procesos internos existentes. La propuesta es fortalecer la capa externa de captación, autoridad y conversión para que los prospectos lleguen mejor orientados y con más contexto.
             </p>
-            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-3 md:gap-4">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
               {[
                 "Landing o ruta de captación personalizada",
                 "Formulario o filtro inicial de prospectos",
@@ -325,8 +335,10 @@ export default async function AuditPage({ params }: { params: Promise<{ domain: 
                 "Medición básica",
                 "Guiones de seguimiento por WhatsApp"
               ].map((item, i) => (
-                <div key={i} className="flex items-center gap-2 text-xs md:text-sm text-gray-300 bg-blue-500/5 p-2 md:p-3 rounded-lg border border-blue-500/10">
-                  <ArrowRight className="w-3 h-3 text-blue-400 flex-shrink-0" />
+                <div key={i} className="flex items-center gap-3 text-sm text-gray-300 bg-blue-500/5 p-3 rounded-lg border border-blue-500/10">
+                  <div className="w-6 h-6 rounded-md bg-blue-500/20 flex items-center justify-center flex-shrink-0">
+                    <CheckCircle className="w-3 h-3 text-blue-400" />
+                  </div>
                   {item}
                 </div>
               ))}
@@ -348,7 +360,7 @@ export default async function AuditPage({ params }: { params: Promise<{ domain: 
                 </p>
                 
                 <h4 className="text-xs md:text-sm font-bold text-white uppercase tracking-wider mb-3">Entregables incluidos:</h4>
-                <ul className="grid grid-cols-1 sm:grid-cols-2 gap-2 md:gap-3 text-xs md:text-sm text-gray-400">
+                <ul className="space-y-2 md:space-y-3 text-sm text-gray-300">
                   {[
                     "Diagnóstico comercial inicial",
                     "Landing o sección de captación",
@@ -358,8 +370,10 @@ export default async function AuditPage({ params }: { params: Promise<{ domain: 
                     "Dashboard inicial",
                     "Recomendaciones de seguimiento"
                   ].map((item, i) => (
-                    <li key={i} className="flex items-center gap-2">
-                      <div className="w-1.5 h-1.5 rounded-full bg-yellow-500 flex-shrink-0"></div>
+                    <li key={i} className="flex items-center gap-3">
+                      <div className="w-5 h-5 rounded-md bg-yellow-500/20 flex items-center justify-center flex-shrink-0">
+                        <ArrowRight className="w-2.5 h-2.5 text-yellow-400" />
+                      </div>
                       {item}
                     </li>
                   ))}
