@@ -354,14 +354,6 @@
     },
     {
         "report_metadata": {
-            "timestamp": "2026-05-11T15:44:29.693518",
-            "domain_scanned": "campagna.com.do",
-            "status": "error",
-            "error_message": "Error de conexión o timeout."
-        }
-    },
-    {
-        "report_metadata": {
             "timestamp": "2026-05-11T15:44:29.704271",
             "domain_scanned": "puntacanarealestateproperties.com",
             "status": "success"
@@ -458,14 +450,6 @@
     },
     {
         "report_metadata": {
-            "timestamp": "2026-05-11T15:44:30.487106",
-            "domain_scanned": "urbanagroup.do",
-            "status": "error",
-            "error_message": "Error de conexión o timeout."
-        }
-    },
-    {
-        "report_metadata": {
             "timestamp": "2026-05-11T15:44:30.909240",
             "domain_scanned": "kwdominicana.com",
             "status": "success"
@@ -553,38 +537,6 @@
     },
     {
         "report_metadata": {
-            "timestamp": "2026-05-11T15:44:31.040166",
-            "domain_scanned": "theagencypuntacana.com",
-            "status": "error",
-            "error_message": "Error de conexión o timeout."
-        }
-    },
-    {
-        "report_metadata": {
-            "timestamp": "2026-05-11T15:44:31.057343",
-            "domain_scanned": "c21.com.do",
-            "status": "error",
-            "error_message": "Error de conexión o timeout."
-        }
-    },
-    {
-        "report_metadata": {
-            "timestamp": "2026-05-11T15:44:31.556178",
-            "domain_scanned": "dominicanrealestate.do",
-            "status": "error",
-            "error_message": "Error de conexión o timeout."
-        }
-    },
-    {
-        "report_metadata": {
-            "timestamp": "2026-05-11T15:44:31.709018",
-            "domain_scanned": "coldwellbanker.com.do",
-            "status": "error",
-            "error_message": "Error de conexión o timeout."
-        }
-    },
-    {
-        "report_metadata": {
             "timestamp": "2026-05-11T15:44:32.649693",
             "domain_scanned": "dominicanproperties.com",
             "status": "success"
@@ -618,30 +570,6 @@
                 "Falta de Open Graph - Compartir en redes muestra enlaces rotos o sin imagen.",
                 "Presencia omnicanal nula - No se detectaron redes sociales enlazadas."
             ]
-        }
-    },
-    {
-        "report_metadata": {
-            "timestamp": "2026-05-11T15:44:32.889883",
-            "domain_scanned": "echenique.com.do",
-            "status": "error",
-            "error_message": "Error de conexión o timeout."
-        }
-    },
-    {
-        "report_metadata": {
-            "timestamp": "2026-05-11T15:44:33.009564",
-            "domain_scanned": "alquiloyvendord.com",
-            "status": "error",
-            "error_message": "Error de conexión o timeout."
-        }
-    },
-    {
-        "report_metadata": {
-            "timestamp": "2026-05-11T15:44:34.575145",
-            "domain_scanned": "palmerrealestate.do",
-            "status": "error",
-            "error_message": "Error de conexión o timeout."
         }
     },
     {
@@ -1043,242 +971,247 @@
     },
     {
         "report_metadata": {
-            "timestamp": "2026-05-12T17:55:28.509642",
-            "domain_scanned": "islandpropertiesrd.com.do",
+            "timestamp": "2026-05-12T18:06:40.964943",
+            "domain_scanned": "remaxlider.com.do",
             "status": "error",
             "error_message": "Error de conexión o timeout."
         }
     },
     {
         "report_metadata": {
-            "timestamp": "2026-05-12T17:55:28.523229",
-            "domain_scanned": "propiedadeslanzamiento.com.do",
+            "timestamp": "2026-05-12T18:06:41.121420",
+            "domain_scanned": "vanguardiard.com",
             "status": "error",
             "error_message": "Error de conexión o timeout."
         }
     },
     {
         "report_metadata": {
-            "timestamp": "2026-05-12T17:55:28.524291",
-            "domain_scanned": "zenithproperties.com.do",
+            "timestamp": "2026-05-12T18:06:41.171255",
+            "domain_scanned": "inversion.do",
             "status": "error",
             "error_message": "Error de conexión o timeout."
         }
     },
     {
         "report_metadata": {
-            "timestamp": "2026-05-12T17:55:28.634057",
-            "domain_scanned": "caribbeanrealestatehub.com.do",
+            "timestamp": "2026-05-12T18:06:41.311750",
+            "domain_scanned": "indominicana.com.do",
             "status": "error",
             "error_message": "Error de conexión o timeout."
         }
     },
     {
         "report_metadata": {
-            "timestamp": "2026-05-12T17:55:28.680448",
-            "domain_scanned": "tropicalestatedo.com.do",
+            "timestamp": "2026-05-12T18:06:41.503448",
+            "domain_scanned": "tuinmobiliaria.com.do",
             "status": "error",
             "error_message": "Error de conexión o timeout."
         }
     },
     {
         "report_metadata": {
-            "timestamp": "2026-05-12T17:55:28.884679",
-            "domain_scanned": "lujosantodomingo.com.do",
+            "timestamp": "2026-05-12T18:06:41.728714",
+            "domain_scanned": "remaxmetropolitan.com.do",
             "status": "error",
             "error_message": "Error de conexión o timeout."
         }
     },
     {
         "report_metadata": {
-            "timestamp": "2026-05-12T17:55:28.885363",
-            "domain_scanned": "inversionesinmobiliariasrd.com.do",
-            "status": "error",
-            "error_message": "Error de conexión o timeout."
+            "timestamp": "2026-05-12T18:06:42.646786",
+            "domain_scanned": "homemaster.do",
+            "status": "success"
+        },
+        "client_identity": {
+            "company_name": "homemaster-srl.alterestate.com",
+            "key_people": [],
+            "emails": [
+                "pablo@homemaster.do"
+            ],
+            "phones": [
+                "+18293458477"
+            ]
+        },
+        "technical_audit": {
+            "tech_stack": [
+                "AlterEstate",
+                "Next.js"
+            ],
+            "tracking": [],
+            "open_graph": true,
+            "pagespeed": {
+                "error": "API Key no configurada",
+                "score": 0,
+                "lcp": null,
+                "tti": null
+            }
+        },
+        "marketing_intelligence": {
+            "social_links": [
+                "https://www.instagram.com/Homemasterrd"
+            ],
+            "broken_links": [
+                "https://www.facebook.com/Homemasterrd"
+            ]
+        },
+        "pain_point_synthesis": {
+            "authority_score": 15,
+            "identified_issues": [
+                "Rendimiento móvil pendiente de revisión — podría afectar la experiencia del usuario y la conversión.",
+                "Sin Meta Pixel - Imposibilidad de retargeting eficiente en pauta.",
+                "1 enlace sociales sin actividad clara o que requieren revisión."
+            ]
         }
     },
     {
         "report_metadata": {
-            "timestamp": "2026-05-12T17:55:29.026395",
-            "domain_scanned": "elitehomesrd.com.do",
-            "status": "error",
-            "error_message": "Error de conexión o timeout."
+            "timestamp": "2026-05-12T18:06:45.004572",
+            "domain_scanned": "citymax-la.com",
+            "status": "success"
+        },
+        "client_identity": {
+            "company_name": "CityMax Real Estate Bienes Raices",
+            "key_people": [],
+            "emails": [
+                "franquicias@citymax-la.com"
+            ],
+            "phones": [
+                "+50224935555"
+            ]
+        },
+        "technical_audit": {
+            "tech_stack": [
+                "WordPress 5.9.13"
+            ],
+            "tracking": [
+                "Meta Pixel",
+                "Google Analytics"
+            ],
+            "open_graph": true,
+            "pagespeed": {
+                "error": "API Key no configurada",
+                "score": 0,
+                "lcp": null,
+                "tti": null
+            }
+        },
+        "marketing_intelligence": {
+            "social_links": [
+                "https://www.linkedin.com/company/citymax-latinoam%C3%A9rica",
+                "https://www.instagram.com/citymax_latinoamerica/",
+                "https://www.youtube.com/channel/UCtbjV60N79i4MjhDiC6ft-Q"
+            ],
+            "broken_links": [
+                "https://www.facebook.com/cityMaxLA",
+                "https://twitter.com/CityMax_LA"
+            ]
+        },
+        "pain_point_synthesis": {
+            "authority_score": 45,
+            "identified_issues": [
+                "Rendimiento móvil pendiente de revisión — podría afectar la experiencia del usuario y la conversión.",
+                "2 enlaces sociales sin actividad clara o que requieren revisión."
+            ]
         }
     },
     {
         "report_metadata": {
-            "timestamp": "2026-05-12T17:55:29.258574",
-            "domain_scanned": "mountainviewestates.com.do",
-            "status": "error",
-            "error_message": "Error de conexión o timeout."
+            "timestamp": "2026-05-12T18:06:46.466347",
+            "domain_scanned": "aei.com.do",
+            "status": "success"
+        },
+        "client_identity": {
+            "company_name": "Asociación de Agentes y Empresas Inmobiliarias",
+            "key_people": [],
+            "emails": [],
+            "phones": []
+        },
+        "technical_audit": {
+            "tech_stack": [],
+            "tracking": [
+                "Google Analytics"
+            ],
+            "open_graph": false,
+            "pagespeed": {
+                "error": "API Key no configurada",
+                "score": 0,
+                "lcp": null,
+                "tti": null
+            }
+        },
+        "marketing_intelligence": {
+            "social_links": [
+                "https://instagram.com/aeiorg/",
+                "https://youtube.com/@aeiorgdo",
+                "https://www.youtube.com/watch?v=sOk-mFh8tzs",
+                "https://www.youtube.com/watch?v=zA7J7vdEtZM",
+                "https://www.youtube.com/watch?v=Gi9NOdcC4JI",
+                "https://www.youtube.com/watch?v=8OIoujBzP9Y"
+            ],
+            "broken_links": [
+                "https://facebook.com/aeiorg/"
+            ]
+        },
+        "pain_point_synthesis": {
+            "authority_score": 40,
+            "identified_issues": [
+                "Rendimiento móvil pendiente de revisión — podría afectar la experiencia del usuario y la conversión.",
+                "Sin Meta Pixel - Imposibilidad de retargeting eficiente en pauta.",
+                "Falta de Open Graph - Compartir en redes muestra enlaces rotos o sin imagen.",
+                "1 enlace sociales sin actividad clara o que requieren revisión."
+            ]
         }
     },
     {
         "report_metadata": {
-            "timestamp": "2026-05-12T17:55:29.336042",
-            "domain_scanned": "casasrd.com.do",
-            "status": "error",
-            "error_message": "Error de conexión o timeout."
-        }
-    },
-    {
-        "report_metadata": {
-            "timestamp": "2026-05-12T17:55:29.386676",
-            "domain_scanned": "greennestproperties.com.do",
-            "status": "error",
-            "error_message": "Error de conexión o timeout."
-        }
-    },
-    {
-        "report_metadata": {
-            "timestamp": "2026-05-12T17:55:29.513536",
-            "domain_scanned": "apexrealestate.com.do",
-            "status": "error",
-            "error_message": "Error de conexión o timeout."
-        }
-    },
-    {
-        "report_metadata": {
-            "timestamp": "2026-05-12T17:55:29.626819",
-            "domain_scanned": "sunstoneestates.com.do",
-            "status": "error",
-            "error_message": "Error de conexión o timeout."
-        }
-    },
-    {
-        "report_metadata": {
-            "timestamp": "2026-05-12T17:55:29.707073",
-            "domain_scanned": "bluewaterrealestate.com.do",
-            "status": "error",
-            "error_message": "Error de conexión o timeout."
-        }
-    },
-    {
-        "report_metadata": {
-            "timestamp": "2026-05-12T17:55:29.729526",
-            "domain_scanned": "beachfrontpropertiesrd.com.do",
-            "status": "error",
-            "error_message": "Error de conexión o timeout."
-        }
-    },
-    {
-        "report_metadata": {
-            "timestamp": "2026-05-12T17:55:29.882786",
-            "domain_scanned": "haciendaestates.com.do",
-            "status": "error",
-            "error_message": "Error de conexión o timeout."
-        }
-    },
-    {
-        "report_metadata": {
-            "timestamp": "2026-05-12T17:55:30.331163",
-            "domain_scanned": "luxuryvillastodon.com.do",
-            "status": "error",
-            "error_message": "Error de conexión o timeout."
-        }
-    },
-    {
-        "report_metadata": {
-            "timestamp": "2026-05-12T17:55:30.480911",
-            "domain_scanned": "oceanfrontproperties.com.do",
-            "status": "error",
-            "error_message": "Error de conexión o timeout."
-        }
-    },
-    {
-        "report_metadata": {
-            "timestamp": "2026-05-12T17:55:30.769576",
-            "domain_scanned": "inmobiliarianova.com.do",
-            "status": "error",
-            "error_message": "Error de conexión o timeout."
-        }
-    },
-    {
-        "report_metadata": {
-            "timestamp": "2026-05-12T17:55:30.847916",
-            "domain_scanned": "inversionessegurasrd.com.do",
-            "status": "error",
-            "error_message": "Error de conexión o timeout."
-        }
-    },
-    {
-        "report_metadata": {
-            "timestamp": "2026-05-12T17:55:30.908637",
-            "domain_scanned": "golfcourtesates.com.do",
-            "status": "error",
-            "error_message": "Error de conexión o timeout."
-        }
-    },
-    {
-        "report_metadata": {
-            "timestamp": "2026-05-12T17:55:30.947552",
-            "domain_scanned": "disenosarquitectonicos.com.do",
-            "status": "error",
-            "error_message": "Error de conexión o timeout."
-        }
-    },
-    {
-        "report_metadata": {
-            "timestamp": "2026-05-12T17:55:31.136582",
-            "domain_scanned": "proyectosinmobiliariosrd.com.do",
-            "status": "error",
-            "error_message": "Error de conexión o timeout."
-        }
-    },
-    {
-        "report_metadata": {
-            "timestamp": "2026-05-12T17:55:31.329405",
-            "domain_scanned": "ranchosantodomingo.com.do",
-            "status": "error",
-            "error_message": "Error de conexión o timeout."
-        }
-    },
-    {
-        "report_metadata": {
-            "timestamp": "2026-05-12T17:55:31.359751",
-            "domain_scanned": "propiedadeselite.com.do",
-            "status": "error",
-            "error_message": "Error de conexión o timeout."
-        }
-    },
-    {
-        "report_metadata": {
-            "timestamp": "2026-05-12T17:55:31.413591",
-            "domain_scanned": "construccionesmodernas.com.do",
-            "status": "error",
-            "error_message": "Error de conexión o timeout."
-        }
-    },
-    {
-        "report_metadata": {
-            "timestamp": "2026-05-12T17:55:31.671565",
-            "domain_scanned": "casasparaelretiro.com.do",
-            "status": "error",
-            "error_message": "Error de conexión o timeout."
-        }
-    },
-    {
-        "report_metadata": {
-            "timestamp": "2026-05-12T17:55:31.816299",
-            "domain_scanned": "hogaressostenibles.com.do",
-            "status": "error",
-            "error_message": "Error de conexión o timeout."
-        }
-    },
-    {
-        "report_metadata": {
-            "timestamp": "2026-05-12T17:55:31.860679",
-            "domain_scanned": "desarrollosurbanos.com.do",
-            "status": "error",
-            "error_message": "Error de conexión o timeout."
-        }
-    },
-    {
-        "report_metadata": {
-            "timestamp": "2026-05-12T17:55:32.224920",
-            "domain_scanned": "inmobiliariaverde.com.do",
-            "status": "error",
-            "error_message": "Error de conexión o timeout."
+            "timestamp": "2026-05-12T18:06:46.942537",
+            "domain_scanned": "propertycaribe.com",
+            "status": "success"
+        },
+        "client_identity": {
+            "company_name": "PropertyCaribe Real Estate",
+            "key_people": [],
+            "emails": [
+                "info@propertycaribe.com"
+            ],
+            "phones": [
+                "18296331383",
+                "+18296331383"
+            ]
+        },
+        "technical_audit": {
+            "tech_stack": [],
+            "tracking": [
+                "Google Tag Manager"
+            ],
+            "open_graph": true,
+            "pagespeed": {
+                "error": "API Key no configurada",
+                "score": 0,
+                "lcp": null,
+                "tti": null
+            }
+        },
+        "marketing_intelligence": {
+            "social_links": [
+                "https://www.youtube.com/watch?v=DnTiha_fanE",
+                "https://www.instagram.com/property_caribe/",
+                "https://www.youtube.com/channel/UCT27zQiV_RWvC6FyZMSxkRw",
+                "https://www.instagram.com/"
+            ],
+            "broken_links": [
+                "https://www.facebook.com/propertycaribe",
+                "https://twitter.com/propertycaribe"
+            ]
+        },
+        "pain_point_synthesis": {
+            "authority_score": 40,
+            "identified_issues": [
+                "Rendimiento móvil pendiente de revisión — podría afectar la experiencia del usuario y la conversión.",
+                "Sin Meta Pixel - Imposibilidad de retargeting eficiente en pauta.",
+                "2 enlaces sociales sin actividad clara o que requieren revisión."
+            ]
         }
     }
 ]
