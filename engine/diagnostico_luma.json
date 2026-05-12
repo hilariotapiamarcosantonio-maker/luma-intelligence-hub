@@ -63,7 +63,7 @@
         },
         "lead_data": {
             "nombre_contacto": [
-                "No detectado"
+                "Nombre comercial no detectado"
             ],
             "email": [],
             "telefono": [],
@@ -96,7 +96,7 @@
         },
         "lead_data": {
             "nombre_contacto": [
-                "No detectado"
+                "Nombre comercial no detectado"
             ],
             "email": [
                 "yuleysinunezrealtor@gmail.com",

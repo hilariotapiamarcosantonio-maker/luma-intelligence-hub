@@ -29,7 +29,7 @@
         "pain_point_synthesis": {
             "authority_score": 0,
             "identified_issues": [
-                "Velocidad móvil crítica (0/100) - Alta tasa de rebote.",
+                "Rendimiento móvil a revisar — podría afectar la experiencia del usuario y la conversión.",
                 "Sin Meta Pixel - Imposibilidad de retargeting eficiente en pauta.",
                 "Falta de Open Graph - Compartir en redes muestra enlaces rotos o sin imagen.",
                 "Presencia omnicanal nula - No se detectaron redes sociales enlazadas."
@@ -80,9 +80,9 @@
         "pain_point_synthesis": {
             "authority_score": 55,
             "identified_issues": [
-                "Velocidad móvil crítica (0/100) - Alta tasa de rebote.",
+                "Rendimiento móvil a revisar — podría afectar la experiencia del usuario y la conversión.",
                 "Sin Meta Pixel - Imposibilidad de retargeting eficiente en pauta.",
-                "2 links de redes sociales caídos (Efecto 'Pueblo Fantasma')."
+                "enlaces sociales sin actividad clara o que requieren revisión."
             ]
         }
     }

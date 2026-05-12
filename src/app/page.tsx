@@ -32,7 +32,7 @@ export default function Home() {
             </p>
           </div>
           <div className="text-right">
-            <p className="text-xs text-gray-600 tracking-widest uppercase">Targets Scanned</p>
+            <p className="text-xs text-gray-600 tracking-widest uppercase">Objetivos revisados</p>
             <p className="text-3xl font-mono text-white">{reports.length}</p>
           </div>
         </header>
@@ -57,7 +57,7 @@ export default function Home() {
                       </h2>
                       <p className="text-xs text-red-500 uppercase tracking-widest flex items-center gap-1">
                         <AlertTriangle className="w-3 h-3" />
-                        {report_metadata?.error_message || 'Scan Failed / Pending Audit'}
+                        {report_metadata?.error_message || 'Dominio pendiente de revisión'}
                       </p>
                     </div>
                     <div className="flex items-center gap-3">
@@ -156,7 +156,7 @@ export default function Home() {
                       <div className="space-y-6">
                         <div className="bg-[#111] p-6 rounded-xl border border-white/5">
                            <h3 className="text-sm font-semibold text-gray-300 flex items-center gap-2 mb-4 uppercase tracking-wider">
-                             <Search className="w-4 h-4 text-blue-500" /> Tech & Tracking Stack
+                             <Search className="w-4 h-4 text-blue-500" /> Tecnología y medición
                            </h3>
                            <div className="flex flex-wrap gap-2">
                              {technical_audit.tech_stack.length > 0 ? (
@@ -166,12 +166,12 @@ export default function Home() {
                                  </span>
                                ))
                              ) : (
-                               <span className="text-xs text-gray-600 italic">No frameworks detected</span>
+                               <p className="text-xs text-gray-600 italic">Sin frameworks modernos detectados</p>
                              )}
                            </div>
                            
                            <div className="mt-4 pt-4 border-t border-white/5">
-                              <h4 className="text-xs text-gray-500 mb-3 uppercase tracking-wider">Pixels & Analytics</h4>
+                              <h4 className="text-xs text-gray-500 mb-3 uppercase tracking-wider">Píxeles y analítica</h4>
                               <div className="flex flex-col gap-2">
                                 {['Meta Pixel', 'Google Analytics', 'Google Tag Manager'].map((tracker: string) => {
                                   const isActive = technical_audit.tracking.includes(tracker);
@@ -193,11 +193,11 @@ export default function Home() {
                         {/* Performance */}
                         <div className="bg-[#111] p-6 rounded-xl border border-white/5">
                            <h3 className="text-sm font-semibold text-gray-300 flex items-center gap-2 mb-4 uppercase tracking-wider">
-                             <Smartphone className="w-4 h-4 text-purple-500" /> Mobile Performance
+                             <Smartphone className="w-4 h-4 text-purple-500" /> Rendimiento móvil
                            </h3>
                            <div className="grid grid-cols-2 gap-4">
                              <div>
-                               <p className="text-xs text-gray-500 mb-1">Speed Score</p>
+                               <p className="text-xs text-gray-500 mb-1">Puntuación de velocidad</p>
                                <p className="text-2xl font-mono text-white">
                                  {technical_audit.pagespeed.score || 'N/A'}
                                </p>
@@ -218,12 +218,12 @@ export default function Home() {
                         {/* Redes Sociales */}
                         <div className="bg-[#111] p-6 rounded-xl border border-white/5">
                            <h3 className="text-sm font-semibold text-gray-300 flex items-center gap-2 mb-4 uppercase tracking-wider">
-                             <LinkIcon className="w-4 h-4 text-emerald-500" /> Omnichannel Presence
+                             <LinkIcon className="w-4 h-4 text-emerald-500" /> Presencia omnicanal
                            </h3>
                            
                            <div className="space-y-3">
                              {marketing_intelligence.social_links.length === 0 && marketing_intelligence.broken_links.length === 0 && (
-                               <p className="text-sm text-gray-500 italic">No social footprints detected.</p>
+                               <p className="text-sm text-gray-500 italic">Sin presencia en redes sociales detectada.</p>
                              )}
                              
                              {/* Links Activos */}
