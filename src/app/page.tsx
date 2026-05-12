@@ -63,7 +63,7 @@ export default function Home() {
                       </h2>
                       <p className="text-xs text-red-500 uppercase tracking-widest flex items-center gap-1">
                         <AlertTriangle className="w-3 h-3" />
-                        {report_metadata?.error_message || 'Dominio pendiente de revisión'}
+                        {(report_metadata?.error_message || 'Dominio pendiente de revisión').replace('conexiÃ³n', 'conexión')}
                       </p>
                     </div>
                     <div className="flex flex-col sm:flex-row gap-2 w-full md:w-auto">
