@@ -2388,5 +2388,374 @@
                 "3 enlaces sociales sin actividad clara o que requieren revisión."
             ]
         }
+    },
+    {
+        "report_metadata": {
+            "timestamp": "2026-05-12T18:32:15.071625",
+            "domain_scanned": "rolandogarciarealty.com",
+            "status": "success"
+        },
+        "client_identity": {
+            "company_name": "Página no disponible en Wasi",
+            "key_people": [],
+            "emails": [],
+            "phones": []
+        },
+        "technical_audit": {
+            "tech_stack": [],
+            "tracking": [],
+            "open_graph": false,
+            "pagespeed": {
+                "error": "API Key no configurada",
+                "score": 0,
+                "lcp": null,
+                "tti": null
+            }
+        },
+        "marketing_intelligence": {
+            "social_links": [],
+            "broken_links": []
+        },
+        "pain_point_synthesis": {
+            "authority_score": 0,
+            "identified_issues": [
+                "Rendimiento móvil pendiente de revisión — podría afectar la experiencia del usuario y la conversión.",
+                "Sin Meta Pixel - Imposibilidad de retargeting eficiente en pauta.",
+                "Falta de Open Graph - Compartir en redes muestra enlaces rotos o sin imagen.",
+                "Presencia omnicanal nula - No se detectaron redes sociales enlazadas."
+            ]
+        }
+    },
+    {
+        "report_metadata": {
+            "timestamp": "2026-05-12T18:32:16.103529",
+            "domain_scanned": "investingdr.com",
+            "status": "success"
+        },
+        "client_identity": {
+            "company_name": "Nombre comercial no detectado",
+            "key_people": [],
+            "emails": [],
+            "phones": []
+        },
+        "technical_audit": {
+            "tech_stack": [],
+            "tracking": [],
+            "open_graph": false,
+            "pagespeed": {
+                "error": "API Key no configurada",
+                "score": 0,
+                "lcp": null,
+                "tti": null
+            }
+        },
+        "marketing_intelligence": {
+            "social_links": [],
+            "broken_links": []
+        },
+        "pain_point_synthesis": {
+            "authority_score": 0,
+            "identified_issues": [
+                "Rendimiento móvil pendiente de revisión — podría afectar la experiencia del usuario y la conversión.",
+                "Sin Meta Pixel - Imposibilidad de retargeting eficiente en pauta.",
+                "Falta de Open Graph - Compartir en redes muestra enlaces rotos o sin imagen.",
+                "Presencia omnicanal nula - No se detectaron redes sociales enlazadas."
+            ]
+        }
+    },
+    {
+        "report_metadata": {
+            "timestamp": "2026-05-12T18:32:16.506618",
+            "domain_scanned": "north-prop.com",
+            "status": "success"
+        },
+        "client_identity": {
+            "company_name": "North-Property - Propiedad en Venta en la República Dominicana...",
+            "key_people": [],
+            "emails": [
+                "info@north-prop.com",
+                "email@email.com"
+            ],
+            "phones": [
+                "809-268-1193",
+                "+1 (809) 268-1193"
+            ]
+        },
+        "technical_audit": {
+            "tech_stack": [
+                "WordPress"
+            ],
+            "tracking": [
+                "Google Analytics",
+                "Google Tag Manager"
+            ],
+            "open_graph": true,
+            "pagespeed": {
+                "error": "API Key no configurada",
+                "score": 0,
+                "lcp": null,
+                "tti": null
+            }
+        },
+        "marketing_intelligence": {
+            "social_links": [
+                "https://pinterest.com/pin/create/button/?url=https://north-prop.com/estate_property/modern-ocean-front-apartment-beach-and-ocean-acces-prime-location/&media=https://north-prop.com/wp-content/uploads/2026/04/IMG_6783-1320x790.jpg&description=Modern+Ocean+Front+apartment.+Beach+and+Ocean+Acces.+Prime+location.",
+                "https://pinterest.com/pin/create/button/?url=https://north-prop.com/estate_property/pent-house-en-venta-frente-a-la-playa-en-playa-dorada-puerto-plata/&media=https://north-prop.com/wp-content/uploads/2026/03/0W6A9495-1920x790.jpg&description=Pent-house+en+venta+frente+a+la+playa+en+Playa+Dorada%2C+Puerto+Plata",
+                "https://pinterest.com/pin/create/button/?url=https://north-prop.com/estate_property/terreno-listo-para-construir-tu-casa-sonada/&media=https://north-prop.com/wp-content/uploads/2026/03/IMAGEN-TERRENO-1-1920x790.jpg&description=Terreno+listo+para+construir+tu+casa+so%C3%B1ada.",
+                "https://pinterest.com/pin/create/button/?url=https://north-prop.com/estate_property/casa-residencial-en-venta-munoz-puerto-plata/&media=https://north-prop.com/wp-content/uploads/2026/03/0W6A6715-1920x790.jpg&description=CASA+RESIDENCIAL+EN+VENTA+MU%C3%91OZ%2C+PUERTO+PLATA",
+                "https://pinterest.com/pin/create/button/?url=https://north-prop.com/estate_property/apartamento-en-venta-completamente-nuevo-en-munoz-puerto-plata/&media=https://north-prop.com/wp-content/uploads/2026/03/0W6A6827-1920x790.jpg&description=Apartamento+en+venta+Mu%C3%B1oz%2C+Puerto+Plata",
+                "https://pinterest.com/pin/create/button/?url=https://north-prop.com/estate_property/apartamentos-en-venta-en-plantation-puerto-plata-%f0%9f%8f%9d%ef%b8%8f/&media=https://north-prop.com/wp-content/uploads/2026/02/WhatsApp-Image-2026-02-13-at-2.43.04-PM-1206x790.jpeg&description=Apartamentos+en+venta+Plantation%2C+Puerto+Plata"
+            ],
+            "broken_links": []
+        },
+        "pain_point_synthesis": {
+            "authority_score": 60,
+            "identified_issues": [
+                "Rendimiento móvil pendiente de revisión — podría afectar la experiencia del usuario y la conversión.",
+                "Sin Meta Pixel - Imposibilidad de retargeting eficiente en pauta."
+            ]
+        }
+    },
+    {
+        "report_metadata": {
+            "timestamp": "2026-05-12T18:32:17.021529",
+            "domain_scanned": "puntacanarealestate.com",
+            "status": "success"
+        },
+        "client_identity": {
+            "company_name": "Nombre comercial no detectado",
+            "key_people": [],
+            "emails": [],
+            "phones": []
+        },
+        "technical_audit": {
+            "tech_stack": [],
+            "tracking": [],
+            "open_graph": false,
+            "pagespeed": {
+                "error": "API Key no configurada",
+                "score": 0,
+                "lcp": null,
+                "tti": null
+            }
+        },
+        "marketing_intelligence": {
+            "social_links": [],
+            "broken_links": []
+        },
+        "pain_point_synthesis": {
+            "authority_score": 0,
+            "identified_issues": [
+                "Rendimiento móvil pendiente de revisión — podría afectar la experiencia del usuario y la conversión.",
+                "Sin Meta Pixel - Imposibilidad de retargeting eficiente en pauta.",
+                "Falta de Open Graph - Compartir en redes muestra enlaces rotos o sin imagen.",
+                "Presencia omnicanal nula - No se detectaron redes sociales enlazadas."
+            ]
+        }
+    },
+    {
+        "report_metadata": {
+            "timestamp": "2026-05-12T18:32:17.417759",
+            "domain_scanned": "rdcondominio.com",
+            "status": "success"
+        },
+        "client_identity": {
+            "company_name": "Condominios del Caribe",
+            "key_people": [],
+            "emails": [
+                "es-module-shims@1.10.0"
+            ],
+            "phones": [
+                "18296107215"
+            ]
+        },
+        "technical_audit": {
+            "tech_stack": [],
+            "tracking": [
+                "Google Analytics",
+                "Meta Pixel"
+            ],
+            "open_graph": false,
+            "pagespeed": {
+                "error": "API Key no configurada",
+                "score": 0,
+                "lcp": null,
+                "tti": null
+            }
+        },
+        "marketing_intelligence": {
+            "social_links": [
+                "https://www.youtube.com/channel/UCQ-JEUZa_HI7kEx4iapgbCw",
+                "https://www.instagram.com/condominiosdelcaribe/",
+                "https://www.pinterest.com/condominionetdo/"
+            ],
+            "broken_links": [
+                "https://www.facebook.com/condominiosdelcaribe",
+                "https://twitter.com/home",
+                "https://www.linkedin.com/in/condominionetdo-real-state-349bab10b?trk=hp-identity-name"
+            ]
+        },
+        "pain_point_synthesis": {
+            "authority_score": 35,
+            "identified_issues": [
+                "Rendimiento móvil pendiente de revisión — podría afectar la experiencia del usuario y la conversión.",
+                "Falta de Open Graph - Compartir en redes muestra enlaces rotos o sin imagen.",
+                "3 enlaces sociales sin actividad clara o que requieren revisión."
+            ]
+        }
+    },
+    {
+        "report_metadata": {
+            "timestamp": "2026-05-12T18:32:18.200850",
+            "domain_scanned": "santiagoapartments.com.do",
+            "status": "error",
+            "error_message": "Error de conexión o timeout."
+        }
+    },
+    {
+        "report_metadata": {
+            "timestamp": "2026-05-12T18:32:18.434795",
+            "domain_scanned": "canablue.com",
+            "status": "success"
+        },
+        "client_identity": {
+            "company_name": "Canablue",
+            "key_people": [],
+            "emails": [
+                "alpinejs@3.12.0",
+                "leaflet@1.9.3"
+            ],
+            "phones": [
+                "+1-809-975-3900"
+            ]
+        },
+        "technical_audit": {
+            "tech_stack": [
+                "WordPress"
+            ],
+            "tracking": [
+                "Google Tag Manager"
+            ],
+            "open_graph": true,
+            "pagespeed": {
+                "error": "API Key no configurada",
+                "score": 0,
+                "lcp": null,
+                "tti": null
+            }
+        },
+        "marketing_intelligence": {
+            "social_links": [
+                "https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=1&cad=rja&uact=8&ved=0ahUKEwjUvMW39d3YAhUV9WMKHZIeBnoQFggnMAA&url=https%3A%2F%2Fwww.facebook.com%2Fcanablue%2F&usg=AOvVaw0KwCs4Y8hcQNZGUGpmFZyq",
+                "https://www.instagram.com/canablue.rd/",
+                "https://www.linkedin.com/company/canablue",
+                "https://www.youtube.com/channel/UCh15GIlCR4JOPznpFpBGong"
+            ],
+            "broken_links": []
+        },
+        "pain_point_synthesis": {
+            "authority_score": 40,
+            "identified_issues": [
+                "Rendimiento móvil pendiente de revisión — podría afectar la experiencia del usuario y la conversión.",
+                "Sin Meta Pixel - Imposibilidad de retargeting eficiente en pauta."
+            ]
+        }
+    },
+    {
+        "report_metadata": {
+            "timestamp": "2026-05-12T18:32:20.924310",
+            "domain_scanned": "santiagoestates.com",
+            "status": "success"
+        },
+        "client_identity": {
+            "company_name": "HugeDomains",
+            "key_people": [],
+            "emails": [
+                "fancybox@3.5.7"
+            ],
+            "phones": [
+                "1-303-893-0552"
+            ]
+        },
+        "technical_audit": {
+            "tech_stack": [],
+            "tracking": [
+                "Google Analytics"
+            ],
+            "open_graph": true,
+            "pagespeed": {
+                "error": "API Key no configurada",
+                "score": 0,
+                "lcp": null,
+                "tti": null
+            }
+        },
+        "marketing_intelligence": {
+            "social_links": [],
+            "broken_links": []
+        },
+        "pain_point_synthesis": {
+            "authority_score": 20,
+            "identified_issues": [
+                "Rendimiento móvil pendiente de revisión — podría afectar la experiencia del usuario y la conversión.",
+                "Sin Meta Pixel - Imposibilidad de retargeting eficiente en pauta.",
+                "Presencia omnicanal nula - No se detectaron redes sociales enlazadas."
+            ]
+        }
+    },
+    {
+        "report_metadata": {
+            "timestamp": "2026-05-12T18:32:21.041398",
+            "domain_scanned": "decanaanpuntacana.net",
+            "status": "success"
+        },
+        "client_identity": {
+            "company_name": "decanaanpuntacana.net",
+            "key_people": [],
+            "emails": [
+                "bootstrap-select@1.14.0-beta3",
+                "wmendez@decanaan.net"
+            ],
+            "phones": [
+                "8094493333",
+                "8097959166"
+            ]
+        },
+        "technical_audit": {
+            "tech_stack": [],
+            "tracking": [],
+            "open_graph": true,
+            "pagespeed": {
+                "error": "API Key no configurada",
+                "score": 0,
+                "lcp": null,
+                "tti": null
+            }
+        },
+        "marketing_intelligence": {
+            "social_links": [],
+            "broken_links": [
+                "https://www.facebook.com/DecanaanPuntaCana//",
+                "https://www.facebook.com/DecanaanPuntaCana/",
+                "https://twitter.com/casasenrd"
+            ]
+        },
+        "pain_point_synthesis": {
+            "authority_score": 10,
+            "identified_issues": [
+                "Rendimiento móvil pendiente de revisión — podría afectar la experiencia del usuario y la conversión.",
+                "Sin Meta Pixel - Imposibilidad de retargeting eficiente en pauta.",
+                "3 enlaces sociales sin actividad clara o que requieren revisión.",
+                "Presencia omnicanal nula - No se detectaron redes sociales enlazadas."
+            ]
+        }
+    },
+    {
+        "report_metadata": {
+            "timestamp": "2026-05-12T18:32:22.493655",
+            "domain_scanned": "deephouserd.com",
+            "status": "error",
+            "error_message": "Error de conexión o timeout."
+        }
     }
 ]
