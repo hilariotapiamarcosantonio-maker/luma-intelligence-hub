@@ -4108,5 +4108,404 @@
                 "1 enlace sociales sin actividad clara o que requieren revisión."
             ]
         }
+    },
+    {
+        "report_metadata": {
+            "timestamp": "2026-05-12T18:37:53.306216",
+            "domain_scanned": "inmobiliariameilan.com",
+            "status": "success"
+        },
+        "client_identity": {
+            "company_name": "inmobiliaria-meilan-group-srl.alterestate.com",
+            "key_people": [],
+            "emails": [
+                "info@inmobiliariameila.com"
+            ],
+            "phones": [
+                "8097345330",
+                "18297633073"
+            ]
+        },
+        "technical_audit": {
+            "tech_stack": [
+                "Next.js",
+                "AlterEstate"
+            ],
+            "tracking": [],
+            "open_graph": true,
+            "pagespeed": {
+                "error": "API Key no configurada",
+                "score": 0,
+                "lcp": null,
+                "tti": null
+            }
+        },
+        "marketing_intelligence": {
+            "social_links": [
+                "https://www.instagram.com/inmobiliariameilan",
+                "https://youtube.com/@inmobiliariameilan"
+            ],
+            "broken_links": [
+                "https://www.facebook.com/inmobiliariameilan"
+            ]
+        },
+        "pain_point_synthesis": {
+            "authority_score": 20,
+            "identified_issues": [
+                "Rendimiento móvil pendiente de revisión — podría afectar la experiencia del usuario y la conversión.",
+                "Sin Meta Pixel - Imposibilidad de retargeting eficiente en pauta.",
+                "1 enlace sociales sin actividad clara o que requieren revisión."
+            ]
+        }
+    },
+    {
+        "report_metadata": {
+            "timestamp": "2026-05-12T18:37:54.118980",
+            "domain_scanned": "lcankyrarents.com",
+            "status": "error",
+            "error_message": "Error de conexión o timeout."
+        }
+    },
+    {
+        "report_metadata": {
+            "timestamp": "2026-05-12T18:37:54.124092",
+            "domain_scanned": "investord.com.do",
+            "status": "success"
+        },
+        "client_identity": {
+            "company_name": "investo-4707.alterestate.com",
+            "key_people": [],
+            "emails": [
+                "ventas@investord.com.do"
+            ],
+            "phones": [
+                "8092476399",
+                "18092476399"
+            ]
+        },
+        "technical_audit": {
+            "tech_stack": [
+                "Next.js",
+                "AlterEstate"
+            ],
+            "tracking": [],
+            "open_graph": true,
+            "pagespeed": {
+                "error": "API Key no configurada",
+                "score": 0,
+                "lcp": null,
+                "tti": null
+            }
+        },
+        "marketing_intelligence": {
+            "social_links": [
+                "https://www.instagram.com/null",
+                "https://www.tiktok.com/undefined"
+            ],
+            "broken_links": [
+                "https://www.facebook.com/",
+                "https://www.twitter.com/null"
+            ]
+        },
+        "pain_point_synthesis": {
+            "authority_score": 20,
+            "identified_issues": [
+                "Rendimiento móvil pendiente de revisión — podría afectar la experiencia del usuario y la conversión.",
+                "Sin Meta Pixel - Imposibilidad de retargeting eficiente en pauta.",
+                "2 enlaces sociales sin actividad clara o que requieren revisión."
+            ]
+        }
+    },
+    {
+        "report_metadata": {
+            "timestamp": "2026-05-12T18:37:55.003678",
+            "domain_scanned": "marialty.com",
+            "status": "success"
+        },
+        "client_identity": {
+            "company_name": "marialty-srl.alterestate.com",
+            "key_people": [],
+            "emails": [
+                "gracielarosario@marialty.com"
+            ],
+            "phones": [
+                "18099796404",
+                "8099796404"
+            ]
+        },
+        "technical_audit": {
+            "tech_stack": [
+                "Next.js",
+                "AlterEstate"
+            ],
+            "tracking": [],
+            "open_graph": true,
+            "pagespeed": {
+                "error": "API Key no configurada",
+                "score": 0,
+                "lcp": null,
+                "tti": null
+            }
+        },
+        "marketing_intelligence": {
+            "social_links": [
+                "https://www.instagram.com/marialtyrd/",
+                "https://www.instagram.com/marialtyrd"
+            ],
+            "broken_links": []
+        },
+        "pain_point_synthesis": {
+            "authority_score": 20,
+            "identified_issues": [
+                "Rendimiento móvil pendiente de revisión — podría afectar la experiencia del usuario y la conversión.",
+                "Sin Meta Pixel - Imposibilidad de retargeting eficiente en pauta."
+            ]
+        }
+    },
+    {
+        "report_metadata": {
+            "timestamp": "2026-05-12T18:37:55.316401",
+            "domain_scanned": "masterhome.do",
+            "status": "success"
+        },
+        "client_identity": {
+            "company_name": "yessymasterhome.com",
+            "key_people": [],
+            "emails": [
+                "yessymasterhome@gmail.com"
+            ],
+            "phones": [
+                "(829)340-2162",
+                "8293402162",
+                "18293402162"
+            ]
+        },
+        "technical_audit": {
+            "tech_stack": [
+                "Next.js",
+                "AlterEstate"
+            ],
+            "tracking": [],
+            "open_graph": true,
+            "pagespeed": {
+                "error": "API Key no configurada",
+                "score": 0,
+                "lcp": null,
+                "tti": null
+            }
+        },
+        "marketing_intelligence": {
+            "social_links": [
+                "https://www.instagram.com/masterhomerd/"
+            ],
+            "broken_links": []
+        },
+        "pain_point_synthesis": {
+            "authority_score": 15,
+            "identified_issues": [
+                "Rendimiento móvil pendiente de revisión — podría afectar la experiencia del usuario y la conversión.",
+                "Sin Meta Pixel - Imposibilidad de retargeting eficiente en pauta."
+            ]
+        }
+    },
+    {
+        "report_metadata": {
+            "timestamp": "2026-05-12T18:37:55.446534",
+            "domain_scanned": "lofthomerd.com",
+            "status": "success"
+        },
+        "client_identity": {
+            "company_name": "lofthomerd.com",
+            "key_people": [],
+            "emails": [
+                "lofthomerd@gmail.com"
+            ],
+            "phones": [
+                "18297755427",
+                "8097924730",
+                "8297755427"
+            ]
+        },
+        "technical_audit": {
+            "tech_stack": [
+                "Next.js"
+            ],
+            "tracking": [
+                "Google Tag Manager"
+            ],
+            "open_graph": true,
+            "pagespeed": {
+                "error": "API Key no configurada",
+                "score": 0,
+                "lcp": null,
+                "tti": null
+            }
+        },
+        "marketing_intelligence": {
+            "social_links": [
+                "https://www.instagram.com/lofthomerd/",
+                "https://www.youtube.com/channel/UCQhJEvCE4A9Br3W30UyYhlA"
+            ],
+            "broken_links": [
+                "https://www.facebook.com/lofthomerd/"
+            ]
+        },
+        "pain_point_synthesis": {
+            "authority_score": 30,
+            "identified_issues": [
+                "Rendimiento móvil pendiente de revisión — podría afectar la experiencia del usuario y la conversión.",
+                "Sin Meta Pixel - Imposibilidad de retargeting eficiente en pauta.",
+                "1 enlace sociales sin actividad clara o que requieren revisión."
+            ]
+        }
+    },
+    {
+        "report_metadata": {
+            "timestamp": "2026-05-12T18:37:56.739111",
+            "domain_scanned": "novesproperties.com.do",
+            "status": "error",
+            "error_message": "Error de conexión o timeout."
+        }
+    },
+    {
+        "report_metadata": {
+            "timestamp": "2026-05-12T18:37:56.743319",
+            "domain_scanned": "newhomeconstrucciones.com",
+            "status": "success"
+        },
+        "client_identity": {
+            "company_name": "Nombre comercial no detectado",
+            "key_people": [],
+            "emails": [],
+            "phones": []
+        },
+        "technical_audit": {
+            "tech_stack": [],
+            "tracking": [],
+            "open_graph": false,
+            "pagespeed": {
+                "error": "API Key no configurada",
+                "score": 0,
+                "lcp": null,
+                "tti": null
+            }
+        },
+        "marketing_intelligence": {
+            "social_links": [],
+            "broken_links": []
+        },
+        "pain_point_synthesis": {
+            "authority_score": 0,
+            "identified_issues": [
+                "Rendimiento móvil pendiente de revisión — podría afectar la experiencia del usuario y la conversión.",
+                "Sin Meta Pixel - Imposibilidad de retargeting eficiente en pauta.",
+                "Falta de Open Graph - Compartir en redes muestra enlaces rotos o sin imagen.",
+                "Presencia omnicanal nula - No se detectaron redes sociales enlazadas."
+            ]
+        }
+    },
+    {
+        "report_metadata": {
+            "timestamp": "2026-05-12T18:37:57.035817",
+            "domain_scanned": "alveare.do",
+            "status": "success"
+        },
+        "client_identity": {
+            "company_name": "alveare-realty.alterestate.com",
+            "key_people": [],
+            "emails": [
+                "info@alveare.do"
+            ],
+            "phones": [
+                "809-736-6712"
+            ]
+        },
+        "technical_audit": {
+            "tech_stack": [
+                "Next.js",
+                "AlterEstate"
+            ],
+            "tracking": [
+                "Meta Pixel",
+                "Google Tag Manager"
+            ],
+            "open_graph": true,
+            "pagespeed": {
+                "error": "API Key no configurada",
+                "score": 0,
+                "lcp": null,
+                "tti": null
+            }
+        },
+        "marketing_intelligence": {
+            "social_links": [
+                "https://www.instagram.com/alveare_realty/",
+                "https://www.youtube.com/channel/UCVDc0ThmxQdsQNU0lRb6KBQ"
+            ],
+            "broken_links": [
+                "https://www.facebook.com/profile.php?id=61552070567914",
+                "https://tiktok.com/@alveare_realty"
+            ]
+        },
+        "pain_point_synthesis": {
+            "authority_score": 40,
+            "identified_issues": [
+                "Rendimiento móvil pendiente de revisión — podría afectar la experiencia del usuario y la conversión.",
+                "2 enlaces sociales sin actividad clara o que requieren revisión."
+            ]
+        }
+    },
+    {
+        "report_metadata": {
+            "timestamp": "2026-05-12T18:37:57.114707",
+            "domain_scanned": "loher.com.do",
+            "status": "success"
+        },
+        "client_identity": {
+            "company_name": "loher-agencia-inmobiliaria-s-r-l.alterestate.com",
+            "key_people": [],
+            "emails": [
+                "info@loheragenciainmobiliaria.com"
+            ],
+            "phones": [
+                "18098302988",
+                "+18098302988"
+            ]
+        },
+        "technical_audit": {
+            "tech_stack": [
+                "Next.js",
+                "AlterEstate"
+            ],
+            "tracking": [
+                "Meta Pixel"
+            ],
+            "open_graph": true,
+            "pagespeed": {
+                "error": "API Key no configurada",
+                "score": 0,
+                "lcp": null,
+                "tti": null
+            }
+        },
+        "marketing_intelligence": {
+            "social_links": [
+                "https://www.tiktok.com/undefined"
+            ],
+            "broken_links": [
+                "https://facebook.com/loherinmobiliariard",
+                "https://www.instagram.com/https://instagram.com/loherinmobiliariard/",
+                "https://www.facebook.com/https://facebook.com/loherinmobiliariard",
+                "https://www.instagram.com/https://instagram.com/loherinmobiliariard",
+                "https://www.twitter.com/null"
+            ]
+        },
+        "pain_point_synthesis": {
+            "authority_score": 25,
+            "identified_issues": [
+                "Rendimiento móvil pendiente de revisión — podría afectar la experiencia del usuario y la conversión.",
+                "5 enlaces sociales sin actividad clara o que requieren revisión."
+            ]
+        }
     }
 ]
