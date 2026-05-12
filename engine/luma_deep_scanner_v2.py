@@ -78,7 +78,7 @@ class LumaDeepScanner:
 
     def extract_identity(self, soup, html_text, base_url):
         # Nombres de empresa (Aproximación por Title o meta og:site_name)
-        company_name = "No detectado"
+        company_name = "Nombre comercial no detectado"
         og_site_name = soup.find('meta', property='og:site_name')
         if og_site_name and og_site_name.get('content'):
             company_name = og_site_name['content']
@@ -212,7 +212,9 @@ class LumaDeepScanner:
         if not tech_seo['open_graph']:
             issues.append("Falta de Open Graph - Compartir en redes muestra enlaces rotos o sin imagen.")
         if marketing['broken_links']:
-            issues.append(f"{len(marketing['broken_links'])} links de redes sociales caídos (Efecto 'Pueblo Fantasma').")
+            count = len(marketing['broken_links'])
+            plural = "enlace" if count == 1 else "enlaces"
+            issues.append(f"{count} {plural} sociales sin actividad clara o que requieren revisión.")
         if not marketing['social_links']:
             issues.append("Presencia omnicanal nula - No se detectaron redes sociales enlazadas.")
             

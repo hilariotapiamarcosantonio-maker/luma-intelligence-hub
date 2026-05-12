@@ -68,7 +68,7 @@ def build_dashboard():
                 <div class="text-sm text-gray-300">
                     <p class="mb-1"><strong class="text-white">Emails:</strong> {len(emails)} encontrados</p>
                     <p class="mb-1"><strong class="text-white">Teléfonos:</strong> {len(telefonos)} encontrados</p>
-                    <p><strong class="text-white">Nombres:</strong> {", ".join(nombres[:3]) if nombres else 'No detectado'}</p>
+                    <p><strong class="text-white">Nombres:</strong> {", ".join(nombres[:3]) if nombres else 'Nombre comercial no detectado'}</p>
                 </div>
             </div>
         </div>

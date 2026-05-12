@@ -105,7 +105,7 @@ class LumaBeastScanner:
                             agent_names.append(clean_name)
         
         return {
-            "nombre_contacto": agent_names[:10] if agent_names else ["No detectado"],
+            "nombre_contacto": agent_names[:10] if agent_names else ["Nombre comercial no detectado"],
             "email": emails,
             "telefono": phones,
             "perfil_social": {
