@@ -1040,5 +1040,13 @@
                 "3 enlaces sociales sin actividad clara o que requieren revisión."
             ]
         }
+    },
+    {
+        "report_metadata": {
+            "timestamp": "2026-05-12T17:55:28.509642",
+            "domain_scanned": "islandpropertiesrd.com.do",
+            "status": "error",
+            "error_message": "Error de conexión o timeout."
+        }
     }
 ]
