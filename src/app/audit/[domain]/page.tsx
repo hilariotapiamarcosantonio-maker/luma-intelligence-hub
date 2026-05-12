@@ -1,13 +1,17 @@
 import fs from 'fs';
 import path from 'path';
 import LiveAuditStatus from '../../../components/LiveAuditStatus';
-import { ShieldAlert, TrendingDown, Target, Search, Globe, Smartphone, Activity, Link as LinkIcon, AlertTriangle } from 'lucide-react';
+import { TrendingDown, Target, Search, Globe, Smartphone, Activity, AlertTriangle, CheckCircle, ArrowRight } from 'lucide-react';
 import { notFound } from 'next/navigation';
+
+export const metadata = {
+  title: "Luma Intelligence Hub | Revisión Digital Inmobiliaria",
+  description: "Revisión preliminar de presencia digital, captación, medición y seguimiento comercial para inmobiliarias y proyectos inmobiliarios.",
+};
 
 export default async function AuditPage({ params }: { params: Promise<{ domain: string }> }) {
   const { domain } = await params;
   
-  // Load data
   const filePath = path.join(process.cwd(), 'public', 'data', 'audits.json');
   let data = [];
   try {
@@ -18,7 +22,6 @@ export default async function AuditPage({ params }: { params: Promise<{ domain: 
     return <div>Error loading audit data.</div>;
   }
 
-  // Find the specific report
   const report = data.find((r: unknown) => {
     const typedR = r as any;
     return typedR.report_metadata.domain_scanned.includes(domain);
@@ -30,40 +33,106 @@ export default async function AuditPage({ params }: { params: Promise<{ domain: 
 
   const { client_identity, technical_audit, marketing_intelligence, pain_point_synthesis } = report as any;
   
-  const topIssues = pain_point_synthesis.identified_issues?.slice(0, 3) || [];
+  const topIssues = pain_point_synthesis.identified_issues?.slice(0, 4) || [];
   
-  const getMaturityInsight = (score: number) => {
-    if (score < 40) return "Existe oportunidad de mejorar la presencia digital para captar más prospectos de forma sistematizada.";
-    if (score < 60) return "Con ajustes estratégicos en medición y seguimiento, se puede fortalecer el embudo comercial.";
-    if (score < 80) return "La base digital es sólida; optimizando seguimiento y análisis se puede incrementar la conversión.";
-    return "Estructura avanzada; el enfoque en medición y automatización puede maximizar resultados.";
+  const getSoftIssueText = (issue: string) => {
+    const lowerIssue = issue.toLowerCase();
+    if (lowerIssue.includes('crm') || lowerIssue.includes('captación')) {
+      return "No se detecta una capa pública clara de captación y seguimiento.";
+    }
+    if (lowerIssue.includes('meta pixel') || lowerIssue.includes('retargeting')) {
+      return "No se detecta Meta Pixel en esta revisión preliminar; esto podría limitar medición, remarketing y optimización futura.";
+    }
+    if (lowerIssue.includes('velocidad') || lowerIssue.includes('móvil') || lowerIssue.includes('rendimiento')) {
+      return "Rendimiento móvil a revisar.";
+    }
+    if (lowerIssue.includes('enlace') || lowerIssue.includes('link') || lowerIssue.includes('red social')) {
+      return "Enlaces sociales que requieren revisión.";
+    }
+    return issue;
+  };
+
+  const getSocialLinksCount = () => {
+    const total = (marketing_intelligence.social_links?.length || 0) + (marketing_intelligence.broken_links?.length || 0);
+    return total;
   };
 
   return (
     <LiveAuditStatus>
       <main className="min-h-screen bg-[#050505] text-gray-200 font-sans selection:bg-red-500/30 overflow-x-hidden">
-        {/* HEADER HERO */}
+        
+        {/* HEADER HERO - Updated */}
         <div className="relative pt-16 pb-12 px-4 md:pt-20 md:pb-16 md:px-8">
           <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-red-900/20 via-[#050505] to-[#050505] -z-10"></div>
           <div className="max-w-5xl mx-auto text-center space-y-4 md:space-y-6">
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-gray-500/10 border border-gray-500/20 text-gray-400 text-xs font-bold tracking-widest uppercase mb-2 md:mb-4">
               <Activity className="w-3 h-3 md:w-4 md:h-4 animate-pulse" />
-              <span className="md:hidden">Revisión Digital</span>
-              <span className="hidden md:inline">Revisión Preliminar de Presencia Digital</span>
+              Revisión Preliminar de Presencia Digital
             </div>
-            <h1 className="text-3xl md:text-5xl lg:text-7xl font-black tracking-tighter text-transparent bg-clip-text bg-gradient-to-br from-white via-gray-200 to-gray-600 uppercase leading-tight">
-              Oportunidades de Captación <br className="hidden md:block"/> <span className="text-gray-400">No Aprovechadas</span>
+            <h1 className="text-3xl md:text-5xl lg:text-6xl font-black tracking-tighter text-transparent bg-clip-text bg-gradient-to-br from-white via-gray-200 to-gray-600 uppercase leading-tight">
+              Revisión preliminar para <span className="text-white">{client_identity.company_name || domain}</span>
             </h1>
             <p className="text-sm md:text-xl text-gray-400 max-w-3xl mx-auto leading-relaxed">
-              Hemos realizado una revisión preliminar de la presencia digital de <strong className="text-white">{client_identity.company_name || domain}</strong>.
-              El objetivo es identificar oportunidades de mejora en presentación, seguimiento comercial y medición de prospectos.
+              Esta revisión identifica oportunidades visibles en presencia digital, captación, medición, experiencia móvil y seguimiento comercial.
+            </p>
+            <p className="text-xs md:text-sm text-gray-500 max-w-2xl mx-auto leading-relaxed italic">
+              No es una auditoría interna completa. Es una lectura inicial basada en señales públicas para detectar dónde puede mejorar la ruta comercial del prospecto.
             </p>
           </div>
         </div>
 
+        {/* DISCLAIMER - Updated */}
         <div className="max-w-5xl mx-auto px-4 md:px-8 mb-8 md:mb-12">
           <div className="p-3 md:p-4 border border-white/10 bg-white/5 rounded-lg text-xs text-gray-400 text-left">
-            <strong>Nota importante:</strong> Esta revisión es preliminar y se basa en señales públicas disponibles: presencia web, redes sociales, velocidad, enlaces, tracking y estructura de captación. No representa una auditoría interna completa ni afirma resultados financieros exactos. Su objetivo es identificar oportunidades de mejora comercial.
+            <strong>Nota importante:</strong> Esta revisión es preliminar y se basa en señales públicas disponibles: presencia web, redes sociales, velocidad, enlaces, tracking y estructura de captación. No representa una auditoría interna completa ni afirma resultados financieros exactos.
+          </div>
+        </div>
+
+        {/* RESUMEN EJECUTIVO - New Section */}
+        <div className="max-w-7xl mx-auto px-4 md:px-8 pb-8 md:pb-12">
+          <div className="bg-[#0a0a0a] border border-white/5 rounded-xl md:rounded-2xl p-4 md:p-8">
+            <h2 className="text-xl md:text-2xl font-bold text-white mb-4 flex items-center gap-2">
+              <Target className="w-5 h-5 md:w-6 md:h-6 text-yellow-500" />
+              Resumen ejecutivo
+            </h2>
+            <p className="text-sm md:text-base text-gray-400 leading-relaxed mb-6 md:mb-8 max-w-3xl">
+              El objetivo no es señalar fallos de forma agresiva, sino mostrar oportunidades que pueden mejorar cómo el prospecto encuentra, entiende y contacta a la empresa.
+            </p>
+            
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6">
+              {/* Card 1: Captación */}
+              <div className="bg-[#111] p-4 md:p-6 rounded-xl border border-white/5">
+                <div className="w-10 h-10 bg-blue-500/10 rounded-lg flex items-center justify-center mb-3 md:mb-4">
+                  <Search className="w-5 h-5 text-blue-500" />
+                </div>
+                <h3 className="text-sm md:text-base font-bold text-white mb-2 md:mb-3">Captación</h3>
+                <p className="text-xs md:text-sm text-gray-400 leading-relaxed">
+                  ¿El prospecto tiene una ruta clara para solicitar información o dejar sus datos?
+                </p>
+              </div>
+
+              {/* Card 2: Medición */}
+              <div className="bg-[#111] p-4 md:p-6 rounded-xl border border-white/5">
+                <div className="w-10 h-10 bg-purple-500/10 rounded-lg flex items-center justify-center mb-3 md:mb-4">
+                  <Activity className="w-5 h-5 text-purple-500" />
+                </div>
+                <h3 className="text-sm md:text-base font-bold text-white mb-2 md:mb-3">Medición</h3>
+                <p className="text-xs md:text-sm text-gray-400 leading-relaxed">
+                  ¿La empresa puede saber qué canales generan oportunidades reales?
+                </p>
+              </div>
+
+              {/* Card 3: Seguimiento */}
+              <div className="bg-[#111] p-4 md:p-6 rounded-xl border border-white/5">
+                <div className="w-10 h-10 bg-emerald-500/10 rounded-lg flex items-center justify-center mb-3 md:mb-4">
+                  <Target className="w-5 h-5 text-emerald-500" />
+                </div>
+                <h3 className="text-sm md:text-base font-bold text-white mb-2 md:mb-3">Seguimiento</h3>
+                <p className="text-xs md:text-sm text-gray-400 leading-relaxed">
+                  ¿Existe una estructura clara para organizar y dar seguimiento al interesado después del primer contacto?
+                </p>
+              </div>
+            </div>
           </div>
         </div>
 
@@ -74,7 +143,7 @@ export default async function AuditPage({ params }: { params: Promise<{ domain: 
             <div className="relative bg-[#0a0a0a] border border-white/5 rounded-xl md:rounded-2xl p-4 md:p-8 lg:p-12 shadow-2xl overflow-hidden">
               <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 md:gap-12">
                 
-                {/* LEFT COL: BIG NUMBERS */}
+                {/* LEFT COL: Score */}
                 <div className="lg:col-span-5 space-y-4 md:space-y-8">
                   <div>
                     <h2 className="text-xl md:text-2xl font-bold text-white mb-2 flex items-center gap-2">
@@ -121,8 +190,9 @@ export default async function AuditPage({ params }: { params: Promise<{ domain: 
                   </div>
                 </div>
 
-                {/* RIGHT COL: DETAILS */}
+                {/* RIGHT COL: DETAILS - Updated language */}
                 <div className="lg:col-span-7 grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
+                  
                   {/* Tech Stack */}
                   <div className="bg-[#111] p-4 md:p-6 rounded-xl border border-white/5 shadow-lg">
                       <h3 className="text-xs font-bold text-gray-400 flex items-center gap-2 mb-3 md:mb-4 uppercase tracking-widest">
@@ -133,7 +203,7 @@ export default async function AuditPage({ params }: { params: Promise<{ domain: 
                           technical_audit.tech_stack.map((tech: string) => (
                               <span key={tech} className="px-2 md:px-3 py-0.5 md:py-1 bg-white/5 border border-white/10 rounded-md text-xs font-medium text-gray-300">{tech}</span>
                           ))
-                          ) : (<span className="text-xs text-red-400 font-bold bg-red-500/10 px-2 py-1 rounded">Cero infraestructura moderna detectada.</span>)}
+                          ) : (<span className="text-xs text-amber-500 font-bold bg-amber-500/10 px-2 py-1 rounded">No se detecta infraestructura moderna visible.</span>)}
                       </div>
                       
                       <h4 className="text-[10px] text-gray-500 mb-2 md:mb-3 uppercase tracking-widest font-bold">Diagnóstico de Píxeles</h4>
@@ -142,16 +212,16 @@ export default async function AuditPage({ params }: { params: Promise<{ domain: 
                           const isActive = technical_audit.tracking?.includes(tracker);
                           return (
                           <div key={tracker} className="flex items-center justify-between text-xs md:text-sm p-1.5 md:p-2 rounded bg-black/40 border border-white/5">
-                              <span className={isActive ? 'text-gray-300 font-medium' : 'text-gray-600 line-through'}>{tracker}</span>
+                              <span className={isActive ? 'text-gray-300 font-medium' : 'text-gray-500'}>{tracker}</span>
                               {isActive ? 
                                   <span className="text-[10px] text-green-400 uppercase font-bold tracking-wider flex items-center gap-1"><div className="w-1.5 h-1.5 rounded-full bg-green-500"></div> <span className="hidden md:inline">Activo</span></span> : 
-                                  <span className="text-[10px] text-red-500 uppercase font-bold tracking-wider">Ausente</span>
+                                  <span className="text-[10px] text-amber-500 uppercase font-bold tracking-wider">A revisar</span>
                               }
                           </div>
                           )
                       })}
                       </div>
-                      <p className="mt-3 md:mt-4 text-xs text-gray-500 italic">Sin herramientas de medición, se dificulta el seguimiento eficiente de prospectos y la optimización de campañas.</p>
+                      <p className="mt-3 md:mt-4 text-xs text-gray-500 italic">Una capa de medición más completa podría mejorar el seguimiento de prospectos y optimización de campañas.</p>
                   </div>
                   
                   {/* Mobile & Speed */}
@@ -167,49 +237,103 @@ export default async function AuditPage({ params }: { params: Promise<{ domain: 
                                   <p className="text-xs text-gray-500 mt-1">El rendimiento móvil puede influir en la experiencia del usuario y la tasa de conversión.</p>
                               </div>
                               <div>
-                                  <p className="text-[10px] uppercase tracking-widest text-gray-500 mb-1 font-bold">Bloqueo Visual (LCP)</p>
+                                  <p className="text-[10px] uppercase tracking-widest text-gray-500 mb-1 font-bold">Carga Visual (LCP)</p>
                                   <p className="text-2xl md:text-3xl font-black text-gray-300">{technical_audit.pagespeed?.lcp || 'N/A'}</p>
                               </div>
                           </div>
                       </div>
                   </div>
 
-                  {/* Synthesis */}
+                  {/* Synthesis - Updated with softer language */}
                   <div className="bg-gradient-to-br from-[#111] to-[#0a0a0a] p-4 md:p-6 rounded-xl border border-white/5 md:col-span-2">
                       <h3 className="text-xs font-bold text-gray-300 flex items-center gap-2 mb-3 md:mb-4 uppercase tracking-widest">
-                          <Search className="w-3 h-3 md:w-4 md:h-4" /> Oportunidades Principales
+                          <Search className="w-3 h-3 md:w-4 md:h-4" /> Oportunidades visibles
                       </h3>
-                      <div className="grid grid-cols-1 md:grid-cols-2 gap-3 md:gap-4">
+                      <div className="space-y-3 md:space-y-4">
                           {topIssues.map((issue: string, i: number) => (
                           <div key={i} className="flex items-start gap-2 md:gap-3 bg-white/5 p-3 md:p-4 rounded-lg border border-white/5">
-                              <div className="mt-0.5 bg-gray-500/20 p-1 rounded flex-shrink-0">
-                                  <Target className="w-3 h-3 text-gray-400" />
+                              <div className="mt-0.5 bg-yellow-500/10 p-1.5 rounded flex-shrink-0">
+                                  <AlertTriangle className="w-3 h-3 text-yellow-500" />
                               </div>
-                              <span className="text-xs md:text-sm text-gray-300 font-medium leading-relaxed">{issue}</span>
+                              <span className="text-xs md:text-sm text-gray-300 font-medium leading-relaxed">{getSoftIssueText(issue)}</span>
                           </div>
                           ))}
                       </div>
+                      {getSocialLinksCount() > 0 && (
+                        <div className="mt-4 pt-4 border-t border-white/5">
+                          <p className="text-xs text-gray-500">
+                            <span className="text-gray-400 font-medium">{getSocialLinksCount()} {getSocialLinksCount() === 1 ? 'enlace' : 'enlaces'} social{getSocialLinksCount() === 1 ? '' : 's'} detectado{getSocialLinksCount() === 1 ? '' : 's'} en la revisión preliminar.</span>
+                          </p>
+                        </div>
+                      )}
                   </div>
                 </div>
               </div>
             </div>
           </div>
 
-          {/* QUÉ SIGNIFICA COMERCIALMENTE */}
+          {/* QUÉ SIGNIFICA COMERCIALMENTE - Updated with bullets */}
           <div className="bg-[#0a0a0a] border border-white/5 rounded-xl md:rounded-2xl p-4 md:p-8 lg:p-12">
             <h3 className="text-base md:text-lg font-bold text-white mb-3 md:mb-4 flex items-center gap-2">
               <Target className="w-4 h-4 md:w-5 md:h-5 text-yellow-500" />
               Qué significa esto comercialmente
             </h3>
-            <p className="text-sm md:text-gray-400 leading-relaxed">
-              {getMaturityInsight(pain_point_synthesis.authority_score)}
+            <p className="text-sm md:text-base text-gray-400 leading-relaxed mb-4 md:mb-6 max-w-3xl">
+              Tener presencia digital no siempre significa tener una estructura comercial. La oportunidad está en convertir visitas, mensajes y búsquedas en prospectos organizados, filtrados y con seguimiento claro.
             </p>
-            <p className="text-gray-500 mt-3 md:mt-4 text-xs md:text-sm leading-relaxed">
-              Una revisión detallada permite identificar exactamente dónde están las fricciones en el proceso de captación y cómo optimizarlas con cambios concretos y medibles.
-            </p>
+            <ul className="grid grid-cols-1 md:grid-cols-2 gap-2 md:gap-3 text-xs md:text-sm text-gray-400">
+              <li className="flex items-center gap-2">
+                <CheckCircle className="w-3 h-3 md:w-4 md:h-4 text-green-500 flex-shrink-0" />
+                Mejorar la confianza antes del primer contacto.
+              </li>
+              <li className="flex items-center gap-2">
+                <CheckCircle className="w-3 h-3 md:w-4 md:h-4 text-green-500 flex-shrink-0" />
+                Reducir prospectos dispersos en WhatsApp o redes.
+              </li>
+              <li className="flex items-center gap-2">
+                <CheckCircle className="w-3 h-3 md:w-4 md:h-4 text-green-500 flex-shrink-0" />
+                Medir mejor qué canales generan oportunidades.
+              </li>
+              <li className="flex items-center gap-2">
+                <CheckCircle className="w-3 h-3 md:w-4 md:h-4 text-green-500 flex-shrink-0" />
+                Crear una ruta más clara desde interés hasta seguimiento.
+              </li>
+              <li className="flex items-center gap-2">
+                <CheckCircle className="w-3 h-3 md:w-4 md:h-4 text-green-500 flex-shrink-0" />
+                Preparar la base para campañas y automatización futura.
+              </li>
+            </ul>
           </div>
 
-          {/* SOLUCIÓN RECOMENDADA */}
+          {/* CÓMO PUEDE AYUDAR LUMA PREMIUM - New Section */}
+          <div className="bg-[#0a0a0a] border border-blue-500/20 rounded-xl md:rounded-2xl p-4 md:p-8 lg:p-12">
+            <h3 className="text-base md:text-lg font-bold text-white mb-3 md:mb-4 flex items-center gap-2">
+              <Search className="w-4 h-4 md:w-5 md:h-5 text-blue-500" />
+              Cómo puede ayudar Luma Premium
+            </h3>
+            <p className="text-sm md:text-base text-gray-400 leading-relaxed mb-4 md:mb-6 max-w-3xl">
+              Luma Premium no busca reemplazar procesos internos existentes. La propuesta es fortalecer la capa externa de captación, autoridad y conversión para que los prospectos lleguen mejor orientados y con más contexto.
+            </p>
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-3 md:gap-4">
+              {[
+                "Landing o ruta de captación personalizada",
+                "Formulario o filtro inicial de prospectos",
+                "Estructura de seguimiento comercial",
+                "CRM o base de control en Google Sheets",
+                "Pipeline de oportunidades",
+                "Dashboard inicial",
+                "Medición básica",
+                "Guiones de seguimiento por WhatsApp"
+              ].map((item, i) => (
+                <div key={i} className="flex items-center gap-2 text-xs md:text-sm text-gray-300 bg-blue-500/5 p-2 md:p-3 rounded-lg border border-blue-500/10">
+                  <ArrowRight className="w-3 h-3 text-blue-400 flex-shrink-0" />
+                  {item}
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* SOLUCIÓN RECOMENDADA - Updated */}
           <div className="bg-gradient-to-br from-yellow-900/20 to-[#0a0a0a] border border-yellow-500/20 rounded-xl md:rounded-2xl p-4 md:p-8 lg:p-12">
             <div className="flex items-start gap-3 md:gap-4">
               <div className="p-2 md:p-3 bg-yellow-500/10 rounded-xl flex-shrink-0">
@@ -219,54 +343,54 @@ export default async function AuditPage({ params }: { params: Promise<{ domain: 
                 <h3 className="text-base md:text-lg font-bold text-white mb-2">
                   Solución recomendada: Luma Estate OS Foundation
                 </h3>
-                <p className="text-sm text-gray-400 leading-relaxed mb-3 md:mb-4">
-                  Una plataforma integral diseñada para inmobiliarias que necesitan estructurar su captación digital, automatizar el seguimiento de prospectos y medir resultados de forma clara.
+                <p className="text-sm text-gray-400 leading-relaxed mb-4 md:mb-6 max-w-2xl">
+                  Una implementación base para convertir presencia digital dispersa en una ruta comercial más clara: presentación, captación, filtro, seguimiento y control.
                 </p>
-                <ul className="space-y-1.5 md:space-y-2 text-xs md:text-sm text-gray-500">
-                  <li className="flex items-center gap-2">
-                    <div className="w-1.5 h-1.5 rounded-full bg-yellow-500 flex-shrink-0"></div>
-                    CRM Inmobiliario con seguimiento automático de prospectos
-                  </li>
-                  <li className="flex items-center gap-2">
-                    <div className="w-1.5 h-1.5 rounded-full bg-yellow-500 flex-shrink-0"></div>
-                    Landing pages optimizadas para captación
-                  </li>
-                  <li className="flex items-center gap-2">
-                    <div className="w-1.5 h-1.5 rounded-full bg-yellow-500 flex-shrink-0"></div>
-                    Integración con Meta Pixel y Google Analytics
-                  </li>
-                  <li className="flex items-center gap-2">
-                    <div className="w-1.5 h-1.5 rounded-full bg-yellow-500 flex-shrink-0"></div>
-                    Dashboard de métricas comerciales en tiempo real
-                  </li>
+                
+                <h4 className="text-xs md:text-sm font-bold text-white uppercase tracking-wider mb-3">Entregables incluidos:</h4>
+                <ul className="grid grid-cols-1 sm:grid-cols-2 gap-2 md:gap-3 text-xs md:text-sm text-gray-400">
+                  {[
+                    "Diagnóstico comercial inicial",
+                    "Landing o sección de captación",
+                    "Formulario de interesados",
+                    "CRM/base de seguimiento",
+                    "Pipeline de prospectos",
+                    "Dashboard inicial",
+                    "Recomendaciones de seguimiento"
+                  ].map((item, i) => (
+                    <li key={i} className="flex items-center gap-2">
+                      <div className="w-1.5 h-1.5 rounded-full bg-yellow-500 flex-shrink-0"></div>
+                      {item}
+                    </li>
+                  ))}
                 </ul>
               </div>
             </div>
           </div>
         </div>
 
-        {/* CTA SECTION */}
+        {/* CTA SECTION - Updated */}
         <div className="border-t border-white/10 bg-[#0a0a0a] relative overflow-hidden py-12 md:py-24">
             <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full max-w-4xl bg-gray-600/10 rounded-full blur-[80px] md:blur-[120px] pointer-events-none"></div>
             
             <div className="max-w-4xl mx-auto px-4 md:px-8 relative z-10 text-center space-y-6 md:space-y-8">
                 <h2 className="text-2xl md:text-4xl lg:text-5xl font-black text-white uppercase tracking-tighter">
-                    Mejora tu Captación Digital
+                    ¿Quieres que te muestre cómo se aplicaría esto a tu caso?
                 </h2>
                 <p className="text-sm md:text-xl text-gray-400 leading-relaxed max-w-2xl mx-auto">
-                    Recibe una lectura breve sobre cómo mejorar captación, seguimiento y control comercial de tus prospectos inmobiliarios.
+                    En una llamada breve de 10 minutos puedo explicarte esta revisión y mostrarte qué estructura tendría más sentido para tu operación.
                 </p>
                 
                 <div className="flex flex-col sm:flex-row items-center justify-center gap-3 md:gap-4 mt-6 md:mt-8">
                     {/* PRIMARY CTA */}
                     <a 
-                        href={`https://wa.me/18292558703?text=Hola,%20vi%20la%20revisión%20preliminar%20para%20mi%20web%20(${domain})%20y%20quiero%20solicitar%20una%20revisión%20personalizada.`}
+                        href={`https://wa.me/18292558703?text=Hola,%20vi%20la%20revisión%20preliminar%20para%20mi%20web%20(${domain})%20y%20quiero%20solicitar%20una%20explicación%20personalizada.`}
                         target="_blank"
                         rel="noreferrer"
                         className="inline-flex items-center justify-center gap-2 md:gap-3 bg-white text-black hover:bg-gray-200 px-6 md:px-10 py-3 md:py-5 rounded-full text-sm md:text-lg font-bold transition-all hover:scale-105 w-full sm:w-auto"
                     >
-                        <span className="md:hidden">Solicitar revisión</span>
-                        <span className="hidden md:inline">Solicitar revisión personalizada</span>
+                        <span className="md:hidden">Explicación personalizada</span>
+                        <span className="hidden md:inline">Solicitar explicación personalizada</span>
                     </a>
 
                     {/* SECONDARY CTA */}

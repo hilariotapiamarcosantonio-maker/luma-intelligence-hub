@@ -5,8 +5,8 @@ import "./globals.css";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Luma Audit Center | Deep Scan Architecture",
-  description: "Auditoría de infraestructura digital High-Ticket para el sector inmobiliario.",
+  title: "Luma Intelligence Hub | Revisión Digital Inmobiliaria",
+  description: "Revisión preliminar de presencia digital, captación, medición y seguimiento comercial para inmobiliarias y proyectos inmobiliarios.",
 };
 
 export default function RootLayout({
