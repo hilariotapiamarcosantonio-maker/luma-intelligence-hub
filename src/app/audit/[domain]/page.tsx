@@ -59,6 +59,220 @@ export default async function AuditPage({ params }: { params: Promise<{ domain: 
     );
   }
 
+  const domainScanned = (typedReport.report_metadata?.domain_scanned || '').toLowerCase();
+  const techStack = typedReport.technical_audit?.tech_stack || [];
+  const isNoWeb = domainScanned.includes('instagram.com-') || 
+                  domainScanned.includes('facebook.com-') || 
+                  techStack.some((t: string) => t.toLowerCase().includes('solo instagram') || t.toLowerCase().includes('solo facebook'));
+
+  if (isNoWeb) {
+    const companyName = typedReport.client_identity?.company_name || domain;
+    const identifiedIssues = typedReport.pain_point_synthesis?.identified_issues || [];
+    const textToAnalyze = `${companyName} ${domainScanned} ${identifiedIssues.join(' ')}`.toLowerCase();
+    
+    let nicheLabel = 'Otros Sectores';
+    let recommendedProduct = 'Luma Custom OS';
+    let productDescription = 'Una plataforma digital a medida para organizar tus prospectos y optimizar tus ventas.';
+    let deliverables = [
+      'Embudo de captación optimizado',
+      'Base de datos integrada en Sheets',
+      'Pipeline comercial interactivo',
+      'Guías de comunicación y seguimiento'
+    ];
+
+    if (textToAnalyze.match(/inmobiliaria|real estate|propiedades|home|house|realty|plusval|remax|kw|estate|apartamento|villa|inmueble/)) {
+      nicheLabel = 'Inmobiliaria';
+      recommendedProduct = 'Luma Estate OS Foundation';
+      productDescription = 'Implementación base para inmobiliarias que convierte visitas y mensajes de redes en una ruta comercial de captación clara.';
+      deliverables = [
+        'Landing page de captación de propiedades',
+        'Formulario inteligente de interesados',
+        'CRM de seguimiento en Google Sheets',
+        'Pipeline visual de prospectos y propiedades'
+      ];
+    } else if (textToAnalyze.match(/beauty|spa|salon|estetica|peluqueria|estética|barberia|barber/)) {
+      nicheLabel = 'Beauty & Spa';
+      recommendedProduct = 'Luma Salon Flow';
+      productDescription = 'Sistema de reservas y agenda digital optimizada para salones de belleza, estéticas y spas.';
+      deliverables = [
+        'Portal móvil de reserva de turnos',
+        'Recordatorios automatizados de citas',
+        'Control de servicios y especialistas',
+        'Base de datos de clientes habituales'
+      ];
+    } else if (textToAnalyze.match(/academy|academia|escuela|curso|colegio|study|universidad|aprender/)) {
+      nicheLabel = 'Educación / Academias';
+      recommendedProduct = 'Luma Academy Suite';
+      productDescription = 'Embudo de captación e inscripción de alumnos para cursos, escuelas y academias.';
+      deliverables = [
+        'Landing de promoción de programas',
+        'Formulario de matrícula digital',
+        'Portal de cobros e inscripción',
+        'Planilla de control escolar en Sheets'
+      ];
+    } else if (textToAnalyze.match(/commerce|store|tienda|shop|e-commerce|comercio|ventas|mercado/)) {
+      nicheLabel = 'E-commerce & Tiendas';
+      recommendedProduct = 'Luma Commerce Store';
+      productDescription = 'Catálogo de venta de productos físicos con flujo directo de pedido a WhatsApp.';
+      deliverables = [
+        'Catálogo interactivo autoadministrable',
+        'Carrito de compras móvil',
+        'Botón de finalización por WhatsApp',
+        'Control de stock básico en Sheets'
+      ];
+    } else if (textToAnalyze.match(/law|abogado|consultora|services|servicios|clinic|clinica|dental|odontologia|medico|doctor/)) {
+      nicheLabel = 'Servicios Profesionales';
+      recommendedProduct = 'Luma Professional Portal';
+      productDescription = 'Portal corporativo para captar consultas comerciales y agendar asesorías de servicios.';
+      deliverables = [
+        'Página web institucional optimizada',
+        'Formulario de cotización de servicios',
+        'Selector de agendamiento inicial',
+        'Panel de control de propuestas en Sheets'
+      ];
+    }
+
+    return (
+      <LiveAuditStatus>
+        <main className="min-h-screen bg-[#050505] text-gray-200 font-sans selection:bg-red-500/30 overflow-x-hidden p-4 md:p-8">
+          <div className="max-w-4xl mx-auto space-y-8 md:space-y-12">
+            {/* Header Hero */}
+            <div className="relative pt-8 pb-4 text-center space-y-4">
+              <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-amber-900/10 via-[#050505] to-[#050505] -z-10"></div>
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-500/10 border border-amber-500/20 text-amber-400 text-xs font-bold tracking-widest uppercase mb-2">
+                <AlertTriangle className="w-3.5 h-3.5" />
+                Sin Web Detectada
+              </div>
+              <h1 className="text-3xl md:text-5xl font-black tracking-tighter text-white uppercase leading-tight">
+                Revisión Digital para <span className="text-amber-400">{companyName}</span>
+              </h1>
+              <p className="text-sm md:text-lg text-gray-400 max-w-2xl mx-auto leading-relaxed">
+                El dominio analizado corresponde únicamente a un perfil social y no cuenta con una estructura web de captación propia.
+              </p>
+            </div>
+
+            {/* Oportunidad Alert Panel */}
+            <div className="bg-[#0a0a0a] border border-amber-500/20 rounded-2xl p-6 md:p-8 space-y-4">
+              <h2 className="text-xl font-bold text-white flex items-center gap-2">
+                <Target className="w-5 h-5 text-amber-500" />
+                Oportunidad: Crear infraestructura propia
+              </h2>
+              <p className="text-sm text-gray-300 leading-relaxed">
+                Operar comercialmente basándose de forma exclusiva en redes sociales (como Instagram o Facebook) limita significativamente el crecimiento, la credibilidad y el control de tus prospectos.
+              </p>
+              
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4 pt-4 border-t border-white/5">
+                <div className="space-y-2">
+                  <h3 className="text-xs font-bold uppercase tracking-wider text-gray-400">Limitaciones actuales:</h3>
+                  <ul className="space-y-1.5 text-xs text-gray-400">
+                    <li className="flex items-start gap-2">
+                      <span className="text-red-500 font-bold">•</span>
+                      <span>Fuga de prospectos hacia sugerencias de competidores.</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <span className="text-red-500 font-bold">•</span>
+                      <span>Imposibilidad de instalar Meta Pixel y Google Analytics de forma directa.</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <span className="text-red-500 font-bold">•</span>
+                      <span>Pérdida de tráfico orgánico en Google (SEO).</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <span className="text-red-500 font-bold">•</span>
+                      <span>Dependencia total de mensajería directa desordenada.</span>
+                    </li>
+                  </ul>
+                </div>
+
+                <div className="space-y-2">
+                  <h3 className="text-xs font-bold uppercase tracking-wider text-gray-400">Solución Estratégica:</h3>
+                  <ul className="space-y-1.5 text-xs text-gray-300">
+                    <li className="flex items-start gap-2">
+                      <span className="text-green-500 font-bold">•</span>
+                      <span>Crear un portal o landing page corporativo de aterrizaje.</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <span className="text-green-500 font-bold">•</span>
+                      <span>Implementar formularios calificados de captación.</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <span className="text-green-500 font-bold">•</span>
+                      <span>Medir conversiones reales de visitas a contactos.</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <span className="text-green-500 font-bold">•</span>
+                      <span>Automatizar seguimientos iniciales.</span>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            {/* Producto Recomendado por Nicho */}
+            <div className="bg-gradient-to-br from-yellow-900/10 to-[#0a0a0a] border border-yellow-500/20 rounded-2xl p-6 md:p-8 space-y-6">
+              <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
+                <div>
+                  <span className="px-2.5 py-0.5 bg-yellow-500/10 text-yellow-400 border border-yellow-500/20 rounded-full text-[10px] font-bold uppercase tracking-widest">
+                    Nicho comercial: {nicheLabel}
+                  </span>
+                  <h3 className="text-2xl font-black text-white mt-2">
+                    {recommendedProduct}
+                  </h3>
+                </div>
+                <div className="w-10 h-10 bg-yellow-500/10 rounded-xl flex items-center justify-center text-yellow-500">
+                  <Globe className="w-5 h-5" />
+                </div>
+              </div>
+              
+              <p className="text-sm text-gray-300 leading-relaxed">
+                {productDescription}
+              </p>
+
+              <div className="space-y-3">
+                <h4 className="text-xs font-bold text-white uppercase tracking-wider">Entregables de la solución recomendada:</h4>
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                  {deliverables.map((item, i) => (
+                    <div key={i} className="flex items-center gap-2.5 p-3 rounded-lg bg-white/5 border border-white/5">
+                      <CheckCircle className="w-4 h-4 text-yellow-400 flex-shrink-0" />
+                      <span className="text-xs font-medium text-gray-300">{item}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+
+            {/* CTA Callout */}
+            <div className="bg-[#0a0a0a] border border-white/5 rounded-2xl p-8 text-center space-y-6 relative overflow-hidden">
+              <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-80 h-80 bg-gray-500/5 rounded-full blur-3xl pointer-events-none"></div>
+              <h2 className="text-xl md:text-2xl font-bold text-white uppercase tracking-tight relative z-10">
+                ¿Quieres estructurar tu embudo comercial premium?
+              </h2>
+              <p className="text-xs md:text-sm text-gray-400 max-w-md mx-auto leading-relaxed relative z-10">
+                En una breve llamada de 10 minutos podemos diseñar la landing page y el CRM en Google Sheets ideales para automatizar el ingreso de clientes a tu negocio.
+              </p>
+              <div className="flex flex-col sm:flex-row items-center justify-center gap-3 relative z-10">
+                <a 
+                  href={`https://wa.me/18292558703?text=Hola,%20vi%20la%20revisión%20de%20no-web%20para%20${companyName}%20y%20quiero%20conocer%20la%20solución%20${recommendedProduct}.`}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="px-6 py-3 bg-white text-black hover:bg-gray-200 rounded-lg text-xs font-bold transition-all w-full sm:w-auto"
+                >
+                  Solicitar consulta gratuita
+                </a>
+                <a 
+                  href="/" 
+                  className="px-6 py-3 bg-transparent border border-white/10 text-gray-300 hover:bg-white/5 rounded-lg text-xs font-bold transition-all w-full sm:w-auto"
+                >
+                  Volver al Dashboard
+                </a>
+              </div>
+            </div>
+          </div>
+        </main>
+      </LiveAuditStatus>
+    );
+  }
+
   const { client_identity, technical_audit, marketing_intelligence, pain_point_synthesis } = typedReport;
   
   const topIssues = pain_point_synthesis.identified_issues?.slice(0, 4) || [];
