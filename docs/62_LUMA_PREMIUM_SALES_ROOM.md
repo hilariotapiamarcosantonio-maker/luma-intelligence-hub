@@ -1,85 +1,72 @@
 # Luma Premium Sales Room - Playbook Comercial
 
-Este documento detalla el propósito de la **Sales Room** (`/sales-room`) y define los protocolos para que **Marcos** y **William** utilicen esta herramienta interactiva para maximizar las tasas de cierre y prospección de servicios digitales de Luma Premium.
+Este documento detalla el protocolo oficial para que **William** y **Marcos** utilicen la **Sales Room** (`/sales-room`) de manera segura, protegiendo los accesos administrativos internos y asegurando que solo se compartan con clientes demos públicas 100% estables.
 
 ---
 
-## 1. Objetivo del Sales Room
+## 1. Clasificación del Ecosistema de Demos
 
-La **Sales Room** no es un portal para el cliente final; es una **herramienta interna de habilitación de ventas**. Su objetivo es simplificar el flujo comercial de prospección y negociación de Luma Premium al centralizar:
+Para mitigar el riesgo de enviar enlaces caídos, inaccesibles o consolas con datos confidenciales de administración, cada demo se ha clasificado en una de las siguientes tres categorías:
 
-1.  **Filtro por Nicho**: Identificar rápidamente el dolor comercial exacto de cada tipo de cliente.
-2.  **Mapeo de Solución**: Conectar el dolor del cliente con el producto Luma exacto.
-3.  **Demos Funcionales**: Acceder con un solo clic a las demos interactivas listas para compartir en frío o mostrar en vivo.
-4.  **Mensajes de Captación**: Mensajes optimizados listos para ser copiados y personalizados para enviar por WhatsApp o LinkedIn.
-5.  **Script de Llamada (Qué Decir / Qué NO Prometer)**: Indicaciones estratégicas para evitar falsas expectativas y enfocar la venta en el retorno de inversión (ROI).
+### A. Demos Públicas y Autorizadas (Enviar al Cliente)
+*   **Protocolo**: Estas demos se pueden enviar directamente en chats fríos o de seguimiento. El botón **"Copiar Enlace"** está habilitado en la Sales Room para estas demos.
+*   **Enlaces Oficiales**:
+    *   **Santuario Estética**: `https://santuario-estetica-mvp.vercel.app/`
+    *   **Santuario Concierge**: `https://santuario-estetica-mvp.vercel.app/concierge`
+    *   **Luma Estate OS**: `https://luma-premium.vercel.app/luma-estate-os`
+    *   **Marcos Portfolio**: `https://marcos-portfolio-premium.vercel.app/`
+    *   **Vista del Río**: `https://vista-del-rio-next.vercel.app/`
+    *   **Luma Capilar**: `https://luma-capilar-saa-s.vercel.app/`
+    *   **Luma Estate Pro**: `https://luma-estate-pro.vercel.app/`
+    *   **Luma Real Estate Concierge**: `https://luma-real-estate-concierge-os.vercel.app/dashboard`
+    *   **SuVoGa público**: `https://suvoga-os-tjaa.vercel.app/`
+    *   **Luma Intelligence Hub**: `https://luma-intelligence-hub.vercel.app/`
+    *   **Gelatinas y Postres**: `https://gelatinasypostres.info/`
+    *   **Depot Graphics**: `https://depotgraphics.com`
+    *   **Inox Minier**: `https://inox-minier.com/`
+
+### B. Demos Privadas (Usar Solo en Reunión)
+*   **Protocolo**: Estas demos están activas pero presentan detalles de visualización móvil o configuraciones que no deben enviarse sueltas en chats. **Solo se muestran compartiendo pantalla** durante una llamada de Zoom/Google Meet. El botón "Copiar Enlace" está bloqueado.
+*   **Enlaces Oficiales**:
+    *   **Luma Commerce OS**: `https://luma-commerce-os.vercel.app/`
+    *   **Luma Boutique Ivette**: `https://luma-boutique-os-ivette.vercel.app/`
+
+### C. Consolas de Administración y Sistemas Internos (Prohibido Compartir)
+*   **Protocolo**: Son paneles de gestión privada. Bajo ninguna circunstancia se debe enviar el enlace al cliente. Su visualización en reuniones debe ser controlada de forma estricta. El botón "Copiar Enlace" está desactivado y se marca con la advertencia **Link Privado**.
+*   **Enlaces Oficiales**:
+    *   **Luma Commerce OS admin**: `https://luma-commerce-os.vercel.app/admin`
+    *   **Luma Boutique Ivette admin**: `https://luma-boutique-os-ivette.vercel.app/admin`
+    *   **SuVoGa admin**: `https://suvoga-os-tjaa.vercel.app/admin`
+    *   **Luma Outreach Console**: `https://luma-outreach-console.vercel.app/console/luma-premium?section=command`
 
 ---
 
-## 2. Guía Operativa para William
+## 2. Protocolo para William: ¿Cómo elegir la demo ideal?
 
-William debe seguir este protocolo estructurado para prospectar y calificar clientes:
+William debe elegir la demo basándose en el nicho comercial del prospecto y el nivel de cualificación en el embudo de ventas:
 
-```mermaid
-graph TD
-    A[1. Investigar Prospecto] --> B[2. Identificar su Nicho]
-    B --> C[3. Entrar a /sales-room]
-    C --> D[4. Copiar Mensaje Sugerido]
-    D --> E[5. Personalizar y Enviar con Demo]
-    E --> F{¿Responde?}
-    F -- Sí --> G[6. Agendar llamada / Diagnóstico]
-    F -- No --> H[7. Seguimiento comercial discreto]
+```
+[Nicho del Prospecto] 
+         │
+         ├──► Real Estate  ──► Enviar Luma Estate OS / Vista del Río (Públicos)
+         ├──► Commerce     ──► Enviar Luma Capilar / Gelatinas y Postres (Públicos)
+         │                     * Mostrar Luma Commerce OS en llamada en vivo
+         ├──► Estética/Spa ──► Enviar Santuario Estética / Concierge (Públicos)
+         └──► B2B / Corp   ──► Enviar Inox Minier (Público)
+                               * Mostrar Outreach Console en llamada en vivo
 ```
 
-### Paso 1: Selección de Demo según Cliente
-Antes de contactar al cliente, William debe identificar en qué categoría encaja su negocio en el menú de la Sales Room. Al hacer clic sobre el nicho correspondiente, se desplegarán las demos específicas para ese mercado:
-*   **Inmobiliarias / Real Estate**: Usar *Luma Estate OS* (catálogo dinámico) o *Vista del Río* (experiencia de desarrollo premium).
-*   **Comercio**: Usar *Luma Commerce OS* para mostrar el flujo de carrito y conexión con CRM.
-*   **Spas o Consultorios**: Usar *Santuario Estética* o *Santuario Concierge* (agendamiento interactivo por IA).
-*   **Servicios/Marcas Personales**: Usar *Marcos Portfolio* como estándar de autoridad visual.
-
-### Paso 2: Envío del Mensaje Sugerido
-1.  Haz clic en el botón **"Copiar Mensaje"**.
-2.  Pega el texto en el chat con el prospecto (WhatsApp, Instagram DM, LinkedIn).
-3.  **Muy Importante**: Reemplaza las etiquetas entre corchetes (por ejemplo, `[Nombre]` o `[Nombre Inmobiliaria]`) con los datos reales del prospecto antes de enviar.
+### Reglas de Envío Seguro:
+1.  **Validación en Sales Room**: William debe ingresar a `/sales-room` y verificar que la demo tenga el badge **"Público - Mostrar al cliente"** en verde antes de copiarla.
+2.  **No modificar las URLs**: No acortar las URLs oficiales con herramientas externas (como bit.ly) para evitar bloqueos por filtros de spam de WhatsApp.
+3.  **Uso de Mensajes pre-redactados**: Usar los botones de copiado rápido del panel y reemplazar solo los corchetes `[...]` con los datos reales del cliente antes de enviar.
 
 ---
 
-## 3. Protocolo de Precios y Negociación
+## 3. Mapeo de Flujo: De Diagnóstico a Propuesta
 
-Para evitar el descarte inmediato por precio o malentendidos sobre el presupuesto, se deben seguir estas pautas estrictas:
+El embudo de captación comercial premium se ejecuta en 3 pasos clave:
 
-*   **Página Pública de Soluciones (`/soluciones`)**: Utiliza términos amplios como "Desde $X USD" o "Según alcance de la infraestructura". Sirve para que el cliente entienda que se trata de soluciones profesionales de alta gama, autocalificando su presupuesto.
-*   **Manejo de Objeciones de Precio**: Si el prospecto dice que el precio es elevado, William debe enfocar la conversación en:
-    1.  **Fugas de Leads**: "¿Cuánto dinero estás perdiendo hoy al tardar más de 30 minutos en atender por WhatsApp?"
-    2.  **Tiempo del Personal**: "El Concierge IA hace el trabajo de calificación de una secretaria 24/7 sin ausencias."
-    3.  **Autoridad**: "Una web premium te permite aumentar el valor de tus servicios frente a tu competencia."
-
----
-
-## 4. Gestión de Expectativas: Qué NO Prometer
-
-Para asegurar una entrega sin fricciones técnicas, William **nunca** debe prometer lo siguiente:
-
-| Nicho Comercial | Lo que SÍ se promete | Lo que **NUNCA** se debe prometer |
-| :--- | :--- | :--- |
-| **Real Estate** | Interfaz rápida, catálogo interactivo con filtros inmediatos y captación fluida. | Integración con sistemas CRM locales obsoletos o cerrados sin cotizar una API a medida. |
-| **Commerce** | Carrito de compras veloz, recuperación de carritos abandonados y conexión al CRM. | Automatización de inventario físico o sincronización con POS de tienda física sin consultar primero a Marcos. |
-| **Belleza / Spa** | Agendamiento inteligente conectado a Google Calendar y recordatorios automáticos. | Respuestas de la IA a diagnósticos de salud delicados o tratamientos estéticos complejos no configurados. |
-| **WhatsApp / Chats** | Respuestas inmediatas, calificación básica del lead y paso al vendedor en caliente. | Uso de APIs no oficiales o envíos masivos de spam que puedan provocar el baneo del número de WhatsApp. |
-
----
-
-## 5. El Embudo de Conversión: De Diagnóstico a Propuesta
-
-El proceso comercial de Luma Premium se divide en tres fases claras:
-
-1.  **Fase 1: El Diagnóstico Digital (Gancho Comercial)**
-    *   *Objetivo*: Generar curiosidad y valor inmediato de forma gratuita o cortesía comercial.
-    *   *Acción*: Analizar su velocidad móvil, SEO básico y píxeles mediante el **Luma Intelligence Hub** actual.
-2.  **Fase 2: Presentación de Oportunidades**
-    *   *Objetivo*: Mostrar las "fugas" de su sitio web actual.
-    *   *Acción*: Guiar al cliente en una llamada rápida mostrando la demo correspondiente de la **Sales Room** para que visualicen cómo debería funcionar su negocio.
-3.  **Fase 3: Propuesta Cerrada**
-    *   *Objetivo*: Firma del acuerdo y pago inicial.
-    *   *Acción*: Enviar una cotización a medida detallando cuál de nuestras 7 líneas de producto se implementará y los plazos de entrega.
+*   **Paso 1: Diagnóstico de Cortesía**: Se ofrece un análisis inicial rápido con el Hub (`/`). Esto detecta errores técnicos públicos de su web (fugas de píxeles, rendimiento lento, falta de captadores).
+*   **Paso 2: La Llamada Estratégica**: William presenta los resultados del diagnóstico. Para resolver objeciones, abre las demos correspondientes en `/sales-room` en pantalla compartida (por ejemplo, mostrando la velocidad de *Vista del Río* frente a su portal lento).
+*   **Paso 3: Propuesta Cerrada**: Se entrega una propuesta digital basada en las 7 líneas de producto de Luma Premium, apuntando a solucionar las fugas detectadas en el Paso 1.
