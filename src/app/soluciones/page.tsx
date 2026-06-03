@@ -162,7 +162,7 @@ export default function SolucionesPublic() {
             Diseñamos e implementamos infraestructuras comerciales a medida para negocios que necesitan autoridad, velocidad y automatización inteligente en sus procesos de prospección.
           </p>
           <p className="text-xs text-amber-500/80 font-mono tracking-wider uppercase">
-            Demos oficiales disponibles según el nicho y nivel de implementación.
+            Demos oficiales disponibles para inmobiliarias, belleza/spa y próximos nichos comerciales según nivel de implementación.
           </p>
         </div>
       </section>

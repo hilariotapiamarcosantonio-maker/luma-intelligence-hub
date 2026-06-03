@@ -37,6 +37,8 @@ interface Demo {
   category?: string;
   productLine?: string;
   notes?: string;
+  secondaryUrl?: string;
+  secondaryUrlLabel?: string;
 }
 
 interface CopyableMessage {
@@ -90,13 +92,17 @@ const ALL_DEMOS: Demo[] = [
   },
   {
     name: 'Luma Beauty Spa OS — Demo Oficial',
-    url: 'https://santuario-estetica-mvp.vercel.app/',
-    status: 'in_preparation',
-    badge: 'En preparación',
-    action: 'No enviar todavía',
-    canCopy: false,
-    canOpen: false,
-    notes: 'Demo oficial de agendamiento y servicios de bienestar. En preparación y saneamiento.'
+    url: 'https://luma-beauty-spa-os-demo.vercel.app/',
+    status: 'official_demo',
+    badge: 'Demo oficial',
+    action: 'Mostrar al cliente',
+    canCopy: true,
+    canOpen: true,
+    category: 'Beauty / Spa',
+    productLine: 'Beauty Spa OS',
+    notes: 'Una experiencia premium para presentar servicios estéticos, captar consultas, simular atención tipo concierge y orientar al prospecto hacia una evaluación o cita.',
+    secondaryUrl: 'https://luma-beauty-spa-os-demo.vercel.app/concierge',
+    secondaryUrlLabel: 'Ver Concierge'
   },
   {
     name: 'Luma Commerce OS — Demo Oficial',
@@ -382,21 +388,44 @@ const clientesData: ClienteConfig[] = [
     id: 'spa',
     niche: 'Belleza / Spa',
     icon: Sparkles,
-    problem: 'Pérdida de facturación por inasistencia de clientes sin previo aviso y saturación telefónica por agendamientos rutinarios que impiden dar una buena atención presencial.',
+    problem: 'El negocio depende de Instagram y WhatsApp suelto, recibe preguntas repetidas, no presenta sus servicios con suficiente autoridad y no tiene una experiencia clara para convertir visitas en consultas.',
     recommendedProduct: 'Beauty Spa OS',
-    demos: ALL_DEMOS.filter(d => ['Luma Beauty Spa OS — Demo Oficial'].includes(d.name)),
-    message: 'Hola [Nombre], me encanta la identidad visual de tu Spa. Sin embargo, vi que para agendar una cita hay que enviar un mensaje y esperar respuesta manual. Estamos preparando un Concierge Inteligente de Belleza que responde de inmediato 24/7 y reserva citas directamente.',
-    priceFrom: '$1,500 USD (configuración del bot, flujos conversacionales e integración de calendario)',
+    demos: ALL_DEMOS.filter(d => [
+      'Luma Beauty Spa OS — Demo Oficial',
+      'Santuario Estética',
+      'Santuario Concierge'
+    ].includes(d.name)),
+    message: 'Te comparto una demo privada de cómo un spa o centro estético puede presentar sus servicios de forma más premium, captar consultas y ordenar mejor la atención antes de WhatsApp o llamada: https://luma-beauty-spa-os-demo.vercel.app/',
+    messageTemplates: [
+      {
+        label: 'WhatsApp corto',
+        text: 'Te comparto una demo privada de cómo un spa o centro estético puede presentar sus servicios de forma más premium, captar consultas y ordenar mejor la atención antes de WhatsApp o llamada: https://luma-beauty-spa-os-demo.vercel.app/'
+      },
+      {
+        label: 'Mensaje con contexto',
+        text: 'Esta demo no es una página web genérica. Es una muestra de infraestructura comercial para estética y bienestar: presenta servicios, genera confianza, capta consultas y simula una atención tipo concierge para que el negocio no dependa solo de mensajes sueltos en Instagram o WhatsApp.'
+      },
+      {
+        label: 'Mensaje para reunión',
+        text: 'Lo importante aquí no es solo el diseño. Es la estructura: presentación premium, captación, simulación de atención, servicios organizados y preparación del prospecto para una consulta o cita.'
+      },
+      {
+        label: 'Mensaje para William',
+        text: 'William: cuando hables con spas o centros estéticos, no vendas “una web”. Presenta esto como una experiencia comercial para captar consultas, ordenar preguntas frecuentes y elevar la percepción premium del negocio. Si el negocio recibe muchas preguntas repetidas, se vende como Captación Inteligente con concierge.'
+      }
+    ],
+    priceFrom: 'Desde US$1,200–US$1,500 para presencia premium; desde US$1,800–US$3,000 si incluye concierge, captación y seguimiento.',
     whatToSay: [
-      'El tiempo que pierde el personal administrativo agendando citas básicas de forma manual es costoso.',
-      'Un recordatorio automático por WhatsApp 24 horas antes de la cita reduce el ausentismo radicalmente.',
-      'El Concierge atiende fuera del horario de oficina, captando clientes nocturnos.'
+      'Esta demo muestra cómo un spa o centro estético puede verse más premium, presentar sus servicios, captar consultas y simular una atención ordenada antes de pasar a WhatsApp, llamada o cita.',
+      'El tiempo que pierde el personal administrativo respondiendo preguntas básicas puede convertirse en una oportunidad para ordenar mejor la captación.',
+      'Una capa de recordatorios y seguimiento puede ayudar a reducir ausencias y mantener conversaciones más ordenadas, según la integración que se definina.',
+      'El Concierge puede orientar al prospecto fuera del horario de oficina y dejar la consulta mejor preparada para el equipo humano.'
     ],
     whatNotToPromise: [
       'No prometer que la IA resolverá consultas médicas complejas o prescribirá tratamientos específicos.',
       'No prometer integraciones con software de reservas muy antiguos que no posean APIs modernas.'
     ],
-    nextStep: 'Agendar una demostración en vivo una vez que la demo oficial esté completamente activa.'
+    nextStep: 'Enviar demo, pedir observación del negocio y agendar una reunión corta para adaptar la estructura a sus servicios, equipo y proceso de atención.'
   },
   {
     id: 'cursos',
@@ -735,9 +764,27 @@ export default function SalesRoom() {
                           {demo.notes}
                         </p>
                         {demo.status === 'official_demo' ? (
-                          <p className="text-[10px] text-gray-500 font-mono break-all bg-black/30 p-2 rounded border border-white/5">
-                            {demo.url}
-                          </p>
+                          <div className="space-y-2">
+                            <p className="text-[10px] text-gray-500 font-mono break-all bg-black/30 p-2 rounded border border-white/5">
+                              {demo.url}
+                            </p>
+                            {demo.secondaryUrl && (
+                              <div className="text-[10px] text-gray-400 bg-black/50 p-2.5 rounded border border-white/5 flex flex-col gap-1">
+                                <div className="flex items-center gap-1">
+                                  <span className="w-1.5 h-1.5 rounded-full bg-amber-500 animate-pulse" />
+                                  <span className="font-bold text-amber-500 uppercase tracking-wider text-[9px]">Módulo Concierge / Sublink:</span>
+                                </div>
+                                <a 
+                                  href={demo.secondaryUrl} 
+                                  target="_blank" 
+                                  rel="noopener noreferrer" 
+                                  className="text-amber-400 hover:text-amber-300 hover:underline font-mono break-all"
+                                >
+                                  {demo.secondaryUrl}
+                                </a>
+                              </div>
+                            )}
+                          </div>
                         ) : (
                           <p className="text-[10px] text-gray-600 font-mono italic p-2 rounded border border-white/5 bg-black/10">
                             Enlace privado y protegido (saneando demo)
@@ -745,36 +792,59 @@ export default function SalesRoom() {
                         )}
                       </div>
                       
-                      <div className="mt-5 pt-3 border-t border-white/5 flex gap-2">
-                        {demo.canOpen ? (
-                          <a 
-                            href={demo.url} 
-                            target="_blank" 
-                            rel="noopener noreferrer" 
-                            className="flex-1 py-2 bg-white/5 hover:bg-white/10 text-xs font-semibold rounded-lg text-gray-300 hover:text-white transition-all flex items-center justify-center gap-1.5 border border-white/5"
-                          >
-                            <Eye className="w-3.5 h-3.5" />
-                            <span>Abrir Demo</span>
-                          </a>
-                        ) : (
-                          <div className="flex-1 py-2 bg-black/40 text-xs font-semibold rounded-lg text-gray-600 cursor-not-allowed flex items-center justify-center gap-1.5 border border-white/5">
-                            <Link2Off className="w-3.5 h-3.5" />
-                            <span>No disponible</span>
-                          </div>
-                        )}
+                      <div className="mt-5 pt-3 border-t border-white/5 flex flex-col gap-2">
+                        <div className="flex gap-2">
+                          {demo.canOpen ? (
+                            <a 
+                              href={demo.url} 
+                              target="_blank" 
+                              rel="noopener noreferrer" 
+                              className="flex-1 py-2 bg-white/5 hover:bg-white/10 text-xs font-semibold rounded-lg text-gray-300 hover:text-white transition-all flex items-center justify-center gap-1.5 border border-white/5"
+                            >
+                              <Eye className="w-3.5 h-3.5" />
+                              <span>Abrir Demo</span>
+                            </a>
+                          ) : (
+                            <div className="flex-1 py-2 bg-black/40 text-xs font-semibold rounded-lg text-gray-600 cursor-not-allowed flex items-center justify-center gap-1.5 border border-white/5">
+                              <Link2Off className="w-3.5 h-3.5" />
+                              <span>No disponible</span>
+                            </div>
+                          )}
 
-                        {demo.canCopy ? (
-                          <button
-                            onClick={() => handleCopyText(demo.url, `demo-${selectedCliente.id}-${idx}`)}
-                            className="flex-1 py-2 bg-emerald-500/10 hover:bg-emerald-500/20 text-xs font-semibold rounded-lg text-emerald-400 hover:text-emerald-300 transition-all flex items-center justify-center gap-1.5 border border-emerald-500/20"
-                          >
-                            <Copy className="w-3.5 h-3.5" />
-                            <span>{copyStatus[`demo-${selectedCliente.id}-${idx}`] ? '¡Copiado!' : 'Copiar Enlace'}</span>
-                          </button>
-                        ) : (
-                          <div className="flex-1 py-2 bg-[#1a0f0f] text-xs font-semibold rounded-lg text-red-500/40 cursor-not-allowed flex items-center justify-center gap-1.5 border border-red-500/10">
-                            <ShieldAlert className="w-3.5 h-3.5" />
-                            <span>Envío Bloqueado</span>
+                          {demo.canCopy ? (
+                            <button
+                              onClick={() => handleCopyText(demo.url, `demo-${selectedCliente.id}-${idx}`)}
+                              className="flex-1 py-2 bg-emerald-500/10 hover:bg-emerald-500/20 text-xs font-semibold rounded-lg text-emerald-400 hover:text-emerald-300 transition-all flex items-center justify-center gap-1.5 border border-emerald-500/20"
+                            >
+                              <Copy className="w-3.5 h-3.5" />
+                              <span>{copyStatus[`demo-${selectedCliente.id}-${idx}`] ? '¡Copiado!' : 'Copiar Enlace'}</span>
+                            </button>
+                          ) : (
+                            <div className="flex-1 py-2 bg-[#1a0f0f] text-xs font-semibold rounded-lg text-red-500/40 cursor-not-allowed flex items-center justify-center gap-1.5 border border-red-500/10">
+                              <ShieldAlert className="w-3.5 h-3.5" />
+                              <span>Envío Bloqueado</span>
+                            </div>
+                          )}
+                        </div>
+
+                        {demo.secondaryUrl && (
+                          <div className="flex gap-2 border-t border-white/5 pt-2">
+                            <a 
+                              href={demo.secondaryUrl} 
+                              target="_blank" 
+                              rel="noopener noreferrer" 
+                              className="flex-1 py-1.5 bg-amber-500/5 hover:bg-amber-500/10 text-xs font-semibold rounded-lg text-amber-400 hover:text-amber-300 transition-all flex items-center justify-center gap-1.5 border border-amber-500/15"
+                            >
+                              <Eye className="w-3 h-3" />
+                              <span>{demo.secondaryUrlLabel || 'Ver Concierge'}</span>
+                            </a>
+                            <button
+                              onClick={() => handleCopyText(demo.secondaryUrl!, `demo-sec-${selectedCliente.id}-${idx}`)}
+                              className="flex-1 py-1.5 bg-white/5 hover:bg-white/10 text-xs font-semibold rounded-lg text-gray-300 hover:text-white transition-all flex items-center justify-center gap-1.5 border border-white/5"
+                            >
+                              <Copy className="w-3.5 h-3.5" />
+                              <span>{copyStatus[`demo-sec-${selectedCliente.id}-${idx}`] ? '¡Copiado!' : 'Copiar Concierge'}</span>
+                            </button>
                           </div>
                         )}
                       </div>
