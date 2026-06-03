@@ -1,18 +1,18 @@
 import fs from 'fs';
 import path from 'path';
 import { Activity } from 'lucide-react';
-import AuditDashboardClient from '../components/AuditDashboardClient';
+import AuditDashboardClient, { AuditReport } from '../components/AuditDashboardClient';
 
 export const dynamic = 'force-dynamic';
 
 export default function Home() {
   const filePath = path.join(process.cwd(), 'public', 'data', 'audits.json');
-  let reports = [];
+  let reports: AuditReport[] = [];
   try {
     const fileContents = fs.readFileSync(filePath, 'utf8');
-    reports = JSON.parse(fileContents);
+    reports = JSON.parse(fileContents) as AuditReport[];
     // Sort by timestamp descending
-    reports.sort((a: any, b: any) => {
+    reports.sort((a: AuditReport, b: AuditReport) => {
       const dateA = new Date(a.report_metadata?.timestamp || 0).getTime();
       const dateB = new Date(b.report_metadata?.timestamp || 0).getTime();
       return dateB - dateA;

@@ -2,10 +2,8 @@
 
 import React, { useState, useMemo } from 'react';
 import { 
-  Search, Globe, Smartphone, Activity, Target, ShieldAlert, 
-  AlertTriangle, Filter, CheckCircle2, Phone, Mail,
-  Building, Sparkles, BookOpen, ShoppingBag, Briefcase, RefreshCw,
-  ChevronDown, X
+  Search, AlertTriangle, Phone, Mail,
+  Building, Sparkles, BookOpen, ShoppingBag, Briefcase, RefreshCw, X
 } from 'lucide-react';
 
 const InstagramIcon = (props: React.SVGProps<SVGSVGElement>) => (
@@ -28,9 +26,88 @@ const InstagramIcon = (props: React.SVGProps<SVGSVGElement>) => (
 );
 import { motion, AnimatePresence } from 'framer-motion';
 
-interface AuditDashboardClientProps {
-  initialReports: any[];
+export interface AuditReport {
+  report_metadata?: {
+    domain_scanned?: string;
+    status?: string;
+    error_message?: string;
+    timestamp?: string;
+  };
+  client_identity?: {
+    company_name?: string;
+    phones?: string[];
+    emails?: string[];
+  };
+  technical_audit?: {
+    tech_stack?: string[];
+    tracking?: string[];
+  };
+  marketing_intelligence?: {
+    social_links?: string[];
+  };
+  pain_point_synthesis?: {
+    identified_issues?: string[];
+    authority_score?: number | null;
+  };
 }
+
+interface AuditDashboardClientProps {
+  initialReports: AuditReport[];
+}
+
+// Helper classification methods
+const hasWeb = (report: AuditReport) => {
+  const domain = (report.report_metadata?.domain_scanned || '').toLowerCase();
+  const techStack = report.technical_audit?.tech_stack || [];
+  return !(
+    domain.includes('instagram.com-') || 
+    domain.includes('facebook.com-') || 
+    techStack.some((tech: string) => tech.toLowerCase().includes('solo instagram') || tech.toLowerCase().includes('solo facebook'))
+  );
+};
+
+const getNiche = (report: AuditReport) => {
+  const name = (report.client_identity?.company_name || '').toLowerCase();
+  const domain = (report.report_metadata?.domain_scanned || '').toLowerCase();
+  const issues = (report.pain_point_synthesis?.identified_issues || []).map((i: string) => i.toLowerCase()).join(' ');
+  const text = `${name} ${domain} ${issues}`;
+
+  if (text.match(/inmobiliaria|real estate|propiedades|home|house|realty|plusval|remax|kw|estate|apartamento|villa|inmueble/)) {
+    return 'inmobiliaria';
+  }
+  if (text.match(/beauty|spa|salon|estetica|peluqueria|estética|barberia|barber|estilista|uñas/)) {
+    return 'beauty';
+  }
+  if (text.match(/academy|academia|escuela|curso|colegio|study|universidad|aprender|instituto/)) {
+    return 'academia';
+  }
+  if (text.match(/commerce|store|tienda|shop|e-commerce|comercio|ventas|mercado|boutique/)) {
+    return 'commerce';
+  }
+  if (text.match(/law|abogado|consultora|services|servicios|clinic|clinica|dental|odontologia|medico|doctor|salud/)) {
+    return 'professional_services';
+  }
+  return 'other';
+};
+
+const isHighOpportunity = (report: AuditReport) => {
+  const score = report.pain_point_synthesis?.authority_score ?? 0;
+  const hasWebVal = hasWeb(report);
+  return report.report_metadata?.status === 'success' && (score !== null && score < 40 || !hasWebVal);
+};
+
+// Contacts detection
+const contactData = (report: AuditReport) => {
+  const phones = report.client_identity?.phones || [];
+  const emails = report.client_identity?.emails || [];
+  const socialLinks = report.marketing_intelligence?.social_links || [];
+  
+  const hasPhone = phones.length > 0;
+  const hasEmail = emails.length > 0 && !emails.some((e: string) => e.includes('correo@ejemplo') || e.includes('nombre@ejemplo') || e.includes('correo@dominio'));
+  const hasInsta = socialLinks.some((link: string) => link.toLowerCase().includes('instagram.com'));
+  
+  return { hasPhone, hasEmail, hasInsta };
+};
 
 export default function AuditDashboardClient({ initialReports }: AuditDashboardClientProps) {
   const [searchQuery, setSearchQuery] = useState('');
@@ -39,60 +116,6 @@ export default function AuditDashboardClient({ initialReports }: AuditDashboardC
   const [hasInstagramFilter, setHasInstagramFilter] = useState<boolean | null>(null);
   const [hasEmailFilter, setHasEmailFilter] = useState<boolean | null>(null);
   const [visibleCount, setVisibleCount] = useState(12);
-
-  // Helper classification methods
-  const hasWeb = (report: any) => {
-    const domain = (report.report_metadata?.domain_scanned || '').toLowerCase();
-    const techStack = report.technical_audit?.tech_stack || [];
-    return !(
-      domain.includes('instagram.com-') || 
-      domain.includes('facebook.com-') || 
-      techStack.some((tech: string) => tech.toLowerCase().includes('solo instagram') || tech.toLowerCase().includes('solo facebook'))
-    );
-  };
-
-  const getNiche = (report: any) => {
-    const name = (report.client_identity?.company_name || '').toLowerCase();
-    const domain = (report.report_metadata?.domain_scanned || '').toLowerCase();
-    const issues = (report.pain_point_synthesis?.identified_issues || []).map((i: string) => i.toLowerCase()).join(' ');
-    const text = `${name} ${domain} ${issues}`;
-
-    if (text.match(/inmobiliaria|real estate|propiedades|home|house|realty|plusval|remax|kw|estate|apartamento|villa|inmueble/)) {
-      return 'inmobiliaria';
-    }
-    if (text.match(/beauty|spa|salon|estetica|peluqueria|estética|barberia|barber|estilista|uñas/)) {
-      return 'beauty';
-    }
-    if (text.match(/academy|academia|escuela|curso|colegio|study|universidad|aprender|instituto/)) {
-      return 'academia';
-    }
-    if (text.match(/commerce|store|tienda|shop|e-commerce|comercio|ventas|mercado|boutique/)) {
-      return 'commerce';
-    }
-    if (text.match(/law|abogado|consultora|services|servicios|clinic|clinica|dental|odontologia|medico|doctor|salud/)) {
-      return 'professional_services';
-    }
-    return 'other';
-  };
-
-  const isHighOpportunity = (report: any) => {
-    const score = report.pain_point_synthesis?.authority_score ?? 0;
-    const hasWebVal = hasWeb(report);
-    return report.report_metadata?.status === 'success' && (score < 40 || !hasWebVal);
-  };
-
-  // Contacts detection
-  const contactData = (report: any) => {
-    const phones = report.client_identity?.phones || [];
-    const emails = report.client_identity?.emails || [];
-    const socialLinks = report.marketing_intelligence?.social_links || [];
-    
-    const hasPhone = phones.length > 0;
-    const hasEmail = emails.length > 0 && !emails.some((e: string) => e.includes('correo@ejemplo') || e.includes('nombre@ejemplo') || e.includes('correo@dominio'));
-    const hasInsta = socialLinks.some((link: string) => link.toLowerCase().includes('instagram.com'));
-    
-    return { hasPhone, hasEmail, hasInsta };
-  };
 
   // Filter & Search Logic
   const filteredReports = useMemo(() => {
@@ -347,7 +370,7 @@ export default function AuditDashboardClient({ initialReports }: AuditDashboardC
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           <AnimatePresence mode="popLayout">
             {visibleReports.map((report, idx) => {
-              const { client_identity, technical_audit, marketing_intelligence, pain_point_synthesis, report_metadata } = report;
+              const { client_identity, pain_point_synthesis, report_metadata } = report;
               const hasWebVal = hasWeb(report);
               const niche = getNiche(report);
               const contacts = contactData(report);

@@ -9,7 +9,6 @@ import {
   Building2, 
   Zap, 
   Wrench,
-  ArrowRight,
   Sparkles
 } from 'lucide-react';
 import Link from 'next/link';
@@ -18,7 +17,7 @@ import Link from 'next/link';
 interface Solucion {
   id: string;
   title: string;
-  icon: React.ComponentType<any>;
+  icon: React.ComponentType<{ className?: string }>;
   tagline: string;
   description: string;
   features: string[];
@@ -161,6 +160,9 @@ export default function SolucionesPublic() {
           </h1>
           <p className="text-gray-400 text-base md:text-xl max-w-3xl mx-auto font-light leading-relaxed">
             Diseñamos e implementamos infraestructuras comerciales a medida para negocios que necesitan autoridad, velocidad y automatización inteligente en sus procesos de prospección.
+          </p>
+          <p className="text-xs text-amber-500/80 font-mono tracking-wider uppercase">
+            Demos oficiales disponibles según el nicho y nivel de implementación.
           </p>
         </div>
       </section>

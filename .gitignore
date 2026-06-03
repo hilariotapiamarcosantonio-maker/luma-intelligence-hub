@@ -42,3 +42,11 @@ next-env.d.ts
 
 # Project Memory (Local Only)
 LUMA_MEMORY.md
+
+.vercel
+.env*
+
+# Local data and tools
+/data_normalized/
+/tools/
+/scratch/

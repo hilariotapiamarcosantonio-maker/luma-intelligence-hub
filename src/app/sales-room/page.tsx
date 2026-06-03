@@ -14,19 +14,17 @@ import {
   CheckCircle2, 
   XCircle, 
   Copy, 
-  ExternalLink,
   ChevronRight,
   ShieldAlert,
   Wrench,
   Link2Off,
   Eye
 } from 'lucide-react';
-import Link from 'next/link';
 
 // Tipado de las demos
-type DemoStatus = 'public' | 'private' | 'internal_admin' | 'needs_repair' | 'pending_creation';
-type BadgeType = 'Público' | 'Privado' | 'Interno' | 'Revisar' | 'Pendiente';
-type WilliamActionType = 'Mostrar al cliente' | 'Usar solo en reunión' | 'No enviar todavía' | 'Demo pendiente';
+type DemoStatus = 'official_demo' | 'in_preparation' | 'internal_only' | 'review_before_send' | 'not_for_sale_now';
+type BadgeType = 'Demo oficial' | 'En preparación' | 'Interno' | 'Revisar' | 'No a la venta';
+type WilliamActionType = 'Mostrar al cliente' | 'Usar solo en reunión' | 'No enviar todavía' | 'Solo consulta interna' | 'En preparación';
 
 interface Demo {
   name: string;
@@ -36,186 +34,248 @@ interface Demo {
   action: WilliamActionType;
   canCopy: boolean;
   canOpen: boolean;
+  category?: string;
+  productLine?: string;
   notes?: string;
+}
+
+interface CopyableMessage {
+  label: string;
+  text: string;
 }
 
 interface ClienteConfig {
   id: string;
   niche: string;
-  icon: React.ComponentType<any>;
+  icon: React.ComponentType<{ className?: string }>;
   problem: string;
   recommendedProduct: string;
   demos: Demo[];
   message: string;
+  messageTemplates?: CopyableMessage[];
   priceFrom: string;
   whatToSay: string[];
   whatNotToPromise: string[];
   nextStep: string;
 }
 
-// Catálogo maestro de demos clasificadas con las URLs reales proporcionadas por Marcos
+// Catálogo maestro de demos clasificadas con las URLs reales
 const ALL_DEMOS: Demo[] = [
-  // Públicas
+  // Demo oficial activa
   {
-    name: 'Santuario Estética',
-    url: 'https://santuario-estetica-mvp.vercel.app/',
-    status: 'public',
-    badge: 'Público',
+    name: 'Luma Real Estate OS — Demo Privada',
+    url: 'https://luma-real-estate-os-demo.vercel.app/',
+    status: 'official_demo',
+    badge: 'Demo oficial',
     action: 'Mostrar al cliente',
     canCopy: true,
     canOpen: true,
-    notes: 'Demo principal y operativa para estética, spas o peluquerías.'
+    category: 'Real Estate',
+    productLine: 'Real Estate OS',
+    notes: 'Landing inmobiliaria premium con narrativa, segmentos de comprador, imágenes IA, captación de leads simulada y estructura adaptable para proyectos inmobiliarios (Residencial Aurora).'
+  },
+
+  // Demos en preparación
+  {
+    name: 'Luma Real Estate Concierge OS — Demo Oficial',
+    url: 'https://luma-real-estate-concierge-os.vercel.app/dashboard',
+    status: 'in_preparation',
+    badge: 'En preparación',
+    action: 'No enviar todavía',
+    canCopy: false,
+    canOpen: false,
+    category: 'Real Estate',
+    productLine: 'Real Estate OS',
+    notes: 'Dashboard interactivo de reservas y leads para Real Estate. En preparación y saneamiento.'
+  },
+  {
+    name: 'Luma Beauty Spa OS — Demo Oficial',
+    url: 'https://santuario-estetica-mvp.vercel.app/',
+    status: 'in_preparation',
+    badge: 'En preparación',
+    action: 'No enviar todavía',
+    canCopy: false,
+    canOpen: false,
+    notes: 'Demo oficial de agendamiento y servicios de bienestar. En preparación y saneamiento.'
+  },
+  {
+    name: 'Luma Commerce OS — Demo Oficial',
+    url: 'https://luma-commerce-os.vercel.app/',
+    status: 'in_preparation',
+    badge: 'En preparación',
+    action: 'No enviar todavía',
+    canCopy: false,
+    canOpen: false,
+    notes: 'Tienda con CRM integrado y pasarela. En preparación y saneamiento.'
+  },
+  {
+    name: 'Luma Boutique / Cosmética OS — Demo Oficial',
+    url: 'https://luma-boutique-os-ivette.vercel.app/',
+    status: 'in_preparation',
+    badge: 'En preparación',
+    action: 'No enviar todavía',
+    canCopy: false,
+    canOpen: false,
+    notes: 'Catálogo interactivo y CRM para boutique. En preparación y saneamiento.'
+  },
+  {
+    name: 'Luma Industrial / B2B OS — Demo Oficial',
+    url: 'https://inox-minier.com/',
+    status: 'in_preparation',
+    badge: 'En preparación',
+    action: 'No enviar todavía',
+    canCopy: false,
+    canOpen: false,
+    notes: 'Catálogo técnico e infraestructura B2B. En preparación y saneamiento.'
+  },
+  {
+    name: 'Luma Content / Media OS — Demo Oficial',
+    url: 'https://luma-intelligence-hub.vercel.app/',
+    status: 'in_preparation',
+    badge: 'En preparación',
+    action: 'No enviar todavía',
+    canCopy: false,
+    canOpen: false,
+    notes: 'Plataforma de cursos y contenidos premium. En preparación y saneamiento.'
+  },
+  {
+    name: 'Capital en Orden — Demo Oficial',
+    url: 'https://suvoga-os-tjaa.vercel.app/',
+    status: 'in_preparation',
+    badge: 'En preparación',
+    action: 'No enviar todavía',
+    canCopy: false,
+    canOpen: false,
+    notes: 'Gestión financiera, contratos y control de capital. En preparación y saneamiento.'
+  },
+
+  // Archivo interno / Referencias no enviables
+  {
+    name: 'Real Estate OS / visión estratégica',
+    url: 'https://luma-premium.vercel.app/luma-estate-os',
+    status: 'internal_only',
+    badge: 'Interno',
+    action: 'Solo consulta interna',
+    canCopy: false,
+    canOpen: true,
+    notes: 'Visión estratégica y catálogo inmobiliario dinámico de alta velocidad.'
+  },
+  {
+    name: 'Santuario Estética',
+    url: 'https://santuario-estetica-mvp.vercel.app/',
+    status: 'review_before_send',
+    badge: 'Revisar',
+    action: 'No enviar todavía',
+    canCopy: false,
+    canOpen: true,
+    notes: 'Demo antigua para estética, spas o peluquerías. Pendiente de saneamiento.'
   },
   {
     name: 'Santuario Concierge',
     url: 'https://santuario-estetica-mvp.vercel.app/concierge',
-    status: 'public',
-    badge: 'Público',
-    action: 'Mostrar al cliente',
-    canCopy: true,
+    status: 'review_before_send',
+    badge: 'Revisar',
+    action: 'No enviar todavía',
+    canCopy: false,
     canOpen: true,
-    notes: 'Flujo conversacional de agendamiento con asistente inteligente.'
-  },
-  {
-    name: 'Luma Estate OS',
-    url: 'https://luma-premium.vercel.app/luma-estate-os',
-    status: 'public',
-    badge: 'Público',
-    action: 'Mostrar al cliente',
-    canCopy: true,
-    canOpen: true,
-    notes: 'Infraestructura de catálogo inmobiliario dinámico de alta velocidad.'
+    notes: 'Flujo conversacional de agendamiento con asistente inteligente. Pendiente de saneamiento.'
   },
   {
     name: 'Marcos Portfolio',
     url: 'https://marcos-portfolio-premium.vercel.app/',
-    status: 'public',
-    badge: 'Público',
-    action: 'Mostrar al cliente',
-    canCopy: true,
+    status: 'review_before_send',
+    badge: 'Revisar',
+    action: 'No enviar todavía',
+    canCopy: false,
     canOpen: true,
-    notes: 'Portafolio premium de marca personal y autoridad visual.'
+    notes: 'Portafolio de marca personal y autoridad visual. Pendiente de saneamiento.'
   },
   {
     name: 'Vista del Río',
     url: 'https://vista-del-rio-next.vercel.app/',
-    status: 'public',
-    badge: 'Público',
-    action: 'Mostrar al cliente',
-    canCopy: true,
+    status: 'review_before_send',
+    badge: 'Revisar',
+    action: 'No enviar todavía',
+    canCopy: false,
     canOpen: true,
-    notes: 'Visualizador cinemático de proyectos inmobiliarios de lujo.'
+    notes: 'Visualizador cinemático inmobiliario legacy. No usar en ventas activas.'
   },
   {
     name: 'Luma Capilar',
     url: 'https://luma-capilar-saa-s.vercel.app/',
-    status: 'public',
-    badge: 'Público',
-    action: 'Mostrar al cliente',
-    canCopy: true,
+    status: 'review_before_send',
+    badge: 'Revisar',
+    action: 'No enviar todavía',
+    canCopy: false,
     canOpen: true,
-    notes: 'Tienda interactiva y CRM para el sector de cuidado personal.'
+    notes: 'Tienda interactiva y CRM para cuidado personal legacy.'
   },
   {
     name: 'Luma Estate Pro',
     url: 'https://luma-estate-pro.vercel.app/',
-    status: 'public',
-    badge: 'Público',
-    action: 'Mostrar al cliente',
-    canCopy: true,
+    status: 'not_for_sale_now',
+    badge: 'No a la venta',
+    action: 'No enviar todavía',
+    canCopy: false,
     canOpen: true,
-    notes: 'Portal avanzado de búsqueda de propiedades para agencias.'
-  },
-  {
-    name: 'Luma Real Estate Concierge',
-    url: 'https://luma-real-estate-concierge-os.vercel.app/dashboard',
-    status: 'public',
-    badge: 'Público',
-    action: 'Mostrar al cliente',
-    canCopy: true,
-    canOpen: true,
-    notes: 'Dashboard interactivo de reservas y leads para Real Estate.'
+    notes: 'Portal de búsqueda de propiedades legacy. No para comercialización activa.'
   },
   {
     name: 'SuVoGa público',
     url: 'https://suvoga-os-tjaa.vercel.app/',
-    status: 'public',
-    badge: 'Público',
-    action: 'Mostrar al cliente',
-    canCopy: true,
+    status: 'review_before_send',
+    badge: 'Revisar',
+    action: 'No enviar todavía',
+    canCopy: false,
     canOpen: true,
-    notes: 'Línea de diseño y catálogo público de productos boutique.'
+    notes: 'Línea de diseño y catálogo público legacy.'
   },
   {
     name: 'Luma Intelligence Hub',
     url: 'https://luma-intelligence-hub.vercel.app/',
-    status: 'public',
-    badge: 'Público',
-    action: 'Mostrar al cliente',
-    canCopy: true,
+    status: 'internal_only',
+    badge: 'Interno',
+    action: 'Solo consulta interna',
+    canCopy: false,
     canOpen: true,
-    notes: 'Centro de control comercial principal y visualización de auditorías.'
+    notes: 'Centro de control comercial principal y visualización de auditorías internas.'
   },
   {
     name: 'Gelatinas y Postres',
     url: 'https://gelatinasypostres.info/',
-    status: 'public',
-    badge: 'Público',
-    action: 'Mostrar al cliente',
-    canCopy: true,
+    status: 'not_for_sale_now',
+    badge: 'No a la venta',
+    action: 'No enviar todavía',
+    canCopy: false,
     canOpen: true,
-    notes: 'E-commerce local de alimentos y pedidos directos optimizado.'
+    notes: 'E-commerce local de alimentos legacy.'
   },
   {
     name: 'Depot Graphics',
     url: 'https://depotgraphics.com',
-    status: 'public',
-    badge: 'Público',
-    action: 'Mostrar al cliente',
-    canCopy: true,
+    status: 'not_for_sale_now',
+    badge: 'No a la venta',
+    action: 'No enviar todavía',
+    canCopy: false,
     canOpen: true,
-    notes: 'Presentación interactiva y portafolio de servicios de diseño gráfico.'
+    notes: 'Servicios de diseño gráfico legacy. Proyecto real de cliente.'
   },
   {
     name: 'Inox Minier',
     url: 'https://inox-minier.com/',
-    status: 'public',
-    badge: 'Público',
-    action: 'Mostrar al cliente',
-    canCopy: true,
-    canOpen: true,
-    notes: 'Landing page industrial B2B y catálogo técnico corporativo.'
-  },
-
-  // Privados / Revisar (No se pueden enviar - Bloqueado Copiar)
-  {
-    name: 'Luma Commerce OS',
-    url: 'https://luma-commerce-os.vercel.app/',
-    status: 'private',
+    status: 'review_before_send',
     badge: 'Revisar',
-    action: 'Usar solo en reunión',
+    action: 'No enviar todavía',
     canCopy: false,
     canOpen: true,
-    notes: 'Tienda con CRM integrado. Revisar errores de carga en móvil.'
+    notes: 'Landing page industrial B2B legacy. Proyecto real de cliente.'
   },
-  {
-    name: 'Luma Boutique Ivette',
-    url: 'https://luma-boutique-os-ivette.vercel.app/',
-    status: 'private',
-    badge: 'Revisar',
-    action: 'Usar solo en reunión',
-    canCopy: false,
-    canOpen: true,
-    notes: 'Tienda interactiva de moda. En revisión técnica de visualización.'
-  },
-
-  // Admins Internos (No se pueden enviar - Bloqueado Copiar)
   {
     name: 'Luma Commerce OS admin',
     url: 'https://luma-commerce-os.vercel.app/admin',
-    status: 'internal_admin',
+    status: 'internal_only',
     badge: 'Interno',
-    action: 'No enviar todavía',
+    action: 'Solo consulta interna',
     canCopy: false,
     canOpen: true,
     notes: 'Consola administrativa interna del CRM de comercio.'
@@ -223,19 +283,19 @@ const ALL_DEMOS: Demo[] = [
   {
     name: 'Luma Boutique Ivette admin',
     url: 'https://luma-boutique-os-ivette.vercel.app/admin',
-    status: 'internal_admin',
+    status: 'internal_only',
     badge: 'Interno',
-    action: 'No enviar todavía',
+    action: 'Solo consulta interna',
     canCopy: false,
     canOpen: true,
-    notes: 'Consola administrativa de Boutique Ivette. No compartir accesos.'
+    notes: 'Consola administrativa de Boutique Ivette.'
   },
   {
     name: 'SuVoGa admin',
     url: 'https://suvoga-os-tjaa.vercel.app/admin',
-    status: 'internal_admin',
+    status: 'internal_only',
     badge: 'Interno',
-    action: 'No enviar todavía',
+    action: 'Solo consulta interna',
     canCopy: false,
     canOpen: true,
     notes: 'Gestor interno de catálogo y pedidos de SuVoGa.'
@@ -243,9 +303,9 @@ const ALL_DEMOS: Demo[] = [
   {
     name: 'Luma Outreach Console',
     url: 'https://luma-outreach-console.vercel.app/console/luma-premium?section=command',
-    status: 'internal_admin',
+    status: 'internal_only',
     badge: 'Interno',
-    action: 'No enviar todavía',
+    action: 'Solo consulta interna',
     canCopy: false,
     canOpen: true,
     notes: 'Consola comercial de Luma Outreach para prospección en frío.'
@@ -257,19 +317,41 @@ const clientesData: ClienteConfig[] = [
     id: 'real-estate',
     niche: 'Inmobiliarias / Real Estate',
     icon: Building2,
-    problem: 'Tienen portales genéricos lentos u obsoletos, no destacan propiedades premium y pierden el control del lead ya que los portales comerciales tradicionales les roban tráfico sugiriendo a sus competidores. Falta de filtros rápidos y visuales para inversores exigentes.',
-    recommendedProduct: 'Real Estate OS + Web Premium',
-    demos: ALL_DEMOS.filter(d => ['Luma Estate OS', 'Luma Estate Pro', 'Vista del Río', 'Luma Real Estate Concierge', 'Luma Intelligence Hub'].includes(d.name)),
-    message: 'Hola [Nombre], estuve analizando la presentación digital de [Nombre Inmobiliaria] y noté que al enviar leads desde portales comerciales se pierde hasta el 40% del interés por falta de un catálogo interactivo propio y rápido. Armamos una estructura demo llamada Luma Estate OS que soluciona esto y permite filtrar propiedades en menos de 2 segundos. Te dejo el acceso para que lo veas: https://luma-premium.vercel.app/luma-estate-os - ¿Te gustaría que hagamos un diagnóstico rápido de tu web actual para ver si tienes estas fugas de leads?',
-    priceFrom: '$3,000 USD (según inventario y nivel de personalización)',
+    problem: 'El negocio presenta proyectos de forma dispersa, depende de portales o WhatsApp suelto y no tiene una experiencia premium para captar prospectos interesados.',
+    recommendedProduct: 'Real Estate OS',
+    demos: ALL_DEMOS.filter(d => [
+      'Luma Real Estate OS — Demo Privada',
+      'Luma Real Estate Concierge OS — Demo Oficial',
+      'Real Estate OS / visión estratégica'
+    ].includes(d.name)),
+    message: 'Te comparto una demo privada de cómo una inmobiliaria o constructora puede presentar un proyecto de forma más premium, captar interesados y organizar mejor la conversación comercial: https://luma-real-estate-os-demo.vercel.app/',
+    messageTemplates: [
+      {
+        label: 'WhatsApp corto',
+        text: 'Te comparto una demo privada de cómo una inmobiliaria o constructora puede presentar un proyecto de forma más premium, captar interesados y organizar mejor la conversación comercial: https://luma-real-estate-os-demo.vercel.app/'
+      },
+      {
+        label: 'Contexto',
+        text: 'Esta demo no es una página web genérica. Es una muestra de infraestructura comercial inmobiliaria: presenta el proyecto, educa al comprador, separa perfiles de interés y lleva al prospecto hacia una solicitud de información o reunión.'
+      },
+      {
+        label: 'Para reunión',
+        text: 'Lo importante aquí no es el diseño solamente. Es la estructura: presentación, segmentación, captación y seguimiento. Esto se puede adaptar a una inmobiliaria, constructora, broker o proyecto específico.'
+      },
+      {
+        label: 'Para William',
+        text: 'William: usa primero las demos oficiales. Si una demo aparece como “En preparación”, no la envíes al cliente todavía. Se puede mencionar como producto disponible, pero la demo oficial se publicará cuando esté saneada.'
+      }
+    ],
+    priceFrom: 'Desde US$1,800–US$3,000 (captación inmobiliaria); US$3,000–US$5,000+ (con CRM y seguimiento avanzado)',
     whatToSay: [
       'Enfocarse en la experiencia del inversor de alto perfil: compra por los ojos.',
       'Un portal lento o sobrecargado espanta al comprador premium internacional.',
-      'Mostrar la demo Vista del Río en vivo (cargas ultra-rápidas) comparada con portales tradicionales.'
+      'Mostrar la demo privada de Real Estate OS destacando la velocidad de carga y segmentación.'
     ],
     whatNotToPromise: [
-      'No prometer sincronización bidireccional automática con CRM obsoletos sin cotizar el desarrollo de API a medida.',
-      'No asegurar cierres de ventas inmediatos, sino mejoras drásticas en la captación y filtrado de leads.'
+      'No prometer integraciones automáticas con CRMs inmobiliarios de baja calidad sin evaluar antes.',
+      'No asegurar ventas inmediatas, sino una captación y calificación de leads sumamente profesional.'
     ],
     nextStep: 'Agendar un Diagnóstico Digital de cortesía de su web inmobiliaria actual.'
   },
@@ -277,30 +359,33 @@ const clientesData: ClienteConfig[] = [
     id: 'commerce',
     niche: 'Tiendas / Commerce',
     icon: ShoppingBag,
-    problem: 'Altas tasas de abandono de carritos, pasarelas de pago engorrosas en dispositivos móviles, y nula automatización de seguimiento de clientes. Dependencia excesiva de atención manual y caótica por Instagram o WhatsApp sin control de inventario.',
-    recommendedProduct: 'Commerce OS / Tienda con CRM',
-    demos: ALL_DEMOS.filter(d => ['Luma Commerce OS', 'Luma Commerce OS admin', 'Luma Boutique Ivette', 'Luma Boutique Ivette admin', 'Luma Capilar', 'SuVoGa público', 'SuVoGa admin', 'Gelatinas y Postres', 'Depot Graphics'].includes(d.name)),
-    message: 'Hola [Nombre], vi tu catálogo en Instagram y noté que el proceso de compra requiere muchos pasos manuales, lo que suele causar el abandono del 60% de los compradores en móvil. Diseñamos un sistema Commerce OS que automatiza la venta y la conecta directo con un CRM de seguimiento comercial por WhatsApp. Te comparto una demo funcional de catálogo capilar: https://luma-capilar-saa-s.vercel.app/ - ¿Cómo gestionas hoy el seguimiento de tus carritos abandonados?',
-    priceFrom: '$2,500 USD (según volumen de catálogo y pasarelas)',
+    problem: 'Altas tasas de abandono de carritos, pasarelas de pago engorrosas en dispositivos móviles, y nula automatización de seguimiento de clientes. Dependencia excesiva de atención manual y caótica por Instagram o WhatsApp.',
+    recommendedProduct: 'Commerce OS',
+    demos: ALL_DEMOS.filter(d => [
+      'Luma Commerce OS — Demo Oficial',
+      'Luma Boutique / Cosmética OS — Demo Oficial'
+    ].includes(d.name)),
+    message: 'Hola [Nombre], vi tu catálogo en Instagram y noté que el proceso de compra requiere muchos pasos manuales, lo que suele causar el abandono del 60% de los compradores en móvil. Estamos preparando un sistema Commerce OS que automatiza la venta y la conecta directo con un CRM de seguimiento comercial por WhatsApp.',
+    priceFrom: 'Desde $2,500 USD (según volumen de catálogo y pasarelas)',
     whatToSay: [
       'Hacer énfasis en la recompra y la recuperación automatizada de carritos.',
       'La gestión manual por chats satura al equipo y frena el crecimiento.',
       'Mostrar cómo el CRM integrado les da control absoluto del historial de cada cliente.'
     ],
     whatNotToPromise: [
-      'No prometer automatización completa de logística física o envíos (despacho) sin usar integraciones validadas.',
-      'No prometer compatibilidad nativa con sistemas POS de tiendas físicas muy antiguos sin costo extra de integración.'
+      'No prometer automatización completa de logística física o envíos sin usar integraciones validadas.',
+      'No prometer compatibilidad nativa con sistemas POS de tiendas físicas muy antiguos sin costo extra.'
     ],
-    nextStep: 'Hacer una llamada corta para mostrarles el backend comercial de Luma Commerce OS.'
+    nextStep: 'Hacer una llamada corta para mostrarles el backend comercial en preparación de Luma Commerce OS.'
   },
   {
     id: 'spa',
     niche: 'Belleza / Spa',
     icon: Sparkles,
-    problem: 'Pérdida de facturación por inasistencia de clientes sin previo aviso (ausentismo) y saturación telefónica por agendamientos rutinarios que impiden dar una buena atención presencial.',
-    recommendedProduct: 'Concierge Inteligente + Web Premium',
-    demos: ALL_DEMOS.filter(d => ['Santuario Estética', 'Santuario Concierge', 'Marcos Portfolio', 'Luma Intelligence Hub'].includes(d.name)),
-    message: 'Hola [Nombre], me encanta la identidad visual de tu Spa. Sin embargo, vi que para agendar una cita hay que enviar un mensaje y esperar respuesta manual. Armamos un Concierge Inteligente que responde de inmediato 24/7 y reserva citas directamente en el calendario del profesional libre. Puedes probarlo aquí: https://santuario-estetica-mvp.vercel.app/concierge - ¿Te gustaría ver cómo reducir las ausencias de clientes en un 30%?',
+    problem: 'Pérdida de facturación por inasistencia de clientes sin previo aviso y saturación telefónica por agendamientos rutinarios que impiden dar una buena atención presencial.',
+    recommendedProduct: 'Beauty Spa OS',
+    demos: ALL_DEMOS.filter(d => ['Luma Beauty Spa OS — Demo Oficial'].includes(d.name)),
+    message: 'Hola [Nombre], me encanta la identidad visual de tu Spa. Sin embargo, vi que para agendar una cita hay que enviar un mensaje y esperar respuesta manual. Estamos preparando un Concierge Inteligente de Belleza que responde de inmediato 24/7 y reserva citas directamente.',
     priceFrom: '$1,500 USD (configuración del bot, flujos conversacionales e integración de calendario)',
     whatToSay: [
       'El tiempo que pierde el personal administrativo agendando citas básicas de forma manual es costoso.',
@@ -308,88 +393,88 @@ const clientesData: ClienteConfig[] = [
       'El Concierge atiende fuera del horario de oficina, captando clientes nocturnos.'
     ],
     whatNotToPromise: [
-      'No prometer que la IA resolverá consultas médicas complejas o prescribirá tratamientos específicos sin validación humana.',
+      'No prometer que la IA resolverá consultas médicas complejas o prescribirá tratamientos específicos.',
       'No prometer integraciones con software de reservas muy antiguos que no posean APIs modernas.'
     ],
-    nextStep: 'Agendar una demostración en vivo enviándoles un enlace para que chateen con el Concierge de prueba.'
+    nextStep: 'Agendar una demostración en vivo una vez que la demo oficial esté completamente activa.'
   },
   {
     id: 'cursos',
     niche: 'Academias / Cursos',
     icon: GraduationCap,
-    problem: 'Dependencia de plataformas de terceros con altas comisiones de venta (hasta el 10% por alumno) y falta de control sobre la marca, la base de datos de estudiantes y las automatizaciones post-venta.',
-    recommendedProduct: 'Web Premium + Sistema Comercial Privado',
-    demos: ALL_DEMOS.filter(d => ['Luma Outreach Console', 'Luma Intelligence Hub'].includes(d.name)),
-    message: 'Hola [Nombre], vi tus cursos. Muchas plataformas se quedan con comisiones de hasta el 10% por alumno. Diseñamos sistemas educativos propios bajo marca privada con pasarela directa a tu banco. Puedes ver cómo se ve una infraestructura de auditoría y captación comercial aquí: https://luma-intelligence-hub.vercel.app/ - ¿Hablamos de cómo ahorrar miles de dólares en comisiones este año?',
+    problem: 'Dependencia de plataformas de terceros con altas comisiones de venta y falta de control sobre la marca, la base de datos de estudiantes y las automatizaciones post-venta.',
+    recommendedProduct: 'Content / Media OS',
+    demos: ALL_DEMOS.filter(d => ['Luma Content / Media OS — Demo Oficial'].includes(d.name)),
+    message: 'Hola [Nombre], vi tus cursos. Muchas plataformas se quedan con comisiones de hasta el 10% por alumno. Diseñamos sistemas educativos propios bajo marca privada con pasarela directa a tu banco.',
     priceFrom: '$2,000 USD (según número de módulos e integraciones con pasarelas)',
     whatToSay: [
       'El activo principal de un infoproductor es la base de datos y retención de sus alumnos.',
-      'Eliminar comisiones abusivas de pasarelas intermediarias aumenta el margen neto un 5-15%.',
+      'Eliminar comisiones abusivas de pasarelas aumenta el margen neto un 5-15%.',
       'Marca privada eleva la percepción de valor y permite vender tickets más altos.'
     ],
     whatNotToPromise: [
-      'No prometer la edición, grabación o producción del contenido audiovisual de los cursos por nuestra cuenta.',
+      'No prometer la edición, grabación o producción del contenido audiovisual de los cursos.',
       'No prometer tráfico orgánico masivo de estudiantes por el simple hecho de instalar el portal de cursos.'
     ],
-    nextStep: 'Llamada por zoom para mostrar la consola interna de Luma Outreach en funcionamiento controlado.'
+    nextStep: 'Programar llamada de diagnóstico sobre plataformas de cursos.'
   },
   {
     id: 'abogados',
     niche: 'Abogados / Alquileres',
     icon: Scale,
     problem: 'Pérdida de horas valiosas filtrando clientes no calificados o respondiendo las mismas preguntas básicas sobre requisitos, honorarios y condiciones antes de una cita formal.',
-    recommendedProduct: 'Concierge Inteligente + Diagnóstico',
-    demos: ALL_DEMOS.filter(d => ['Santuario Concierge', 'Luma Estate OS', 'Luma Intelligence Hub'].includes(d.name)),
-    message: 'Hola [Nombre], analizamos los formularios de tu firma y notamos que no hay un filtro automatizado para clasificar los casos urgentes. Creamos un Concierge inteligente de atención automática que atiende al prospecto, evalúa si es un cliente calificado para tu bufete y te agenda la cita. Puedes probar el bot interactivo similar aquí: https://santuario-estetica-mvp.vercel.app/concierge - ¿Qué porcentaje de tiempo pierden hoy atendiendo leads no calificados?',
+    recommendedProduct: 'Capital en Orden',
+    demos: ALL_DEMOS.filter(d => ['Capital en Orden — Demo Oficial'].includes(d.name)),
+    message: 'Hola [Nombre], analizamos los formularios de tu firma y notamos que no hay un filtro automatizado para clasificar los casos urgentes. Estamos preparando el módulo Capital en Orden para bufetes.',
     priceFrom: '$1,200 USD (según la complejidad de las reglas de calificación)',
     whatToSay: [
       'Las horas facturables del abogado son sagradas. La IA pre-califica a las personas interesadas.',
-      'La IA entrega un resumen del caso e información básica de contacto lista en su agenda comercial.',
+      'La IA entrega un resumen del caso e información de contacto lista para agendar.',
       'La profesionalidad de un asistente inmediato eleva el valor percibido del despacho.'
     ],
     whatNotToPromise: [
       'No prometer que la IA emitirá asesoramiento legal directo o resoluciones jurídicas autónomas.',
       'No garantizar el filtrado perfecto del 100% de consultas mal intencionadas sin reglas estrictas.'
     ],
-    nextStep: 'Elaborar un bosquejo rápido del embudo de preguntas de calificación para presentárselo.'
+    nextStep: 'Hacerles una propuesta de preguntas clave de calificación comercial.'
   },
   {
     id: 'b2b',
     niche: 'Empresas B2B',
     icon: Briefcase,
-    problem: 'Ciclos de venta largos y frustrantes. Se envían presupuestos y propuestas comerciales en archivos PDF estáticos y no se sabe si se abrieron, quién los leyó o si hay interés real de la junta directiva.',
-    recommendedProduct: 'Sistema Comercial Privado + Web Premium',
-    demos: ALL_DEMOS.filter(d => ['Inox Minier', 'Luma Outreach Console', 'Luma Intelligence Hub'].includes(d.name)),
-    message: 'Hola [Nombre], vi tus soluciones de servicios B2B. Los prospectos corporativos exigen respuestas rápidas y presentaciones que denoten máxima profesionalidad. Desarrollamos landings premium a medida y consolas comerciales. Puedes ver nuestra landing industrial de muestra: https://inox-minier.com/ - ¿Te interesaría medir el interés real de tus propuestas comerciales?',
-    priceFrom: '$3,500 USD (según pipelines, integraciones de correo y control de propuestas)',
+    problem: 'Ciclos de venta largos y frustrantes. Se envían presupuestos y propuestas comerciales en archivos PDF estáticos y no se sabe si se abrieron o si hay interés real.',
+    recommendedProduct: 'Industrial / B2B OS',
+    demos: ALL_DEMOS.filter(d => ['Luma Industrial / B2B OS — Demo Oficial'].includes(d.name)),
+    message: 'Hola [Nombre], vi tus soluciones de servicios B2B. Los prospectos corporativos exigen respuestas rápidas. Estamos preparando el sistema Industrial B2B OS con métricas en caliente.',
+    priceFrom: '$3,500 USD (según pipelines e integraciones de correo y control de propuestas)',
     whatToSay: [
       'En ventas B2B corporativas, el tiempo de seguimiento y saber quién toma la decisión es crucial.',
       'Saber exactamente cuándo abren el presupuesto te permite llamarlos en caliente para resolver objeciones.',
-      'Centralizar el pipeline comercial en un sistema propio disminuye la dependencia de hojas de cálculo rotas.'
+      'Centralizar el pipeline comercial en un sistema propio disminuye la dependencia de hojas de cálculo.'
     ],
     whatNotToPromise: [
-      'No prometer base de datos de leads corporativos lista para prospectar de forma masiva sin un plan de adquisición comercial aprobado.',
-      'No prometer que el portal interactivo reemplazará el trabajo humano de relación y cierre del ejecutivo.'
+      'No prometer base de datos de leads corporativos lista para prospectar de forma masiva sin estrategia previa.',
+      'No prometer que el portal reemplazará el trabajo humano de relación y cierre del ejecutivo.'
     ],
-    nextStep: 'Programar una videollamada para demostrar el sistema de rastreo de propuestas Luma Outreach.'
+    nextStep: 'Agendar reunión de presentación técnica una vez liberada la demo oficial.'
   },
   {
     id: 'servicios',
     niche: 'Marcas personales / servicios',
     icon: UserCheck,
-    problem: 'Baja autoridad digital. Sitios web o perfiles sociales genéricos que no reflejan el verdadero valor de sus servicios, limitando su capacidad para cobrar tarifas premium (alto ticket).',
-    recommendedProduct: 'Web / Landing Premium + Diagnóstico',
-    demos: ALL_DEMOS.filter(d => ['Marcos Portfolio', 'Vista del Río', 'Luma Boutique Ivette', 'Luma Intelligence Hub'].includes(d.name)),
-    message: 'Hola [Nombre], estuve revisando tu perfil. Tu contenido es de gran valor, pero tu enlace de presentación web no refleja ese mismo nivel de autoridad profesional. Diseñamos portafolios interactivos premium que cargan al instante y estructuran tus testimonios e historias de éxito para cerrar clientes de alto ticket. Mira este ejemplo de portafolio interactivo: https://marcos-portfolio-premium.vercel.app/ - ¿Te gustaría rediseñar tu carta de presentación digital?',
+    problem: 'Baja autoridad digital. Sitios web o perfiles sociales genéricos que no reflejan el verdadero valor de sus servicios, limitando su capacidad para cobrar tarifas premium.',
+    recommendedProduct: 'Content / Media OS',
+    demos: ALL_DEMOS.filter(d => ['Luma Content / Media OS — Demo Oficial'].includes(d.name)),
+    message: 'Hola [Nombre], estuve revisando tu perfil. Tu contenido es de gran valor, pero tu presentación web no refleja ese mismo nivel de autoridad profesional. Diseñamos portafolios interactivos premium.',
     priceFrom: '$1,200 USD (según secciones, contenido interactivo y testimoniales)',
     whatToSay: [
       'La primera impresión digital define el precio de tu hora o consultoría.',
       'Una web genérica obliga a competir por precio. Una web premium justifica tarifas premium.',
-      'Demostrar la velocidad y la excelencia tipográfica de su portafolio frente a la competencia.'
+      'Demostrar la velocidad y la excelencia tipográfica frente a la competencia.'
     ],
     whatNotToPromise: [
-      'No prometer aumento automático de seguidores en redes o viralidad sin estrategias de pauta o generación de contenido.',
-      'No prometer que la web solucionará fallas en el modelo de monetización o servicio del profesional.'
+      'No prometer aumento automático de seguidores en redes o viralidad sin estrategias de pauta.',
+      'No prometer que la web solucionará fallas en el modelo de monetización del profesional.'
     ],
     nextStep: 'Hacer una videollamada corta para sugerirles 3 cambios clave en el diseño de su web actual.'
   },
@@ -397,10 +482,13 @@ const clientesData: ClienteConfig[] = [
     id: 'whatsapp-leads',
     niche: 'Fuga de Leads en WhatsApp',
     icon: MessageSquare,
-    problem: 'Saturación en canales de chat. Reciben decenas de mensajes diarios, pero tardan horas en contestar o no hacen seguimiento a prospectos calientes, perdiendo ventas frente a competidores más veloces.',
-    recommendedProduct: 'Concierge Inteligente + Sistema Comercial Privado',
-    demos: ALL_DEMOS.filter(d => ['Santuario Concierge', 'Luma Outreach Console', 'Luma Intelligence Hub'].includes(d.name)),
-    message: 'Hola [Nombre], noté que en horas pico tardan más de 30 minutos en responder las consultas de WhatsApp de nuevos prospectos. El 50% de las ventas por chat se pierden por no responder en los primeros 5 minutos. Desarrollamos un Concierge de WhatsApp que califica el lead de inmediato. Mira esta demo interactiva del agente de reservas: https://santuario-estetica-mvp.vercel.app/concierge - ¿Qué porcentaje de leads calculas que se enfrían por tardanza en responder?',
+    problem: 'Saturación en canales de chat. Reciben decenas de mensajes diarios, pero tardan horas en contestar o no hacen seguimiento a prospectos calientes, perdiendo ventas.',
+    recommendedProduct: 'Concierge Inteligente',
+    demos: ALL_DEMOS.filter(d => [
+      'Luma Real Estate Concierge OS — Demo Oficial',
+      'Luma Commerce OS — Demo Oficial'
+    ].includes(d.name)),
+    message: 'Hola [Nombre], noté que en horas pico tardan en responder las consultas de WhatsApp de nuevos prospectos. El 50% de las ventas por chat se pierden por no responder en los primeros 5 minutos.',
     priceFrom: '$1,500 USD (según la cantidad de integraciones y complejidad del bot)',
     whatToSay: [
       'En canales de chat, la velocidad de respuesta es el factor número uno de conversión.',
@@ -408,8 +496,8 @@ const clientesData: ClienteConfig[] = [
       'El Concierge Inteligente actúa de forma instantánea y extrae los datos de interés listos para tu vendedor.'
     ],
     whatNotToPromise: [
-      'No recomendar ni prometer el uso de herramientas no oficiales que puedan provocar el bloqueo de su cuenta de WhatsApp.',
-      'No asegurar que la IA cerrará la venta sin la intervención del equipo de ventas en la fase final de negociación.'
+      'No recomendar ni prometer el uso de herramientas no oficiales que puedan provocar el bloqueo de WhatsApp.',
+      'No asegurar que la IA cerrará la venta sin la intervención del equipo de ventas en la fase final.'
     ],
     nextStep: 'Hacerles una simulación real de la IA enviándoles el número del bot de prueba.'
   }
@@ -448,22 +536,22 @@ export default function SalesRoom() {
   };
 
   // Filtrar las demos rotas o de mantenimiento para Marcos
-  const maintenanceDemos = ALL_DEMOS.filter(d => d.status === 'needs_repair' || d.status === 'private' || d.status === 'internal_admin');
+  const maintenanceDemos = ALL_DEMOS.filter(d => d.status === 'internal_only' || d.status === 'review_before_send' || d.status === 'not_for_sale_now');
 
   const ActiveIcon = selectedCliente.icon;
 
   const getStatusBadgeStyles = (status: DemoStatus) => {
     switch (status) {
-      case 'public':
+      case 'official_demo':
         return 'bg-emerald-500/10 text-emerald-400 border-emerald-500/20';
-      case 'private':
-        return 'bg-purple-500/10 text-purple-400 border-purple-500/20';
-      case 'internal_admin':
-        return 'bg-blue-500/10 text-blue-400 border-blue-500/20';
-      case 'needs_repair':
-        return 'bg-rose-500/10 text-rose-400 border-rose-500/20';
-      case 'pending_creation':
+      case 'in_preparation':
         return 'bg-amber-500/10 text-amber-400 border-amber-500/20';
+      case 'internal_only':
+        return 'bg-blue-500/10 text-blue-400 border-blue-500/20';
+      case 'review_before_send':
+        return 'bg-purple-500/10 text-purple-400 border-purple-500/20';
+      case 'not_for_sale_now':
+        return 'bg-rose-500/10 text-rose-400 border-rose-500/20';
       default:
         return 'bg-gray-500/10 text-gray-400 border-gray-500/20';
     }
@@ -476,8 +564,10 @@ export default function SalesRoom() {
       case 'Usar solo en reunión':
         return 'text-purple-400 border-purple-500/10 bg-purple-500/5';
       case 'No enviar todavía':
-        return 'text-rose-400 border-rose-500/10 bg-rose-500/5 animate-pulse';
-      case 'Demo pendiente':
+        return 'text-rose-400 border-rose-500/10 bg-rose-500/5';
+      case 'Solo consulta interna':
+        return 'text-blue-400 border-blue-500/10 bg-blue-500/5';
+      case 'En preparación':
         return 'text-amber-400 border-amber-500/10 bg-amber-500/5';
       default:
         return 'text-gray-400 border-gray-500/10';
@@ -615,14 +705,16 @@ export default function SalesRoom() {
                 <h3 className="text-sm font-bold text-gray-400 uppercase tracking-widest px-2">
                   Demos del Ecosistema
                 </h3>
+                
+                {/* Demos Vendibles */}
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                  {selectedCliente.demos.map((demo, idx) => (
+                  {selectedCliente.demos.filter(d => d.status === 'official_demo' || d.status === 'in_preparation').map((demo, idx) => (
                     <div 
                       key={idx} 
                       className={`bg-[#0a0a0c] border rounded-xl p-5 flex flex-col justify-between transition-colors ${
-                        demo.status === 'public' 
-                          ? 'border-white/5 hover:border-emerald-500/20' 
-                          : 'border-white/5 hover:border-rose-500/20'
+                        demo.status === 'official_demo' 
+                          ? 'border-emerald-500/20 hover:border-emerald-500/40 shadow-[0_0_15px_rgba(16,185,129,0.05)]' 
+                          : 'border-white/5 hover:border-amber-500/20'
                       }`}
                     >
                       <div className="space-y-3">
@@ -642,13 +734,18 @@ export default function SalesRoom() {
                         <p className="text-xs text-gray-400 font-light leading-relaxed">
                           {demo.notes}
                         </p>
-                        <p className="text-[10px] text-gray-600 font-mono break-all bg-black/30 p-2 rounded border border-white/5">
-                          {demo.url}
-                        </p>
+                        {demo.status === 'official_demo' ? (
+                          <p className="text-[10px] text-gray-500 font-mono break-all bg-black/30 p-2 rounded border border-white/5">
+                            {demo.url}
+                          </p>
+                        ) : (
+                          <p className="text-[10px] text-gray-600 font-mono italic p-2 rounded border border-white/5 bg-black/10">
+                            Enlace privado y protegido (saneando demo)
+                          </p>
+                        )}
                       </div>
                       
                       <div className="mt-5 pt-3 border-t border-white/5 flex gap-2">
-                        {/* Botón Abrir (uso interno o público) */}
                         {demo.canOpen ? (
                           <a 
                             href={demo.url} 
@@ -666,7 +763,6 @@ export default function SalesRoom() {
                           </div>
                         )}
 
-                        {/* Botón Copiar (Deshabilitado/Ocultado para admins e internos) */}
                         {demo.canCopy ? (
                           <button
                             onClick={() => handleCopyText(demo.url, `demo-${selectedCliente.id}-${idx}`)}
@@ -676,37 +772,123 @@ export default function SalesRoom() {
                             <span>{copyStatus[`demo-${selectedCliente.id}-${idx}`] ? '¡Copiado!' : 'Copiar Enlace'}</span>
                           </button>
                         ) : (
-                          <div className="flex-1 py-2 bg-[#1a0f0f] text-xs font-semibold rounded-lg text-red-400 cursor-not-allowed flex items-center justify-center gap-1.5 border border-red-500/10">
+                          <div className="flex-1 py-2 bg-[#1a0f0f] text-xs font-semibold rounded-lg text-red-500/40 cursor-not-allowed flex items-center justify-center gap-1.5 border border-red-500/10">
                             <ShieldAlert className="w-3.5 h-3.5" />
-                            <span>Link Privado</span>
+                            <span>Envío Bloqueado</span>
                           </div>
                         )}
                       </div>
                     </div>
                   ))}
                 </div>
+
+                {/* Archivo Interno / Referencias no enviables */}
+                {selectedCliente.demos.filter(d => d.status === 'internal_only' || d.status === 'review_before_send' || d.status === 'not_for_sale_now').length > 0 && (
+                  <div className="mt-6 border border-white/5 bg-[#0a0a0c]/60 rounded-xl p-5 space-y-4">
+                    <div className="flex items-center gap-2 border-b border-white/5 pb-2.5">
+                      <ShieldAlert className="w-4 h-4 text-rose-500" />
+                      <h4 className="text-xs font-bold text-gray-400 uppercase tracking-widest">
+                        Archivo interno / Referencias no enviables (No usar en ventas)
+                      </h4>
+                    </div>
+                    
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                      {selectedCliente.demos.filter(d => d.status === 'internal_only' || d.status === 'review_before_send' || d.status === 'not_for_sale_now').map((demo, idx) => (
+                        <div 
+                          key={idx} 
+                          className="bg-black/30 border border-white/5 rounded-lg p-4 flex flex-col justify-between opacity-60 hover:opacity-85 transition-opacity duration-200"
+                        >
+                          <div className="space-y-2">
+                            <div className="flex flex-wrap items-center gap-1.5">
+                              <span className={`px-1.5 py-0.5 text-[8px] font-bold uppercase rounded border ${getStatusBadgeStyles(demo.status)}`}>
+                                {demo.badge}
+                              </span>
+                              <span className="px-1.5 py-0.5 text-[8px] font-bold uppercase rounded border bg-rose-500/10 text-rose-400 border-rose-500/20">
+                                NO USAR EN VENTAS
+                              </span>
+                            </div>
+                            <h5 className="font-bold text-gray-300 text-sm">{demo.name}</h5>
+                            <p className="text-[11px] text-gray-500 leading-relaxed font-light">{demo.notes}</p>
+                          </div>
+                          
+                          <div className="mt-4 pt-2 border-t border-white/5 flex gap-2">
+                            {demo.canOpen ? (
+                              <a 
+                                href={demo.url} 
+                                target="_blank" 
+                                rel="noopener noreferrer" 
+                                className="flex-1 py-1.5 bg-white/5 hover:bg-white/10 text-[11px] font-medium rounded text-gray-400 hover:text-white transition-all flex items-center justify-center gap-1 border border-white/5"
+                              >
+                                <Eye className="w-3 h-3" />
+                                <span>Abrir Referencia</span>
+                              </a>
+                            ) : (
+                              <div className="flex-1 py-1.5 bg-black/40 text-[11px] font-medium rounded text-gray-600 cursor-not-allowed flex items-center justify-center gap-1 border border-white/5">
+                                <Link2Off className="w-3 h-3" />
+                                <span>No disponible</span>
+                              </div>
+                            )}
+                            <div className="flex-1 py-1.5 bg-rose-950/20 text-[10px] font-medium rounded text-rose-500/50 cursor-not-allowed flex items-center justify-center gap-1 border border-rose-950/40">
+                              <ShieldAlert className="w-3 h-3" />
+                              <span>Uso Interno</span>
+                            </div>
+                          </div>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                )}
               </div>
 
               {/* Mensaje de Prospección y Argumentario */}
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 
-                {/* Mensaje Sugerido */}
-                <div className="bg-[#0a0a0c] border border-white/5 rounded-2xl p-6 flex flex-col justify-between">
+                {/* Mensaje Sugerido o Múltiples Plantillas */}
+                <div className="bg-[#0a0a0c] border border-white/5 rounded-2xl p-6 space-y-6 flex flex-col justify-between">
                   <div className="space-y-4">
                     <h4 className="text-xs font-bold text-gray-400 uppercase tracking-widest flex items-center gap-1.5">
-                      <MessageSquare className="w-3.5 h-3.5 text-amber-500" /> Mensaje para WhatsApp / DM
+                      <MessageSquare className="w-3.5 h-3.5 text-amber-500" />
+                      {selectedCliente.messageTemplates ? 'Plantillas de Mensajes Copiables' : 'Mensaje para WhatsApp / DM'}
                     </h4>
-                    <p className="text-xs md:text-sm text-gray-300 font-light leading-relaxed bg-black/40 border border-white/5 p-4 rounded-xl font-mono">
-                      {selectedCliente.message}
-                    </p>
+                    
+                    {selectedCliente.messageTemplates ? (
+                      <div className="space-y-4">
+                        {selectedCliente.messageTemplates.map((template, tIdx) => (
+                          <div key={tIdx} className="bg-black/30 border border-white/5 p-4 rounded-xl space-y-3">
+                            <div className="flex justify-between items-center">
+                              <span className="text-[10px] font-bold text-amber-500 uppercase tracking-wider">
+                                {template.label}
+                              </span>
+                              <button
+                                onClick={() => handleCopyText(template.text, `tmpl-${tIdx}`)}
+                                className="px-2 py-1 bg-white/5 hover:bg-white/10 text-[10px] font-semibold rounded text-gray-400 hover:text-white transition-all flex items-center gap-1 border border-white/5"
+                              >
+                                <Copy className="w-3 h-3" />
+                                <span>{copyStatus[`tmpl-${tIdx}`] ? '¡Copiado!' : 'Copiar'}</span>
+                              </button>
+                            </div>
+                            <p className="text-xs md:text-sm text-gray-300 font-light leading-relaxed font-mono whitespace-pre-wrap">
+                              {template.text}
+                            </p>
+                          </div>
+                        ))}
+                      </div>
+                    ) : (
+                      <p className="text-xs md:text-sm text-gray-300 font-light leading-relaxed bg-black/40 border border-white/5 p-4 rounded-xl font-mono">
+                        {selectedCliente.message}
+                      </p>
+                    )}
                   </div>
-                  <button
-                    onClick={() => handleCopyText(selectedCliente.message, 'script-msg')}
-                    className="mt-6 w-full py-3 bg-amber-500 hover:bg-amber-600 text-black text-xs font-bold uppercase tracking-wider rounded-xl transition-all flex items-center justify-center gap-2"
-                  >
-                    <Copy className="w-4 h-4" />
-                    <span>{copyStatus['script-msg'] ? '¡Mensaje Copiado!' : 'Copiar Mensaje'}</span>
-                  </button>
+                  
+                  {!selectedCliente.messageTemplates && (
+                    <button
+                      onClick={() => handleCopyText(selectedCliente.message, 'script-msg')}
+                      className="mt-6 w-full py-3 bg-amber-500 hover:bg-amber-600 text-black text-xs font-bold uppercase tracking-wider rounded-xl transition-all flex items-center justify-center gap-2 font-semibold"
+                    >
+                      <Copy className="w-4 h-4" />
+                      <span>{copyStatus['script-msg'] ? '¡Mensaje Copiado!' : 'Copiar Mensaje'}</span>
+                    </button>
+                  )}
                 </div>
 
                 {/* Argumentario de Ventas */}

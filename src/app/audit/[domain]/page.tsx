@@ -2,6 +2,7 @@ import fs from 'fs';
 import path from 'path';
 import LiveAuditStatus from '../../../components/LiveAuditStatus';
 import { TrendingDown, Target, Search, Globe, Smartphone, Activity, AlertTriangle, CheckCircle, ArrowRight } from 'lucide-react';
+import Link from 'next/link';
 
 export const dynamic = 'force-dynamic';
 
@@ -296,7 +297,7 @@ export default async function AuditPage({ params }: { params: Promise<{ domain: 
              Esto puede deberse a que el dominio no resuelve, está caído o tiene protecciones anti-bot.
            </p>
            <div className="flex gap-4">
-             <a href="/" className="px-6 py-3 bg-white/5 border border-white/10 rounded-lg hover:bg-white/10 transition-colors">Volver al Dashboard</a>
+             <Link href="/" className="px-6 py-3 bg-white/5 border border-white/10 rounded-lg hover:bg-white/10 transition-colors">Volver al Dashboard</Link>
              <a 
               href={`https://wa.me/18292558703?text=${encodeURIComponent(`Hola, el escaneo para ${requestedDomain} fallo. Podemos revisarlo manualmente?`)}`}
               target="_blank"
@@ -510,12 +511,12 @@ export default async function AuditPage({ params }: { params: Promise<{ domain: 
                 >
                   Solicitar consulta gratuita
                 </a>
-                <a 
+                <Link 
                   href="/" 
                   className="px-6 py-3 bg-transparent border border-white/10 text-gray-300 hover:bg-white/5 rounded-lg text-xs font-bold transition-all w-full sm:w-auto"
                 >
                   Volver al Dashboard
-                </a>
+                </Link>
               </div>
             </div>
           </div>
