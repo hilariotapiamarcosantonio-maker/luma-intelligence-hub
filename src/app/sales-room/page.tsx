@@ -39,6 +39,13 @@ interface Demo {
   notes?: string;
   secondaryUrl?: string;
   secondaryUrlLabel?: string;
+  idealClient?: string;
+  commercialPain?: string;
+  whatItShows?: string;
+  whatToSay?: string;
+  recommendedPackage?: string;
+  priceGuide?: string;
+  nextStep?: string;
 }
 
 interface CopyableMessage {
@@ -75,6 +82,25 @@ const ALL_DEMOS: Demo[] = [
     category: 'Real Estate',
     productLine: 'Real Estate OS',
     notes: 'Landing inmobiliaria premium con narrativa, segmentos de comprador, imágenes IA, captación de leads simulada y estructura adaptable para proyectos inmobiliarios (Residencial Aurora).'
+  },
+  {
+    name: 'Luma Real Estate CRM OS — Demo Oficial',
+    url: 'https://luma-real-estate-crm-os-demo.vercel.app/',
+    status: 'official_demo',
+    badge: 'Demo oficial',
+    action: 'Mostrar al cliente',
+    canCopy: true,
+    canOpen: true,
+    category: 'Real Estate',
+    productLine: 'Real Estate CRM OS',
+    notes: 'Un CRM inmobiliario funcional con propiedades, leads, asesores, estados comerciales, notas de seguimiento y persistencia real en Google Sheets demo.',
+    idealClient: 'Inmobiliarias, brokers, constructoras y equipos comerciales que necesitan registrar propiedades, organizar leads, dar seguimiento y controlar estados comerciales.',
+    commercialPain: 'El negocio depende de WhatsApp, Excel o memoria para manejar propiedades, prospectos y seguimiento. Esto provoca leads perdidos, poca trazabilidad y falta de control comercial.',
+    whatItShows: 'Un CRM inmobiliario funcional con propiedades, leads, asesores, estados comerciales, notas de seguimiento y persistencia real en Google Sheets demo.',
+    whatToSay: 'Esta demo muestra cómo una inmobiliaria puede organizar propiedades, registrar leads, cambiar estados, dejar notas de seguimiento y visualizar su operación comercial desde un sistema privado conectado a una base de datos demo.',
+    recommendedPackage: 'Sistema Comercial Privado',
+    priceGuide: 'Desde US$3,000–US$5,000+ según cantidad de módulos, usuarios, automatizaciones, dashboards e integraciones.',
+    nextStep: 'Mostrar demo en reunión, registrar un lead o propiedad en vivo, y luego levantar los campos y procesos reales del cliente para preparar una propuesta.'
   },
 
   // Demos en preparación
@@ -327,26 +353,43 @@ const clientesData: ClienteConfig[] = [
     recommendedProduct: 'Real Estate OS',
     demos: ALL_DEMOS.filter(d => [
       'Luma Real Estate OS — Demo Privada',
+      'Luma Real Estate CRM OS — Demo Oficial',
       'Luma Real Estate Concierge OS — Demo Oficial',
       'Real Estate OS / visión estratégica'
     ].includes(d.name)),
     message: 'Te comparto una demo privada de cómo una inmobiliaria o constructora puede presentar un proyecto de forma más premium, captar interesados y organizar mejor la conversación comercial: https://luma-real-estate-os-demo.vercel.app/',
     messageTemplates: [
       {
-        label: 'WhatsApp corto',
+        label: '[Proyecto] WhatsApp corto',
         text: 'Te comparto una demo privada de cómo una inmobiliaria o constructora puede presentar un proyecto de forma más premium, captar interesados y organizar mejor la conversación comercial: https://luma-real-estate-os-demo.vercel.app/'
       },
       {
-        label: 'Contexto',
+        label: '[Proyecto] Contexto',
         text: 'Esta demo no es una página web genérica. Es una muestra de infraestructura comercial inmobiliaria: presenta el proyecto, educa al comprador, separa perfiles de interés y lleva al prospecto hacia una solicitud de información o reunión.'
       },
       {
-        label: 'Para reunión',
+        label: '[Proyecto] Para reunión',
         text: 'Lo importante aquí no es el diseño solamente. Es la estructura: presentación, segmentación, captación y seguimiento. Esto se puede adaptar a una inmobiliaria, constructora, broker o proyecto específico.'
       },
       {
-        label: 'Para William',
+        label: '[Proyecto] Para William',
         text: 'William: usa primero las demos oficiales. Si una demo aparece como “En preparación”, no la envíes al cliente todavía. Se puede mencionar como producto disponible, pero la demo oficial se publicará cuando esté saneada.'
+      },
+      {
+        label: '[CRM] WhatsApp corto',
+        text: 'Te comparto una demo de CRM inmobiliario donde una inmobiliaria puede registrar propiedades, organizar leads, cambiar estados y dar seguimiento comercial desde un panel privado: https://luma-real-estate-crm-os-demo.vercel.app/'
+      },
+      {
+        label: '[CRM] Contexto',
+        text: 'Esta demo no es una página web. Es una muestra de sistema interno comercial para inmobiliarias: propiedades, leads, asesores, estados, notas de seguimiento y base de datos conectada para que las oportunidades no se pierdan en WhatsApp, Excel o memoria.'
+      },
+      {
+        label: '[CRM] Para reunión',
+        text: 'Lo importante aquí es el control interno: registrar propiedades, organizar prospectos, ver estados, dejar notas y medir seguimiento. Esta capa puede conectarse con una landing, un concierge o campañas de captación.'
+      },
+      {
+        label: '[CRM] Para William',
+        text: 'William: si una inmobiliaria dice que ya tiene página o que recibe leads por WhatsApp, presenta esta demo como el sistema interno para ordenar la operación. No vendas diseño; vende control, seguimiento y menos oportunidades perdidas.'
       }
     ],
     priceFrom: 'Desde US$1,800–US$3,000 (captación inmobiliaria); US$3,000–US$5,000+ (con CRM y seguimiento avanzado)',
@@ -763,6 +806,58 @@ export default function SalesRoom() {
                         <p className="text-xs text-gray-400 font-light leading-relaxed">
                           {demo.notes}
                         </p>
+                        {demo.idealClient && (
+                          <details className="group border border-white/5 bg-black/20 rounded-lg overflow-hidden mt-2 transition-all duration-200">
+                            <summary className="flex items-center justify-between p-2 text-[10px] font-bold text-gray-400 uppercase tracking-widest cursor-pointer select-none hover:bg-white/5 hover:text-white">
+                              <span>Argumentario de Venta</span>
+                              <ChevronRight className="w-3 h-3 transition-transform group-open:rotate-90 text-amber-500" />
+                            </summary>
+                            <div className="p-3 border-t border-white/5 space-y-2 text-xs bg-black/40">
+                              <div>
+                                <span className="text-[9px] font-bold text-amber-500 uppercase tracking-wider block">Cliente ideal</span>
+                                <span className="text-gray-300 font-light">{demo.idealClient}</span>
+                              </div>
+                              {demo.commercialPain && (
+                                <div>
+                                  <span className="text-[9px] font-bold text-rose-400 uppercase tracking-wider block">Dolor comercial</span>
+                                  <span className="text-gray-300 font-light">{demo.commercialPain}</span>
+                                </div>
+                              )}
+                              {demo.whatItShows && (
+                                <div>
+                                  <span className="text-[9px] font-bold text-emerald-400 uppercase tracking-wider block">Qué demuestra</span>
+                                  <span className="text-gray-300 font-light">{demo.whatItShows}</span>
+                                </div>
+                              )}
+                              {demo.whatToSay && (
+                                <div>
+                                  <span className="text-[9px] font-bold text-blue-400 uppercase tracking-wider block">Qué decir</span>
+                                  <span className="text-gray-300 font-light italic">&ldquo;{demo.whatToSay}&rdquo;</span>
+                                </div>
+                              )}
+                              <div className="grid grid-cols-2 gap-2 pt-2 border-t border-white/5">
+                                {demo.recommendedPackage && (
+                                  <div>
+                                    <span className="text-[8px] font-bold text-gray-500 uppercase tracking-wider block">Paquete</span>
+                                    <span className="text-white font-semibold text-[11px]">{demo.recommendedPackage}</span>
+                                  </div>
+                                )}
+                                {demo.priceGuide && (
+                                  <div>
+                                    <span className="text-[8px] font-bold text-gray-500 uppercase tracking-wider block">Precio Guía</span>
+                                    <span className="text-amber-500 font-mono font-semibold text-[11px]">{demo.priceGuide}</span>
+                                  </div>
+                                )}
+                              </div>
+                              {demo.nextStep && (
+                                <div className="bg-amber-500/5 p-2 rounded border border-amber-500/10 mt-1">
+                                  <span className="text-[8px] font-bold text-amber-500 uppercase tracking-wider block">Siguiente paso</span>
+                                  <span className="text-gray-200 font-medium text-[11px]">{demo.nextStep}</span>
+                                </div>
+                              )}
+                            </div>
+                          </details>
+                        )}
                         {demo.status === 'official_demo' ? (
                           <div className="space-y-2">
                             <p className="text-[10px] text-gray-500 font-mono break-all bg-black/30 p-2 rounded border border-white/5">
