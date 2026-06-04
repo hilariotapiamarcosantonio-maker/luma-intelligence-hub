@@ -137,18 +137,29 @@ const ALL_DEMOS: Demo[] = [
     priceGuide: 'Desde US$1,800–US$3,000 como concierge de captación; desde US$3,000–US$5,000+ si se integra con CRM, campañas, WhatsApp Business API o dashboard privado.',
     nextStep: 'Mostrar demo, simular una conversación, revisar el resumen del lead y luego levantar las preguntas frecuentes reales del cliente para preparar una propuesta.'
   },
-
-  // Demos en preparación
   {
     name: 'Luma Commerce OS — Demo Oficial',
-    url: 'https://luma-commerce-os.vercel.app/',
-    status: 'in_preparation',
-    badge: 'En preparación',
-    action: 'No enviar todavía',
-    canCopy: false,
-    canOpen: false,
-    notes: 'Tienda con CRM integrado y pasarela. En preparación y saneamiento.'
+    url: 'https://luma-commerce-os-demo.vercel.app/',
+    status: 'official_demo',
+    badge: 'Demo oficial',
+    action: 'Mostrar al cliente',
+    canCopy: true,
+    canOpen: true,
+    category: 'Commerce',
+    productLine: 'Commerce OS',
+    notes: 'E-commerce interactivo (Nexa Store) acoplado a un CRM de seguimiento local basado en CSV semillas con simulación de pasarela de checkout y canal de WhatsApp.',
+    secondaryUrl: 'https://luma-commerce-os-demo.vercel.app/admin',
+    secondaryUrlLabel: 'Ver CRM / Admin',
+    idealClient: 'Tiendas online, boutiques, marcas de productos físicos y retailers locales que quieren vender de forma autónoma y automatizar su control de ventas y cobros por WhatsApp.',
+    commercialPain: 'Dependencia exclusiva de Instagram DM o chats manuales para concretar ventas, falta de un carrito integrado, pérdida de trazabilidad de clientes recurrentes y cobros manuales desorganizados.',
+    whatItShows: 'Un e-commerce premium responsivo, simulación de carrito de compras y checkout, simulador interactivo de pedidos dirigidos a WhatsApp, y un panel administrativo/CRM local con control de cuentas por cobrar (CxC), ventas e inventario.',
+    whatToSay: 'Esta demo muestra la experiencia fluida del comprador desde que selecciona el producto hasta el envío del pedido, y cómo el comercio gestiona cada oportunidad, abonos, pagos quincenales e inventario desde su propio panel administrativo.',
+    recommendedPackage: 'E-commerce con CRM',
+    priceGuide: 'Desde US$2,500–US$4,500+ según cantidad de productos, pasarelas de pago reales, integraciones de envío y personalizaciones del CRM operativo.',
+    nextStep: 'Mostrar la experiencia de tienda en móviles, agregar productos al carrito, simular el checkout y explorar el panel administrativo para ver cómo se registra el pedido instantáneamente.'
   },
+
+  // Demos en preparación
   {
     name: 'Luma Boutique / Cosmética OS — Demo Oficial',
     url: 'https://luma-boutique-os-ivette.vercel.app/',
@@ -313,13 +324,13 @@ const ALL_DEMOS: Demo[] = [
   },
   {
     name: 'Luma Commerce OS admin',
-    url: 'https://luma-commerce-os.vercel.app/admin',
+    url: 'https://luma-commerce-os-demo.vercel.app/admin',
     status: 'internal_only',
     badge: 'Interno',
     action: 'Solo consulta interna',
     canCopy: false,
     canOpen: true,
-    notes: 'Consola administrativa interna del CRM de comercio.'
+    notes: 'Consola administrativa de la demo oficial Nexa Store (Commerce OS).'
   },
   {
     name: 'Luma Boutique Ivette admin',
@@ -439,7 +450,7 @@ const clientesData: ClienteConfig[] = [
       'Luma Commerce OS — Demo Oficial',
       'Luma Boutique / Cosmética OS — Demo Oficial'
     ].includes(d.name)),
-    message: 'Hola [Nombre], vi tu catálogo en Instagram y noté que el proceso de compra requiere muchos pasos manuales, lo que suele causar el abandono del 60% de los compradores en móvil. Estamos preparando un sistema Commerce OS que automatiza la venta y la conecta directo con un CRM de seguimiento comercial por WhatsApp.',
+    message: 'Hola [Nombre], vi tu catálogo en Instagram y noté que el proceso de compra requiere muchos pasos manuales, lo que suele causar el abandono del 60% de los compradores en móvil. Te comparto una demo del sistema Commerce OS que automatiza la venta, incluye carrito, checkout interactivo y conecta directo con un panel CRM de seguimiento: https://luma-commerce-os-demo.vercel.app/',
     priceFrom: 'Desde $2,500 USD (según volumen de catálogo y pasarelas)',
     whatToSay: [
       'Hacer énfasis en la recompra y la recuperación automatizada de carritos.',
@@ -448,9 +459,9 @@ const clientesData: ClienteConfig[] = [
     ],
     whatNotToPromise: [
       'No prometer automatización completa de logística física o envíos sin usar integraciones validadas.',
-      'No prometer compatibilidad nativa con sistemas POS de tiendas físicas muy antiguos sin costo extra.'
+      'No asegurar compatibilidad nativa con sistemas POS de tiendas físicas muy antiguos sin costo extra.'
     ],
-    nextStep: 'Hacer una llamada corta para mostrarles el backend comercial en preparación de Luma Commerce OS.'
+    nextStep: 'Hacer una llamada corta para mostrarles la demo interactiva de la tienda y el panel CRM de Luma Commerce OS (Nexa Store).'
   },
   {
     id: 'spa',
