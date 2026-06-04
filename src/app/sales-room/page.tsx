@@ -70,7 +70,7 @@ interface ClienteConfig {
 
 // Catálogo maestro de demos clasificadas con las URLs reales
 const ALL_DEMOS: Demo[] = [
-  // Demo oficial activa
+  // Demos oficiales activas
   {
     name: 'Luma Real Estate OS — Demo Privada',
     url: 'https://luma-real-estate-os-demo.vercel.app/',
@@ -82,6 +82,20 @@ const ALL_DEMOS: Demo[] = [
     category: 'Real Estate',
     productLine: 'Real Estate OS',
     notes: 'Landing inmobiliaria premium con narrativa, segmentos de comprador, imágenes IA, captación de leads simulada y estructura adaptable para proyectos inmobiliarios (Residencial Aurora).'
+  },
+  {
+    name: 'Luma Beauty Spa OS — Demo Oficial',
+    url: 'https://luma-beauty-spa-os-demo.vercel.app/',
+    status: 'official_demo',
+    badge: 'Demo oficial',
+    action: 'Mostrar al cliente',
+    canCopy: true,
+    canOpen: true,
+    category: 'Beauty / Spa',
+    productLine: 'Beauty Spa OS',
+    notes: 'Una experiencia premium para presentar servicios estéticos, captar consultas, simular atención tipo concierge y orientar al prospecto hacia una evaluación o cita.',
+    secondaryUrl: 'https://luma-beauty-spa-os-demo.vercel.app/concierge',
+    secondaryUrlLabel: 'Ver Concierge'
   },
   {
     name: 'Luma Real Estate CRM OS — Demo Oficial',
@@ -102,34 +116,29 @@ const ALL_DEMOS: Demo[] = [
     priceGuide: 'Desde US$3,000–US$5,000+ según cantidad de módulos, usuarios, automatizaciones, dashboards e integraciones.',
     nextStep: 'Mostrar demo en reunión, registrar un lead o propiedad en vivo, y luego levantar los campos y procesos reales del cliente para preparar una propuesta.'
   },
-
-  // Demos en preparación
   {
     name: 'Luma Real Estate Concierge OS — Demo Oficial',
-    url: 'https://luma-real-estate-concierge-os.vercel.app/dashboard',
-    status: 'in_preparation',
-    badge: 'En preparación',
-    action: 'No enviar todavía',
-    canCopy: false,
-    canOpen: false,
-    category: 'Real Estate',
-    productLine: 'Real Estate OS',
-    notes: 'Dashboard interactivo de reservas y leads para Real Estate. En preparación y saneamiento.'
-  },
-  {
-    name: 'Luma Beauty Spa OS — Demo Oficial',
-    url: 'https://luma-beauty-spa-os-demo.vercel.app/',
+    url: 'https://luma-real-estate-concierge-os-demo.vercel.app/',
     status: 'official_demo',
     badge: 'Demo oficial',
     action: 'Mostrar al cliente',
     canCopy: true,
     canOpen: true,
-    category: 'Beauty / Spa',
-    productLine: 'Beauty Spa OS',
-    notes: 'Una experiencia premium para presentar servicios estéticos, captar consultas, simular atención tipo concierge y orientar al prospecto hacia una evaluación o cita.',
-    secondaryUrl: 'https://luma-beauty-spa-os-demo.vercel.app/concierge',
-    secondaryUrlLabel: 'Ver Concierge'
+    category: 'Real Estate',
+    productLine: 'Real Estate Concierge OS',
+    notes: 'Un concierge inmobiliario funcional que conversa con el prospecto, califica su interés, responde preguntas frecuentes y genera un resumen comercial estructurado para el asesor.',
+    secondaryUrl: 'https://luma-real-estate-concierge-os-demo.vercel.app/dashboard',
+    secondaryUrlLabel: 'Ver Dashboard',
+    idealClient: 'Inmobiliarias, brokers, constructoras y equipos comerciales que reciben preguntas repetidas, leads de campañas o consultas por WhatsApp y necesitan filtrar mejor antes de pasar al asesor.',
+    commercialPain: 'El negocio recibe leads que preguntan lo mismo, no siempre califican, se pierden conversaciones y el asesor llega a la llamada sin información clara del prospecto.',
+    whatItShows: 'Un concierge inmobiliario demo que conversa con el prospecto, filtra interés, identifica presupuesto, entrega recursos del proyecto y prepara un resumen comercial para el asesor.',
+    whatToSay: 'Esta demo muestra cómo una inmobiliaria puede responder preguntas frecuentes, filtrar prospectos y dejar al asesor con un resumen claro antes de llamar o agendar cita.',
+    recommendedPackage: 'Captación Inteligente',
+    priceGuide: 'Desde US$1,800–US$3,000 como concierge de captación; desde US$3,000–US$5,000+ si se integra con CRM, campañas, WhatsApp Business API o dashboard privado.',
+    nextStep: 'Mostrar demo, simular una conversación, revisar el resumen del lead y luego levantar las preguntas frecuentes reales del cliente para preparar una propuesta.'
   },
+
+  // Demos en preparación
   {
     name: 'Luma Commerce OS — Demo Oficial',
     url: 'https://luma-commerce-os.vercel.app/',
@@ -351,12 +360,12 @@ const clientesData: ClienteConfig[] = [
     icon: Building2,
     problem: 'El negocio presenta proyectos de forma dispersa, depende de portales o WhatsApp suelto y no tiene una experiencia premium para captar prospectos interesados.',
     recommendedProduct: 'Real Estate OS',
-    demos: ALL_DEMOS.filter(d => [
-      'Luma Real Estate OS — Demo Privada',
-      'Luma Real Estate CRM OS — Demo Oficial',
-      'Luma Real Estate Concierge OS — Demo Oficial',
-      'Real Estate OS / visión estratégica'
-    ].includes(d.name)),
+    demos: [
+      ALL_DEMOS.find(d => d.name === 'Luma Real Estate OS — Demo Privada'),
+      ALL_DEMOS.find(d => d.name === 'Luma Real Estate Concierge OS — Demo Oficial'),
+      ALL_DEMOS.find(d => d.name === 'Luma Real Estate CRM OS — Demo Oficial'),
+      ALL_DEMOS.find(d => d.name === 'Real Estate OS / visión estratégica')
+    ].filter((d): d is Demo => !!d),
     message: 'Te comparto una demo privada de cómo una inmobiliaria o constructora puede presentar un proyecto de forma más premium, captar interesados y organizar mejor la conversación comercial: https://luma-real-estate-os-demo.vercel.app/',
     messageTemplates: [
       {
@@ -376,6 +385,22 @@ const clientesData: ClienteConfig[] = [
         text: 'William: usa primero las demos oficiales. Si una demo aparece como “En preparación”, no la envíes al cliente todavía. Se puede mencionar como producto disponible, pero la demo oficial se publicará cuando esté saneada.'
       },
       {
+        label: '[Concierge] WhatsApp corto',
+        text: 'Te comparto una demo de concierge inmobiliario que responde preguntas frecuentes, filtra prospectos y prepara un resumen para el asesor antes de llamar o agendar cita: https://luma-real-estate-concierge-os-demo.vercel.app/'
+      },
+      {
+        label: '[Concierge] Contexto',
+        text: 'Esta demo no es solo un chatbot. Es una capa de atención y calificación para que los leads no se pierdan entre preguntas repetidas, WhatsApp suelto o falta de seguimiento. El sistema conversa, entrega recursos demo y deja al asesor con información más clara.'
+      },
+      {
+        label: '[Concierge] Para reunión',
+        text: 'Lo importante aquí es el flujo: preguntas frecuentes, calificación, recursos del proyecto, resumen comercial y paso al asesor. Esta capa puede conectarse luego con CRM, Google Sheets, WhatsApp Business API o campañas de captación según el alcance.'
+      },
+      {
+        label: '[Concierge] Para William',
+        text: 'William: si una inmobiliaria dice que recibe muchos leads o muchas preguntas repetidas, presenta esta demo como la capa que filtra y prepara al prospecto antes del asesor. No vendas “chatbot”; vende atención ordenada, menos pérdida de leads y mejor preparación comercial.'
+      },
+      {
         label: '[CRM] WhatsApp corto',
         text: 'Te comparto una demo de CRM inmobiliario donde una inmobiliaria puede registrar propiedades, organizar leads, cambiar estados y dar seguimiento comercial desde un panel privado: https://luma-real-estate-crm-os-demo.vercel.app/'
       },
@@ -392,7 +417,7 @@ const clientesData: ClienteConfig[] = [
         text: 'William: si una inmobiliaria dice que ya tiene página o que recibe leads por WhatsApp, presenta esta demo como el sistema interno para ordenar la operación. No vendas diseño; vende control, seguimiento y menos oportunidades perdidas.'
       }
     ],
-    priceFrom: 'Desde US$1,800–US$3,000 (captación inmobiliaria); US$3,000–US$5,000+ (con CRM y seguimiento avanzado)',
+    priceFrom: 'Desde US$1,800–US$3,000 (captación y concierge); desde US$3,000–US$5,000+ (CRM y seguimiento avanzado)',
     whatToSay: [
       'Enfocarse en la experiencia del inversor de alto perfil: compra por los ojos.',
       'Un portal lento o sobrecargado espanta al comprador premium internacional.',
