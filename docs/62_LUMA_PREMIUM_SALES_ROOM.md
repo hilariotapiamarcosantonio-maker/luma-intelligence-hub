@@ -11,6 +11,11 @@ Para mitigar el riesgo de enviar enlaces caídos, inaccesibles o consolas con da
 ### A. Demos Públicas y Autorizadas (Enviar al Cliente)
 *   **Protocolo**: Estas demos se pueden enviar directamente en chats fríos o de seguimiento. El botón **"Copiar Enlace"** está habilitado en la Sales Room para estas demos.
 *   **Enlaces Oficiales**:
+    *   **Luma Commerce OS — Demo Oficial / Nexa Store**: `https://luma-commerce-os-demo.vercel.app/`
+    *   **Luma Real Estate OS — Demo Privada**: `https://luma-real-estate-os-demo.vercel.app/`
+    *   **Luma Beauty Spa OS — Demo Oficial**: `https://luma-beauty-spa-os-demo.vercel.app/`
+    *   **Luma Real Estate CRM OS — Demo Oficial**: `https://luma-real-estate-crm-os-demo.vercel.app/`
+    *   **Luma Real Estate Concierge OS — Demo Oficial**: `https://luma-real-estate-concierge-os-demo.vercel.app/`
     *   **Santuario Estética**: `https://santuario-estetica-mvp.vercel.app/`
     *   **Santuario Concierge**: `https://santuario-estetica-mvp.vercel.app/concierge`
     *   **Luma Estate OS**: `https://luma-premium.vercel.app/luma-estate-os`
@@ -18,7 +23,6 @@ Para mitigar el riesgo de enviar enlaces caídos, inaccesibles o consolas con da
     *   **Vista del Río**: `https://vista-del-rio-next.vercel.app/`
     *   **Luma Capilar**: `https://luma-capilar-saa-s.vercel.app/`
     *   **Luma Estate Pro**: `https://luma-estate-pro.vercel.app/`
-    *   **Luma Real Estate Concierge**: `https://luma-real-estate-concierge-os.vercel.app/dashboard`
     *   **SuVoGa público**: `https://suvoga-os-tjaa.vercel.app/`
     *   **Luma Intelligence Hub**: `https://luma-intelligence-hub.vercel.app/`
     *   **Gelatinas y Postres**: `https://gelatinasypostres.info/`
@@ -28,14 +32,15 @@ Para mitigar el riesgo de enviar enlaces caídos, inaccesibles o consolas con da
 ### B. Demos Privadas (Usar Solo en Reunión)
 *   **Protocolo**: Estas demos están activas pero presentan detalles de visualización móvil o configuraciones que no deben enviarse sueltas en chats. **Solo se muestran compartiendo pantalla** durante una llamada de Zoom/Google Meet. El botón "Copiar Enlace" está bloqueado.
 *   **Enlaces Oficiales**:
-    *   **Luma Commerce OS**: `https://luma-commerce-os.vercel.app/`
-    *   **Luma Boutique Ivette**: `https://luma-boutique-os-ivette.vercel.app/`
+    *   *Nota: Las demos oficiales de Commerce y Spa se han saneado y subido a la categoría A. Actualmente no hay demos asignadas a esta categoría.*
 
 ### C. Consolas de Administración y Sistemas Internos (Prohibido Compartir)
-*   **Protocolo**: Son paneles de gestión privada. Bajo ninguna circunstancia se debe enviar el enlace al cliente. Su visualización en reuniones debe ser controlada de forma estricta. El botón "Copiar Enlace" está desactivado y se marca con la advertencia **Link Privado**.
+*   **Protocolo**: Son paneles de gestión privada, referencias legacy o proyectos de clientes reales. Bajo ninguna circunstancia se debe enviar el enlace al cliente. Su visualización en reuniones debe ser controlada de forma estricta. El botón "Copiar Enlace" está desactivado y se marca con la advertencia **Link Privado**.
 *   **Enlaces Oficiales**:
-    *   **Luma Commerce OS admin**: `https://luma-commerce-os.vercel.app/admin`
-    *   **Luma Boutique Ivette admin**: `https://luma-boutique-os-ivette.vercel.app/admin`
+    *   **Luma Commerce OS admin (Demo Oficial)**: `https://luma-commerce-os-demo.vercel.app/admin`
+    *   **Luma Commerce OS — Legacy**: `https://luma-commerce-os.vercel.app/`
+    *   **Luma Boutique OS / Ivette Berroa — Proyecto Real**: `https://luma-boutique-os-ivette.vercel.app/`
+    *   **Luma Boutique OS / Ivette Berroa Admin — Interno**: `https://luma-boutique-os-ivette.vercel.app/admin`
     *   **SuVoGa admin**: `https://suvoga-os-tjaa.vercel.app/admin`
     *   **Luma Outreach Console**: `https://luma-outreach-console.vercel.app/console/luma-premium?section=command`
 

@@ -161,14 +161,14 @@ const ALL_DEMOS: Demo[] = [
 
   // Demos en preparación
   {
-    name: 'Luma Boutique / Cosmética OS — Demo Oficial',
-    url: 'https://luma-boutique-os-ivette.vercel.app/',
+    name: 'Aura Boutique OS — Demo Oficial',
+    url: '',
     status: 'in_preparation',
     badge: 'En preparación',
     action: 'No enviar todavía',
     canCopy: false,
     canOpen: false,
-    notes: 'Catálogo interactivo y CRM para boutique. En preparación y saneamiento.'
+    notes: 'Demo futura para boutiques, cosmética premium, marcas de bienestar y productos artesanales, construida con datos ficticios y marca genérica.'
   },
   {
     name: 'Luma Industrial / B2B OS — Demo Oficial',
@@ -191,7 +191,7 @@ const ALL_DEMOS: Demo[] = [
     notes: 'Plataforma de cursos y contenidos premium. En preparación y saneamiento.'
   },
   {
-    name: 'Capital en Orden — Demo Oficial',
+    name: 'Capital en Orden OS — Demo Oficial',
     url: 'https://suvoga-os-tjaa.vercel.app/',
     status: 'in_preparation',
     badge: 'En preparación',
@@ -202,6 +202,36 @@ const ALL_DEMOS: Demo[] = [
   },
 
   // Archivo interno / Referencias no enviables
+  {
+    name: 'Luma Commerce OS — Legacy',
+    url: 'https://luma-commerce-os.vercel.app/',
+    status: 'internal_only',
+    badge: 'Interno',
+    action: 'Solo consulta interna',
+    canCopy: false,
+    canOpen: true,
+    notes: 'Archivo interno / Referencias no enviables. Versión legacy de Commerce OS.'
+  },
+  {
+    name: 'Luma Boutique OS / Ivette Berroa — Proyecto Real',
+    url: 'https://luma-boutique-os-ivette.vercel.app/',
+    status: 'internal_only',
+    badge: 'Interno',
+    action: 'Solo consulta interna',
+    canCopy: false,
+    canOpen: true,
+    notes: 'Proyecto real / referencia interna / no enviar sin aprobación. No usar como demo genérica.'
+  },
+  {
+    name: 'Luma Boutique OS / Ivette Berroa Admin — Interno',
+    url: 'https://luma-boutique-os-ivette.vercel.app/admin',
+    status: 'internal_only',
+    badge: 'Interno',
+    action: 'Solo consulta interna',
+    canCopy: false,
+    canOpen: true,
+    notes: 'Consola administrativa de Boutique Ivette. Proyecto real / referencia interna / no enviar sin aprobación.'
+  },
   {
     name: 'Real Estate OS / visión estratégica',
     url: 'https://luma-premium.vercel.app/luma-estate-os',
@@ -333,16 +363,6 @@ const ALL_DEMOS: Demo[] = [
     notes: 'Consola administrativa de la demo oficial Nexa Store (Commerce OS).'
   },
   {
-    name: 'Luma Boutique Ivette admin',
-    url: 'https://luma-boutique-os-ivette.vercel.app/admin',
-    status: 'internal_only',
-    badge: 'Interno',
-    action: 'Solo consulta interna',
-    canCopy: false,
-    canOpen: true,
-    notes: 'Consola administrativa de Boutique Ivette.'
-  },
-  {
     name: 'SuVoGa admin',
     url: 'https://suvoga-os-tjaa.vercel.app/admin',
     status: 'internal_only',
@@ -448,7 +468,9 @@ const clientesData: ClienteConfig[] = [
     recommendedProduct: 'Commerce OS',
     demos: ALL_DEMOS.filter(d => [
       'Luma Commerce OS — Demo Oficial',
-      'Luma Boutique / Cosmética OS — Demo Oficial'
+      'Aura Boutique OS — Demo Oficial',
+      'Luma Commerce OS — Legacy',
+      'Luma Commerce OS admin'
     ].includes(d.name)),
     message: 'Hola [Nombre], vi tu catálogo en Instagram y noté que el proceso de compra requiere muchos pasos manuales, lo que suele causar el abandono del 60% de los compradores en móvil. Te comparto una demo del sistema Commerce OS que automatiza la venta, incluye carrito, checkout interactivo y conecta directo con un panel CRM de seguimiento: https://luma-commerce-os-demo.vercel.app/',
     priceFrom: 'Desde $2,500 USD (según volumen de catálogo y pasarelas)',
