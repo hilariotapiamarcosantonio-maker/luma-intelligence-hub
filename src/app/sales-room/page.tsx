@@ -1,30 +1,31 @@
 'use client';
 
 import React, { useState } from 'react';
-import { 
-  Building2, 
-  ShoppingBag, 
-  Sparkles, 
-  GraduationCap, 
-  Scale, 
-  Briefcase, 
-  UserCheck, 
-  MessageSquare, 
-  AlertTriangle, 
-  CheckCircle2, 
-  XCircle, 
-  Copy, 
-  ChevronRight,
+import {
+  Building2,
+  ShoppingBag,
+  Sparkles,
+  GraduationCap,
+  Briefcase,
+  UserCheck,
+  MessageSquare,
+  AlertTriangle,
+  XCircle,
+  Copy,
   ShieldAlert,
-  Wrench,
   Link2Off,
-  Eye
+  Eye,
+  Globe,
+  Lock,
+  Clock,
+  Package,
+  FileText
 } from 'lucide-react';
 
 // Tipado de las demos
-type DemoStatus = 'official_demo' | 'in_preparation' | 'internal_only' | 'review_before_send' | 'not_for_sale_now';
-type BadgeType = 'Demo oficial' | 'En preparación' | 'Interno' | 'Revisar' | 'No a la venta';
-type WilliamActionType = 'Mostrar al cliente' | 'Usar solo en reunión' | 'No enviar todavía' | 'Solo consulta interna' | 'En preparación';
+type DemoStatus = 'official_demo' | 'in_preparation' | 'internal_only' | 'real_case';
+type BadgeType = 'Demo oficial' | 'En preparación' | 'Interno' | 'Caso real';
+type WilliamActionType = 'Mostrar al cliente' | 'Usar solo en reunión' | 'No enviar todavía' | 'Solo consulta interna' | 'En preparación' | 'Caso de referencia';
 
 interface Demo {
   name: string;
@@ -34,43 +35,46 @@ interface Demo {
   action: WilliamActionType;
   canCopy: boolean;
   canOpen: boolean;
-  category?: string;
-  productLine?: string;
-  notes?: string;
+  category: string;
+  notes: string;
   secondaryUrl?: string;
   secondaryUrlLabel?: string;
   idealClient?: string;
   commercialPain?: string;
   whatItShows?: string;
   whatToSay?: string;
-  recommendedPackage?: string;
   priceGuide?: string;
   nextStep?: string;
-}
-
-interface CopyableMessage {
-  label: string;
-  text: string;
+  whatsappShort?: string;
+  messageContext?: string;
+  noteForWilliam?: string;
 }
 
 interface ClienteConfig {
   id: string;
   niche: string;
   icon: React.ComponentType<{ className?: string }>;
-  problem: string;
+  idealClient: string;
+  problem: string; // Dolor principal
   recommendedProduct: string;
-  demos: Demo[];
-  message: string;
-  messageTemplates?: CopyableMessage[];
-  priceFrom: string;
-  whatToSay: string[];
-  whatNotToPromise: string[];
-  nextStep: string;
+  demos: Demo[]; // Qué demos mostrar
+  messageShort: string;
+  messageContext: string;
+  priceFrom: string; // Precio guía
+  nextStep: string; // Siguiente paso recomendado
+  whatNotToPromise: string[]; // Qué NO prometer
+  noteForWilliam: string; // Nota para William
+}
+
+interface LineaProducto {
+  title: string;
+  desc: string;
+  invest: string;
 }
 
 // Catálogo maestro de demos clasificadas con las URLs reales
 const ALL_DEMOS: Demo[] = [
-  // Demos oficiales activas
+  // 1. Demos oficiales activas (5)
   {
     name: 'Luma Real Estate OS — Demo Privada',
     url: 'https://luma-real-estate-os-demo.vercel.app/',
@@ -80,8 +84,16 @@ const ALL_DEMOS: Demo[] = [
     canCopy: true,
     canOpen: true,
     category: 'Real Estate',
-    productLine: 'Real Estate OS',
-    notes: 'Landing inmobiliaria premium con narrativa, segmentos de comprador, imágenes IA, captación de leads simulada y estructura adaptable para proyectos inmobiliarios (Residencial Aurora).'
+    notes: 'Landing inmobiliaria premium con narrativa, segmentos de comprador, imágenes IA, captación de leads simulada y estructura adaptable para proyectos inmobiliarios (Residencial Aurora).',
+    idealClient: 'Constructoras, desarrolladoras inmobiliarias, corredores y brokers que comercializan proyectos en planos o listados premium y buscan impresionar a compradores exigentes.',
+    commercialPain: 'Uso de PDFs pesados, páginas lentas o portales genéricos que no transmiten confianza ni exclusividad, lo que reduce la captación de inversores de alto valor.',
+    whatItShows: 'Landing page cinemática e interactiva con narrativa de valor para proyectos, segmentación de tipologías, imágenes fotorrealistas y captación de prospectos de alta conversión.',
+    whatToSay: 'Esta demo muestra cómo presentar un proyecto inmobiliario bajo una experiencia premium que segmenta automáticamente a los compradores y captura su perfil de interés desde el primer minuto.',
+    priceGuide: 'Desde RD$65,000–RD$120,000 para landing de proyecto premium. Desarrollo completo desde RD$150,000–RD$350,000+ según tipologías.',
+    nextStep: 'Simular la navegación de un usuario en móvil, mostrar la velocidad de carga de las imágenes y definir la estructura del proyecto actual del cliente.',
+    whatsappShort: 'Hola [Nombre], te comparto esta demo de presentación premium para proyectos inmobiliarios. Carga instantáneamente y filtra prospectos calificados en automático: https://luma-real-estate-os-demo.vercel.app/',
+    messageContext: 'Hola [Nombre], te comparto la demo oficial de Luma Real Estate OS (Residencial Aurora). Está diseñada específicamente para desarrolladores que necesitan vender proyectos en planos sin depender de PDFs pesados. La demo simula cómo un cliente interactúa con las tipologías y solicita información segmentada de valor: https://luma-real-estate-os-demo.vercel.app/',
+    noteForWilliam: 'Presentar la demo haciendo foco en la velocidad de carga móvil y en cómo capta el interés del comprador de alto nivel adquisitivo. No prometer integraciones con CRM antiguos sin validar primero.'
   },
   {
     name: 'Luma Beauty Spa OS — Demo Oficial',
@@ -92,10 +104,18 @@ const ALL_DEMOS: Demo[] = [
     canCopy: true,
     canOpen: true,
     category: 'Beauty / Spa',
-    productLine: 'Beauty Spa OS',
     notes: 'Una experiencia premium para presentar servicios estéticos, captar consultas, simular atención tipo concierge y orientar al prospecto hacia una evaluación o cita.',
     secondaryUrl: 'https://luma-beauty-spa-os-demo.vercel.app/concierge',
-    secondaryUrlLabel: 'Ver Concierge'
+    secondaryUrlLabel: 'Ver Concierge',
+    idealClient: 'Spas, centros estéticos, clínicas de bienestar, peluquerías premium y profesionales independientes del cuidado personal.',
+    commercialPain: 'El personal pierde horas respondiendo preguntas básicas sobre servicios, precios y disponibilidad en WhatsApp o Instagram. El agendamiento manual genera ausencias no justificadas.',
+    whatItShows: 'Experiencia web premium de presentación de servicios estéticos con simulación de agendamiento conversacional tipo Concierge inteligente para precalificación.',
+    whatToSay: 'Esta demo muestra cómo elevar la percepción del centro estético facilitando la consulta de servicios y automatizando el filtro previo de citas de manera elegante.',
+    priceGuide: 'Desde RD$35,000–RD$75,000 para presencia premium y catálogo de servicios. Desde RD$65,000–RD$150,000+ si incluye Concierge inteligente y sistema de agendamiento.',
+    nextStep: 'Simular el agendamiento en el botón de Concierge, revisar el flujo de preguntas y estructurar las preguntas clave de calificación comercial del cliente.',
+    whatsappShort: 'Hola [Nombre], mira cómo puedes automatizar las consultas y citas de tu estética con esta demo de concierge inteligente: https://luma-beauty-spa-os-demo.vercel.app/',
+    messageContext: 'Hola [Nombre], te comparto la demo oficial de Luma Beauty Spa OS. Incluye un asistente conversacional (Concierge) que precalifica al cliente sobre sus necesidades estéticas y le permite simular el agendamiento, quitando carga operativa a tu recepción: https://luma-beauty-spa-os-demo.vercel.app/',
+    noteForWilliam: 'Enfatizar el ahorro de tiempo en recepción y la reducción de ausencias. Si el cliente recibe muchos mensajes en redes, esta es su solución ideal.'
   },
   {
     name: 'Luma Real Estate CRM OS — Demo Oficial',
@@ -106,15 +126,16 @@ const ALL_DEMOS: Demo[] = [
     canCopy: true,
     canOpen: true,
     category: 'Real Estate',
-    productLine: 'Real Estate CRM OS',
     notes: 'Un CRM inmobiliario funcional con propiedades, leads, asesores, estados comerciales, notas de seguimiento y persistencia real en Google Sheets demo.',
     idealClient: 'Inmobiliarias, brokers, constructoras y equipos comerciales que necesitan registrar propiedades, organizar leads, dar seguimiento y controlar estados comerciales.',
     commercialPain: 'El negocio depende de WhatsApp, Excel o memoria para manejar propiedades, prospectos y seguimiento. Esto provoca leads perdidos, poca trazabilidad y falta de control comercial.',
     whatItShows: 'Un CRM inmobiliario funcional con propiedades, leads, asesores, estados comerciales, notas de seguimiento y persistencia real en Google Sheets demo.',
     whatToSay: 'Esta demo muestra cómo una inmobiliaria puede organizar propiedades, registrar leads, cambiar estados, dejar notas de seguimiento y visualizar su operación comercial desde un sistema privado conectado a una base de datos demo.',
-    recommendedPackage: 'Sistema Comercial Privado',
-    priceGuide: 'Desde US$3,000–US$5,000+ según cantidad de módulos, usuarios, automatizaciones, dashboards e integraciones.',
-    nextStep: 'Mostrar demo en reunión, registrar un lead o propiedad en vivo, y luego levantar los campos y procesos reales del cliente para preparar una propuesta.'
+    priceGuide: 'Desde RD$90,000–RD$180,000+ según cantidad de módulos, usuarios, automatizaciones, dashboards e integraciones.',
+    nextStep: 'Mostrar demo en reunión, registrar un lead o propiedad en vivo, y luego levantar los campos y procesos reales del cliente para preparar una propuesta.',
+    whatsappShort: 'Hola [Nombre], te comparto la demo de nuestro CRM inmobiliario para que veas cómo controlar propiedades y leads en un solo lugar: https://luma-real-estate-crm-os-demo.vercel.app/',
+    messageContext: 'Hola [Nombre], te comparto la demo del CRM Inmobiliario de Luma. Está conectado a una base de datos ágil en la nube que permite llevar la trazabilidad completa del prospecto, asignar asesores y actualizar el inventario físico en tiempo real: https://luma-real-estate-crm-os-demo.vercel.app/',
+    noteForWilliam: 'Explicar al cliente que no perderá más prospectos por falta de seguimiento. Mostrar en vivo el registro de una propiedad o lead.'
   },
   {
     name: 'Luma Real Estate Concierge OS — Demo Oficial',
@@ -125,7 +146,6 @@ const ALL_DEMOS: Demo[] = [
     canCopy: true,
     canOpen: true,
     category: 'Real Estate',
-    productLine: 'Real Estate Concierge OS',
     notes: 'Un concierge inmobiliario funcional que conversa con el prospecto, califica su interés, responde preguntas frecuentes y genera un resumen comercial estructurado para el asesor.',
     secondaryUrl: 'https://luma-real-estate-concierge-os-demo.vercel.app/dashboard',
     secondaryUrlLabel: 'Ver Dashboard',
@@ -133,12 +153,14 @@ const ALL_DEMOS: Demo[] = [
     commercialPain: 'El negocio recibe leads que preguntan lo mismo, no siempre califican, se pierden conversaciones y el asesor llega a la llamada sin información clara del prospecto.',
     whatItShows: 'Un concierge inmobiliario demo que conversa con el prospecto, filtra interés, identifica presupuesto, entrega recursos del proyecto y prepara un resumen comercial para el asesor.',
     whatToSay: 'Esta demo muestra cómo una inmobiliaria puede responder preguntas frecuentes, filtrar prospectos y dejar al asesor con un resumen claro antes de llamar o agendar cita.',
-    recommendedPackage: 'Captación Inteligente',
-    priceGuide: 'Desde US$1,800–US$3,000 como concierge de captación; desde US$3,000–US$5,000+ si se integra con CRM, campañas, WhatsApp Business API o dashboard privado.',
-    nextStep: 'Mostrar demo, simular una conversación, revisar el resumen del lead y luego levantar las preguntas frecuentes reales del cliente para preparar una propuesta.'
+    priceGuide: 'Desde RD$55,000–RD$90,000 como concierge de captación; desde RD$90,000–RD$150,000+ si se integra con CRM, campañas, WhatsApp Business API o dashboard privado.',
+    nextStep: 'Mostrar demo, simular una conversación, revisar el resumen del lead y luego levantar las preguntas frecuentes reales del cliente para preparar una propuesta.',
+    whatsappShort: 'Hola [Nombre], mira cómo un concierge con IA puede atender y calificar a tus leads inmobiliarios 24/7 de forma personalizada: https://luma-real-estate-concierge-os-demo.vercel.app/',
+    messageContext: 'Hola [Nombre], aquí tienes la demo oficial de nuestro Concierge Inmobiliario. Conversa de manera inteligente con el interesado, extrae su presupuesto, zona de interés, urgencia de compra y genera una ficha de perfil calificado para tu fuerza de ventas: https://luma-real-estate-concierge-os-demo.vercel.app/',
+    noteForWilliam: 'Mostrar la pestaña del "Dashboard" durante la videollamada para que el cliente vea el nivel de detalle comercial que la IA entrega al vendedor.'
   },
   {
-    name: 'Luma Commerce OS — Demo Oficial',
+    name: 'Luma Commerce OS — Demo Oficial / Nexa Store',
     url: 'https://luma-commerce-os-demo.vercel.app/',
     status: 'official_demo',
     badge: 'Demo oficial',
@@ -146,91 +168,145 @@ const ALL_DEMOS: Demo[] = [
     canCopy: true,
     canOpen: true,
     category: 'Commerce',
-    productLine: 'Commerce OS',
-    notes: 'E-commerce interactivo (Nexa Store) acoplado a un CRM de seguimiento local basado en CSV semillas con simulación de pasarela de checkout y canal de WhatsApp.',
+    notes: 'E-commerce interactivo (Nexa Store) acoplado a un CRM de seguimiento local con pasarela de checkout simulada y panel administrativo demo con datos ficticios.',
     secondaryUrl: 'https://luma-commerce-os-demo.vercel.app/admin',
-    secondaryUrlLabel: 'Ver CRM / Admin',
-    idealClient: 'Tiendas online, boutiques, marcas de productos físicos y retailers locales que quieren vender de forma autónoma y automatizar su control de ventas y cobros por WhatsApp.',
-    commercialPain: 'Dependencia exclusiva de Instagram DM o chats manuales para concretar ventas, falta de un carrito integrado, pérdida de trazabilidad de clientes recurrentes y cobros manuales desorganizados.',
-    whatItShows: 'Un e-commerce premium responsivo, simulación de carrito de compras y checkout, simulador interactivo de pedidos dirigidos a WhatsApp, y un panel administrativo/CRM local con control de cuentas por cobrar (CxC), ventas e inventario.',
-    whatToSay: 'Esta demo muestra la experiencia fluida del comprador desde que selecciona el producto hasta el envío del pedido, y cómo el comercio gestiona cada oportunidad, abonos, pagos quincenales e inventario desde su propio panel administrativo.',
-    recommendedPackage: 'E-commerce con CRM',
-    priceGuide: 'Desde US$2,500–US$4,500+ según cantidad de productos, pasarelas de pago reales, integraciones de envío y personalizaciones del CRM operativo.',
-    nextStep: 'Mostrar la experiencia de tienda en móviles, agregar productos al carrito, simular el checkout y explorar el panel administrativo para ver cómo se registra el pedido instantáneamente.'
+    secondaryUrlLabel: 'Admin demo con datos ficticios',
+    idealClient: 'Tiendas físicas, marcas de productos, perfumes, cosmética, boutiques, regalos, accesorios, repuestos ligeros y negocios que venden por WhatsApp o Instagram pero no tienen un sistema claro de catálogo, pedido, seguimiento y control.',
+    commercialPain: 'El negocio vende por mensajes sueltos, catálogos desordenados, notas manuales o Excel. Pierde pedidos, no mide oportunidades, no organiza clientes, no controla cuentas por cobrar y depende demasiado de WhatsApp sin estructura.',
+    whatItShows: 'Una tienda premium con catálogo, carrito, checkout simulado, pedido organizado, panel administrativo demo, contactos, ventas, cuentas por cobrar y flujo comercial adaptable a una marca real.',
+    whatToSay: 'Esta demo muestra cómo una tienda puede dejar de vender solo por mensajes sueltos y pasar a tener una experiencia más profesional: catálogo, pedidos, clientes, seguimiento y control comercial desde un sistema propio.',
+    priceGuide: 'Desde RD$45,000–RD$95,000 para tienda premium con admin base. Desde RD$120,000–RD$250,000+ si incluye CRM, Google Sheets, automatización, dashboard, seguimiento, cuentas por cobrar e integraciones. Mantenimiento sugerido: RD$8,000–RD$25,000 mensual según operación.',
+    nextStep: 'Mostrar la tienda, simular un pedido, abrir el admin demo y levantar cómo vende actualmente el cliente: productos, formas de pago, entrega, WhatsApp, seguimiento y reportes necesarios.',
+    whatsappShort: 'Te comparto una demo de tienda premium donde una marca puede mostrar productos, recibir pedidos y organizar clientes desde un sistema propio, sin depender solo de WhatsApp o catálogos sueltos: https://luma-commerce-os-demo.vercel.app/',
+    messageContext: 'Esta demo no es solo una tienda bonita. Es una muestra de infraestructura comercial para negocios de productos: catálogo, carrito, pedido, clientes, seguimiento y panel interno. La idea es que el negocio venda mejor, pierda menos conversaciones y tenga más control sobre su operación.',
+    noteForWilliam: 'William: si el cliente vende productos por WhatsApp, Instagram o tienda física y se queja de desorden, pedidos perdidos, falta de seguimiento o falta de control, usa Commerce OS. No vendas “página web”. Vende orden comercial, presentación premium, pedidos claros y seguimiento.'
   },
 
-  // Demos en preparación
+  // 2. Casos Reales / Referencia Corporativa (2)
   {
-    name: 'Aura Boutique OS — Demo Oficial',
+    name: 'Inox Minier — Caso Real / Referencia Corporativa',
+    url: 'https://inox-minier.com/',
+    status: 'real_case',
+    badge: 'Caso real',
+    action: 'Caso de referencia',
+    canCopy: false,
+    canOpen: true,
+    category: 'B2B corporativo',
+    notes: 'Landing page industrial B2B. Caso de referencia real para proyectos de infraestructura, manufactura, catálogo industrial y ventas de ingeniería.'
+  },
+  {
+    name: 'Depot Graphics — Caso Real / Referencia Corporativa',
+    url: 'https://depotgraphics.com',
+    status: 'real_case',
+    badge: 'Caso real',
+    action: 'Caso de referencia',
+    canCopy: false,
+    canOpen: true,
+    category: 'Servicios profesionales',
+    notes: 'Servicios de diseño gráfico e impresión. Caso de referencia real para proyectos corporativos, portafolios y control de pedidos de artes gráficas.'
+  },
+
+  // 3. Próximas demos (6)
+  {
+    name: 'Academy OS',
     url: '',
     status: 'in_preparation',
     badge: 'En preparación',
-    action: 'No enviar todavía',
+    action: 'En preparación',
     canCopy: false,
     canOpen: false,
-    notes: 'Demo futura para boutiques, cosmética premium, marcas de bienestar y productos artesanales, construida con datos ficticios y marca genérica.'
+    category: 'Academy / cursos',
+    notes: 'Plataforma educativa para academias, cursos y distribución de contenido premium bajo marca privada.'
   },
   {
-    name: 'Luma Industrial / B2B OS — Demo Oficial',
-    url: 'https://inox-minier.com/',
+    name: 'Legal / Lease OS',
+    url: '',
     status: 'in_preparation',
     badge: 'En preparación',
-    action: 'No enviar todavía',
+    action: 'En preparación',
     canCopy: false,
     canOpen: false,
-    notes: 'Catálogo técnico e infraestructura B2B. En preparación y saneamiento.'
+    category: 'Inmobiliarias',
+    notes: 'Plataforma de gestión de contratos, control de capital, arrendamiento y precalificación de inquilinos.'
   },
   {
-    name: 'Luma Content / Media OS — Demo Oficial',
-    url: 'https://luma-intelligence-hub.vercel.app/',
+    name: 'B2B Corporate OS',
+    url: '',
     status: 'in_preparation',
     badge: 'En preparación',
-    action: 'No enviar todavía',
+    action: 'En preparación',
     canCopy: false,
     canOpen: false,
-    notes: 'Plataforma de cursos y contenidos premium. En preparación y saneamiento.'
+    category: 'B2B corporativo',
+    notes: 'Ecosistema de catálogo industrial y cotizaciones rápidas para empresas y corporaciones B2B.'
   },
   {
-    name: 'Capital en Orden OS — Demo Oficial',
-    url: 'https://suvoga-os-tjaa.vercel.app/',
+    name: 'Personal Brand OS',
+    url: '',
     status: 'in_preparation',
     badge: 'En preparación',
-    action: 'No enviar todavía',
+    action: 'En preparación',
     canCopy: false,
     canOpen: false,
-    notes: 'Gestión financiera, contratos y control de capital. En preparación y saneamiento.'
+    category: 'Servicios profesionales',
+    notes: 'Portal interactivo de marca personal, autoridad y captación de clientes de consultoría.'
+  },
+  {
+    name: 'Perfumes / Retail OS',
+    url: '',
+    status: 'in_preparation',
+    badge: 'En preparación',
+    action: 'En preparación',
+    canCopy: false,
+    canOpen: false,
+    category: 'Tiendas / Commerce',
+    notes: 'Demo en preparación para boutiques, perfumes, cosmética premium, marcas de bienestar y productos artesanales con datos ficticios.'
+  },
+  {
+    name: 'WhatsApp Lead Recovery OS',
+    url: '',
+    status: 'in_preparation',
+    badge: 'En preparación',
+    action: 'En preparación',
+    canCopy: false,
+    canOpen: false,
+    category: 'WhatsApp Lead Recovery',
+    notes: 'Agente conversacional inteligente de calificación y recuperación de leads con soporte de carritos abandonados.'
   },
 
-  // Archivo interno / Referencias no enviables
+  // 4. Archivo interno / NO ENVIAR AL CLIENTE (16)
   {
-    name: 'Luma Commerce OS — Legacy',
+    name: 'Luma Commerce OS legacy',
     url: 'https://luma-commerce-os.vercel.app/',
     status: 'internal_only',
     badge: 'Interno',
     action: 'Solo consulta interna',
     canCopy: false,
     canOpen: true,
-    notes: 'Archivo interno / Referencias no enviables. Versión legacy de Commerce OS.'
+    category: 'Tiendas / Commerce',
+    notes: 'Archivo interno / NO ENVIAR AL CLIENTE. Versión legacy de Commerce OS.'
   },
   {
-    name: 'Luma Boutique OS / Ivette Berroa — Proyecto Real',
+    name: 'Luma Boutique OS / Ivette Berroa',
     url: 'https://luma-boutique-os-ivette.vercel.app/',
     status: 'internal_only',
     badge: 'Interno',
     action: 'Solo consulta interna',
     canCopy: false,
     canOpen: true,
-    notes: 'Proyecto real / referencia interna / no enviar sin aprobación. No usar como demo genérica.'
+    category: 'Tiendas / Commerce',
+    notes: 'Proyecto real de cliente / NO ENVIAR AL CLIENTE. No usar como demo genérica.'
   },
   {
-    name: 'Luma Boutique OS / Ivette Berroa Admin — Interno',
+    name: 'Luma Boutique OS / Ivette Berroa Admin',
     url: 'https://luma-boutique-os-ivette.vercel.app/admin',
     status: 'internal_only',
     badge: 'Interno',
     action: 'Solo consulta interna',
     canCopy: false,
     canOpen: true,
-    notes: 'Consola administrativa de Boutique Ivette. Proyecto real / referencia interna / no enviar sin aprobación.'
+    category: 'Tiendas / Commerce',
+    notes: 'Consola administrativa real de Boutique Ivette / NO ENVIAR AL CLIENTE. Acceso real sensible.'
   },
   {
     name: 'Real Estate OS / visión estratégica',
@@ -240,77 +316,85 @@ const ALL_DEMOS: Demo[] = [
     action: 'Solo consulta interna',
     canCopy: false,
     canOpen: true,
-    notes: 'Visión estratégica y catálogo inmobiliario dinámico de alta velocidad.'
+    category: 'Inmobiliarias',
+    notes: 'Archivo interno / NO ENVIAR AL CLIENTE. Catálogo y visión estratégica de listados.'
   },
   {
     name: 'Santuario Estética',
     url: 'https://santuario-estetica-mvp.vercel.app/',
-    status: 'review_before_send',
-    badge: 'Revisar',
-    action: 'No enviar todavía',
+    status: 'internal_only',
+    badge: 'Interno',
+    action: 'Solo consulta interna',
     canCopy: false,
     canOpen: true,
-    notes: 'Demo antigua para estética, spas o peluquerías. Pendiente de saneamiento.'
+    category: 'Beauty / Spa',
+    notes: 'Demo antigua de spa / NO ENVIAR AL CLIENTE. Pendiente de saneamiento de datos.'
   },
   {
     name: 'Santuario Concierge',
     url: 'https://santuario-estetica-mvp.vercel.app/concierge',
-    status: 'review_before_send',
-    badge: 'Revisar',
-    action: 'No enviar todavía',
+    status: 'internal_only',
+    badge: 'Interno',
+    action: 'Solo consulta interna',
     canCopy: false,
     canOpen: true,
-    notes: 'Flujo conversacional de agendamiento con asistente inteligente. Pendiente de saneamiento.'
+    category: 'Beauty / Spa',
+    notes: 'Flujo conversacional antiguo / NO ENVIAR AL CLIENTE. Contiene referencias pendientes de sanear.'
   },
   {
     name: 'Marcos Portfolio',
     url: 'https://marcos-portfolio-premium.vercel.app/',
-    status: 'review_before_send',
-    badge: 'Revisar',
-    action: 'No enviar todavía',
+    status: 'internal_only',
+    badge: 'Interno',
+    action: 'Solo consulta interna',
     canCopy: false,
     canOpen: true,
-    notes: 'Portafolio de marca personal y autoridad visual. Pendiente de saneamiento.'
+    category: 'Servicios profesionales',
+    notes: 'Portafolio de marca personal y autoridad visual legacy / NO ENVIAR AL CLIENTE.'
   },
   {
     name: 'Vista del Río',
     url: 'https://vista-del-rio-next.vercel.app/',
-    status: 'review_before_send',
-    badge: 'Revisar',
-    action: 'No enviar todavía',
+    status: 'internal_only',
+    badge: 'Interno',
+    action: 'Solo consulta interna',
     canCopy: false,
     canOpen: true,
-    notes: 'Visualizador cinemático inmobiliario legacy. No usar en ventas activas.'
+    category: 'Inmobiliarias',
+    notes: 'Visualizador inmobiliario legacy / NO ENVIAR AL CLIENTE.'
   },
   {
     name: 'Luma Capilar',
     url: 'https://luma-capilar-saa-s.vercel.app/',
-    status: 'review_before_send',
-    badge: 'Revisar',
-    action: 'No enviar todavía',
+    status: 'internal_only',
+    badge: 'Interno',
+    action: 'Solo consulta interna',
     canCopy: false,
     canOpen: true,
-    notes: 'Tienda interactiva y CRM para cuidado personal legacy.'
+    category: 'Beauty / Spa',
+    notes: 'Tienda interactiva y CRM capilar legacy / NO ENVIAR AL CLIENTE.'
   },
   {
     name: 'Luma Estate Pro',
     url: 'https://luma-estate-pro.vercel.app/',
-    status: 'not_for_sale_now',
-    badge: 'No a la venta',
-    action: 'No enviar todavía',
+    status: 'internal_only',
+    badge: 'Interno',
+    action: 'Solo consulta interna',
     canCopy: false,
     canOpen: true,
-    notes: 'Portal de búsqueda de propiedades legacy. No para comercialización activa.'
+    category: 'Inmobiliarias',
+    notes: 'Portal de búsqueda de propiedades legacy / NO ENVIAR AL CLIENTE.'
   },
   {
     name: 'SuVoGa público',
     url: 'https://suvoga-os-tjaa.vercel.app/',
-    status: 'review_before_send',
-    badge: 'Revisar',
-    action: 'No enviar todavía',
+    status: 'internal_only',
+    badge: 'Interno',
+    action: 'Solo consulta interna',
     canCopy: false,
     canOpen: true,
-    notes: 'Línea de diseño y catálogo público legacy.'
+    category: 'Tiendas / Commerce',
+    notes: 'Catálogo de pedidos público legacy / NO ENVIAR AL CLIENTE.'
   },
   {
     name: 'Luma Intelligence Hub',
@@ -320,47 +404,30 @@ const ALL_DEMOS: Demo[] = [
     action: 'Solo consulta interna',
     canCopy: false,
     canOpen: true,
-    notes: 'Centro de control comercial principal y visualización de auditorías internas.'
+    category: 'Servicios profesionales',
+    notes: 'Centro de control comercial principal y visualización de auditorías internas / NO ENVIAR AL CLIENTE.'
   },
   {
     name: 'Gelatinas y Postres',
     url: 'https://gelatinasypostres.info/',
-    status: 'not_for_sale_now',
-    badge: 'No a la venta',
-    action: 'No enviar todavía',
+    status: 'internal_only',
+    badge: 'Interno',
+    action: 'Solo consulta interna',
     canCopy: false,
     canOpen: true,
-    notes: 'E-commerce local de alimentos legacy.'
+    category: 'Tiendas / Commerce',
+    notes: 'E-commerce de alimentos legacy / NO ENVIAR AL CLIENTE.'
   },
   {
-    name: 'Depot Graphics',
-    url: 'https://depotgraphics.com',
-    status: 'not_for_sale_now',
-    badge: 'No a la venta',
-    action: 'No enviar todavía',
-    canCopy: false,
-    canOpen: true,
-    notes: 'Servicios de diseño gráfico legacy. Proyecto real de cliente.'
-  },
-  {
-    name: 'Inox Minier',
-    url: 'https://inox-minier.com/',
-    status: 'review_before_send',
-    badge: 'Revisar',
-    action: 'No enviar todavía',
-    canCopy: false,
-    canOpen: true,
-    notes: 'Landing page industrial B2B legacy. Proyecto real de cliente.'
-  },
-  {
-    name: 'Luma Commerce OS admin',
+    name: 'Luma Commerce OS Admin — Demo Ficticia',
     url: 'https://luma-commerce-os-demo.vercel.app/admin',
     status: 'internal_only',
     badge: 'Interno',
     action: 'Solo consulta interna',
     canCopy: false,
     canOpen: true,
-    notes: 'Consola administrativa de la demo oficial Nexa Store (Commerce OS).'
+    category: 'Tiendas / Commerce',
+    notes: 'Consola administrativa demo (Nexa Store) con datos simulados/ficticios / NO ENVIAR AL CLIENTE.'
   },
   {
     name: 'SuVoGa admin',
@@ -370,7 +437,8 @@ const ALL_DEMOS: Demo[] = [
     action: 'Solo consulta interna',
     canCopy: false,
     canOpen: true,
-    notes: 'Gestor interno de catálogo y pedidos de SuVoGa.'
+    category: 'Tiendas / Commerce',
+    notes: 'Gestor interno de catálogo y pedidos legacy / NO ENVIAR AL CLIENTE.'
   },
   {
     name: 'Luma Outreach Console',
@@ -380,281 +448,158 @@ const ALL_DEMOS: Demo[] = [
     action: 'Solo consulta interna',
     canCopy: false,
     canOpen: true,
-    notes: 'Consola comercial de Luma Outreach para prospección en frío.'
+    category: 'Servicios profesionales',
+    notes: 'Consola de prospección comercial fría interna / NO ENVIAR AL CLIENTE.'
   }
 ];
 
-const clientesData: ClienteConfig[] = [
+// Configuración de Playbooks para William (7 nichos)
+const clientesData = (demosList: Demo[]): ClienteConfig[] => [
   {
     id: 'real-estate',
-    niche: 'Inmobiliarias / Real Estate',
+    niche: 'Inmobiliarias',
     icon: Building2,
-    problem: 'El negocio presenta proyectos de forma dispersa, depende de portales o WhatsApp suelto y no tiene una experiencia premium para captar prospectos interesados.',
+    idealClient: 'Constructoras, desarrolladoras inmobiliarias, corredores y brokers que comercializan proyectos en planos o listados premium y buscan impresionar a compradores exigentes.',
+    problem: 'Uso de PDFs pesados, páginas lentas o portales genéricos que no transmiten confianza ni exclusividad, lo que reduce la captación de inversores de alto valor.',
     recommendedProduct: 'Real Estate OS',
-    demos: [
-      ALL_DEMOS.find(d => d.name === 'Luma Real Estate OS — Demo Privada'),
-      ALL_DEMOS.find(d => d.name === 'Luma Real Estate Concierge OS — Demo Oficial'),
-      ALL_DEMOS.find(d => d.name === 'Luma Real Estate CRM OS — Demo Oficial'),
-      ALL_DEMOS.find(d => d.name === 'Real Estate OS / visión estratégica')
-    ].filter((d): d is Demo => !!d),
-    message: 'Te comparto una demo privada de cómo una inmobiliaria o constructora puede presentar un proyecto de forma más premium, captar interesados y organizar mejor la conversación comercial: https://luma-real-estate-os-demo.vercel.app/',
-    messageTemplates: [
-      {
-        label: '[Proyecto] WhatsApp corto',
-        text: 'Te comparto una demo privada de cómo una inmobiliaria o constructora puede presentar un proyecto de forma más premium, captar interesados y organizar mejor la conversación comercial: https://luma-real-estate-os-demo.vercel.app/'
-      },
-      {
-        label: '[Proyecto] Contexto',
-        text: 'Esta demo no es una página web genérica. Es una muestra de infraestructura comercial inmobiliaria: presenta el proyecto, educa al comprador, separa perfiles de interés y lleva al prospecto hacia una solicitud de información o reunión.'
-      },
-      {
-        label: '[Proyecto] Para reunión',
-        text: 'Lo importante aquí no es el diseño solamente. Es la estructura: presentación, segmentación, captación y seguimiento. Esto se puede adaptar a una inmobiliaria, constructora, broker o proyecto específico.'
-      },
-      {
-        label: '[Proyecto] Para William',
-        text: 'William: usa primero las demos oficiales. Si una demo aparece como “En preparación”, no la envíes al cliente todavía. Se puede mencionar como producto disponible, pero la demo oficial se publicará cuando esté saneada.'
-      },
-      {
-        label: '[Concierge] WhatsApp corto',
-        text: 'Te comparto una demo de concierge inmobiliario que responde preguntas frecuentes, filtra prospectos y prepara un resumen para el asesor antes de llamar o agendar cita: https://luma-real-estate-concierge-os-demo.vercel.app/'
-      },
-      {
-        label: '[Concierge] Contexto',
-        text: 'Esta demo no es solo un chatbot. Es una capa de atención y calificación para que los leads no se pierdan entre preguntas repetidas, WhatsApp suelto o falta de seguimiento. El sistema conversa, entrega recursos demo y deja al asesor con información más clara.'
-      },
-      {
-        label: '[Concierge] Para reunión',
-        text: 'Lo importante aquí es el flujo: preguntas frecuentes, calificación, recursos del proyecto, resumen comercial y paso al asesor. Esta capa puede conectarse luego con CRM, Google Sheets, WhatsApp Business API o campañas de captación según el alcance.'
-      },
-      {
-        label: '[Concierge] Para William',
-        text: 'William: si una inmobiliaria dice que recibe muchos leads o muchas preguntas repetidas, presenta esta demo como la capa que filtra y prepara al prospecto antes del asesor. No vendas “chatbot”; vende atención ordenada, menos pérdida de leads y mejor preparación comercial.'
-      },
-      {
-        label: '[CRM] WhatsApp corto',
-        text: 'Te comparto una demo de CRM inmobiliario donde una inmobiliaria puede registrar propiedades, organizar leads, cambiar estados y dar seguimiento comercial desde un panel privado: https://luma-real-estate-crm-os-demo.vercel.app/'
-      },
-      {
-        label: '[CRM] Contexto',
-        text: 'Esta demo no es una página web. Es una muestra de sistema interno comercial para inmobiliarias: propiedades, leads, asesores, estados, notas de seguimiento y base de datos conectada para que las oportunidades no se pierdan en WhatsApp, Excel o memoria.'
-      },
-      {
-        label: '[CRM] Para reunión',
-        text: 'Lo importante aquí es el control interno: registrar propiedades, organizar prospectos, ver estados, dejar notas y medir seguimiento. Esta capa puede conectarse con una landing, un concierge o campañas de captación.'
-      },
-      {
-        label: '[CRM] Para William',
-        text: 'William: si una inmobiliaria dice que ya tiene página o que recibe leads por WhatsApp, presenta esta demo como el sistema interno para ordenar la operación. No vendas diseño; vende control, seguimiento y menos oportunidades perdidas.'
-      }
-    ],
-    priceFrom: 'Desde US$1,800–US$3,000 (captación y concierge); desde US$3,000–US$5,000+ (CRM y seguimiento avanzado)',
-    whatToSay: [
-      'Enfocarse en la experiencia del inversor de alto perfil: compra por los ojos.',
-      'Un portal lento o sobrecargado espanta al comprador premium internacional.',
-      'Mostrar la demo privada de Real Estate OS destacando la velocidad de carga y segmentación.'
-    ],
+    demos: demosList.filter(d => d.name.includes('Real Estate')),
+    priceFrom: 'Desde RD$65,000–RD$120,000 para landing de proyecto premium. Desarrollo completo desde RD$150,000–RD$350,000+ según tipologías.',
+    nextStep: 'Simular la navegación de un usuario en móvil, mostrar la velocidad de carga de las imágenes y definir la estructura del proyecto actual del cliente.',
+    messageShort: 'Hola [Nombre], te comparto esta demo de presentación premium para proyectos inmobiliarios. Carga instantáneamente y filtra prospectos calificados en automático: https://luma-real-estate-os-demo.vercel.app/',
+    messageContext: 'Esta demo no es una página web genérica. Es una muestra de infraestructura comercial inmobiliaria: presenta el proyecto, educa al comprador, separa perfiles de interés y lleva al prospecto hacia una solicitud de información o reunión.',
     whatNotToPromise: [
       'No prometer integraciones automáticas con CRMs inmobiliarios de baja calidad sin evaluar antes.',
       'No asegurar ventas inmediatas, sino una captación y calificación de leads sumamente profesional.'
     ],
-    nextStep: 'Agendar un Diagnóstico Digital de cortesía de su web inmobiliaria actual.'
+    noteForWilliam: 'Presentar la demo haciendo foco en la velocidad de carga móvil y en cómo capta el interés del comprador de alto nivel adquisitivo. No vendas "diseño"; vende orden, control de leads y presentación corporativa.'
+  },
+  {
+    id: 'spa',
+    niche: 'Beauty / Spa',
+    icon: Sparkles,
+    idealClient: 'Spas, centros estéticos, clínicas de bienestar, peluquerías premium y profesionales independientes del cuidado personal.',
+    problem: 'El personal pierde horas respondiendo preguntas básicas sobre servicios, precios y disponibilidad en WhatsApp o Instagram. El agendamiento manual genera ausencias no justificadas.',
+    recommendedProduct: 'Beauty Spa OS',
+    demos: demosList.filter(d => d.name.includes('Beauty Spa')),
+    priceFrom: 'Desde RD$35,000–RD$75,000 para presencia premium y catálogo de servicios. Desde RD$65,000–RD$150,000+ si incluye Concierge inteligente y sistema de agendamiento.',
+    nextStep: 'Simular el agendamiento en el botón de Concierge, revisar el flujo de preguntas y estructurar las preguntas clave de calificación comercial del cliente.',
+    messageShort: 'Hola [Nombre], mira cómo puedes automatizar las consultas y citas de tu estética con esta demo de concierge inteligente: https://luma-beauty-spa-os-demo.vercel.app/',
+    messageContext: 'Esta demo oficial de Luma Beauty Spa OS incluye un asistente conversacional (Concierge) que precalifica al cliente sobre sus necesidades estéticas y le permite simular el agendamiento, quitando carga operativa a tu recepción: https://luma-beauty-spa-os-demo.vercel.app/',
+    whatNotToPromise: [
+      'No prometer que la IA resolverá consultas médicas complejas o prescribirá tratamientos específicos.',
+      'No prometer integraciones con software de reservas muy antiguos que no posean APIs modernas.'
+    ],
+    noteForWilliam: 'William: cuando hables con spas o centros estéticos, no vendas “una web”. Presenta esto como una experiencia comercial para captar consultas, ordenar preguntas frecuentes y elevar la percepción premium del negocio.'
   },
   {
     id: 'commerce',
     niche: 'Tiendas / Commerce',
     icon: ShoppingBag,
-    problem: 'Altas tasas de abandono de carritos, pasarelas de pago engorrosas en dispositivos móviles, y nula automatización de seguimiento de clientes. Dependencia excesiva de atención manual y caótica por Instagram o WhatsApp.',
+    idealClient: 'Tiendas físicas, marcas de productos, perfumes, cosmética, boutiques, regalos, accesorios, repuestos ligeros y negocios que venden por WhatsApp o Instagram pero no tienen un sistema claro de catálogo, pedido, seguimiento y control.',
+    problem: 'El negocio vende por mensajes sueltos, catálogos desordenados, notas manuales o Excel. Pierde pedidos, no mide oportunidades, no organiza clientes, no controla cuentas por cobrar y depende demasiado de WhatsApp sin estructura.',
     recommendedProduct: 'Commerce OS',
-    demos: ALL_DEMOS.filter(d => [
-      'Luma Commerce OS — Demo Oficial',
-      'Aura Boutique OS — Demo Oficial',
-      'Luma Commerce OS — Legacy',
-      'Luma Commerce OS admin'
-    ].includes(d.name)),
-    message: 'Hola [Nombre], vi tu catálogo en Instagram y noté que el proceso de compra requiere muchos pasos manuales, lo que suele causar el abandono del 60% de los compradores en móvil. Te comparto una demo del sistema Commerce OS que automatiza la venta, incluye carrito, checkout interactivo y conecta directo con un panel CRM de seguimiento: https://luma-commerce-os-demo.vercel.app/',
-    priceFrom: 'Desde $2,500 USD (según volumen de catálogo y pasarelas)',
-    whatToSay: [
-      'Hacer énfasis en la recompra y la recuperación automatizada de carritos.',
-      'La gestión manual por chats satura al equipo y frena el crecimiento.',
-      'Mostrar cómo el CRM integrado les da control absoluto del historial de cada cliente.'
-    ],
+    demos: demosList.filter(d => d.name.includes('Commerce OS') && !d.name.includes('legacy')),
+    priceFrom: 'Desde RD$45,000–RD$95,000 para tienda premium con admin base. Desde RD$120,000–RD$250,000+ si incluye CRM, Google Sheets, automatización, CxC e integraciones. Mantenimiento: RD$8,000–RD$25,000 mensual.',
+    nextStep: 'Mostrar la tienda, simular un pedido, abrir el admin demo y levantar cómo vende actualmente el cliente: productos, formas de pago, entrega, WhatsApp, seguimiento y reportes necesarios.',
+    messageShort: 'Te comparto una demo de tienda premium donde una marca puede mostrar productos, recibir pedidos y organizar clientes desde un sistema propio, sin depender solo de WhatsApp o catálogos sueltos: https://luma-commerce-os-demo.vercel.app/',
+    messageContext: 'Esta demo no es solo una tienda bonita. Es una muestra de infraestructura comercial para negocios de productos: catálogo, carrito, pedido, clientes, seguimiento y panel interno. La idea es que el negocio venda mejor, pierda menos conversaciones y tenga más control sobre su operación.',
     whatNotToPromise: [
-      'No prometer automatización completa de logística física o envíos sin usar integraciones validadas.',
-      'No asegurar compatibilidad nativa con sistemas POS de tiendas físicas muy antiguos sin costo extra.'
+      'No prometer pasarelas de pago, WhatsApp API oficiales, automatizaciones de inventario avanzado o conexión contable sin levantar alcance detallado.',
+      'No decir que es un desarrollo estándar en Shopify (es infraestructura personalizada).',
+      'No prometer ventas inmediatas.',
+      'No conectar datos reales del cliente sin su autorización explícita.'
     ],
-    nextStep: 'Hacer una llamada corta para mostrarles la demo interactiva de la tienda y el panel CRM de Luma Commerce OS (Nexa Store).'
-  },
-  {
-    id: 'spa',
-    niche: 'Belleza / Spa',
-    icon: Sparkles,
-    problem: 'El negocio depende de Instagram y WhatsApp suelto, recibe preguntas repetidas, no presenta sus servicios con suficiente autoridad y no tiene una experiencia clara para convertir visitas en consultas.',
-    recommendedProduct: 'Beauty Spa OS',
-    demos: ALL_DEMOS.filter(d => [
-      'Luma Beauty Spa OS — Demo Oficial',
-      'Santuario Estética',
-      'Santuario Concierge'
-    ].includes(d.name)),
-    message: 'Te comparto una demo privada de cómo un spa o centro estético puede presentar sus servicios de forma más premium, captar consultas y ordenar mejor la atención antes de WhatsApp o llamada: https://luma-beauty-spa-os-demo.vercel.app/',
-    messageTemplates: [
-      {
-        label: 'WhatsApp corto',
-        text: 'Te comparto una demo privada de cómo un spa o centro estético puede presentar sus servicios de forma más premium, captar consultas y ordenar mejor la atención antes de WhatsApp o llamada: https://luma-beauty-spa-os-demo.vercel.app/'
-      },
-      {
-        label: 'Mensaje con contexto',
-        text: 'Esta demo no es una página web genérica. Es una muestra de infraestructura comercial para estética y bienestar: presenta servicios, genera confianza, capta consultas y simula una atención tipo concierge para que el negocio no dependa solo de mensajes sueltos en Instagram o WhatsApp.'
-      },
-      {
-        label: 'Mensaje para reunión',
-        text: 'Lo importante aquí no es solo el diseño. Es la estructura: presentación premium, captación, simulación de atención, servicios organizados y preparación del prospecto para una consulta o cita.'
-      },
-      {
-        label: 'Mensaje para William',
-        text: 'William: cuando hables con spas o centros estéticos, no vendas “una web”. Presenta esto como una experiencia comercial para captar consultas, ordenar preguntas frecuentes y elevar la percepción premium del negocio. Si el negocio recibe muchas preguntas repetidas, se vende como Captación Inteligente con concierge.'
-      }
-    ],
-    priceFrom: 'Desde US$1,200–US$1,500 para presencia premium; desde US$1,800–US$3,000 si incluye concierge, captación y seguimiento.',
-    whatToSay: [
-      'Esta demo muestra cómo un spa o centro estético puede verse más premium, presentar sus servicios, captar consultas y simular una atención ordenada antes de pasar a WhatsApp, llamada o cita.',
-      'El tiempo que pierde el personal administrativo respondiendo preguntas básicas puede convertirse en una oportunidad para ordenar mejor la captación.',
-      'Una capa de recordatorios y seguimiento puede ayudar a reducir ausencias y mantener conversaciones más ordenadas, según la integración que se definina.',
-      'El Concierge puede orientar al prospecto fuera del horario de oficina y dejar la consulta mejor preparada para el equipo humano.'
-    ],
-    whatNotToPromise: [
-      'No prometer que la IA resolverá consultas médicas complejas o prescribirá tratamientos específicos.',
-      'No prometer integraciones con software de reservas muy antiguos que no posean APIs modernas.'
-    ],
-    nextStep: 'Enviar demo, pedir observación del negocio y agendar una reunión corta para adaptar la estructura a sus servicios, equipo y proceso de atención.'
-  },
-  {
-    id: 'cursos',
-    niche: 'Academias / Cursos',
-    icon: GraduationCap,
-    problem: 'Dependencia de plataformas de terceros con altas comisiones de venta y falta de control sobre la marca, la base de datos de estudiantes y las automatizaciones post-venta.',
-    recommendedProduct: 'Content / Media OS',
-    demos: ALL_DEMOS.filter(d => ['Luma Content / Media OS — Demo Oficial'].includes(d.name)),
-    message: 'Hola [Nombre], vi tus cursos. Muchas plataformas se quedan con comisiones de hasta el 10% por alumno. Diseñamos sistemas educativos propios bajo marca privada con pasarela directa a tu banco.',
-    priceFrom: '$2,000 USD (según número de módulos e integraciones con pasarelas)',
-    whatToSay: [
-      'El activo principal de un infoproductor es la base de datos y retención de sus alumnos.',
-      'Eliminar comisiones abusivas de pasarelas aumenta el margen neto un 5-15%.',
-      'Marca privada eleva la percepción de valor y permite vender tickets más altos.'
-    ],
-    whatNotToPromise: [
-      'No prometer la edición, grabación o producción del contenido audiovisual de los cursos.',
-      'No prometer tráfico orgánico masivo de estudiantes por el simple hecho de instalar el portal de cursos.'
-    ],
-    nextStep: 'Programar llamada de diagnóstico sobre plataformas de cursos.'
-  },
-  {
-    id: 'abogados',
-    niche: 'Abogados / Alquileres',
-    icon: Scale,
-    problem: 'Pérdida de horas valiosas filtrando clientes no calificados o respondiendo las mismas preguntas básicas sobre requisitos, honorarios y condiciones antes de una cita formal.',
-    recommendedProduct: 'Capital en Orden',
-    demos: ALL_DEMOS.filter(d => ['Capital en Orden — Demo Oficial'].includes(d.name)),
-    message: 'Hola [Nombre], analizamos los formularios de tu firma y notamos que no hay un filtro automatizado para clasificar los casos urgentes. Estamos preparando el módulo Capital en Orden para bufetes.',
-    priceFrom: '$1,200 USD (según la complejidad de las reglas de calificación)',
-    whatToSay: [
-      'Las horas facturables del abogado son sagradas. La IA pre-califica a las personas interesadas.',
-      'La IA entrega un resumen del caso e información de contacto lista para agendar.',
-      'La profesionalidad de un asistente inmediato eleva el valor percibido del despacho.'
-    ],
-    whatNotToPromise: [
-      'No prometer que la IA emitirá asesoramiento legal directo o resoluciones jurídicas autónomas.',
-      'No garantizar el filtrado perfecto del 100% de consultas mal intencionadas sin reglas estrictas.'
-    ],
-    nextStep: 'Hacerles una propuesta de preguntas clave de calificación comercial.'
+    noteForWilliam: 'William: si el cliente vende productos por WhatsApp, Instagram o tienda física y se queja de desorden, pedidos perdidos, falta de seguimiento o falta de control, usa Commerce OS. No vendas “página web”. Vende orden comercial, presentación premium, pedidos claros y seguimiento.'
   },
   {
     id: 'b2b',
-    niche: 'Empresas B2B',
+    niche: 'B2B corporativo',
     icon: Briefcase,
-    problem: 'Ciclos de venta largos y frustrantes. Se envían presupuestos y propuestas comerciales en archivos PDF estáticos y no se sabe si se abrieron o si hay interés real.',
-    recommendedProduct: 'Industrial / B2B OS',
-    demos: ALL_DEMOS.filter(d => ['Luma Industrial / B2B OS — Demo Oficial'].includes(d.name)),
-    message: 'Hola [Nombre], vi tus soluciones de servicios B2B. Los prospectos corporativos exigen respuestas rápidas. Estamos preparando el sistema Industrial B2B OS con métricas en caliente.',
-    priceFrom: '$3,500 USD (según pipelines e integraciones de correo y control de propuestas)',
-    whatToSay: [
-      'En ventas B2B corporativas, el tiempo de seguimiento y saber quién toma la decisión es crucial.',
-      'Saber exactamente cuándo abren el presupuesto te permite llamarlos en caliente para resolver objeciones.',
-      'Centralizar el pipeline comercial en un sistema propio disminuye la dependencia de hojas de cálculo.'
-    ],
+    idealClient: 'Empresas de servicios, distribuidores, proveedores industriales y negocios B2B con ciclos de venta basados en cotizaciones y propuestas comerciales.',
+    problem: 'Ciclos de venta largos y frustrantes. Se envían presupuestos y propuestas comerciales en archivos PDF estáticos y no se sabe si se abrieron o si hay interés real del tomador de decisión.',
+    recommendedProduct: 'B2B Corporate OS',
+    demos: demosList.filter(d => d.name.includes('Inox Minier') || d.name.includes('B2B Corporate')),
+    priceFrom: 'Desde RD$150,000–RD$250,000+ (según pipelines e integraciones de correo y control de propuestas).',
+    nextStep: 'Mostrar el caso real de Inox Minier para ilustrar la visualización de un catálogo industrial y agendar reunión técnica una vez liberada la demo oficial.',
+    messageShort: 'Hola [Nombre], vi tus soluciones de servicios B2B. Los prospectos corporativos exigen respuestas rápidas. Estamos preparando el sistema B2B Corporate OS con métricas en caliente para cotizaciones: https://inox-minier.com/',
+    messageContext: 'Esta es una muestra de infraestructura comercial para negocios B2B. Te comparto el caso de Inox Minier para mostrar la velocidad del catálogo industrial y la estructura corporativa premium que integramos para optimizar pipelines: https://inox-minier.com/',
     whatNotToPromise: [
       'No prometer base de datos de leads corporativos lista para prospectar de forma masiva sin estrategia previa.',
       'No prometer que el portal reemplazará el trabajo humano de relación y cierre del ejecutivo.'
     ],
-    nextStep: 'Agendar reunión de presentación técnica una vez liberada la demo oficial.'
+    noteForWilliam: 'William: usa los casos reales de Depot Graphics e Inox Minier para mostrar la capacidad visual y experiencia B2B corporativa de Luma. No los presentes como demos SaaS, sino como referencias de clientes reales.'
   },
   {
     id: 'servicios',
-    niche: 'Marcas personales / servicios',
+    niche: 'Servicios profesionales',
     icon: UserCheck,
+    idealClient: 'Profesionales de servicios, consultores, agencias, marcas personales, coaches y freelancers de alto nivel que venden intangibles de alto ticket.',
     problem: 'Baja autoridad digital. Sitios web o perfiles sociales genéricos que no reflejan el verdadero valor de sus servicios, limitando su capacidad para cobrar tarifas premium.',
-    recommendedProduct: 'Content / Media OS',
-    demos: ALL_DEMOS.filter(d => ['Luma Content / Media OS — Demo Oficial'].includes(d.name)),
-    message: 'Hola [Nombre], estuve revisando tu perfil. Tu contenido es de gran valor, pero tu presentación web no refleja ese mismo nivel de autoridad profesional. Diseñamos portafolios interactivos premium.',
-    priceFrom: '$1,200 USD (según secciones, contenido interactivo y testimoniales)',
-    whatToSay: [
-      'La primera impresión digital define el precio de tu hora o consultoría.',
-      'Una web genérica obliga a competir por precio. Una web premium justifica tarifas premium.',
-      'Demostrar la velocidad y la excelencia tipográfica frente a la competencia.'
-    ],
+    recommendedProduct: 'Personal Brand OS',
+    demos: demosList.filter(d => d.name.includes('Depot Graphics') || d.name.includes('Personal Brand')),
+    priceFrom: 'Desde RD$55,000–RD$90,000 (según secciones, contenido interactivo, agendas y testimoniales).',
+    nextStep: 'Hacer una videollamada corta para sugerirles 3 cambios clave en el diseño de su web actual y mostrarles cómo Depot Graphics ordena sus propuestas.',
+    messageShort: 'Hola [Nombre], estuve revisando tu perfil. Tu contenido es de gran valor, pero tu presentación web no refleja ese mismo nivel de autoridad profesional. Diseñamos portafolios interactivos premium: https://depotgraphics.com',
+    messageContext: 'Diseñamos infraestructuras web para profesionales y marcas que quieren elevar su posicionamiento. Te comparto el caso de referencia de Depot Graphics para que aprecies el nivel tipográfico, la velocidad y la experiencia corporativa premium: https://depotgraphics.com',
     whatNotToPromise: [
       'No prometer aumento automático de seguidores en redes o viralidad sin estrategias de pauta.',
-      'No prometer que la web solucionará fallas en el modelo de monetización del profesional.'
+      'No prometer que la web solucionará fallas en el modelo de monetización o fijación de precios del profesional.'
     ],
-    nextStep: 'Hacer una videollamada corta para sugerirles 3 cambios clave en el diseño de su web actual.'
+    noteForWilliam: 'William: enfócate en el valor percibido del profesional. Si tiene una web mediocre, está perdiendo clientes de ticket alto. Vende autoridad y posicionamiento premium.'
+  },
+  {
+    id: 'cursos',
+    niche: 'Academy / cursos',
+    icon: GraduationCap,
+    idealClient: 'Infoproductores, academias, centros de formación y creadores de contenido que quieren vender cursos en su propia plataforma.',
+    problem: 'Dependencia de plataformas de terceros con altas comisiones de venta (hasta el 10% por alumno) y falta de control sobre la marca, la base de datos de estudiantes y las automatizaciones post-venta.',
+    recommendedProduct: 'Academy OS',
+    demos: demosList.filter(d => d.name.includes('Academy OS')),
+    priceFrom: 'Desde RD$90,000–RD$180,000+ (según número de módulos e integraciones con pasarelas).',
+    nextStep: 'Programar llamada de diagnóstico sobre plataformas de cursos actuales y proponer migración para aumentar márgenes netos.',
+    messageShort: 'Hola [Nombre], vi tus cursos. Muchas plataformas se quedan con comisiones de hasta el 10% por alumno. Diseñamos sistemas educativos propios bajo marca privada con pasarela directa a tu banco.',
+    messageContext: 'Muchos infoproductores pierden miles de dólares en Hotmart o Teachable. Academy OS te permite tener el control absoluto de tus alumnos, tus datos y tus pagos directamente a tu cuenta local sin comisiones intermedias.',
+    whatNotToPromise: [
+      'No prometer la edición, grabación o producción del contenido audiovisual de los cursos.',
+      'No prometer tráfico orgánico masivo de estudiantes por el simple hecho de instalar el portal de cursos.'
+    ],
+    noteForWilliam: 'William: si el cliente ya vende cursos y se queja de las comisiones abusivas, ofrécele Academy OS. Explica que recuperará su inversión en pocos meses al eliminar comisiones por transacción.'
   },
   {
     id: 'whatsapp-leads',
-    niche: 'Fuga de Leads en WhatsApp',
+    niche: 'WhatsApp Lead Recovery',
     icon: MessageSquare,
-    problem: 'Saturación en canales de chat. Reciben decenas de mensajes diarios, pero tardan horas en contestar o no hacen seguimiento a prospectos calientes, perdiendo ventas.',
-    recommendedProduct: 'Concierge Inteligente',
-    demos: ALL_DEMOS.filter(d => [
-      'Luma Real Estate Concierge OS — Demo Oficial',
-      'Luma Commerce OS — Demo Oficial'
-    ].includes(d.name)),
-    message: 'Hola [Nombre], noté que en horas pico tardan en responder las consultas de WhatsApp de nuevos prospectos. El 50% de las ventas por chat se pierden por no responder en los primeros 5 minutos.',
-    priceFrom: '$1,500 USD (según la cantidad de integraciones y complejidad del bot)',
-    whatToSay: [
-      'En canales de chat, la velocidad de respuesta es el factor número uno de conversión.',
-      'Un prospecto caliente no atendido en 5 minutos se va a chatear con la competencia.',
-      'El Concierge Inteligente actúa de forma instantánea y extrae los datos de interés listos para tu vendedor.'
-    ],
+    idealClient: 'Negocios de productos o servicios que reciben decenas de leads diarios por redes sociales y chats, pero tardan en contestar o no hacen seguimiento estructurado.',
+    problem: 'Saturación en canales de chat y falta de automatización inicial. El 50% de las ventas por chat se pierden por no responder en los primeros 5 minutos.',
+    recommendedProduct: 'WhatsApp Lead Recovery OS',
+    demos: demosList.filter(d => d.name.includes('WhatsApp Lead Recovery') || d.name.includes('Concierge OS')),
+    priceFrom: 'Desde RD$35,000–RD$75,000 (según la cantidad de integraciones, APIs y complejidad de reglas del bot).',
+    nextStep: 'Hacerles una simulación real de la IA enviándoles el número del bot de prueba para que experimenten el flujo conversacional en vivo.',
+    messageShort: 'Hola [Nombre], noté que en horas pico tardan en responder las consultas de WhatsApp de nuevos prospectos. El 50% de las ventas por chat se pierden por no responder en los primeros 5 minutos. Mira cómo un concierge con IA responde al instante.',
+    messageContext: 'La velocidad en chats define el cierre. WhatsApp Lead Recovery OS es un concierge con inteligencia artificial que conversa con el prospecto, califica su presupuesto e interés y te entrega el lead listo para cerrar en menos de 1 minuto.',
     whatNotToPromise: [
-      'No recomendar ni prometer el uso de herramientas no oficiales que puedan provocar el bloqueo de WhatsApp.',
-      'No asegurar que la IA cerrará la venta sin la intervención del equipo de ventas en la fase final.'
+      'No recomendar ni prometer el uso de herramientas no oficiales que puedan provocar el bloqueo del número de WhatsApp.',
+      'No asegurar que la IA cerrará la venta sin la intervención del equipo humano en la fase final de negociación.'
     ],
-    nextStep: 'Hacerles una simulación real de la IA enviándoles el número del bot de prueba.'
+    noteForWilliam: 'William: la velocidad de respuesta lo es todo. Si tardan en responder, están regalando clientes a la competencia. Vende respuesta instantánea 24/7 y precalificación comercial limpia.'
   }
 ];
 
-interface LineaProducto {
-  title: string;
-  desc: string;
-  invest: string;
-}
-
 const lineasProducto: LineaProducto[] = [
-  { title: 'Diagnóstico Digital / Luma Intelligence', desc: 'Auditoría comercial y técnica preliminar basada en velocidad, UX, SEO, píxeles de tracking y tiempos de respuesta en canales.', invest: 'Cortesía comercial / Según alcance' },
-  { title: 'Web / Landing Premium', desc: 'Diseño UX/UI a medida enfocado en conversión con rendimiento óptimo y velocidad sobresaliente.', invest: 'Desde $1,200 USD' },
-  { title: 'Concierge Inteligente', desc: 'Asistente con Inteligencia Artificial entrenado con información comercial para calificar y agendar citas 24/7.', invest: 'Desde $800 USD' },
-  { title: 'Commerce OS / Tienda con CRM', desc: 'E-commerce interactivo acoplado a un CRM de seguimiento para gestión y fidelización de clientes.', invest: 'Desde $2,500 USD' },
-  { title: 'Real Estate OS', desc: 'Sistema inmobiliario completo para catalogar propiedades con filtros de alta velocidad y captación de leads.', invest: 'Desde $3,000 USD' },
-  { title: 'Sistema Comercial Privado', desc: 'Infraestructura digital personalizada para administración de ventas, pipelines y automatizaciones comerciales.', invest: 'Según alcance de la infraestructura' },
-  { title: 'Contenido y Mantenimiento', desc: 'Soporte mensual prioritario, respaldos, actualizaciones y optimización técnica permanente.', invest: 'Desde $150 USD / mes' }
+  { title: 'Diagnóstico Digital / Luma Intelligence', desc: 'Auditoría comercial y técnica preliminar basada en velocidad de carga, UX, SEO, píxeles de tracking y tiempos de respuesta en canales.', invest: 'Cortesía comercial / Según alcance' },
+  { title: 'Landing Premium', desc: 'Diseño UX/UI a medida enfocado en conversión con rendimiento óptimo y velocidad de carga sobresaliente.', invest: 'Desde $1,200 USD (RD$70,000+)' },
+  { title: 'Concierge Inteligente', desc: 'Asistente con Inteligencia Artificial entrenado con información comercial para calificar leads y agendar citas 24/7.', invest: 'Desde $800 USD (RD$48,000+)' },
+  { title: 'CRM / Sistema Comercial Privado', desc: 'Infraestructura digital personalizada para administración de ventas, pipelines y automatizaciones comerciales.', invest: 'Desde $1,500 USD (RD$90,000+)' },
+  { title: 'Commerce OS', desc: 'E-commerce interactivo acoplado a un CRM de seguimiento para la gestión de productos y CxC.', invest: 'Desde $2,500 USD (RD$150,000+)' },
+  { title: 'Real Estate OS', desc: 'Sistema inmobiliario completo para catalogar propiedades con filtros de alta velocidad y captación de leads.', invest: 'Desde $3,000 USD (RD$180,000+)' },
+  { title: 'Automatización / Lead Recovery', desc: 'Sistemas de recuperación de leads en WhatsApp y carritos abandonados con agentes conversacionales integrados.', invest: 'Desde $600 USD (RD$35,000+)' },
+  { title: 'Mantenimiento mensual', desc: 'Soporte prioritario, respaldos, actualizaciones, hosting y optimización técnica permanente.', invest: 'Desde $150 USD / mes (RD$8,000+ / mes)' }
 ];
 
 export default function SalesRoom() {
+  const [activeTab, setActiveTab] = useState<'official' | 'real_cases' | 'playbooks' | 'upcoming' | 'internal' | 'catalog'>('official');
   const [selectedId, setSelectedId] = useState<string>('real-estate');
   const [copyStatus, setCopyStatus] = useState<{ [key: string]: boolean }>({});
-  const [activeTab, setActiveTab] = useState<'sales' | 'catalog' | 'maintenance'>('sales');
-
-  const selectedCliente = clientesData.find(c => c.id === selectedId) || clientesData[0];
 
   const handleCopyText = (text: string, key: string) => {
     navigator.clipboard.writeText(text).then(() => {
@@ -665,22 +610,24 @@ export default function SalesRoom() {
     });
   };
 
-  // Filtrar las demos rotas o de mantenimiento para Marcos
-  const maintenanceDemos = ALL_DEMOS.filter(d => d.status === 'internal_only' || d.status === 'review_before_send' || d.status === 'not_for_sale_now');
+  const officialDemos = ALL_DEMOS.filter(d => d.status === 'official_demo');
+  const realCases = ALL_DEMOS.filter(d => d.status === 'real_case');
+  const upcomingDemos = ALL_DEMOS.filter(d => d.status === 'in_preparation');
+  const internalArchive = ALL_DEMOS.filter(d => d.status === 'internal_only');
 
-  const ActiveIcon = selectedCliente.icon;
+  const playbooksList = clientesData(ALL_DEMOS);
+  const selectedPlaybook = playbooksList.find(p => p.id === selectedId) || playbooksList[0];
+  const PlaybookIcon = selectedPlaybook.icon;
 
   const getStatusBadgeStyles = (status: DemoStatus) => {
     switch (status) {
       case 'official_demo':
         return 'bg-emerald-500/10 text-emerald-400 border-emerald-500/20';
+      case 'real_case':
+        return 'bg-blue-500/10 text-blue-400 border-blue-500/20';
       case 'in_preparation':
         return 'bg-amber-500/10 text-amber-400 border-amber-500/20';
       case 'internal_only':
-        return 'bg-blue-500/10 text-blue-400 border-blue-500/20';
-      case 'review_before_send':
-        return 'bg-purple-500/10 text-purple-400 border-purple-500/20';
-      case 'not_for_sale_now':
         return 'bg-rose-500/10 text-rose-400 border-rose-500/20';
       default:
         return 'bg-gray-500/10 text-gray-400 border-gray-500/20';
@@ -691,14 +638,14 @@ export default function SalesRoom() {
     switch (action) {
       case 'Mostrar al cliente':
         return 'text-emerald-400 border-emerald-500/10 bg-emerald-500/5';
-      case 'Usar solo en reunión':
-        return 'text-purple-400 border-purple-500/10 bg-purple-500/5';
-      case 'No enviar todavía':
-        return 'text-rose-400 border-rose-500/10 bg-rose-500/5';
-      case 'Solo consulta interna':
+      case 'Caso de referencia':
         return 'text-blue-400 border-blue-500/10 bg-blue-500/5';
       case 'En preparación':
         return 'text-amber-400 border-amber-500/10 bg-amber-500/5';
+      case 'Solo consulta interna':
+        return 'text-rose-400 border-rose-500/10 bg-rose-500/5';
+      case 'No enviar todavía':
+        return 'text-rose-400 border-rose-500/10 bg-rose-500/5';
       default:
         return 'text-gray-400 border-gray-500/10';
     }
@@ -706,7 +653,7 @@ export default function SalesRoom() {
 
   return (
     <div className="min-h-screen bg-[#050505] text-gray-200 font-sans selection:bg-amber-500/30">
-      
+
       {/* Header Operativo de Ventas */}
       <header className="border-b border-white/10 bg-[#0a0a0c] py-6 px-4 md:px-8 sticky top-0 z-50 backdrop-blur-md bg-opacity-95">
         <div className="max-w-7xl mx-auto flex flex-col lg:flex-row justify-between items-start lg:items-center gap-4">
@@ -719,424 +666,494 @@ export default function SalesRoom() {
               Luma Premium Sales Room
             </h1>
             <p className="text-gray-400 text-xs md:text-sm mt-0.5 font-light">
-              Control de demos autorizadas, playbooks comerciales y mitigación de enlaces rotos.
+              Sistema de ventas por valor de Luma Premium. Mitigación y control de enlaces compartidos.
             </p>
           </div>
+
+          {/* Navegación por pestañas (6 Pestañas) */}
           <div className="flex flex-wrap items-center gap-2">
-            <button 
-              onClick={() => setActiveTab('sales')}
-              className={`px-3 py-2 text-xs font-semibold uppercase tracking-wider rounded-lg border transition-all ${
-                activeTab === 'sales' 
-                  ? 'bg-amber-500 text-black border-amber-500' 
-                  : 'bg-transparent text-gray-400 border-white/10 hover:border-white/20'
-              }`}
-            >
-              Playbook por Cliente
-            </button>
-            <button 
-              onClick={() => setActiveTab('catalog')}
-              className={`px-3 py-2 text-xs font-semibold uppercase tracking-wider rounded-lg border transition-all ${
-                activeTab === 'catalog' 
-                  ? 'bg-amber-500 text-black border-amber-500' 
-                  : 'bg-transparent text-gray-400 border-white/10 hover:border-white/20'
-              }`}
-            >
-              Líneas de Producto
-            </button>
-            <button 
-              onClick={() => setActiveTab('maintenance')}
+            <button
+              onClick={() => setActiveTab('official')}
               className={`px-3 py-2 text-xs font-semibold uppercase tracking-wider rounded-lg border transition-all flex items-center gap-1.5 ${
-                activeTab === 'maintenance' 
-                  ? 'bg-rose-500/20 text-rose-400 border-rose-500/40' 
+                activeTab === 'official'
+                  ? 'bg-emerald-500 text-black border-emerald-500'
+                  : 'bg-transparent text-gray-400 border-white/10 hover:border-white/20'
+              }`}
+            >
+              <Globe className="w-3.5 h-3.5" />
+              Demos Oficiales ({officialDemos.length})
+            </button>
+
+            <button
+              onClick={() => setActiveTab('real_cases')}
+              className={`px-3 py-2 text-xs font-semibold uppercase tracking-wider rounded-lg border transition-all flex items-center gap-1.5 ${
+                activeTab === 'real_cases'
+                  ? 'bg-blue-500 text-white border-blue-500'
+                  : 'bg-transparent text-gray-400 border-white/10 hover:border-white/20'
+              }`}
+            >
+              <Briefcase className="w-3.5 h-3.5" />
+              Casos Reales
+            </button>
+
+            <button
+              onClick={() => setActiveTab('playbooks')}
+              className={`px-3 py-2 text-xs font-semibold uppercase tracking-wider rounded-lg border transition-all flex items-center gap-1.5 ${
+                activeTab === 'playbooks'
+                  ? 'bg-amber-500 text-black border-amber-500'
+                  : 'bg-transparent text-gray-400 border-white/10 hover:border-white/20'
+              }`}
+            >
+              <FileText className="w-3.5 h-3.5" />
+              Playbooks de Venta
+            </button>
+
+            <button
+              onClick={() => setActiveTab('upcoming')}
+              className={`px-3 py-2 text-xs font-semibold uppercase tracking-wider rounded-lg border transition-all flex items-center gap-1.5 ${
+                activeTab === 'upcoming'
+                  ? 'bg-amber-600/20 text-amber-400 border-amber-600/40'
+                  : 'bg-transparent text-gray-400 border-white/10 hover:border-white/20'
+              }`}
+            >
+              <Clock className="w-3.5 h-3.5" />
+              Próximas Demos ({upcomingDemos.length})
+            </button>
+
+            <button
+              onClick={() => setActiveTab('internal')}
+              className={`px-3 py-2 text-xs font-semibold uppercase tracking-wider rounded-lg border transition-all flex items-center gap-1.5 ${
+                activeTab === 'internal'
+                  ? 'bg-rose-600 text-white border-rose-600'
                   : 'bg-transparent text-rose-500/40 border-rose-500/10 hover:border-rose-500/20'
               }`}
             >
-              <Wrench className="w-3.5 h-3.5" />
-              Mantenimiento Demos ({maintenanceDemos.length})
+              <ShieldAlert className="w-3.5 h-3.5" />
+              Archivo Interno ({internalArchive.length})
+            </button>
+
+            <button
+              onClick={() => setActiveTab('catalog')}
+              className={`px-3 py-2 text-xs font-semibold uppercase tracking-wider rounded-lg border transition-all flex items-center gap-1.5 ${
+                activeTab === 'catalog'
+                  ? 'bg-gray-800 text-white border-gray-700'
+                  : 'bg-transparent text-gray-500 border-white/5 hover:border-white/10'
+              }`}
+            >
+              <Package className="w-3.5 h-3.5" />
+              Líneas de Producto
             </button>
           </div>
         </div>
       </header>
 
       <main className="max-w-7xl mx-auto px-4 md:px-8 py-8">
-        
-        {/* PESTAÑA 1: PLAYBOOK POR NICHO */}
-        {activeTab === 'sales' && (
+
+        {/* PESTAÑA 1: DEMOS OFICIALES */}
+        {activeTab === 'official' && (
+          <div className="space-y-6">
+            <div className="bg-[#0a0a0c] border border-white/5 rounded-2xl p-6 md:p-8">
+              <h2 className="text-xl md:text-2xl font-black text-white uppercase tracking-tight flex items-center gap-2">
+                <Globe className="text-emerald-500 w-6 h-6" /> Demos Oficiales Enviables
+              </h2>
+              <p className="text-xs md:text-sm text-gray-400 mt-1.5">
+                Demos SaaS oficiales autorizadas para ser compartidas directamente con los clientes. El copiado rápido de enlace y redirección están habilitados.
+              </p>
+            </div>
+
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+              {officialDemos.map((demo, idx) => (
+                <div
+                  key={idx}
+                  className="bg-[#0a0a0c] border border-emerald-500/10 hover:border-emerald-500/30 rounded-2xl p-6 flex flex-col justify-between transition-all duration-300 shadow-[0_0_20px_rgba(16,185,129,0.02)]"
+                >
+                  <div className="space-y-4">
+                    <div className="flex items-start justify-between gap-4">
+                      <div>
+                        <div className="flex flex-wrap items-center gap-1.5">
+                          <span className={`px-2 py-0.5 text-[9px] font-bold uppercase rounded border ${getStatusBadgeStyles(demo.status)}`}>
+                            {demo.badge}
+                          </span>
+                          <span className={`px-2 py-0.5 text-[9px] font-bold uppercase rounded border ${getActionStyles(demo.action)}`}>
+                            {demo.action}
+                          </span>
+                          <span className="px-2 py-0.5 text-[9px] font-bold uppercase rounded border border-white/10 text-gray-400 bg-white/5">
+                            {demo.category}
+                          </span>
+                        </div>
+                        <h3 className="font-extrabold text-white text-lg md:text-xl mt-3">{demo.name}</h3>
+                      </div>
+                    </div>
+
+                    <p className="text-xs text-gray-300 font-light leading-relaxed">
+                      {demo.notes}
+                    </p>
+
+                    <div className="space-y-2.5 border-t border-white/5 pt-4">
+                      <div>
+                        <span className="text-[10px] font-bold text-gray-500 uppercase tracking-widest block">Cliente Ideal</span>
+                        <span className="text-xs text-gray-300 font-light">{demo.idealClient}</span>
+                      </div>
+                      <div>
+                        <span className="text-[10px] font-bold text-gray-500 uppercase tracking-widest block">Dolor Comercial</span>
+                        <span className="text-xs text-gray-300 font-light">{demo.commercialPain}</span>
+                      </div>
+                      <div>
+                        <span className="text-[10px] font-bold text-gray-500 uppercase tracking-widest block">Qué Demuestra</span>
+                        <span className="text-xs text-gray-300 font-light">{demo.whatItShows}</span>
+                      </div>
+                    </div>
+
+                    {/* Sublinks o Enlaces Secundarios */}
+                    {(demo.secondaryUrl || demo.url) && (
+                      <div className="space-y-2 border-t border-white/5 pt-4">
+                        <span className="text-[10px] font-bold text-amber-500 uppercase tracking-widest block font-mono">
+                          Enlaces de Acceso
+                        </span>
+                        <div className="bg-black/40 p-2.5 rounded-lg border border-white/5 space-y-1.5">
+                          <div className="flex items-center justify-between text-xs">
+                            <span className="text-gray-400 font-mono break-all">{demo.url}</span>
+                          </div>
+                          {demo.secondaryUrl && (
+                            <div className="border-t border-white/5 pt-1.5 mt-1.5 flex flex-col gap-0.5">
+                              <span className="text-[9px] font-bold text-amber-500 uppercase tracking-wide">
+                                {demo.secondaryUrlLabel || 'Sublink Oficial'}:
+                              </span>
+                              <a
+                                href={demo.secondaryUrl}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="text-amber-400 hover:text-amber-300 hover:underline font-mono text-xs break-all"
+                              >
+                                {demo.secondaryUrl}
+                              </a>
+                            </div>
+                          )}
+                        </div>
+                      </div>
+                    )}
+                  </div>
+
+                  <div className="mt-6 pt-4 border-t border-white/5 space-y-2">
+                    <div className="flex gap-2">
+                      <a
+                        href={demo.url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="flex-1 py-2.5 bg-white/5 hover:bg-white/10 text-xs font-semibold rounded-lg text-gray-300 hover:text-white transition-all flex items-center justify-center gap-1.5 border border-white/5"
+                      >
+                        <Eye className="w-3.5 h-3.5" />
+                        <span>Abrir Demo</span>
+                      </a>
+
+                      <button
+                        onClick={() => handleCopyText(demo.url, `official-copy-${idx}`)}
+                        className="flex-1 py-2.5 bg-emerald-500/10 hover:bg-emerald-500/20 text-xs font-semibold rounded-lg text-emerald-400 hover:text-emerald-300 transition-all flex items-center justify-center gap-1.5 border border-emerald-500/20"
+                      >
+                        <Copy className="w-3.5 h-3.5" />
+                        <span>{copyStatus[`official-copy-${idx}`] ? '¡Copiado!' : 'Copiar Enlace'}</span>
+                      </button>
+                    </div>
+
+                    {demo.secondaryUrl && (
+                      <div className="flex gap-2 pt-1">
+                        <a
+                          href={demo.secondaryUrl}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="flex-1 py-2 bg-amber-500/5 hover:bg-amber-500/10 text-xs font-semibold rounded-lg text-amber-400 hover:text-amber-300 transition-all flex items-center justify-center gap-1.5 border border-amber-500/15"
+                        >
+                          <Eye className="w-3.5 h-3.5" />
+                          <span>{demo.secondaryUrlLabel || 'Ver Sublink'}</span>
+                        </a>
+                        <button
+                          onClick={() => handleCopyText(demo.secondaryUrl!, `official-sec-copy-${idx}`)}
+                          className="flex-1 py-2 bg-white/5 hover:bg-white/10 text-xs font-semibold rounded-lg text-gray-300 hover:text-white transition-all flex items-center justify-center gap-1.5 border border-white/5"
+                        >
+                          <Copy className="w-3.5 h-3.5" />
+                          <span>{copyStatus[`official-sec-copy-${idx}`] ? '¡Copiado!' : 'Copiar Subenlace'}</span>
+                        </button>
+                      </div>
+                    )}
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        )}
+
+        {/* PESTAÑA 2: CASOS REALES / REFERENCIA CORPORATIVA */}
+        {activeTab === 'real_cases' && (
+          <div className="space-y-6">
+            <div className="bg-[#0a0a0c] border border-blue-500/10 rounded-2xl p-6 md:p-8">
+              <h2 className="text-xl md:text-2xl font-black text-white uppercase tracking-tight flex items-center gap-2">
+                <Briefcase className="text-blue-500 w-6 h-6" /> Casos Reales B2B / Referencia Corporativa
+              </h2>
+              <p className="text-xs md:text-sm text-gray-400 mt-1.5 leading-relaxed">
+                Proyectos a medida e infraestructuras corporativas desarrolladas para marcas reales. Sirven como demostración técnica de capacidad visual y solidez B2B.
+              </p>
+
+              <div className="bg-blue-500/5 border border-blue-500/20 rounded-xl p-4 mt-6 flex items-start gap-3">
+                <AlertTriangle className="w-5 h-5 text-blue-400 shrink-0 mt-0.5" />
+                <p className="text-xs md:text-sm text-blue-300 font-medium leading-relaxed">
+                  “Usar para mostrar capacidad visual, estructura corporativa y experiencia B2B. No presentar como demo SaaS.”
+                </p>
+              </div>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              {realCases.map((demo, idx) => (
+                <div
+                  key={idx}
+                  className="bg-[#0a0a0c] border border-blue-500/10 hover:border-blue-500/20 rounded-2xl p-6 flex flex-col justify-between transition-colors"
+                >
+                  <div className="space-y-4">
+                    <div className="flex flex-wrap items-center gap-1.5">
+                      <span className="px-2 py-0.5 text-[8px] font-bold uppercase rounded border bg-blue-500/10 text-blue-400 border-blue-500/20">
+                        Caso Real
+                      </span>
+                      <span className="px-2 py-0.5 text-[8px] font-bold uppercase rounded border bg-gray-800 text-gray-400 border-white/5">
+                        Referencia Corporativa
+                      </span>
+                    </div>
+
+                    <h3 className="font-extrabold text-white text-lg">{demo.name}</h3>
+                    <p className="text-xs text-gray-400 font-light leading-relaxed">{demo.notes}</p>
+                    <p className="text-xs text-gray-500 font-mono break-all">{demo.url}</p>
+                  </div>
+
+                  <div className="mt-6 pt-4 border-t border-white/5 flex gap-3">
+                    <a
+                      href={demo.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex-1 py-2 bg-white/5 hover:bg-white/10 text-xs font-semibold rounded-lg text-gray-300 hover:text-white transition-all flex items-center justify-center gap-1.5 border border-white/5"
+                    >
+                      <Eye className="w-3.5 h-3.5" />
+                      <span>Abrir Sitio</span>
+                    </a>
+
+                    <div className="flex-1 py-2 bg-[#10141f] text-[10px] font-semibold rounded-lg text-blue-400/60 cursor-not-allowed flex items-center justify-center gap-1 border border-blue-500/5">
+                      <Lock className="w-3 h-3 text-blue-500/40" />
+                      <span>Referencia Corporativa</span>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        )}
+
+        {/* PESTAÑA 3: PLAYBOOKS DE VENTA */}
+        {activeTab === 'playbooks' && (
           <div className="grid grid-cols-1 lg:grid-cols-4 gap-8">
-            
-            {/* Selector de Clientes */}
+
+            {/* Selector Lateral de Nichos */}
             <div className="lg:col-span-1 space-y-3">
               <h2 className="text-xs font-bold text-gray-400 uppercase tracking-widest mb-4 px-2">
-                Nicho del Cliente
+                Estrategia por Nicho
               </h2>
               <div className="flex flex-row lg:flex-col overflow-x-auto lg:overflow-visible gap-2 pb-4 lg:pb-0 scrollbar-none">
-                {clientesData.map((cliente) => {
-                  const ClieIcon = cliente.icon;
-                  const isSelected = cliente.id === selectedId;
+                {playbooksList.map((playbook) => {
+                  const Icon = playbook.icon;
+                  const isSelected = playbook.id === selectedId;
                   return (
                     <button
-                      key={cliente.id}
-                      onClick={() => setSelectedId(cliente.id)}
-                      className={`flex items-center gap-3 px-4 py-3 rounded-xl border text-left text-xs md:text-sm font-semibold whitespace-nowrap lg:whitespace-normal transition-all w-full shrink-0 lg:shrink ${
-                        isSelected 
-                          ? 'bg-amber-500/10 text-amber-500 border-amber-500/40 shadow-[0_0_15px_rgba(217,119,6,0.05)]' 
+                      key={playbook.id}
+                      onClick={() => setSelectedId(playbook.id)}
+                      className={`flex items-center gap-3 px-4 py-3.5 rounded-xl border text-left text-xs md:text-sm font-semibold whitespace-nowrap lg:whitespace-normal transition-all w-full shrink-0 lg:shrink ${
+                        isSelected
+                          ? 'bg-amber-500/10 text-amber-500 border-amber-500/40 shadow-[0_0_15px_rgba(217,119,6,0.03)]'
                           : 'bg-[#0a0a0c] text-gray-400 border-white/5 hover:border-white/10 hover:text-gray-200'
                       }`}
                     >
-                      <ClieIcon className={`w-4 h-4 shrink-0 ${isSelected ? 'text-amber-500' : 'text-gray-500'}`} />
-                      <span>{cliente.niche}</span>
+                      <Icon className={`w-4 h-4 shrink-0 ${isSelected ? 'text-amber-500' : 'text-gray-500'}`} />
+                      <span>{playbook.niche}</span>
                     </button>
                   );
                 })}
               </div>
             </div>
 
-            {/* Ficha del Cliente */}
-            <div className="lg:col-span-3 space-y-8">
-              
-              {/* Resumen del Nicho */}
+            {/* Ficha del Nicho */}
+            <div className="lg:col-span-3 space-y-6">
+
+              {/* Encabezado del Playbook */}
               <div className="bg-[#0a0a0c] border border-white/5 rounded-2xl p-6 md:p-8 space-y-6">
                 <div className="flex items-center gap-3">
                   <div className="p-3 bg-amber-500/10 rounded-xl text-amber-500">
-                    <ActiveIcon className="w-6 h-6" />
+                    <PlaybookIcon className="w-6 h-6" />
                   </div>
                   <div>
-                    <h3 className="text-lg md:text-2xl font-extrabold text-white uppercase tracking-tight">
-                      {selectedCliente.niche}
+                    <h3 className="text-lg md:text-2xl font-black text-white uppercase tracking-tight">
+                      Playbook: {selectedPlaybook.niche}
                     </h3>
-                    <p className="text-xs text-amber-500 font-mono tracking-widest uppercase">
-                      Infraestructura: {selectedCliente.recommendedProduct}
+                    <p className="text-xs text-amber-500 font-mono tracking-widest uppercase mt-0.5">
+                      Línea principal: {selectedPlaybook.recommendedProduct}
                     </p>
                   </div>
                 </div>
 
-                <div className="border-t border-white/5 pt-6 space-y-4">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6 border-t border-white/5 pt-6">
                   <div>
-                    <h4 className="text-xs font-bold text-gray-400 uppercase tracking-widest flex items-center gap-1.5">
-                      <AlertTriangle className="w-3.5 h-3.5 text-red-500" /> Dolor Principal
-                    </h4>
-                    <p className="text-xs md:text-sm text-gray-300 mt-1.5 font-light leading-relaxed">
-                      {selectedCliente.problem}
+                    <span className="text-[10px] font-bold text-gray-500 uppercase tracking-widest block">Cliente Ideal</span>
+                    <p className="text-xs md:text-sm text-gray-300 mt-1 font-light leading-relaxed">
+                      {selectedPlaybook.idealClient}
                     </p>
                   </div>
                   <div>
-                    <h4 className="text-xs font-bold text-gray-400 uppercase tracking-widest">
-                      Inversión Estimada
-                    </h4>
+                    <span className="text-[10px] font-bold text-rose-400 uppercase tracking-widest block flex items-center gap-1">
+                      <AlertTriangle className="w-3.5 h-3.5" /> Dolor Comercial Principal
+                    </span>
+                    <p className="text-xs md:text-sm text-gray-300 mt-1 font-light leading-relaxed">
+                      {selectedPlaybook.problem}
+                    </p>
+                  </div>
+                </div>
+
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6 border-t border-white/5 pt-6">
+                  <div>
+                    <span className="text-[10px] font-bold text-gray-500 uppercase tracking-widest block">Precio Guía Recomendado</span>
                     <p className="text-sm font-semibold font-mono text-white mt-1">
-                      {selectedCliente.priceFrom}
+                      {selectedPlaybook.priceFrom}
+                    </p>
+                  </div>
+                  <div>
+                    <span className="text-[10px] font-bold text-amber-500 uppercase tracking-widest block">Siguiente Paso Comercial</span>
+                    <p className="text-xs md:text-sm text-amber-400 font-semibold mt-1">
+                      {selectedPlaybook.nextStep}
                     </p>
                   </div>
                 </div>
               </div>
 
-              {/* Demos Relacionadas del Nicho */}
-              <div className="space-y-4">
-                <h3 className="text-sm font-bold text-gray-400 uppercase tracking-widest px-2">
-                  Demos del Ecosistema
-                </h3>
-                
-                {/* Demos Vendibles */}
+              {/* Qué Demo Mostrar */}
+              <div className="space-y-3">
+                <h4 className="text-xs font-bold text-gray-400 uppercase tracking-widest px-2">
+                  Demos Recomendadas para Mostrar
+                </h4>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                  {selectedCliente.demos.filter(d => d.status === 'official_demo' || d.status === 'in_preparation').map((demo, idx) => (
-                    <div 
-                      key={idx} 
+                  {selectedPlaybook.demos.map((demo, idx) => (
+                    <div
+                      key={idx}
                       className={`bg-[#0a0a0c] border rounded-xl p-5 flex flex-col justify-between transition-colors ${
-                        demo.status === 'official_demo' 
-                          ? 'border-emerald-500/20 hover:border-emerald-500/40 shadow-[0_0_15px_rgba(16,185,129,0.05)]' 
-                          : 'border-white/5 hover:border-amber-500/20'
+                        demo.status === 'official_demo'
+                          ? 'border-emerald-500/10 hover:border-emerald-500/30'
+                          : demo.status === 'real_case'
+                            ? 'border-blue-500/10 hover:border-blue-500/30'
+                            : 'border-white/5'
                       }`}
                     >
-                      <div className="space-y-3">
-                        <div className="flex items-start justify-between gap-4">
-                          <div>
-                            <div className="flex flex-wrap items-center gap-1.5">
-                              <span className={`px-2 py-0.5 text-[9px] font-bold uppercase rounded border ${getStatusBadgeStyles(demo.status)}`}>
-                                {demo.badge}
-                              </span>
-                              <span className={`px-2 py-0.5 text-[9px] font-bold uppercase rounded border ${getActionStyles(demo.action)}`}>
-                                {demo.action}
-                              </span>
-                            </div>
-                            <h4 className="font-extrabold text-white text-base mt-2">{demo.name}</h4>
-                          </div>
+                      <div className="space-y-2">
+                        <div className="flex flex-wrap items-center gap-1.5">
+                          <span className={`px-2 py-0.5 text-[8px] font-bold uppercase rounded border ${getStatusBadgeStyles(demo.status)}`}>
+                            {demo.badge}
+                          </span>
+                          <span className="px-2 py-0.5 text-[8px] font-bold uppercase rounded border border-white/5 text-gray-400 bg-white/5">
+                            {demo.category}
+                          </span>
                         </div>
-                        <p className="text-xs text-gray-400 font-light leading-relaxed">
-                          {demo.notes}
-                        </p>
-                        {demo.idealClient && (
-                          <details className="group border border-white/5 bg-black/20 rounded-lg overflow-hidden mt-2 transition-all duration-200">
-                            <summary className="flex items-center justify-between p-2 text-[10px] font-bold text-gray-400 uppercase tracking-widest cursor-pointer select-none hover:bg-white/5 hover:text-white">
-                              <span>Argumentario de Venta</span>
-                              <ChevronRight className="w-3 h-3 transition-transform group-open:rotate-90 text-amber-500" />
-                            </summary>
-                            <div className="p-3 border-t border-white/5 space-y-2 text-xs bg-black/40">
-                              <div>
-                                <span className="text-[9px] font-bold text-amber-500 uppercase tracking-wider block">Cliente ideal</span>
-                                <span className="text-gray-300 font-light">{demo.idealClient}</span>
-                              </div>
-                              {demo.commercialPain && (
-                                <div>
-                                  <span className="text-[9px] font-bold text-rose-400 uppercase tracking-wider block">Dolor comercial</span>
-                                  <span className="text-gray-300 font-light">{demo.commercialPain}</span>
-                                </div>
-                              )}
-                              {demo.whatItShows && (
-                                <div>
-                                  <span className="text-[9px] font-bold text-emerald-400 uppercase tracking-wider block">Qué demuestra</span>
-                                  <span className="text-gray-300 font-light">{demo.whatItShows}</span>
-                                </div>
-                              )}
-                              {demo.whatToSay && (
-                                <div>
-                                  <span className="text-[9px] font-bold text-blue-400 uppercase tracking-wider block">Qué decir</span>
-                                  <span className="text-gray-300 font-light italic">&ldquo;{demo.whatToSay}&rdquo;</span>
-                                </div>
-                              )}
-                              <div className="grid grid-cols-2 gap-2 pt-2 border-t border-white/5">
-                                {demo.recommendedPackage && (
-                                  <div>
-                                    <span className="text-[8px] font-bold text-gray-500 uppercase tracking-wider block">Paquete</span>
-                                    <span className="text-white font-semibold text-[11px]">{demo.recommendedPackage}</span>
-                                  </div>
-                                )}
-                                {demo.priceGuide && (
-                                  <div>
-                                    <span className="text-[8px] font-bold text-gray-500 uppercase tracking-wider block">Precio Guía</span>
-                                    <span className="text-amber-500 font-mono font-semibold text-[11px]">{demo.priceGuide}</span>
-                                  </div>
-                                )}
-                              </div>
-                              {demo.nextStep && (
-                                <div className="bg-amber-500/5 p-2 rounded border border-amber-500/10 mt-1">
-                                  <span className="text-[8px] font-bold text-amber-500 uppercase tracking-wider block">Siguiente paso</span>
-                                  <span className="text-gray-200 font-medium text-[11px]">{demo.nextStep}</span>
-                                </div>
-                              )}
-                            </div>
-                          </details>
-                        )}
-                        {demo.status === 'official_demo' ? (
-                          <div className="space-y-2">
-                            <p className="text-[10px] text-gray-500 font-mono break-all bg-black/30 p-2 rounded border border-white/5">
-                              {demo.url}
-                            </p>
-                            {demo.secondaryUrl && (
-                              <div className="text-[10px] text-gray-400 bg-black/50 p-2.5 rounded border border-white/5 flex flex-col gap-1">
-                                <div className="flex items-center gap-1">
-                                  <span className="w-1.5 h-1.5 rounded-full bg-amber-500 animate-pulse" />
-                                  <span className="font-bold text-amber-500 uppercase tracking-wider text-[9px]">Módulo Concierge / Sublink:</span>
-                                </div>
-                                <a 
-                                  href={demo.secondaryUrl} 
-                                  target="_blank" 
-                                  rel="noopener noreferrer" 
-                                  className="text-amber-400 hover:text-amber-300 hover:underline font-mono break-all"
-                                >
-                                  {demo.secondaryUrl}
-                                </a>
-                              </div>
-                            )}
-                          </div>
-                        ) : (
-                          <p className="text-[10px] text-gray-600 font-mono italic p-2 rounded border border-white/5 bg-black/10">
-                            Enlace privado y protegido (saneando demo)
-                          </p>
-                        )}
+                        <h5 className="font-extrabold text-white text-sm mt-1">{demo.name}</h5>
+                        <p className="text-xs text-gray-400 font-light leading-relaxed">{demo.notes}</p>
                       </div>
-                      
-                      <div className="mt-5 pt-3 border-t border-white/5 flex flex-col gap-2">
-                        <div className="flex gap-2">
-                          {demo.canOpen ? (
-                            <a 
-                              href={demo.url} 
-                              target="_blank" 
-                              rel="noopener noreferrer" 
-                              className="flex-1 py-2 bg-white/5 hover:bg-white/10 text-xs font-semibold rounded-lg text-gray-300 hover:text-white transition-all flex items-center justify-center gap-1.5 border border-white/5"
-                            >
-                              <Eye className="w-3.5 h-3.5" />
-                              <span>Abrir Demo</span>
-                            </a>
-                          ) : (
-                            <div className="flex-1 py-2 bg-black/40 text-xs font-semibold rounded-lg text-gray-600 cursor-not-allowed flex items-center justify-center gap-1.5 border border-white/5">
-                              <Link2Off className="w-3.5 h-3.5" />
-                              <span>No disponible</span>
-                            </div>
-                          )}
 
-                          {demo.canCopy ? (
-                            <button
-                              onClick={() => handleCopyText(demo.url, `demo-${selectedCliente.id}-${idx}`)}
-                              className="flex-1 py-2 bg-emerald-500/10 hover:bg-emerald-500/20 text-xs font-semibold rounded-lg text-emerald-400 hover:text-emerald-300 transition-all flex items-center justify-center gap-1.5 border border-emerald-500/20"
-                            >
-                              <Copy className="w-3.5 h-3.5" />
-                              <span>{copyStatus[`demo-${selectedCliente.id}-${idx}`] ? '¡Copiado!' : 'Copiar Enlace'}</span>
-                            </button>
-                          ) : (
-                            <div className="flex-1 py-2 bg-[#1a0f0f] text-xs font-semibold rounded-lg text-red-500/40 cursor-not-allowed flex items-center justify-center gap-1.5 border border-red-500/10">
-                              <ShieldAlert className="w-3.5 h-3.5" />
-                              <span>Envío Bloqueado</span>
-                            </div>
-                          )}
-                        </div>
+                      <div className="mt-4 pt-3 border-t border-white/5 flex gap-2">
+                        {demo.canOpen ? (
+                          <a
+                            href={demo.url}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="flex-1 py-1.5 bg-white/5 hover:bg-white/10 text-xs font-semibold rounded-lg text-gray-300 hover:text-white transition-all flex items-center justify-center gap-1 border border-white/5"
+                          >
+                            <Eye className="w-3 h-3" />
+                            <span>Abrir Demo</span>
+                          </a>
+                        ) : (
+                          <div className="flex-1 py-1.5 bg-black/40 text-xs font-semibold rounded-lg text-gray-600 cursor-not-allowed flex items-center justify-center gap-1 border border-white/5">
+                            <Link2Off className="w-3 h-3" />
+                            <span>No disponible</span>
+                          </div>
+                        )}
 
-                        {demo.secondaryUrl && (
-                          <div className="flex gap-2 border-t border-white/5 pt-2">
-                            <a 
-                              href={demo.secondaryUrl} 
-                              target="_blank" 
-                              rel="noopener noreferrer" 
-                              className="flex-1 py-1.5 bg-amber-500/5 hover:bg-amber-500/10 text-xs font-semibold rounded-lg text-amber-400 hover:text-amber-300 transition-all flex items-center justify-center gap-1.5 border border-amber-500/15"
-                            >
-                              <Eye className="w-3 h-3" />
-                              <span>{demo.secondaryUrlLabel || 'Ver Concierge'}</span>
-                            </a>
-                            <button
-                              onClick={() => handleCopyText(demo.secondaryUrl!, `demo-sec-${selectedCliente.id}-${idx}`)}
-                              className="flex-1 py-1.5 bg-white/5 hover:bg-white/10 text-xs font-semibold rounded-lg text-gray-300 hover:text-white transition-all flex items-center justify-center gap-1.5 border border-white/5"
-                            >
-                              <Copy className="w-3.5 h-3.5" />
-                              <span>{copyStatus[`demo-sec-${selectedCliente.id}-${idx}`] ? '¡Copiado!' : 'Copiar Concierge'}</span>
-                            </button>
+                        {demo.canCopy ? (
+                          <button
+                            onClick={() => handleCopyText(demo.url, `playbook-copy-${selectedPlaybook.id}-${idx}`)}
+                            className="flex-1 py-1.5 bg-emerald-500/10 hover:bg-emerald-500/20 text-xs font-semibold rounded-lg text-emerald-400 hover:text-emerald-300 transition-all flex items-center justify-center gap-1 border border-emerald-500/20"
+                          >
+                            <Copy className="w-3 h-3" />
+                            <span>{copyStatus[`playbook-copy-${selectedPlaybook.id}-${idx}`] ? 'Copiado' : 'Copiar Link'}</span>
+                          </button>
+                        ) : (
+                          <div className="flex-1 py-1.5 bg-[#120a0a] text-[10px] font-semibold rounded-lg text-red-500/50 cursor-not-allowed flex items-center justify-center gap-1 border border-red-500/5">
+                            <Lock className="w-3.5 h-3.5 text-red-500/40" />
+                            <span>No Enviable</span>
                           </div>
                         )}
                       </div>
                     </div>
                   ))}
                 </div>
-
-                {/* Archivo Interno / Referencias no enviables */}
-                {selectedCliente.demos.filter(d => d.status === 'internal_only' || d.status === 'review_before_send' || d.status === 'not_for_sale_now').length > 0 && (
-                  <div className="mt-6 border border-white/5 bg-[#0a0a0c]/60 rounded-xl p-5 space-y-4">
-                    <div className="flex items-center gap-2 border-b border-white/5 pb-2.5">
-                      <ShieldAlert className="w-4 h-4 text-rose-500" />
-                      <h4 className="text-xs font-bold text-gray-400 uppercase tracking-widest">
-                        Archivo interno / Referencias no enviables (No usar en ventas)
-                      </h4>
-                    </div>
-                    
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                      {selectedCliente.demos.filter(d => d.status === 'internal_only' || d.status === 'review_before_send' || d.status === 'not_for_sale_now').map((demo, idx) => (
-                        <div 
-                          key={idx} 
-                          className="bg-black/30 border border-white/5 rounded-lg p-4 flex flex-col justify-between opacity-60 hover:opacity-85 transition-opacity duration-200"
-                        >
-                          <div className="space-y-2">
-                            <div className="flex flex-wrap items-center gap-1.5">
-                              <span className={`px-1.5 py-0.5 text-[8px] font-bold uppercase rounded border ${getStatusBadgeStyles(demo.status)}`}>
-                                {demo.badge}
-                              </span>
-                              <span className="px-1.5 py-0.5 text-[8px] font-bold uppercase rounded border bg-rose-500/10 text-rose-400 border-rose-500/20">
-                                NO USAR EN VENTAS
-                              </span>
-                            </div>
-                            <h5 className="font-bold text-gray-300 text-sm">{demo.name}</h5>
-                            <p className="text-[11px] text-gray-500 leading-relaxed font-light">{demo.notes}</p>
-                          </div>
-                          
-                          <div className="mt-4 pt-2 border-t border-white/5 flex gap-2">
-                            {demo.canOpen ? (
-                              <a 
-                                href={demo.url} 
-                                target="_blank" 
-                                rel="noopener noreferrer" 
-                                className="flex-1 py-1.5 bg-white/5 hover:bg-white/10 text-[11px] font-medium rounded text-gray-400 hover:text-white transition-all flex items-center justify-center gap-1 border border-white/5"
-                              >
-                                <Eye className="w-3 h-3" />
-                                <span>Abrir Referencia</span>
-                              </a>
-                            ) : (
-                              <div className="flex-1 py-1.5 bg-black/40 text-[11px] font-medium rounded text-gray-600 cursor-not-allowed flex items-center justify-center gap-1 border border-white/5">
-                                <Link2Off className="w-3 h-3" />
-                                <span>No disponible</span>
-                              </div>
-                            )}
-                            <div className="flex-1 py-1.5 bg-rose-950/20 text-[10px] font-medium rounded text-rose-500/50 cursor-not-allowed flex items-center justify-center gap-1 border border-rose-950/40">
-                              <ShieldAlert className="w-3 h-3" />
-                              <span>Uso Interno</span>
-                            </div>
-                          </div>
-                        </div>
-                      ))}
-                    </div>
-                  </div>
-                )}
               </div>
 
-              {/* Mensaje de Prospección y Argumentario */}
+              {/* Mensajes y Plantillas de Copiado */}
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                
-                {/* Mensaje Sugerido o Múltiples Plantillas */}
-                <div className="bg-[#0a0a0c] border border-white/5 rounded-2xl p-6 space-y-6 flex flex-col justify-between">
+
+                {/* Textos Copiables para Redes / WhatsApp */}
+                <div className="bg-[#0a0a0c] border border-white/5 rounded-2xl p-6 space-y-4">
+                  <h4 className="text-xs font-bold text-gray-400 uppercase tracking-widest flex items-center gap-1.5 border-b border-white/5 pb-2.5">
+                    <MessageSquare className="w-4 h-4 text-amber-500" /> Mensajes de Primer Contacto
+                  </h4>
+
                   <div className="space-y-4">
-                    <h4 className="text-xs font-bold text-gray-400 uppercase tracking-widest flex items-center gap-1.5">
-                      <MessageSquare className="w-3.5 h-3.5 text-amber-500" />
-                      {selectedCliente.messageTemplates ? 'Plantillas de Mensajes Copiables' : 'Mensaje para WhatsApp / DM'}
-                    </h4>
-                    
-                    {selectedCliente.messageTemplates ? (
-                      <div className="space-y-4">
-                        {selectedCliente.messageTemplates.map((template, tIdx) => (
-                          <div key={tIdx} className="bg-black/30 border border-white/5 p-4 rounded-xl space-y-3">
-                            <div className="flex justify-between items-center">
-                              <span className="text-[10px] font-bold text-amber-500 uppercase tracking-wider">
-                                {template.label}
-                              </span>
-                              <button
-                                onClick={() => handleCopyText(template.text, `tmpl-${tIdx}`)}
-                                className="px-2 py-1 bg-white/5 hover:bg-white/10 text-[10px] font-semibold rounded text-gray-400 hover:text-white transition-all flex items-center gap-1 border border-white/5"
-                              >
-                                <Copy className="w-3 h-3" />
-                                <span>{copyStatus[`tmpl-${tIdx}`] ? '¡Copiado!' : 'Copiar'}</span>
-                              </button>
-                            </div>
-                            <p className="text-xs md:text-sm text-gray-300 font-light leading-relaxed font-mono whitespace-pre-wrap">
-                              {template.text}
-                            </p>
-                          </div>
-                        ))}
+                    <div className="bg-black/30 border border-white/5 p-4 rounded-xl space-y-2.5">
+                      <div className="flex justify-between items-center">
+                        <span className="text-[9px] font-bold text-amber-500 uppercase tracking-wider">
+                          Mensaje WhatsApp Corto
+                        </span>
+                        <button
+                          onClick={() => handleCopyText(selectedPlaybook.messageShort, 'play-short')}
+                          className="px-2 py-0.5 bg-white/5 hover:bg-white/10 text-[9px] font-semibold rounded text-gray-400 hover:text-white transition-all flex items-center gap-1 border border-white/5"
+                        >
+                          <Copy className="w-2.5 h-2.5" />
+                          <span>{copyStatus['play-short'] ? 'Copiado' : 'Copiar'}</span>
+                        </button>
                       </div>
-                    ) : (
-                      <p className="text-xs md:text-sm text-gray-300 font-light leading-relaxed bg-black/40 border border-white/5 p-4 rounded-xl font-mono">
-                        {selectedCliente.message}
+                      <p className="text-xs text-gray-300 font-mono leading-relaxed bg-black/10 p-2 rounded border border-white/5">
+                        {selectedPlaybook.messageShort}
                       </p>
-                    )}
+                    </div>
+
+                    <div className="bg-black/30 border border-white/5 p-4 rounded-xl space-y-2.5">
+                      <div className="flex justify-between items-center">
+                        <span className="text-[9px] font-bold text-amber-500 uppercase tracking-wider">
+                          Mensaje Con Contexto / Seguimiento
+                        </span>
+                        <button
+                          onClick={() => handleCopyText(selectedPlaybook.messageContext, 'play-ctx')}
+                          className="px-2 py-0.5 bg-white/5 hover:bg-white/10 text-[9px] font-semibold rounded text-gray-400 hover:text-white transition-all flex items-center gap-1 border border-white/5"
+                        >
+                          <Copy className="w-2.5 h-2.5" />
+                          <span>{copyStatus['play-ctx'] ? 'Copiado' : 'Copiar'}</span>
+                        </button>
+                      </div>
+                      <p className="text-xs text-gray-300 font-mono leading-relaxed bg-black/10 p-2 rounded border border-white/5">
+                        {selectedPlaybook.messageContext}
+                      </p>
+                    </div>
                   </div>
-                  
-                  {!selectedCliente.messageTemplates && (
-                    <button
-                      onClick={() => handleCopyText(selectedCliente.message, 'script-msg')}
-                      className="mt-6 w-full py-3 bg-amber-500 hover:bg-amber-600 text-black text-xs font-bold uppercase tracking-wider rounded-xl transition-all flex items-center justify-center gap-2 font-semibold"
-                    >
-                      <Copy className="w-4 h-4" />
-                      <span>{copyStatus['script-msg'] ? '¡Mensaje Copiado!' : 'Copiar Mensaje'}</span>
-                    </button>
-                  )}
                 </div>
 
-                {/* Argumentario de Ventas */}
+                {/* Argumentario y Prevención */}
                 <div className="bg-[#0a0a0c] border border-white/5 rounded-2xl p-6 space-y-6">
-                  <div>
-                    <h4 className="text-xs font-bold text-gray-400 uppercase tracking-widest flex items-center gap-1.5 mb-3">
-                      <CheckCircle2 className="w-3.5 h-3.5 text-emerald-500" /> Qué decir en llamada
-                    </h4>
-                    <ul className="space-y-3">
-                      {selectedCliente.whatToSay.map((item, idx) => (
-                        <li key={idx} className="text-xs md:text-sm text-gray-300 font-light flex items-start gap-2.5">
-                          <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 shrink-0 mt-1.5" />
-                          <span>{item}</span>
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
 
-                  <div className="border-t border-white/5 pt-4">
-                    <h4 className="text-xs font-bold text-gray-400 uppercase tracking-widest flex items-center gap-1.5 mb-3">
-                      <XCircle className="w-3.5 h-3.5 text-red-500" /> Qué NO prometer
+                  {/* Qué NO prometer / Qué NO enviar */}
+                  <div>
+                    <h4 className="text-xs font-bold text-red-400 uppercase tracking-widest flex items-center gap-1.5 border-b border-white/5 pb-2.5">
+                      <XCircle className="w-4 h-4 text-red-500" /> Qué NO Prometer / Enviar
                     </h4>
-                    <ul className="space-y-3">
-                      {selectedCliente.whatNotToPromise.map((item, idx) => (
-                        <li key={idx} className="text-xs md:text-sm text-gray-300 font-light flex items-start gap-2.5">
+                    <ul className="space-y-2.5 mt-3">
+                      {selectedPlaybook.whatNotToPromise.map((item, idx) => (
+                        <li key={idx} className="text-xs text-gray-300 font-light flex items-start gap-2.5">
                           <span className="w-1.5 h-1.5 rounded-full bg-red-500 shrink-0 mt-1.5" />
                           <span>{item}</span>
                         </li>
@@ -1144,12 +1161,13 @@ export default function SalesRoom() {
                     </ul>
                   </div>
 
-                  <div className="border-t border-white/5 pt-4 bg-amber-500/5 -mx-6 -mb-6 p-6 rounded-b-2xl border-x-0 border-b-0">
-                    <h4 className="text-xs font-bold text-amber-500 uppercase tracking-widest flex items-center gap-1.5">
-                      Siguiente Paso Recomendado
-                    </h4>
-                    <p className="text-xs md:text-sm text-white font-semibold mt-1 flex items-center gap-1.5">
-                      <ChevronRight className="w-4 h-4 text-amber-500" /> {selectedCliente.nextStep}
+                  {/* Nota Operativa William */}
+                  <div className="bg-amber-500/5 p-4 rounded-xl border border-amber-500/15">
+                    <span className="text-[9px] font-bold text-amber-500 uppercase tracking-widest block font-mono">
+                      Nota Comercial para William
+                    </span>
+                    <p className="text-xs text-gray-300 font-light mt-1.5 leading-relaxed italic">
+                      “{selectedPlaybook.noteForWilliam}”
                     </p>
                   </div>
                 </div>
@@ -1160,111 +1178,159 @@ export default function SalesRoom() {
           </div>
         )}
 
-        {/* PESTAÑA 2: LÍNEAS DE PRODUCTO DE REFERENCIA */}
-        {activeTab === 'catalog' && (
-          <div className="space-y-8">
-            <div className="bg-[#0a0a0c] border border-white/5 rounded-2xl p-6 md:p-8">
-              <h2 className="text-lg md:text-2xl font-extrabold text-white uppercase tracking-tight">
-                Líneas de Producto Oficiales
+        {/* PESTAÑA 4: PRÓXIMAS DEMOS */}
+        {activeTab === 'upcoming' && (
+          <div className="space-y-6">
+            <div className="bg-[#0a0a0c] border border-amber-600/10 rounded-2xl p-6 md:p-8">
+              <h2 className="text-xl md:text-2xl font-black text-white uppercase tracking-tight flex items-center gap-2">
+                <Clock className="text-amber-500 w-6 h-6" /> Próximas Demos (En preparación)
               </h2>
-              <p className="text-xs md:text-sm text-gray-400 mt-1">
-                Ficha de precios y alcances para William & Marcos durante negociaciones directas.
+              <p className="text-xs md:text-sm text-gray-400 mt-1.5">
+                Módulos del ecosistema en fase de saneamiento de código o maquetación inicial. William las puede plantear como soluciones en desarrollo para preventas estructuradas.
               </p>
+            </div>
 
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-8">
-                {lineasProducto.map((p, idx) => (
-                  <div 
-                    key={idx} 
-                    className="bg-black/40 border border-white/5 rounded-xl p-5 hover:border-white/10 transition-colors flex flex-col justify-between"
-                  >
-                    <div className="space-y-2">
-                      <h3 className="font-bold text-white text-sm md:text-base">{p.title}</h3>
-                      <p className="text-xs text-gray-400 font-light leading-relaxed">{p.desc}</p>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {upcomingDemos.map((demo, idx) => (
+                <div
+                  key={idx}
+                  className="bg-[#0a0a0c] border border-amber-500/5 hover:border-amber-500/25 rounded-2xl p-6 flex flex-col justify-between transition-all"
+                >
+                  <div className="space-y-3">
+                    <div className="flex flex-wrap items-center gap-1.5">
+                      <span className="px-2 py-0.5 text-[8px] font-bold uppercase rounded border bg-amber-500/10 text-amber-500 border-amber-500/20">
+                        {demo.badge}
+                      </span>
+                      <span className="px-2 py-0.5 text-[8px] font-bold uppercase rounded border bg-gray-900 text-gray-400 border-white/5">
+                        Producto Vendible
+                      </span>
                     </div>
-                    <div className="mt-4 pt-3 border-t border-white/5 flex items-center justify-between">
-                      <span className="text-[10px] text-gray-500 uppercase tracking-wider">Inversión</span>
-                      <span className="text-xs font-semibold font-mono text-amber-500">{p.invest}</span>
+
+                    <h3 className="font-extrabold text-white text-base mt-1">{demo.name}</h3>
+                    <p className="text-xs text-gray-400 font-light leading-relaxed">{demo.notes}</p>
+                  </div>
+
+                  <div className="mt-6 pt-3 border-t border-white/5 flex gap-2">
+                    <div className="flex-1 py-2 bg-black/40 text-xs font-semibold rounded-lg text-gray-600 cursor-not-allowed flex items-center justify-center gap-1.5 border border-white/5">
+                      <Link2Off className="w-3.5 h-3.5" />
+                      <span>En Preparación</span>
+                    </div>
+                    <div className="flex-1 py-2 bg-black/40 text-xs font-semibold rounded-lg text-gray-600 cursor-not-allowed flex items-center justify-center gap-1.5 border border-white/5">
+                      <Lock className="w-3.5 h-3.5" />
+                      <span>Sin Enlace</span>
                     </div>
                   </div>
-                ))}
-              </div>
+                </div>
+              ))}
             </div>
           </div>
         )}
 
-        {/* PESTAÑA 3: SECCIÓN DE MANTENIMIENTO TÉCNICO Y DEMOS PENDIENTES */}
-        {activeTab === 'maintenance' && (
-          <div className="space-y-8">
-            
-            {/* Panel Principal */}
-            <div className="bg-[#0a0a0c] border border-rose-500/10 rounded-2xl p-6 md:p-8">
-              <div className="flex items-center gap-3 border-b border-white/5 pb-4">
-                <div className="p-3 bg-rose-500/10 text-rose-400 rounded-xl">
-                  <Wrench className="w-6 h-6" />
-                </div>
-                <div>
-                  <h2 className="text-lg md:text-2xl font-extrabold text-white uppercase tracking-tight">
-                    Demos pendientes de reparación o creación
-                  </h2>
-                  <p className="text-xs md:text-sm text-gray-400 mt-0.5">
-                    Sección exclusiva para Marcos. Lista de demos privadas, administradores internos o enlaces bajo revisión que no deben ser compartidos con prospectos.
-                  </p>
+        {/* PESTAÑA 5: ARCHIVO INTERNO */}
+        {activeTab === 'internal' && (
+          <div className="space-y-6">
+
+            {/* Cartel de Advertencia Crítica */}
+            <div className="bg-[#1a0c0c] border border-rose-500/30 rounded-2xl p-6 md:p-8 flex flex-col md:flex-row gap-5 items-start">
+              <div className="p-4 bg-rose-500/15 text-rose-500 rounded-2xl shrink-0">
+                <ShieldAlert className="w-8 h-8" />
+              </div>
+              <div className="space-y-2">
+                <h2 className="text-lg md:text-2xl font-black text-rose-500 uppercase tracking-tight flex items-center gap-2">
+                  ARCHIVO INTERNO — EXCLUSIVO PARA MARCOS & WILLIAM
+                </h2>
+                <p className="text-xs md:text-sm text-gray-300 leading-relaxed font-light">
+                  Esta pestaña contiene consolas administrativas internas reales, versiones legacy antiguas con datos confidenciales, listados no saneados o plataformas asociadas a clientes privados (como Ivette Berroa).
+                </p>
+                <div className="inline-block bg-rose-500 text-black text-xs font-black uppercase tracking-widest px-3 py-1.5 rounded-lg border border-rose-600 shadow-[0_0_15px_rgba(239,68,68,0.2)] mt-2">
+                  NO ENVIAR AL CLIENTE
                 </div>
               </div>
+            </div>
 
-              <div className="mt-8 space-y-4">
-                {maintenanceDemos.map((demo, idx) => (
-                  <div 
-                    key={idx}
-                    className="p-4 bg-black/40 border border-white/5 rounded-xl flex flex-col md:flex-row justify-between items-start md:items-center gap-4 hover:border-rose-500/20 transition-all"
-                  >
-                    <div className="space-y-1">
-                      <div className="flex flex-wrap items-center gap-2">
-                        <h3 className="font-bold text-white text-sm md:text-base">{demo.name}</h3>
-                        <span className={`px-2 py-0.5 text-[9px] font-bold uppercase rounded border ${getStatusBadgeStyles(demo.status)}`}>
-                          {demo.badge}
-                        </span>
-                        <span className={`px-2 py-0.5 text-[9px] font-bold uppercase rounded border ${getActionStyles(demo.action)}`}>
-                          {demo.action}
-                        </span>
-                      </div>
-                      <p className="text-xs text-gray-400 font-light leading-relaxed">{demo.notes}</p>
-                      <p className="text-[10px] text-gray-500 font-mono break-all">{demo.url}</p>
+            {/* Listado de Archivos Internos */}
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {internalArchive.map((demo, idx) => (
+                <div
+                  key={idx}
+                  className="bg-[#0f0909] border border-rose-500/10 hover:border-rose-500/30 rounded-2xl p-6 flex flex-col justify-between transition-all opacity-80 hover:opacity-100"
+                >
+                  <div className="space-y-3">
+                    <div className="flex flex-wrap items-center gap-1.5">
+                      <span className="px-2 py-0.5 text-[8px] font-bold uppercase rounded border bg-rose-500/10 text-rose-400 border-rose-500/20">
+                        {demo.badge}
+                      </span>
+                      <span className="px-2 py-0.5 text-[8px] font-bold uppercase rounded border bg-[#1c0808] text-rose-500 border-rose-950">
+                        NO ENVIAR
+                      </span>
                     </div>
 
-                    <div className="flex gap-2 w-full md:w-auto mt-2 md:mt-0">
-                      {demo.canOpen && (
-                        <a 
-                          href={demo.url} 
-                          target="_blank" 
-                          rel="noopener noreferrer" 
-                          className="flex-1 md:flex-initial px-4 py-2 bg-white/5 hover:bg-white/10 text-xs font-semibold rounded-lg text-gray-300 hover:text-white transition-all flex items-center justify-center gap-1 border border-white/5"
-                        >
-                          <Eye className="w-3.5 h-3.5" />
-                          <span>Inspeccionar</span>
-                        </a>
-                      )}
-                      <div className="px-4 py-2 bg-rose-500/5 text-xs font-semibold rounded-lg text-rose-400 border border-rose-500/10 flex items-center gap-1 w-full md:w-auto justify-center">
+                    <h3 className="font-extrabold text-gray-200 text-base">{demo.name}</h3>
+                    <p className="text-xs text-gray-500 font-light leading-relaxed">{demo.notes}</p>
+                    <p className="text-[10px] text-gray-600 font-mono break-all bg-black/45 p-2 rounded border border-white/5">
+                      {demo.url}
+                    </p>
+                  </div>
+
+                  <div className="mt-6 pt-3 border-t border-white/5 flex gap-2">
+                    {demo.canOpen ? (
+                      <a
+                        href={demo.url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="flex-1 py-1.5 bg-white/5 hover:bg-white/10 text-xs font-semibold rounded-lg text-gray-300 hover:text-white transition-all flex items-center justify-center gap-1 border border-white/5"
+                      >
+                        <Eye className="w-3.5 h-3.5" />
+                        <span>Inspeccionar</span>
+                      </a>
+                    ) : (
+                      <div className="flex-1 py-1.5 bg-black/40 text-xs font-semibold rounded-lg text-gray-600 cursor-not-allowed flex items-center justify-center gap-1.5 border border-white/5">
                         <Link2Off className="w-3.5 h-3.5" />
-                        <span>Envío Bloqueado</span>
+                        <span>No Disponible</span>
                       </div>
+                    )}
+
+                    <div className="flex-1 py-1.5 bg-[#261010] text-[10px] font-bold rounded-lg text-rose-400 cursor-not-allowed flex items-center justify-center gap-1 border border-rose-950/40">
+                      <ShieldAlert className="w-3.5 h-3.5 text-rose-500" />
+                      <span>Envío Bloqueado</span>
                     </div>
                   </div>
-                ))}
-              </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        )}
+
+        {/* PESTAÑA 6: LÍNEAS DE PRODUCTO */}
+        {activeTab === 'catalog' && (
+          <div className="space-y-6">
+            <div className="bg-[#0a0a0c] border border-white/5 rounded-2xl p-6 md:p-8">
+              <h2 className="text-xl md:text-2xl font-black text-white uppercase tracking-tight flex items-center gap-2">
+                <Package className="text-gray-400 w-6 h-6" /> Líneas de Producto & Precios Guía
+              </h2>
+              <p className="text-xs md:text-sm text-gray-400 mt-1.5">
+                Alcances y marcos de inversión sugeridos para las cotizaciones comerciales de Luma Premium.
+              </p>
             </div>
 
-            {/* Caja de Recomendación Técnica */}
-            <div className="bg-[#120909] border border-red-500/20 rounded-xl p-6 flex flex-col md:flex-row gap-4 items-start">
-              <ShieldAlert className="w-6 h-6 text-red-500 shrink-0 mt-1" />
-              <div className="space-y-2">
-                <h4 className="text-sm font-bold text-white uppercase">Advertencia Comercial para William</h4>
-                <p className="text-xs text-gray-400 leading-relaxed font-light">
-                  Ninguno de los enlaces de este panel de mantenimiento debe ser enviado en chats con prospectos comerciales. Si el cliente requiere visualizar un admin o CRM en funcionamiento, Marcos o William deben coordinar una videollamada para presentarlo mediante pantalla compartida (modo de demostración guiada).
-                </p>
-              </div>
-            </div>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {lineasProducto.map((p, idx) => (
+                <div
+                  key={idx}
+                  className="bg-[#0a0a0c] border border-white/5 hover:border-white/10 rounded-2xl p-6 flex flex-col justify-between transition-colors"
+                >
+                  <div className="space-y-3">
+                    <h3 className="font-extrabold text-white text-base md:text-lg">{p.title}</h3>
+                    <p className="text-xs text-gray-400 font-light leading-relaxed">{p.desc}</p>
+                  </div>
 
+                  <div className="mt-6 pt-4 border-t border-white/5 flex items-center justify-between">
+                    <span className="text-[10px] text-gray-500 uppercase tracking-widest font-mono">Presupuesto Sugerido</span>
+                    <span className="text-xs font-semibold font-mono text-amber-500">{p.invest}</span>
+                  </div>
+                </div>
+              ))}
+            </div>
           </div>
         )}
       </main>
@@ -1272,8 +1338,12 @@ export default function SalesRoom() {
       {/* Footer Comercial Interno */}
       <footer className="border-t border-white/5 py-8 mt-12 bg-black text-center text-xs text-gray-600">
         <div className="max-w-7xl mx-auto px-4">
-          <p className="uppercase tracking-widest text-[10px]">Luma Premium Ecosistema Comercial</p>
-          <p className="mt-1">Documento Confidencial. Solo para uso operativo de Marcos Hilario y William.</p>
+          <p className="uppercase tracking-widest text-[9px] text-gray-500 font-bold">
+            Luma Premium Ecosistema Comercial
+          </p>
+          <p className="mt-1 text-[11px]">
+            Documento Confidencial. Solo para uso operativo de Marcos Hilario, William y aliados.
+          </p>
         </div>
       </footer>
     </div>
